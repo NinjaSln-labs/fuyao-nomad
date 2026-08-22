@@ -43,4 +43,4 @@ orchestration:
 
 - [x] 文档级规则 + `contention_policy` schema
 - [x] 升级协议 [escalation-protocol.md](./escalation-protocol.md)
-- [ ] 自动争用检测（git / 文件锁）— P2
+- [x] 自动争用检测（git 脏文件顾问）— `npm run check:contention` · [file-lock-contract.md](./file-lock-contract.md)

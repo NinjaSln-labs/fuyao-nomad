@@ -1,6 +1,6 @@
 {
   "name": "fuyao-nomad",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "扶摇 · Nomad — Agent team framework",
   "license": "Apache-2.0",
   "type": "module",
@@ -20,6 +20,7 @@
     "test": "node --test tests/scripts.test.mjs",
     "pack": "node scripts/pack.mjs",
     "pack:install": "node scripts/pack.mjs install",
+    "check:contention": "node scripts/check-contention.mjs",
     "install:cursor-agents": "node scripts/install-cursor-agents.mjs"
   },
   "devDependencies": {

@@ -27,6 +27,11 @@ test("pack validate minimal-research-to-spec", () => {
   assert.equal(r.status, 0, r.stdout + r.stderr);
 });
 
+test("check:contention advisory passes on repo", () => {
+  const r = run("npm", ["run", "check:contention", "--", "--project", ROOT]);
+  assert.equal(r.status, 0, r.stdout + r.stderr);
+});
+
 test("pack install to temp project", () => {
   const scratchBase = join(ROOT, ".scratch");
   mkdirSync(scratchBase, { recursive: true });

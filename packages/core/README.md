@@ -22,6 +22,7 @@ npm run validate
 npm test
 npm run pack -- validate packs/<id>
 npm run pack:install -- --pack packs/<id> --project .
+npm run check:contention -- --project .
 npm run install:cursor-agents
 ```
 

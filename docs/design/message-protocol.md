@@ -92,7 +92,7 @@ payload:
 
 - [x] 文档与示例 YAML
 - [x] JSON Schema（v0.2.0）
-- [x] validate 扫描 message 文件（`packs/*/examples/`）
+- [x] validate 扫描 message 文件（`packs/*/examples/` · `agents/examples/messages/` · `.agents/messages/`）
 
 ## 示例
 

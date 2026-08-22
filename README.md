@@ -63,8 +63,9 @@ npm run install:cursor-agents -- --project .
 |------|------|
 | **v0.1.0** ✅ | 开源基线 |
 | **v0.2.0** ✅ | 团队包 pack · 消息协议 schema |
-| **v0.3.0** ✅ | 六档模板 · CLI 映射 POC · 升级协议 |
-| **v0.4.x** | 争用自动检测 · 更多 harness |
+| **v0.3.0** ✅ | 六档模板 · CLI POC · 升级协议 |
+| **v0.4.0** ✅ | message validate · check:contention · OpenHands POC |
+| **v0.5.x** | territory schema · harness 示例片段 |
 
 详见 [ROADMAP.md](ROADMAP.md) · [后 v0.1 路线](docs/product/post-v01-roadmap.md) · [0→1 路径](docs/product/0-1-path.md)
 
@@ -88,7 +89,7 @@ fuyao-nomad/
 
 ## 状态
 
-**v0.3.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md)
+**v0.4.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md)
 
 维护者审计为**本地私有**（`.agents/audit/`，不入库）。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
 

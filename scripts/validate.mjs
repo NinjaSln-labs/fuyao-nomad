@@ -2,7 +2,7 @@
 /**
  * Validate rosters, plan-progress, and docs/templates against JSON schemas.
  */
-import { readFileSync, readdirSync, existsSync } from "node:fs";
+import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
 import { join, dirname, isAbsolute } from "node:path";
 import { fileURLToPath } from "node:url";
 import YAML from "yaml";
@@ -91,6 +91,30 @@ function validateDir(dir, filter) {
   return { passed, failed };
 }
 
+function validateMessagesTree(dir) {
+  if (!existsSync(dir)) return { passed: 0, failed: 0 };
+  let passed = 0;
+  let failed = 0;
+  for (const name of readdirSync(dir)) {
+    const p = join(dir, name);
+    if (name.endsWith(".yaml") || name.endsWith(".yml")) {
+      const ok = validateFile(p, "message");
+      if (ok) passed++;
+      else failed++;
+    } else if (!name.startsWith(".")) {
+      try {
+        if (!statSync(p).isDirectory()) continue;
+        const sub = validateMessagesTree(p);
+        passed += sub.passed;
+        failed += sub.failed;
+      } catch {
+        /* skip */
+      }
+    }
+  }
+  return { passed, failed };
+}
+
 let passed = 0;
 let failed = 0;
 
@@ -103,6 +127,14 @@ if (args[0] === "--path" && args[1]) {
   const ex = validateDir(join(ROOT, "agents/examples"));
   passed += ex.passed;
   failed += ex.failed;
+
+  const msgEx = validateMessagesTree(join(ROOT, "agents/examples/messages"));
+  passed += msgEx.passed;
+  failed += msgEx.failed;
+
+  const msgLocal = validateMessagesTree(join(ROOT, ".agents/messages"));
+  passed += msgLocal.passed;
+  failed += msgLocal.failed;
 
   const tpl = validateDir(join(ROOT, "docs/templates"), (n) => n !== "README.md");
   passed += tpl.passed;

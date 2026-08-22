@@ -1,22 +1,20 @@
 # Harness 薄适配
 
-将扶摇 · Nomad **挂载**到现有运行时（Cursor、CLI 等）。
+将扶摇 · Nomad **挂载**到现有运行时。
 
 ## 边界
 
 | 做 | 不做 |
 |----|------|
-| 槽位 → 运行时 agent 映射 | 构建 harness / IDE |
-| 上下文注入、技能发现 | 替代 Cursor Agent / OpenHands |
-| 团队包加载 | 与 harness 核心逻辑竞争 |
+| 槽位 → 运行时映射 | 构建 harness / IDE |
+| 团队包加载 | 替代 Cursor / OpenHands / CLI runtime |
 
-## 原则
-
-- 团队 spec（roster、交接、DoD）**不依赖**某一 harness
-- 换 harness 只换映射表，不换团队包
-- 本层是**适配**，不是扶摇的产品目标
+## 适配目录
 
 | 目录 | 目标 | 状态 |
 |------|------|------|
-| `cursor/` | Cursor IDE | 待建 |
-| `cli/` | 命令行 | 待建 |
+| [cursor/](./cursor/) | Cursor IDE | POC + `install:cursor-agents` |
+| [cli/](./cli/) | 命令行 | v0.3 文档 POC |
+| [openhands/](./openhands/) | OpenHands | v0.4 文档 POC |
+
+换 harness 只换映射表，不换 roster / pack。

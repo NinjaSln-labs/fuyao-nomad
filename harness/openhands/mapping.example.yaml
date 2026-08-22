@@ -1,0 +1,11 @@
+# 槽位 id → OpenHands agent 角色名（示意）
+
+roster_id: minimal-research-to-spec
+
+mappings:
+  research: ResearchAgent
+  spec: SpecAgent
+  progress: ProgressAgent
+  auditor: AuditorAgent
+
+# OpenHands 委派配置由用户/runtime 实现；扶摇只定义映射语义。

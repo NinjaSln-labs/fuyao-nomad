@@ -5,6 +5,7 @@
 ```bash
 npm install
 npm run validate    # roster · pack · templates · messages
+npm run check:contention -- --project .   # 争用顾问（可选）
 npm test
 npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 npm run install:cursor-agents -- --check --project .   # 漂移检测

@@ -4,39 +4,37 @@
 
 ## 已完成
 
-### v0.3.0（2026-08-22）
+### v0.4.0（2026-08-22）
 
-- `flow_weight` 六档模板（轻 · 轻中 · 中 · 中重 · 重 · 全流程）
-- CLI harness 映射 POC（文档 + `mapping.example.yaml`）
-- 升级与争用协议 · `contention_policy` · `messages_dir`
+- 运行时 message 校验：`agents/examples/messages/` · `.agents/messages/`
+- 争用顾问脚本：`npm run check:contention` · [file-lock-contract.md](docs/design/file-lock-contract.md)
+- OpenHands 薄适配 POC（文档 + mapping）
 
-### v0.2.0
+### v0.3.x
 
-- 团队包 · 消息协议 schema · pack install
+- 六档 flow_weight · CLI POC · escalation · 审计本地化（v0.3.1）
 
-### v0.1.0
+### v0.2.0 · v0.1.0
 
-- 开源基线 · CI · Cursor POC · audit-record schema
+- 团队包 · 消息 schema · 开源基线
 
 ## 后续
 
-| 优先级 | 主题 | 说明 |
-|--------|------|------|
-| P2 | OpenHands 等第二 harness | 文档级，按需 |
-| P2 | 自动争用检测 | git / 文件锁契约 |
-| P2 | message validate 运行时目录 | `.agents/messages/` 扫描 |
+| 优先级 | 主题 |
+|--------|------|
+| P2 | plan-progress `territory` 字段 schema |
+| P2 | OpenHands / CLI 示例 agent 片段 |
+| P3 | 争用 `--strict` 与 CI 可选门禁 |
 
 ## 里程碑
 
 ```
-v0.1.0 ✅ → v0.2.0 ✅ → v0.3.0 ✅
-    ↓
-v0.4.x   运行时争用检测 · 更多 harness
+v0.3.x ✅ → v0.4.0 ✅ → v0.5.x  schema 深化
 ```
 
 ## 原则
 
-不做 harness · 技能不进 harness · 无固定编制 · DDD 必要
+不做 harness · 技能不进 harness · 审计本地私有
 
 [CONTRIBUTING.md](CONTRIBUTING.md)
 
