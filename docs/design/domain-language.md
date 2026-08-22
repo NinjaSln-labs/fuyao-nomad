@@ -1,6 +1,6 @@
 # 领域语言 · 扶摇 · Nomad
 
-> **状态：③ 设计 · v0.1**  
+> **状态：③ 设计 · v0.3**  
 > 框架自身 dogfood DDD：术语与边界上下文，供文档、schema、审计对齐。
 
 ## 愿景
@@ -21,7 +21,9 @@
 | **Harness** | 外部运行时（Cursor、CLI…）；扶摇 **不实现** |
 | **Harness 映射** | 槽位 id → 运行时 agent 文件 |
 | **团队包（Team Pack）** | roster + 模板 + 映射 + skills 的可发布单元 |
-| **Skill** | harness 无关能力单元，绑到槽位 |
+| **Skill** | harness 无关能力单元，绑到槽位（路径引用，不同步 harness） |
+| **Slot Message** | 结构化槽位 payload；见 message-protocol |
+| **contention_policy** | 并行争用策略；见 escalation-protocol |
 
 ## 边界上下文
 

@@ -57,7 +57,7 @@ npm run install:cursor-agents -- --project .
 
 ## 路线图
 
-**当前：v0.2.0** — 团队包 · 消息协议 schema · `pack:install`。
+**当前：v0.3.0** — 六档 `flow_weight` 模板 · CLI 映射 POC · 升级协议。
 
 | 版本 | 目标 |
 |------|------|
@@ -88,7 +88,8 @@ fuyao-nomad/
 
 ## 状态
 
-**v0.3.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md)
+**v0.3.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md)  
+审计：[v0.3 发布 100/100](docs/audit/2026-08-22-v03-release-audit.md)
 
 ## 许可
 

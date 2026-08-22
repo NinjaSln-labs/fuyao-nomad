@@ -56,13 +56,14 @@ npm run install:cursor-agents -- --project .
 
 ## Roadmap
 
-**Current: v0.1.0** — schemas, template families, validation, Cursor POC, CI.
+**Current: v0.3.0** — six `flow_weight` tiers · CLI mapping POC · escalation protocol.
 
 | Version | Goal |
 |---------|------|
-| **v0.1.0** ✅ | Open baseline: roster/plan-progress schemas, light/medium templates, validate + test |
-| **v0.2.0** | Team **pack** format; slot **message protocol** draft |
-| **v0.3.0** | Second harness doc-level POC; extended `flow_weight` tiers |
+| **v0.1.0** ✅ | Open baseline |
+| **v0.2.0** ✅ | Team pack · message protocol schema |
+| **v0.3.0** ✅ | Extended templates · CLI POC · escalation |
+| **v0.4.x** | Contention detection · more harness docs |
 
 See [ROADMAP.md](ROADMAP.md) · [Post-v0.1 plan](docs/product/post-v01-roadmap.md)
 
@@ -86,7 +87,7 @@ fuyao-nomad/
 
 ## Status
 
-v0.1.0 release passed a [100/100 release audit](docs/audit/2026-08-22-v01-release-audit.md).
+**v0.3.0** — see [CHANGELOG](CHANGELOG.md). v0.1 [release audit](docs/audit/2026-08-22-v01-release-audit.md) · v0.3 [release audit](docs/audit/2026-08-22-v03-release-audit.md).
 
 ## License
 
