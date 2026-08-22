@@ -1,0 +1,12 @@
+# DDD 设计门 · flow_weight=轻中
+
+flow_weight: 轻中
+
+ddd_gate:
+  required: true
+  checks:
+    - id: intent_scope_consistent
+      required: true
+    - id: terms_sketch
+      required: true
+      description: 核心术语一览（可简表）

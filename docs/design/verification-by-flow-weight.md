@@ -58,5 +58,5 @@ verification:
 
 ## V1 验收
 
-- [x] 至少 **2 个** flow_weight 示例（`轻` + `中`）各有 verification 清单
+- [x] 至少 **6 个** flow_weight 档位各有 verification 清单（轻 · 轻中 · 中 · 中重 · 重 · 全流程）
 - [x] 与 `agents/examples/` 中 roster 的 `flow_weight` 可配对

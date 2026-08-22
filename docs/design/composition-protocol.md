@@ -88,7 +88,7 @@
 - [x] Role Slot / Roster schema → `docs/design/schemas/roster.schema.json`
 - [x] 默认 handoff → `docs/design/default-handoff.md`
 - [x] 团队包打包格式 → [team-pack.md](./team-pack.md)
-- [ ] 多 agent 争用与升级协议
+- [ ] 多 agent 争用与升级协议 → [escalation-protocol.md](./escalation-protocol.md)
 - [x] 示例 roster → `agents/examples/minimal-roster.yaml`
 
 ## 示例（可全部删除）

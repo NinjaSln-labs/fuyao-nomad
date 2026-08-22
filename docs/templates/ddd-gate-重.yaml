@@ -1,0 +1,19 @@
+# DDD 设计门 · flow_weight=重
+
+flow_weight: 重
+
+ddd_gate:
+  required: true
+  checks:
+    - id: ubiquitous_language
+      required: true
+    - id: bc_and_aggregates
+      required: true
+    - id: invariant_list
+      required: true
+      description: 关键不变式清单
+    - id: trace_matrix
+      required: true
+    - id: design_audit_major_clear
+      required: true
+      description: 设计审计 Major 已清零

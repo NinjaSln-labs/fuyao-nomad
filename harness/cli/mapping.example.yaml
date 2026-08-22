@@ -1,0 +1,11 @@
+# 槽位 id → CLI runner 名（示意，非可执行配置）
+
+roster_id: minimal-research-to-spec
+
+mappings:
+  research: research-runner
+  spec: spec-runner
+  progress: progress-runner
+  auditor: auditor-runner
+
+# CLI 编排器由用户实现；扶摇只定义映射语义。

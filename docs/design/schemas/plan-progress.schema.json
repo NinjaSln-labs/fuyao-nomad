@@ -119,6 +119,10 @@
           "type": "string",
           "description": "简短交接摘要，可嵌入会话 HANDOFF"
         },
+        "messages_dir": {
+          "type": "string",
+          "description": "槽位消息目录，建议 .agents/messages/<roster_id>/"
+        },
         "updated_at": { "type": "string", "format": "date-time" }
       }
     }

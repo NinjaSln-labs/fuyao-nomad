@@ -1,0 +1,23 @@
+# DoD 模板 · flow_weight=中重
+
+flow_weight: 中重
+
+dod:
+  deliverables:
+    - 规格或任务追溯摘要
+    - 槽位 outputs 齐全
+    - plan-progress 已更新
+    - 关键路径集成说明（若适用）
+  boundaries:
+    - 范围变更已确认
+  checklist:
+    - id: intent_clear
+      required: true
+    - id: plan_progress_synced
+      required: true
+    - id: handoff_snippet_updated
+      required: true
+    - id: integration_risk_addressed
+      required: true
+    - id: audit_gates_passed
+      required: true

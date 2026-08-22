@@ -1,0 +1,27 @@
+# 配对：dod-轻中.yaml · ddd-gate-轻中.yaml
+
+flow_weight: 轻中
+
+verification:
+  coding:
+    - id: runnable_change
+      required: true
+    - id: smoke_tests_or_manual
+      required: true
+      description: 变更路径 smoke 或等效手动验证
+    - id: lint_if_present
+      required: false
+  non_coding:
+    - id: sources_cited
+      required: true
+
+audit:
+  design:
+    required: false
+    depth: self_check
+  implementation:
+    required: false
+    depth: light
+  code_quality:
+    required: false
+    depth: lint_optional

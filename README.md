@@ -63,7 +63,8 @@ npm run install:cursor-agents -- --project .
 |------|------|
 | **v0.1.0** ✅ | 开源基线 |
 | **v0.2.0** ✅ | 团队包 pack · 消息协议 schema |
-| **v0.3.0** | 第二 harness POC · flow_weight 扩展模板 |
+| **v0.3.0** ✅ | 六档模板 · CLI 映射 POC · 升级协议 |
+| **v0.4.x** | 争用自动检测 · 更多 harness |
 
 详见 [ROADMAP.md](ROADMAP.md) · [后 v0.1 路线](docs/product/post-v01-roadmap.md) · [0→1 路径](docs/product/0-1-path.md)
 
@@ -87,8 +88,7 @@ fuyao-nomad/
 
 ## 状态
 
-**v0.2.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md)  
-v0.1.0 [100/100 发布审计](docs/audit/2026-08-22-v01-release-audit.md)
+**v0.3.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md)
 
 ## 许可
 

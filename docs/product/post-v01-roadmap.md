@@ -1,30 +1,21 @@
-# 后 v0.1 路线（⑥+）
+# 后 v0.1 路线
 
-> v0.2.0 已发布 — 见 [CHANGELOG](../../CHANGELOG.md)
+## v0.3.0 ✅（2026-08-22）
 
-## v0.2.0 ✅
+| 项 | 状态 |
+|----|------|
+| flow_weight 六档模板 | ✅ |
+| CLI harness MAPPING POC | ✅ |
+| escalation-protocol · contention_policy · messages_dir | ✅ |
 
-| P | 主题 | 状态 |
-|---|------|------|
-| P0 | 团队包 pack | ✅ |
-| P1 | 消息协议 schema + validate | ✅ |
-| P1 | ~~技能同步~~ | **不做** |
+## v0.4+ 候选
 
-## v0.3.0 计划
-
-| P | 主题 | 产出 | 状态 |
-|---|------|------|------|
-| P2 | 第二 harness | 文档级 POC（CLI / OpenHands 等） | ⏳ |
-| P2 | flow_weight 扩展档 | 轻中/中重/重/全流程 模板 | ⏳ |
-| P2 | 争用与升级协议 | composition-protocol 补全 | ⏳ |
-| P2 | 消息运行时目录 | `.agents/messages/` 与 plan-progress 联动 | ⏳ |
+| P | 主题 |
+|---|------|
+| P2 | OpenHands / 更多 harness 文档 |
+| P2 | 争用自动检测 |
+| P2 | 运行时 message 目录 validate |
 
 ## 纪律
 
-- 不做 harness · 技能不进 harness · 无固定编制 · 调研去权威化
-
-## 里程碑
-
-```
-v0.2.0 ✅ → v0.3.0（第二 harness + 扩展模板）
-```
+不做 harness · 技能不同步 harness · 无固定编制

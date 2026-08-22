@@ -1,7 +1,8 @@
 # CLI 适配
 
-> **状态：experimental · 未实现**
+> **状态：v0.3 文档级 POC** — 见 [MAPPING.md](./MAPPING.md)
 
-命令行 harness 薄适配占位。V1 以 **Cursor 映射 POC** 为主。
+命令行 harness **薄适配**占位：映射表与加载流程说明，**不实现** CLI runtime。
 
-计划：编排入口、与 `packages/core` schema 对齐。参见 [harness/README.md](../README.md)。
+- Cursor 仍是主要可安装 POC：`npm run install:cursor-agents`
+- CLI：用户自备编排器，按 `mapping.yaml` 解释 roster

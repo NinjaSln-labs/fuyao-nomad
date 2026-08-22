@@ -1,0 +1,20 @@
+# DDD 设计门 · flow_weight=全流程
+
+flow_weight: 全流程
+
+ddd_gate:
+  required: true
+  checks:
+    - id: ubiquitous_language_signed
+      required: true
+    - id: bc_map_complete
+      required: true
+    - id: aggregate_boundaries_reviewed
+      required: true
+    - id: full_trace_to_docs
+      required: true
+    - id: design_review_rounds
+      required: true
+      description: 设计评审轮次完成（按项目约定，非默认百波）
+    - id: design_audit_pass
+      required: true

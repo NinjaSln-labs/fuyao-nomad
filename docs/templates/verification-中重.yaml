@@ -1,0 +1,32 @@
+# 配对：dod-中重.yaml · ddd-gate-中重.yaml
+
+flow_weight: 中重
+
+verification:
+  coding:
+    - id: unit_tests_changed_scope
+      required: true
+    - id: build_passes
+      required: true
+    - id: test_passes
+      required: true
+    - id: integration_key_paths
+      required: true
+      description: 关键路径/模块集成测试（按风险）
+  non_coding:
+    - id: sources_cited
+      required: true
+    - id: multi_source_check
+      required: true
+
+audit:
+  design:
+    required: true
+    depth: medium_high
+    gate: before_implementation
+  implementation:
+    required: true
+    depth: medium_high
+  code_quality:
+    required: true
+    depth: review_with_integration

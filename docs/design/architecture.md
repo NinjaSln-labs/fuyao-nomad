@@ -50,3 +50,4 @@ DDD 驱动的协作与门禁          单体 AI 员工
 - [x] 争用规则文档
 - [x] 团队包 pack 格式 → [team-pack.md](./team-pack.md) · `packs/` · `npm run pack`
 - [x] 消息协议 schema（[message-protocol.md](./message-protocol.md)）
+- [x] CLI harness POC · 六档 flow_weight 模板 · [escalation-protocol.md](./escalation-protocol.md)

@@ -51,6 +51,11 @@
           "type": "array",
           "items": { "type": "string" },
           "description": "正交槽位：不参与 serial_order，随时介入（推进、审计等）"
+        },
+        "contention_policy": {
+          "type": "string",
+          "enum": ["escalate_to_progress", "serial_fallback", "human"],
+          "description": "并行争用时的默认策略，见 escalation-protocol.md"
         }
       }
     },

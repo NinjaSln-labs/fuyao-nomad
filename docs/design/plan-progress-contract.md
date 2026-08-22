@@ -39,8 +39,9 @@
 | `blockers` | 阻塞 + `waiting_on` + 可选 `escalate_to_slot_id` |
 | `next_actions` | 下一步 + 负责槽位 |
 | `handoff_snippet` | 会话交接用摘要 |
+| `messages_dir` | 槽位消息目录（见 [message-protocol.md](../design/message-protocol.md)） |
 
-阻塞项应能触发 **默认或自定义 handoff**（升级至推进者槽位）。
+阻塞与升级见 [escalation-protocol.md](../design/escalation-protocol.md)。
 
 ## 与 roster 的关系
 

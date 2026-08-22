@@ -1,0 +1,32 @@
+# 配对：dod-全流程.yaml · ddd-gate-全流程.yaml
+
+flow_weight: 全流程
+
+verification:
+  coding:
+    - id: full_test_suite
+      required: true
+    - id: build_passes
+      required: true
+    - id: integration_and_e2e
+      required: true
+    - id: optional_adversarial_modules
+      required: false
+      description: 对抗/边界模块（若启用）
+  non_coding:
+    - id: doc_audit_complete
+      required: true
+    - id: trace_matrix_verified
+      required: true
+
+audit:
+  design:
+    required: true
+    depth: full
+    gate: before_implementation
+  implementation:
+    required: true
+    depth: full
+  code_quality:
+    required: true
+    depth: full_with_rotation

@@ -1,0 +1,26 @@
+# DoD 模板 · flow_weight=重
+
+flow_weight: 重
+
+dod:
+  deliverables:
+    - 完整追溯链（意图→领域→任务→实现）
+    - 分层审计记录（design / implementation / code_quality）
+    - plan-progress + handoff 产物齐全
+  boundaries:
+    - ADR 已覆盖硬约束
+    - 范围外工作显式排除
+  checklist:
+    - id: trace_matrix_complete
+      required: true
+    - id: design_audit_pass
+      required: true
+    - id: implementation_audit_pass
+      required: true
+    - id: code_quality_audit_pass
+      required: true
+    - id: verifier_signoff
+      required: true
+      description: verifier 或 auditor 槽位复核
+    - id: gate_confirm_resolved
+      required: true

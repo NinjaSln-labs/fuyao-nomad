@@ -2,6 +2,16 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.3.0] - 2026-08-22
+
+### Added
+
+- `flow_weight` 扩展模板：轻中 · 中重 · 重 · 全流程（dod / verification / ddd-gate）
+- CLI harness 薄适配 POC：`harness/cli/MAPPING.md` · `mapping.example.yaml`
+- [escalation-protocol.md](docs/design/escalation-protocol.md)
+- roster `orchestration.contention_policy`
+- plan-progress `progress.messages_dir`
+
 ## [0.2.0] - 2026-08-22
 
 ### Added
@@ -39,5 +49,6 @@
 - **不做 harness** — `harness/` 仅为薄适配
 - **无固定官方编制** — `agents/examples/` 可删改
 
+[0.3.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.3.0
 [0.2.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.2.0
 [0.1.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.1.0

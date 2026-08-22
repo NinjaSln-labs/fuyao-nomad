@@ -1,0 +1,18 @@
+# DDD 设计门 · flow_weight=中重
+
+flow_weight: 中重
+
+ddd_gate:
+  required: true
+  checks:
+    - id: ubiquitous_language
+      required: true
+    - id: bc_sketch
+      required: true
+    - id: trace_to_work_items
+      required: true
+    - id: cross_module_boundaries
+      required: true
+      description: 跨模块/并行槽位边界已声明
+    - id: design_audit_pass
+      required: true

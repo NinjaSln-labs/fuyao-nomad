@@ -1,0 +1,23 @@
+# DoD 模板 · flow_weight=全流程
+
+flow_weight: 全流程
+
+dod:
+  deliverables:
+    - 文档齐套（按项目约定结构）
+    - 全追溯矩阵与审计留痕
+    - 反指标/安全模块（若项目启用）
+  boundaries:
+    - 全流程门禁项逐项勾选或标注 N/A
+  checklist:
+    - id: doc_set_complete
+      required: true
+    - id: trace_end_to_end
+      required: true
+    - id: all_audit_gates_pass
+      required: true
+    - id: explicit_authorization_gates
+      required: true
+    - id: optional_modules_declared
+      required: true
+      description: 对抗/边界等可选模块是否启用已声明
