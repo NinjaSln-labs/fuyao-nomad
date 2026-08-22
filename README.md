@@ -85,9 +85,10 @@ fuyao-nomad/
 └── agents/          # 团队包示例（可删改）
 ```
 
-## 状态与审计
+## 状态
 
-v0.1.0 发布前经 [100/100 发布审计](docs/audit/2026-08-22-v01-release-audit.md)（设计 + 实现 + 发布门禁）。
+**v0.2.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md)  
+v0.1.0 [100/100 发布审计](docs/audit/2026-08-22-v01-release-audit.md)
 
 ## 许可
 
