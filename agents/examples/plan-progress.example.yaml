@@ -1,0 +1,45 @@
+# 调研→规格 · 计划进度示例
+
+version: "0.1"
+roster_id: minimal-research-to-spec
+flow_weight: 中
+
+intent: 为扶摇 Nomad 完成竞品快照后的能力模型定稿
+
+plan:
+  goal: 定稿能力模型与 north-star，进入设计阶段 schema
+  scope: 产品文档；不含代码实现
+  phases:
+    - id: p1
+      name: 定义
+  work_items:
+    - id: wi-research
+      title: 竞品快照
+      slot_id: research
+      phase_id: p1
+    - id: wi-spec
+      title: capability-model 定稿
+      slot_id: spec
+      phase_id: p1
+  milestones:
+    - id: m-define
+      name: ② 定义完成
+      criteria: north-star 定稿 + schema v0.1
+      phase_id: p1
+    - id: m-design-audit
+      name: 设计审计通过
+      criteria: 设计审计 verdict pass 或 pass_with_notes
+      phase_id: p1
+      audit_gate: design
+
+progress:
+  current_phase_id: p1
+  current_milestone_id: m-define
+  active_slot_id: spec
+  completed_work_item_ids: [wi-research]
+  blockers: []
+  next_actions:
+    - action: 撰写 roster/plan-progress schema
+      slot_id: spec
+  handoff_snippet: "竞品快照已完成；进行 schema 与 harness 映射 POC。"
+  updated_at: "2026-08-22T00:00:00Z"

@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/roster/v0",
+  "title": "Fuyao Nomad Team Roster",
+  "description": "团队实例：槽位编队 + 可选 handoff + flow_weight。handoff.rules 可选；未配置时使用默认交接行为。",
+  "type": "object",
+  "required": ["version", "id", "slots", "orchestration", "flow_weight"],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "本 roster 实例标识"
+    },
+    "name": {
+      "type": "string",
+      "description": "人类可读名称"
+    },
+    "flow_weight": {
+      "type": "string",
+      "minLength": 1,
+      "description": "轻-重流程重量。可扩展档位（如 轻、轻中、中、中重、重、全流程），框架不锁死枚举。"
+    },
+    "orchestration": {
+      "type": "object",
+      "required": ["mode"],
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": ["serial", "parallel", "mixed"]
+        },
+        "serial_order": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "mode=serial 时槽位 id 顺序"
+        },
+        "parallel_groups": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "description": "mode=parallel|mixed 时的并行组"
+        },
+        "orthogonal_slots": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "正交槽位：不参与 serial_order，随时介入（推进、审计等）"
+        }
+      }
+    },
+    "handoff": {
+      "type": "object",
+      "description": "交接配置。use_defaults=true 时未列出的路径仍走默认行为。",
+      "additionalProperties": false,
+      "properties": {
+        "use_defaults": {
+          "type": "boolean",
+          "default": true
+        },
+        "rules": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/handoffRule" }
+        }
+      }
+    },
+    "slots": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/roleSlot" }
+    },
+    "harness_mapping_ref": {
+      "type": "string",
+      "description": "可选：指向 harness 映射文件路径"
+    }
+  },
+  "$defs": {
+    "roleSlot": {
+      "type": "object",
+      "required": ["id", "purpose"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "purpose": { "type": "string", "minLength": 1 },
+        "boundaries": {
+          "type": "object",
+          "properties": {
+            "do": { "type": "array", "items": { "type": "string" } },
+            "dont": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "inputs": { "type": "array", "items": { "type": "string" } },
+        "outputs": { "type": "array", "items": { "type": "string" } },
+        "capabilities": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "skills / tools 引用"
+        },
+        "gate_level": {
+          "type": "string",
+          "enum": ["auto", "confirm", "forbid"],
+          "default": "auto"
+        },
+        "slot_kind": {
+          "type": "string",
+          "enum": ["generic", "progress", "verifier", "auditor"],
+          "description": "generic=通用；progress=推进；verifier=验证跑通；auditor=设计/实现/代码质量评审"
+        }
+      }
+    },
+    "handoffRule": {
+      "type": "object",
+      "required": ["from", "to", "when"],
+      "additionalProperties": false,
+      "properties": {
+        "from": { "type": "string" },
+        "to": { "type": "string" },
+        "when": {
+          "type": "string",
+          "enum": ["dod_complete", "blocked", "escalate", "custom"]
+        },
+        "when_detail": { "type": "string" },
+        "artifact": {
+          "type": "string",
+          "description": "交接载体：handoff_snippet | checklist | slot_output 等"
+        },
+        "overrides_default": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  }
+}

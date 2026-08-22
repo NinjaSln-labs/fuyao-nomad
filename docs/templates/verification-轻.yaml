@@ -1,0 +1,28 @@
+# 配对：dod-轻.yaml · ddd-gate-轻.yaml
+# 验证与测试（非 DoD 本体）
+
+flow_weight: 轻
+
+verification:
+  coding:
+    - id: runnable_change
+      required: true
+      description: 变更可运行或文档可读
+    - id: lint_if_present
+      required: false
+      description: 项目已有 lint 时通过
+  non_coding:
+    - id: sources_cited
+      required: true
+      description: 关键结论有来源，可快速核对
+
+audit:
+  design:
+    required: false
+    depth: self_check
+  implementation:
+    required: false
+    depth: light
+  code_quality:
+    required: false
+    depth: lint_optional

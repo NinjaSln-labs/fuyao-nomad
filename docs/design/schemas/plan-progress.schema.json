@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/plan-progress/v0",
+  "title": "Fuyao Nomad Plan & Progress",
+  "description": "计划 + 执行态进度载体。可与 HANDOFF 合并或独立文件（如 .agents/plan-progress.yaml）。",
+  "type": "object",
+  "required": ["version", "intent", "plan", "progress"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "type": "string", "const": "0.1" },
+    "roster_id": {
+      "type": "string",
+      "description": "关联的 roster.id"
+    },
+    "flow_weight": {
+      "type": "string",
+      "description": "可与 roster 同步；用于选取验证/DoD 模板"
+    },
+    "intent": {
+      "type": "string",
+      "minLength": 1,
+      "description": "任务/意图一句话"
+    },
+    "plan": { "$ref": "#/$defs/plan" },
+    "progress": { "$ref": "#/$defs/progress" }
+  },
+  "$defs": {
+    "plan": {
+      "type": "object",
+      "required": ["goal", "scope"],
+      "additionalProperties": false,
+      "properties": {
+        "goal": { "type": "string" },
+        "scope": { "type": "string" },
+        "out_of_scope": { "type": "array", "items": { "type": "string" } },
+        "phases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "name"],
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "depends_on": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "work_items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "title"],
+            "properties": {
+              "id": { "type": "string" },
+              "title": { "type": "string" },
+              "slot_id": { "type": "string" },
+              "phase_id": { "type": "string" }
+            }
+          }
+        },
+        "milestones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "name"],
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "criteria": { "type": "string" },
+              "phase_id": { "type": "string" },
+              "audit_gate": {
+                "type": "string",
+                "enum": ["design", "implementation", "code_quality"],
+                "description": "可选：里程碑为审计门时声明类型"
+              }
+            }
+          }
+        },
+        "dependencies": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "外部依赖或前置条件"
+        }
+      }
+    },
+    "progress": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "current_phase_id": { "type": "string" },
+        "current_milestone_id": { "type": "string" },
+        "active_work_item_ids": { "type": "array", "items": { "type": "string" } },
+        "active_slot_id": { "type": "string" },
+        "completed_work_item_ids": { "type": "array", "items": { "type": "string" } },
+        "blockers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["description"],
+            "properties": {
+              "description": { "type": "string" },
+              "waiting_on": { "type": "string" },
+              "escalate_to_slot_id": { "type": "string" }
+            }
+          }
+        },
+        "next_actions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["action"],
+            "properties": {
+              "action": { "type": "string" },
+              "slot_id": { "type": "string" }
+            }
+          }
+        },
+        "handoff_snippet": {
+          "type": "string",
+          "description": "简短交接摘要，可嵌入会话 HANDOFF"
+        },
+        "updated_at": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

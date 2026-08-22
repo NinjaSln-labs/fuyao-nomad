@@ -1,0 +1,16 @@
+# DoD 模板 · flow_weight=轻
+# 配对：verification-轻.yaml · ddd-gate-轻.yaml
+
+flow_weight: 轻
+
+dod:
+  deliverables:
+    - 意图/范围陈述
+    - 约定产出物（按槽位 outputs）
+  boundaries:
+    - 明确不做什么
+  checklist:
+    - id: intent_clear
+      required: true
+    - id: handoff_snippet_updated
+      required: false

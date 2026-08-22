@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-verification/v0",
+  "type": "object",
+  "required": ["flow_weight", "verification"],
+  "additionalProperties": false,
+  "properties": {
+    "flow_weight": { "type": "string", "minLength": 1 },
+    "verification": {
+      "type": "object",
+      "properties": {
+        "coding": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "required"],
+            "properties": {
+              "id": { "type": "string" },
+              "required": { "type": "boolean" },
+              "description": { "type": "string" }
+            }
+          }
+        },
+        "non_coding": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "required"],
+            "properties": {
+              "id": { "type": "string" },
+              "required": { "type": "boolean" },
+              "description": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "properties": {
+        "design": { "$ref": "#/$defs/auditSection" },
+        "implementation": { "$ref": "#/$defs/auditSection" },
+        "code_quality": { "$ref": "#/$defs/auditSection" }
+      }
+    }
+  },
+  "$defs": {
+    "auditSection": {
+      "type": "object",
+      "properties": {
+        "required": { "type": "boolean" },
+        "depth": { "type": "string" },
+        "gate": { "type": "string" }
+      }
+    }
+  }
+}

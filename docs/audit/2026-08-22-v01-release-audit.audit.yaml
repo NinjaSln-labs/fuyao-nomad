@@ -1,0 +1,7 @@
+audit:
+  type: implementation
+  flow_weight: 中
+  verdict: pass
+  findings: []
+  auditor_slot_id: auditor
+  recorded_at: "2026-08-22T08:15:00Z"

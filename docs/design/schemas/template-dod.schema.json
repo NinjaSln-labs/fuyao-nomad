@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-dod/v0",
+  "type": "object",
+  "required": ["flow_weight", "dod"],
+  "additionalProperties": false,
+  "properties": {
+    "flow_weight": { "type": "string", "minLength": 1 },
+    "dod": {
+      "type": "object",
+      "required": ["deliverables", "checklist"],
+      "properties": {
+        "deliverables": { "type": "array", "items": { "type": "string" } },
+        "boundaries": { "type": "array", "items": { "type": "string" } },
+        "checklist": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "required"],
+            "properties": {
+              "id": { "type": "string" },
+              "required": { "type": "boolean" },
+              "description": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

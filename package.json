@@ -1,0 +1,28 @@
+{
+  "name": "fuyao-nomad",
+  "version": "0.1.0",
+  "description": "扶摇 · Nomad — Agent team framework",
+  "license": "Apache-2.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NinjaSln-labs/fuyao-nomad.git"
+  },
+  "homepage": "https://github.com/NinjaSln-labs/fuyao-nomad#readme",
+  "bugs": {
+    "url": "https://github.com/NinjaSln-labs/fuyao-nomad/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "test": "node --test tests/scripts.test.mjs",
+    "install:cursor-agents": "node scripts/install-cursor-agents.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "yaml": "^2.7.0"
+  }
+}

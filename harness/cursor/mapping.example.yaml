@@ -1,0 +1,12 @@
+# 槽位 id → Cursor subagent 文件名（不含 .md）
+
+roster_id: minimal-research-to-spec
+
+mappings:
+  research: research-analyst
+  spec: spec-writer
+  progress: progress-keeper
+  auditor: quality-auditor
+
+# 主 agent 使用项目默认 Agent；或指定：
+# parent: default
