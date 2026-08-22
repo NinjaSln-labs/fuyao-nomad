@@ -64,6 +64,7 @@ function validateFile(path, labelOverride) {
   let kind = labelOverride;
   if (!kind) {
     if (name === "pack.yaml") kind = "pack";
+    else if (name.endsWith(".audit.yaml")) kind = "audit";
     else if (data?.message) kind = "message";
     else if (name.includes("plan-progress")) kind = "plan";
     else if (name.includes("roster") || name === "minimal-roster.yaml") kind = "roster";
@@ -106,16 +107,6 @@ if (args[0] === "--path" && args[1]) {
   const tpl = validateDir(join(ROOT, "docs/templates"), (n) => n !== "README.md");
   passed += tpl.passed;
   failed += tpl.failed;
-
-  const auditDir = join(ROOT, "docs/audit");
-  if (existsSync(auditDir)) {
-    for (const name of readdirSync(auditDir)) {
-      if (!name.endsWith(".audit.yaml")) continue;
-      const ok = validateFile(join(auditDir, name), "audit");
-      if (ok) passed++;
-      else failed++;
-    }
-  }
 
   const packsDir = join(ROOT, "packs");
   if (existsSync(packsDir)) {

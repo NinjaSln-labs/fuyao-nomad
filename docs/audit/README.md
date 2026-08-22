@@ -1,10 +1,34 @@
-# 审计记录
+# 审计
 
-| 日期 | 文档 | 结论 |
-|------|------|------|
-| 2026-08-22 | [v0.1 交付审计](./2026-08-22-v01-delivery-audit.md) | pass_with_notes → 已修复 |
-| 2026-08-22 | [v0.1 修复复验](./2026-08-22-v01-delivery-reaudit.md) | pass |
-| 2026-08-22 | [v0.1 发布审计](./2026-08-22-v01-release-audit.md) | pass · 100/100 |
-| 2026-08-22 | [v0.3 发布审计](./2026-08-22-v03-release-audit.md) | **pass · 100/100**（含 v0.2–v0.3） |
+**审计记录为本地私有**，不随开源仓库发布。
 
-校验：`npm run validate` 覆盖 `docs/audit/*.audit.yaml`。
+## 存放位置（维护者本地）
+
+```
+.agents/audit/
+  *.md              # 审计报告
+  *.audit.yaml      # 结构化记录（可选）
+```
+
+首次使用可从本仓库历史 tag 复制，或按 [audit-by-flow-weight.md](../design/audit-by-flow-weight.md) 自建。
+
+## 公开契约
+
+框架仍提供 **审计记录 schema**（供团队自建留痕）：
+
+- [audit-record.schema.json](../design/schemas/audit-record.schema.json)
+- [audit-by-flow-weight.md](../design/audit-by-flow-weight.md)
+
+## 本地校验
+
+```bash
+npm run validate -- --path .agents/audit/your-record.audit.yaml
+```
+
+## 与开源边界
+
+| 公开仓库 | 本地私有 |
+|----------|----------|
+| schema · 模板 · 审计**规则** | 具体**审计报告**与 findings |
+
+`.agents/audit/` 已列入 `.gitignore`。

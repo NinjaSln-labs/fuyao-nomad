@@ -2,6 +2,13 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.3.1] - 2026-08-22
+
+### Changed
+
+- **审计记录改为本地私有**：自 `docs/audit/` 移除具体报告；维护者使用 `.agents/audit/`（已 `.gitignore`）
+- 公开保留：`docs/audit/README.md` · `audit-record.schema.json` · 审计设计文档
+
 ## [0.3.0] - 2026-08-22
 
 ### Added
@@ -49,6 +56,7 @@
 - **不做 harness** — `harness/` 仅为薄适配
 - **无固定官方编制** — `agents/examples/` 可删改
 
+[0.3.1]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.3.1
 [0.3.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.3.0
 [0.2.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.2.0
 [0.1.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.1.0

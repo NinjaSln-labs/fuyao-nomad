@@ -87,7 +87,7 @@ fuyao-nomad/
 
 ## Status
 
-**v0.3.0** — see [CHANGELOG](CHANGELOG.md). v0.1 [release audit](docs/audit/2026-08-22-v01-release-audit.md) · v0.3 [release audit](docs/audit/2026-08-22-v03-release-audit.md).
+**v0.3.0** — see [CHANGELOG](CHANGELOG.md). Maintainer audits are **local only** (`.agents/audit/`). See [docs/audit/README.md](docs/audit/README.md).
 
 ## License
 

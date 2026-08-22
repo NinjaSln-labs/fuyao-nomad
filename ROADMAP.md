@@ -16,7 +16,7 @@
 
 ### v0.1.0
 
-- 开源基线 · CI · Cursor POC · 100/100 审计
+- 开源基线 · CI · Cursor POC · audit-record schema
 
 ## 后续
 

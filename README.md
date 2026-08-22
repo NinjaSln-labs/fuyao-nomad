@@ -88,8 +88,9 @@ fuyao-nomad/
 
 ## 状态
 
-**v0.3.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md)  
-审计：[v0.3 发布 100/100](docs/audit/2026-08-22-v03-release-audit.md)
+**v0.3.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md)
+
+维护者审计为**本地私有**（`.agents/audit/`，不入库）。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
 
 ## 许可
 
