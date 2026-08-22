@@ -1,0 +1,22 @@
+# DoD 模板 · flow_weight=中
+# 配对：verification-中.yaml · ddd-gate-中.yaml
+
+flow_weight: 中
+
+dod:
+  deliverables:
+    - 规格或任务追溯摘要
+    - 槽位 outputs 齐全
+    - plan-progress 已更新
+  boundaries:
+    - 范围变更已确认（gate_level=confirm 时）
+  checklist:
+    - id: intent_clear
+      required: true
+    - id: plan_progress_synced
+      required: true
+    - id: handoff_snippet_updated
+      required: true
+    - id: audit_gates_passed
+      required: true
+      description: 里程碑 audit_gate 已通过或 N/A

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/team-pack/v0",
+  "title": "Fuyao Nomad Team Pack",
+  "description": "可发布的团队包：roster + 模板 + 可选 harness 适配与 skills",
+  "type": "object",
+  "required": ["version", "id", "name", "flow_weight", "roster", "templates"],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "flow_weight": {
+      "type": "string",
+      "minLength": 1
+    },
+    "roster": {
+      "type": "string",
+      "minLength": 1,
+      "description": "相对 pack 根目录的 roster YAML 路径"
+    },
+    "templates": {
+      "type": "object",
+      "required": ["dod", "verification", "ddd_gate"],
+      "additionalProperties": false,
+      "properties": {
+        "dod": { "type": "string", "minLength": 1 },
+        "verification": { "type": "string", "minLength": 1 },
+        "ddd_gate": { "type": "string", "minLength": 1 }
+      }
+    },
+    "harness_adapters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cursor": {
+          "type": "object",
+          "required": ["mapping", "agents_dir"],
+          "additionalProperties": false,
+          "properties": {
+            "mapping": { "type": "string", "minLength": 1 },
+            "agents_dir": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "description": "相对 pack 根目录的技能目录路径"
+    }
+  }
+}

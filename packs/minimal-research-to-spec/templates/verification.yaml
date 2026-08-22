@@ -1,0 +1,35 @@
+# 配对：dod-中.yaml · ddd-gate-中.yaml
+# 验证 + 分层审计（非 DoD 本体）
+
+flow_weight: 中
+
+verification:
+  coding:
+    - id: unit_tests_changed_scope
+      required: true
+      description: 变更范围单元测试
+    - id: build_passes
+      required: true
+      description: 项目默认 build 通过
+    - id: test_passes
+      required: true
+      description: 项目默认 test 通过
+  non_coding:
+    - id: sources_cited
+      required: true
+      description: 关键结论有来源
+    - id: multi_source_check
+      required: true
+      description: 多源对照；快照去权威化声明
+
+audit:
+  design:
+    required: true
+    depth: medium
+    gate: before_implementation
+  implementation:
+    required: true
+    depth: medium
+  code_quality:
+    required: false
+    depth: review_changed_scope

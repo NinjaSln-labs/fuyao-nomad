@@ -1,0 +1,22 @@
+# 扶摇团队包 · 调研→规格（最小示例）
+
+version: "0.1"
+id: minimal-research-to-spec
+name: 调研到规格（最小示例）
+description: 竞品调研 + 规格撰写；含推进与审计正交槽位；flow_weight=中
+flow_weight: 中
+
+roster: roster.yaml
+
+templates:
+  dod: templates/dod.yaml
+  verification: templates/verification.yaml
+  ddd_gate: templates/ddd-gate.yaml
+
+harness_adapters:
+  cursor:
+    mapping: harness/cursor/mapping.yaml
+    agents_dir: harness/cursor/agents
+
+skills:
+  - skills/audit-readonly

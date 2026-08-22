@@ -26,6 +26,7 @@ const validators = {
   verification: ajv.compile(loadSchema("template-verification.schema.json")),
   ddd_gate: ajv.compile(loadSchema("template-ddd-gate.schema.json")),
   audit: ajv.compile(loadSchema("audit-record.schema.json")),
+  pack: ajv.compile(loadSchema("team-pack.schema.json")),
 };
 
 function parseYaml(path) {
@@ -60,7 +61,8 @@ function validateFile(path, labelOverride) {
   const name = path.split("/").pop();
   let kind = labelOverride;
   if (!kind) {
-    if (name.includes("plan-progress")) kind = "plan";
+    if (name === "pack.yaml") kind = "pack";
+    else if (name.includes("plan-progress")) kind = "plan";
     else if (name.includes("roster") || name === "minimal-roster.yaml") kind = "roster";
     else kind = classifyTemplate(name);
   }
@@ -108,6 +110,17 @@ if (args[0] === "--path" && args[1]) {
     for (const name of readdirSync(auditDir)) {
       if (!name.endsWith(".audit.yaml")) continue;
       const ok = validateFile(join(auditDir, name), "audit");
+      if (ok) passed++;
+      else failed++;
+    }
+  }
+
+  const packsDir = join(ROOT, "packs");
+  if (existsSync(packsDir)) {
+    for (const name of readdirSync(packsDir)) {
+      const packYaml = join(packsDir, name, "pack.yaml");
+      if (!existsSync(packYaml)) continue;
+      const ok = validateFile(packYaml, "pack");
       if (ok) passed++;
       else failed++;
     }

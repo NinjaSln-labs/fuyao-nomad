@@ -1,0 +1,19 @@
+# DDD 设计门 · flow_weight=中
+
+flow_weight: 中
+
+ddd_gate:
+  required: true
+  checks:
+    - id: ubiquitous_language
+      required: true
+      description: 关键术语与 domain-language 或项目术语表一致
+    - id: bc_sketch
+      required: true
+      description: 边界上下文/聚合草图（可简图）
+    - id: trace_to_work_items
+      required: true
+      description: 工作项可追溯到领域概念
+    - id: design_audit_pass
+      required: true
+      description: 设计审计 verdict ≥ pass_with_notes

@@ -1,0 +1,45 @@
+# Minimal roster · flow_weight=中
+
+version: "0.1"
+id: minimal-research-to-spec
+name: 调研到规格（最小示例）
+flow_weight: 中
+
+orchestration:
+  mode: serial
+  serial_order:
+    - research
+    - spec
+  orthogonal_slots:
+    - progress
+    - auditor
+
+handoff:
+  use_defaults: true
+
+slots:
+  - id: research
+    purpose: 竞品与问题澄清
+    outputs: [research_snapshot, problem_notes]
+    capabilities: [skills/audit-readonly]
+    gate_level: auto
+    slot_kind: generic
+
+  - id: spec
+    purpose: 产出可执行规格摘要
+    inputs: [research_snapshot, problem_notes]
+    outputs: [spec_summary]
+    gate_level: confirm
+    slot_kind: generic
+
+  - id: progress
+    purpose: 维护计划与进度、处理阻塞
+    slot_kind: progress
+    gate_level: auto
+
+  - id: auditor
+    purpose: 设计/实现/代码质量审计
+    slot_kind: auditor
+    gate_level: auto
+
+harness_mapping_ref: harness/cursor/mapping.yaml

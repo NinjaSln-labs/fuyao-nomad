@@ -27,6 +27,8 @@
 | [验证随 flow_weight](../design/verification-by-flow-weight.md) | v0.1 |
 | [分层审计随 flow_weight](../design/audit-by-flow-weight.md) | v0.1 |
 | [领域语言](../design/domain-language.md) | v0.1 |
+| [团队包](../design/team-pack.md) | v0.2 草案 |
+| [消息协议](../design/message-protocol.md) | v0.2 草案 |
 | [Schema](../design/schemas/) | v0.1 |
 | [架构概览](../design/architecture.md) | 草案 |
 

@@ -48,5 +48,5 @@ DDD 驱动的协作与门禁          单体 AI 员工
 - [x] `npm run validate` · `npm test`
 - [x] Cursor 映射 POC + `--check` 漂移检测
 - [x] 争用规则文档
-- [ ] 团队包 pack 格式
-- [ ] 消息协议（后续）
+- [x] 团队包 pack 格式 → [team-pack.md](./team-pack.md) · `packs/` · `npm run pack`
+- [ ] 消息协议 schema（[message-protocol.md](./message-protocol.md) 草案已有）

@@ -12,6 +12,14 @@ npm run install:cursor-agents -- --check --project .   # 漂移检测
 
 ## 定义一支团队
 
+**方式 A — 团队包（推荐）**
+
+```bash
+npm run pack:install -- --pack packs/minimal-research-to-spec --project .
+```
+
+**方式 B — 手写 roster**
+
 1. 复制 [agents/examples/minimal-roster.yaml](../agents/examples/minimal-roster.yaml)
 2. 加减 `slots`；`orchestration.serial_order` + `orthogonal_slots`（推进/审计）
 3. **可选** `handoff.rules` — 不写则用 [默认 handoff](../design/default-handoff.md)

@@ -20,7 +20,7 @@
 | **Progress** | 执行态：当前项、阻塞、下一动 |
 | **Harness** | 外部运行时（Cursor、CLI…）；扶摇 **不实现** |
 | **Harness 映射** | 槽位 id → 运行时 agent 文件 |
-| **团队包** | roster + 模板 + 映射的可发布单元 |
+| **团队包（Team Pack）** | roster + 模板 + 映射 + skills 的可发布单元 |
 | **Skill** | harness 无关能力单元，绑到槽位 |
 
 ## 边界上下文
@@ -51,6 +51,7 @@
 |------|------|--------|
 | **Roster** | `roster.id` | 槽位 id 唯一；`serial_order` 引用须存在 |
 | **PlanProgress** | `roster_id` + 会话/任务 | `intent` 必填；里程碑可含 `audit_gate` |
+| **TeamPack** | `pack.id` | roster · templates · 引用路径须存在 |
 | **AuditRecord** | `type` + `recorded_at` | `blocked` 须对应 open finding |
 
 ## 非本框架领域

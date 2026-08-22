@@ -1,0 +1,21 @@
+# handoff 消息示例 · 调研 → 规格
+
+message:
+  version: "0.1"
+  type: handoff
+  from_slot_id: research
+  to_slot_id: spec
+  roster_id: minimal-research-to-spec
+  trace:
+    work_item_id: wi-research
+    milestone_id: m-define
+  payload:
+    summary: 竞品快照已完成；请基于快照定稿 capability-model 与 schema。
+    artifacts:
+      - kind: research_snapshot
+        path: docs/research/2026-08-22-agent-team-landscape.md
+    dod_status:
+      intent_clear: true
+      sources_cited: true
+    open_questions: []
+  recorded_at: "2026-08-22T00:00:00Z"

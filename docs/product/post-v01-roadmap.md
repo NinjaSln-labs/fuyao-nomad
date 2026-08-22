@@ -7,8 +7,8 @@
 
 | P | 主题 | 产出 | 状态 |
 |---|------|------|------|
-| P0 | 团队包 **pack** 格式 | schema + 打包/解包脚本草案 | ⏳ |
-| P1 | **消息协议** | slot 间 payload 契约（harness 无关） | ⏳ |
+| P0 | 团队包 **pack** 格式 | schema + `npm run pack` / `pack:install` | 🔄 |
+| P1 | **消息协议** | [message-protocol.md](../design/message-protocol.md) + 示例 | 🔄 |
 | P1 | 技能同步 | `skills/` → `.cursor/skills` 脚本 | ⏳ |
 | P2 | 第二 harness | 文档级适配（CLI / OpenHands 等） | ⏳ |
 | P2 | flow_weight 扩展档 | 轻中/中重/重/全流程 模板 | ⏳ |

@@ -17,11 +17,13 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 const args = process.argv.slice(2);
 let mappingPath = join(ROOT, "harness/cursor/mapping.example.yaml");
+let agentsSrc = join(ROOT, "harness/cursor/agents");
 let targetRoot = process.cwd();
 let checkOnly = false;
 
 for (let i = 0; i < args.length; i++) {
   if (args[i] === "--mapping" && args[i + 1]) mappingPath = args[++i];
+  else if (args[i] === "--agents-dir" && args[i + 1]) agentsSrc = args[++i];
   else if (args[i] === "--project" && args[i + 1]) targetRoot = args[++i];
   else if (args[i] === "--check") checkOnly = true;
   else if (args[i] === "--help") {
@@ -29,6 +31,7 @@ for (let i = 0; i < args.length; i++) {
 Usage: npm run install:cursor-agents -- [options]
 
   --mapping <path>   Mapping YAML
+  --agents-dir <path>  Source agents directory (default: harness/cursor/agents)
   --project <path>   Target project root
   --check            Report drift without copying (edit harness/cursor/agents only)
 `);
@@ -43,7 +46,6 @@ if (!existsSync(mappingPath)) {
 
 const mapping = YAML.parse(readFileSync(mappingPath, "utf8"));
 const mappings = mapping.mappings ?? {};
-const agentsSrc = join(ROOT, "harness/cursor/agents");
 const agentsDest = join(targetRoot, ".cursor/agents");
 
 function filesEqual(a, b) {
