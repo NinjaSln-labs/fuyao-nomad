@@ -40,6 +40,7 @@ test("pack install to temp project", () => {
   ]);
   assert.equal(r.status, 0, r.stdout + r.stderr);
   assert.ok(existsSync(join(tmp, "agents/packs/minimal-research-to-spec/pack.yaml")));
-  assert.ok(existsSync(join(tmp, "skills/audit-readonly/README.md")));
+  assert.ok(existsSync(join(tmp, "agents/packs/minimal-research-to-spec/skills/audit-readonly/README.md")));
   assert.ok(existsSync(join(tmp, ".cursor/agents/research-analyst.md")));
+  assert.ok(!existsSync(join(tmp, ".cursor/skills")));
 });

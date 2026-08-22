@@ -15,7 +15,9 @@ harness/cursor/    # 可选：mapping + agents
 skills/            # 可选：可移植技能目录
 ```
 
-换 harness 时：**roster + templates + skills 不变**，只换 `harness_adapters` 块或映射表。
+换 harness 时：**roster + templates + 包内 skills** 路径不变，只换 `harness_adapters`（映射表与 agent 定义）。
+
+**技能不进 harness**：包内 `skills/` 随包落在 `agents/packs/<id>/skills/`，安装时 **不** 复制到 `.cursor/skills` 或任何 harness 目录。
 
 ## 清单字段（pack.yaml）
 
@@ -28,7 +30,7 @@ skills/            # 可选：可移植技能目录
 | `roster` | roster 文件相对路径 |
 | `templates` | `dod` · `verification` · `ddd_gate` 路径 |
 | `harness_adapters.cursor` | `mapping` + `agents_dir` |
-| `skills` | 技能目录列表 |
+| `skills` | 包内技能目录列表（校验 + 随包分发；**不**同步到 harness） |
 
 Schema：`docs/design/schemas/team-pack.schema.json`
 
@@ -39,12 +41,13 @@ agents/packs/<pack-id>/
   pack.yaml
   roster.yaml
   templates/
-  harness/cursor/    # 随包携带的适配副本
-skills/<skill-name>/ # 从包合并到项目 skills/
-.cursor/agents/      # 由 install 根据 mapping 写入
+  skills/            # harness 无关，留在包内
+  harness/cursor/    # 仅此块为薄适配副本
+.cursor/agents/      # 仅 subagent 定义（mapping 安装）
 ```
 
-Roster 内 `harness_mapping_ref` 建议指向包内路径，例如 `harness/cursor/mapping.yaml`。
+Roster 内 `harness_mapping_ref` 建议指向包内路径，例如 `harness/cursor/mapping.yaml`。  
+`capabilities` 引用包内技能，例如 `agents/packs/<id>/skills/audit-readonly`。
 
 ## 命令
 

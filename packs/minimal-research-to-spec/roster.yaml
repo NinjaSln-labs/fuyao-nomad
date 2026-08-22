@@ -21,7 +21,7 @@ slots:
   - id: research
     purpose: 竞品与问题澄清
     outputs: [research_snapshot, problem_notes]
-    capabilities: [skills/audit-readonly]
+    capabilities: [agents/packs/minimal-research-to-spec/skills/audit-readonly]
     gate_level: auto
     slot_kind: generic
 

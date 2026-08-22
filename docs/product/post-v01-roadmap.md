@@ -9,7 +9,7 @@
 |---|------|------|------|
 | P0 | 团队包 **pack** 格式 | schema + `npm run pack` / `pack:install` | 🔄 |
 | P1 | **消息协议** | [message-protocol.md](../design/message-protocol.md) + 示例 | 🔄 |
-| P1 | ~~技能同步~~ | **不做** — 见 [skills/README.md](../../skills/README.md) | — |
+| P1 | ~~技能同步~~ | **不做** — 技能脱离 harness，不写 `.cursor/skills` 等 | — |
 | P2 | 第二 harness | 文档级适配（CLI / OpenHands 等） | ⏳ |
 | P2 | flow_weight 扩展档 | 轻中/中重/重/全流程 模板 | ⏳ |
 

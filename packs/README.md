@@ -15,4 +15,4 @@ npm run pack -- validate packs/minimal-research-to-spec
 npm run pack:install -- --pack packs/minimal-research-to-spec --project /path/to/project
 ```
 
-安装后：`agents/packs/<id>/` · 合并 `skills/` · `.cursor/agents/`（若有 Cursor 适配）。
+安装后：`agents/packs/<id>/`（含包内 `skills/`）· `.cursor/agents/` **仅 agents**（若有 Cursor 适配）。技能 **不同步** 到 harness。

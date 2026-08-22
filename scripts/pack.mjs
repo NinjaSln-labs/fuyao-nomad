@@ -122,14 +122,7 @@ function installPack(packDir, projectRoot) {
   cpSync(packDir, destPack, { recursive: true });
   console.log(`✓ copied pack → ${destPack}`);
 
-  for (const rel of manifest.skills ?? []) {
-    const src = join(packDir, rel);
-    const skillName = rel.split("/").pop();
-    const dest = join(projectRoot, "skills", skillName);
-    mkdirSync(dirname(dest), { recursive: true });
-    cpSync(src, dest, { recursive: true });
-    console.log(`✓ skill → ${dest}`);
-  }
+  // Skills stay inside the pack (harness-agnostic). Never copy to .cursor/ or harness paths.
 
   if (manifest.harness_adapters?.cursor) {
     const mapping = join(destPack, manifest.harness_adapters.cursor.mapping);
