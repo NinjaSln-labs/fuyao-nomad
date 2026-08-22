@@ -1,12 +1,12 @@
-# Builder 指南（v0.1）
+# Builder 指南（v0.2）
 
 ## 快速开始
 
 ```bash
 npm install
-npm run validate    # roster · plan-progress · templates
-npm test            # 脚本冒烟
-npm run install:cursor-agents -- --project /path/to/project
+npm run validate    # roster · pack · templates · messages
+npm test
+npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 npm run install:cursor-agents -- --check --project .   # 漂移检测
 ```
 
@@ -18,35 +18,54 @@ npm run install:cursor-agents -- --check --project .   # 漂移检测
 npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 ```
 
+安装结果：
+
+| 路径 | 内容 |
+|------|------|
+| `agents/packs/<id>/` | roster · 模板 · 包内 `skills/` · `harness/cursor/` |
+| `.cursor/agents/` | **仅** subagent 定义（薄适配） |
+
 **方式 B — 手写 roster**
 
 1. 复制 [agents/examples/minimal-roster.yaml](../agents/examples/minimal-roster.yaml)
-2. 加减 `slots`；`orchestration.serial_order` + `orthogonal_slots`（推进/审计）
-3. **可选** `handoff.rules` — 不写则用 [默认 handoff](../design/default-handoff.md)
-4. 设 `flow_weight`，配对 **三套模板**：
-   - `docs/templates/dod-<weight>.yaml`
-   - `docs/templates/verification-<weight>.yaml`
-   - `docs/templates/ddd-gate-<weight>.yaml`
+2. 加减 `slots`；`orchestration.serial_order` + `orthogonal_slots`
+3. **可选** `handoff.rules` — [默认 handoff](../design/default-handoff.md)
+4. 设 `flow_weight`，配对三套模板（`docs/templates/`）
 5. `npm run validate`
+
+## 技能与 harness 边界
+
+- **技能** harness 无关 — 路径引用，如 `agents/packs/<id>/skills/audit-readonly`
+- **不同步到 harness** — 不写 `.cursor/skills`；扶摇不替 IDE 挂载技能
+- **agents** 可经 `install:cursor-agents` 或 `pack:install` 写入 `.cursor/agents/`
+
+见 [skills/README.md](../../skills/README.md) · [team-pack.md](../design/team-pack.md)
 
 ## 计划与进度
 
-`.agents/plan-progress.yaml` — 见 [plan-progress-contract.md](../design/plan-progress-contract.md)。
+`.agents/plan-progress.yaml` — [plan-progress-contract.md](../design/plan-progress-contract.md)
 
-里程碑可加 `audit_gate`。
+结构化槽位消息（可选）：[message-protocol.md](../design/message-protocol.md)  
+运行时建议目录：`.agents/messages/<roster-id>/`
+
+## 团队包命令
+
+```bash
+npm run pack -- validate packs/<pack-id>
+npm run pack:install -- --pack packs/<pack-id> --project /path/to/project
+```
 
 ## 领域与审计
 
-- 术语：[domain-language.md](../design/domain-language.md)
-- 分层审计：[audit-by-flow-weight.md](../design/audit-by-flow-weight.md)
+- [domain-language.md](../design/domain-language.md)
+- [audit-by-flow-weight.md](../design/audit-by-flow-weight.md)
 
-## Cursor
+## Cursor 薄适配
 
 - [harness/cursor/MAPPING.md](../../harness/cursor/MAPPING.md)
-- 源文件：`harness/cursor/agents/`（**勿只改** `.cursor/agents/`）
+- 改源文件：`harness/cursor/agents/`（勿只改 `.cursor/agents/`）
 
-## 许可与发布
+## 许可与路线
 
 - [Apache-2.0](../../LICENSE) · [CHANGELOG](../../CHANGELOG.md)
-- 发布审计：[100/100](../audit/2026-08-22-v01-release-audit.md)
-- 后续路线：[post-v01-roadmap.md](post-v01-roadmap.md)
+- [ROADMAP.md](../../ROADMAP.md) · [post-v01-roadmap.md](post-v01-roadmap.md)

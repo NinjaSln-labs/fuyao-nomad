@@ -2,7 +2,7 @@
 
 Harness 无关的核心契约与校验。
 
-## Schema（v0.1）
+## Schema（v0.2）
 
 | 文件 | 说明 |
 |------|------|
@@ -12,6 +12,7 @@ Harness 无关的核心契约与校验。
 | [template-verification.schema.json](../../docs/design/schemas/template-verification.schema.json) | 验证/审计模板 |
 | [template-ddd-gate.schema.json](../../docs/design/schemas/template-ddd-gate.schema.json) | DDD 门模板 |
 | [audit-record.schema.json](../../docs/design/schemas/audit-record.schema.json) | 审计记录 |
+| [message.schema.json](../../docs/design/schemas/message.schema.json) | 槽位消息 |
 | [team-pack.schema.json](../../docs/design/schemas/team-pack.schema.json) | 团队包清单 |
 
 ## 脚本

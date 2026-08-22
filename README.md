@@ -57,13 +57,13 @@ npm run install:cursor-agents -- --project .
 
 ## 路线图
 
-**当前：v0.1.0** — schema、模板族、校验脚本、Cursor POC、CI。
+**当前：v0.2.0** — 团队包 · 消息协议 schema · `pack:install`。
 
 | 版本 | 目标 |
 |------|------|
-| **v0.1.0** ✅ | 开源基线：roster/plan-progress schema、轻/中模板、validate + test |
-| **v0.2.0** | 团队包 **pack** 格式；槽位 **消息协议** 草案 |
-| **v0.3.0** | 第二 harness 文档级 POC；`flow_weight` 扩展档 |
+| **v0.1.0** ✅ | 开源基线 |
+| **v0.2.0** ✅ | 团队包 pack · 消息协议 schema |
+| **v0.3.0** | 第二 harness POC · flow_weight 扩展模板 |
 
 详见 [ROADMAP.md](ROADMAP.md) · [后 v0.1 路线](docs/product/post-v01-roadmap.md) · [0→1 路径](docs/product/0-1-path.md)
 

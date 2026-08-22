@@ -27,6 +27,7 @@ const validators = {
   ddd_gate: ajv.compile(loadSchema("template-ddd-gate.schema.json")),
   audit: ajv.compile(loadSchema("audit-record.schema.json")),
   pack: ajv.compile(loadSchema("team-pack.schema.json")),
+  message: ajv.compile(loadSchema("message.schema.json")),
 };
 
 function parseYaml(path) {
@@ -59,9 +60,11 @@ function classifyTemplate(name) {
 
 function validateFile(path, labelOverride) {
   const name = path.split("/").pop();
+  const data = parseYaml(path);
   let kind = labelOverride;
   if (!kind) {
     if (name === "pack.yaml") kind = "pack";
+    else if (data?.message) kind = "message";
     else if (name.includes("plan-progress")) kind = "plan";
     else if (name.includes("roster") || name === "minimal-roster.yaml") kind = "roster";
     else kind = classifyTemplate(name);
@@ -70,7 +73,6 @@ function validateFile(path, labelOverride) {
     console.warn(`⚠ skip (unknown type): ${path}`);
     return true;
   }
-  const data = parseYaml(path);
   return validateData(data, validators[kind], kind, path);
 }
 
@@ -118,11 +120,22 @@ if (args[0] === "--path" && args[1]) {
   const packsDir = join(ROOT, "packs");
   if (existsSync(packsDir)) {
     for (const name of readdirSync(packsDir)) {
-      const packYaml = join(packsDir, name, "pack.yaml");
+      const packDir = join(packsDir, name);
+      const packYaml = join(packDir, "pack.yaml");
       if (!existsSync(packYaml)) continue;
       const ok = validateFile(packYaml, "pack");
       if (ok) passed++;
       else failed++;
+
+      const examplesDir = join(packDir, "examples");
+      if (existsSync(examplesDir)) {
+        for (const ex of readdirSync(examplesDir)) {
+          if (!ex.endsWith(".yaml") && !ex.endsWith(".yml")) continue;
+          const exOk = validateFile(join(examplesDir, ex), "message");
+          if (exOk) passed++;
+          else failed++;
+        }
+      }
     }
   }
 }

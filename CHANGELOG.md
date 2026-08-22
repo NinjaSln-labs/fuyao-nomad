@@ -2,6 +2,24 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.2.0] - 2026-08-22
+
+### Added
+
+- 团队包：`team-pack.schema.json` · `packs/minimal-research-to-spec` · `npm run pack` / `pack:install`
+- 槽位消息协议：`message.schema.json` · [message-protocol.md](docs/design/message-protocol.md)
+- `validate` 扫描 pack 清单与 `packs/*/examples/` 消息示例
+- `install-cursor-agents --agents-dir`（pack 内 agents 安装）
+
+### Changed
+
+- 技能 **不同步到 harness** — 留在 `agents/packs/<id>/skills/`；仅 agents 写入 `.cursor/agents/`
+- Builder 指南更新至 v0.2
+
+### Fixed
+
+- CI：`pack install` 测试先创建 `.scratch/` 再 `mkdtemp`
+
 ## [0.1.0] - 2026-08-22
 
 ### Added
@@ -20,6 +38,6 @@
 
 - **不做 harness** — `harness/` 仅为薄适配
 - **无固定官方编制** — `agents/examples/` 可删改
-- 后续见 [post-v01-roadmap.md](docs/product/post-v01-roadmap.md)
 
+[0.2.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.2.0
 [0.1.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.1.0

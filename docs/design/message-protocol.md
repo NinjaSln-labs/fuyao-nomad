@@ -91,8 +91,8 @@ payload:
 ## V0.2 验收
 
 - [x] 文档与示例 YAML
-- [ ] JSON Schema（v0.2.x）
-- [ ] validate 扫描 message 文件
+- [x] JSON Schema（v0.2.0）
+- [x] validate 扫描 message 文件（`packs/*/examples/`）
 
 ## 示例
 

@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/message/v0",
+  "title": "Fuyao Nomad Slot Message",
+  "description": "槽位间结构化消息信封 + 按 type 的 payload",
+  "type": "object",
+  "required": ["message"],
+  "additionalProperties": false,
+  "properties": {
+    "message": {
+      "type": "object",
+      "required": [
+        "version",
+        "type",
+        "from_slot_id",
+        "to_slot_id",
+        "roster_id",
+        "payload",
+        "recorded_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "version": { "type": "string", "const": "0.1" },
+        "type": {
+          "type": "string",
+          "enum": ["handoff", "status", "audit", "request"]
+        },
+        "from_slot_id": { "type": "string", "minLength": 1 },
+        "to_slot_id": { "type": "string", "minLength": 1 },
+        "roster_id": { "type": "string", "minLength": 1 },
+        "trace": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "work_item_id": { "type": "string" },
+            "milestone_id": { "type": "string" }
+          }
+        },
+        "payload": { "type": "object" },
+        "recorded_at": { "type": "string", "format": "date-time" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "type": { "const": "handoff" } },
+            "required": ["type"]
+          },
+          "then": {
+            "properties": { "payload": { "$ref": "#/$defs/handoffPayload" } }
+          }
+        },
+        {
+          "if": {
+            "properties": { "type": { "const": "status" } },
+            "required": ["type"]
+          },
+          "then": {
+            "properties": { "payload": { "$ref": "#/$defs/statusPayload" } }
+          }
+        },
+        {
+          "if": {
+            "properties": { "type": { "const": "audit" } },
+            "required": ["type"]
+          },
+          "then": {
+            "properties": { "payload": { "$ref": "#/$defs/auditPayload" } }
+          }
+        },
+        {
+          "if": {
+            "properties": { "type": { "const": "request" } },
+            "required": ["type"]
+          },
+          "then": {
+            "properties": { "payload": { "$ref": "#/$defs/requestPayload" } }
+          }
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "handoffPayload": {
+      "type": "object",
+      "required": ["summary"],
+      "additionalProperties": false,
+      "properties": {
+        "summary": { "type": "string", "minLength": 1 },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["kind"],
+            "additionalProperties": false,
+            "properties": {
+              "kind": { "type": "string", "minLength": 1 },
+              "path": { "type": "string" }
+            }
+          }
+        },
+        "dod_status": {
+          "type": "object",
+          "additionalProperties": { "type": "boolean" }
+        },
+        "open_questions": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "statusPayload": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "phase_id": { "type": "string" },
+        "milestone_id": { "type": "string" },
+        "blockers": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "next_actions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["action", "slot_id"],
+            "additionalProperties": false,
+            "properties": {
+              "action": { "type": "string" },
+              "slot_id": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "auditPayload": {
+      "type": "object",
+      "required": ["audit_type", "verdict"],
+      "additionalProperties": false,
+      "properties": {
+        "audit_type": {
+          "type": "string",
+          "enum": ["design", "implementation", "code_quality"]
+        },
+        "verdict": {
+          "type": "string",
+          "enum": ["pass", "pass_with_notes", "blocked"]
+        },
+        "findings": {
+          "type": "array",
+          "items": { "type": "object" }
+        }
+      }
+    },
+    "requestPayload": {
+      "type": "object",
+      "required": ["reason", "detail"],
+      "additionalProperties": false,
+      "properties": {
+        "reason": {
+          "type": "string",
+          "enum": ["contention", "escalate", "gate_confirm"]
+        },
+        "detail": { "type": "string", "minLength": 1 },
+        "requested_slot_id": { "type": "string" }
+      }
+    }
+  }
+}
