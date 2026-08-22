@@ -40,7 +40,7 @@
 
 1. 团队包 pack 格式 schema
 2. 槽位消息协议草案
-3. 技能同步脚本 · 第二 harness 文档
+3. 第二 harness 文档 · 消息协议 schema
 
 ## 纪律
 

@@ -13,4 +13,6 @@ skills/<skill-name>/
 
 Harness 适配层负责将技能挂载到具体运行时（如 Cursor Skills、MCP、CLI）。
 
+**不提供** `skills/` → `.cursor/skills` 同步脚本：扶摇只维护 harness 无关的 `skills/`；`pack:install` 会把包内技能合并到项目 `skills/`。IDE 如何发现技能，由 harness/用户配置。
+
 示例：[audit-readonly/README.md](./audit-readonly/README.md)
