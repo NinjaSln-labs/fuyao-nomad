@@ -37,4 +37,4 @@
 ## V0.4 验收
 
 - [x] MAPPING.md + mapping.example.yaml
-- [x] 示例 agent 片段 — `agents/ResearchAgent.md` · `SpecAgent.md`（v0.5）
+- [x] 示例 agent 片段 — `agents/`（Research · Spec · Progress · Auditor，v0.6）

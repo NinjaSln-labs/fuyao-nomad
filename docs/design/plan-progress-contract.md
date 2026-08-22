@@ -35,7 +35,7 @@
 | 字段 | 说明 |
 |------|------|
 | `current_phase_id` / `current_milestone_id` | 当前阶段/里程碑 |
-| `active_work_item_ids` / `active_slot_id` | 正在做什么、谁在做 |
+| `active_work_item_ids` / `active_slot_id` | 正在做什么、谁在做；争用检测优先 scope |
 | `blockers` | 阻塞 + `waiting_on` + 可选 `escalate_to_slot_id` |
 | `next_actions` | 下一步 + 负责槽位 |
 | `handoff_snippet` | 会话交接用摘要 |

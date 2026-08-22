@@ -9,14 +9,14 @@
 | **③ 设计** | schema、handoff、审计、Cursor 映射 | ✅ v0.1 |
 | **④ 交付** | 校验、模板、测试、CI、审计修复 | ✅ v0.1 |
 | **⑤ 开源发布** | LICENSE、README、CHANGELOG | ✅ **v0.1.0** |
-| **⑥ 后 v0.1** | pack · 消息 · 六档模板 · CLI POC · territory · harness 片段 | ✅ **v0.5.0** |
+| **⑥ 后 v0.1** | pack · 消息 · 六档 · territory · harness 片段 · active 争用 | ✅ **v0.6.0** |
 
 ## 当前落点
 
 | 阶段 | 状态 |
 |------|------|
-| ①–⑤ | ✅ **v0.1.0 可发布** |
-| ⑥ | ▶ 见 [post-v01-roadmap.md](post-v01-roadmap.md) |
+| ①–⑥ | ✅ **v0.6.0 路线图切片完成** |
+| ⑦+ | ▶ 能力模型 P1 — 见 [post-v01-roadmap.md](post-v01-roadmap.md) |
 
 ## 纪律
 

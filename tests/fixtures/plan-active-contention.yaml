@@ -1,0 +1,25 @@
+# 争用测试 fixture — 多 active work_item + territory 重叠
+
+version: "0.1"
+intent: contention fixture — active work items overlap
+
+plan:
+  goal: test active_work_item_ids contention
+  scope: fixture only
+  work_items:
+    - id: wi-a
+      title: api layer
+      slot_id: backend
+      territory:
+        paths:
+          - src/api/
+    - id: wi-b
+      title: api handlers
+      slot_id: backend-alt
+      territory:
+        paths:
+          - src/api/handlers/
+
+progress:
+  active_work_item_ids: [wi-a, wi-b]
+  blockers: []

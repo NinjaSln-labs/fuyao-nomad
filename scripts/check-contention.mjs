@@ -127,35 +127,76 @@ function dirtyOutsideTerritories(dirty, items) {
   return dirty.filter((file) => !allPaths.some((t) => pathUnderTerritory(file, t)));
 }
 
+function activeTerritoryItems(planDoc, territoryItems) {
+  const ids = planDoc?.progress?.active_work_item_ids;
+  if (Array.isArray(ids) && ids.length > 0) {
+    return territoryItems.filter((wi) => ids.includes(wi.id));
+  }
+  const slot = planDoc?.progress?.active_slot_id;
+  if (slot) {
+    return territoryItems.filter((wi) => wi.slot_id === slot);
+  }
+  return [];
+}
+
+function dirtyHitsMultipleActiveTerritories(dirty, activeItems) {
+  if (!dirty?.length || activeItems.length < 2) return { hit: false, workItemIds: [] };
+  const hitIds = new Set();
+  for (const file of dirty) {
+    for (const wi of activeItems) {
+      if (wi.paths.some((t) => pathUnderTerritory(file, t))) hitIds.add(wi.id);
+    }
+  }
+  return { hit: hitIds.size >= 2, workItemIds: [...hitIds] };
+}
+
 const { projectRoot, planPath, rosterPath, strict } = parseArgs(process.argv.slice(2));
 
 const planDoc = loadYaml(planPath);
 const rosterDoc = loadYaml(rosterPath);
 const dirty = gitDirtyFiles(projectRoot);
+
+const orch = rosterDoc?.orchestration ?? {};
+const parallel =
+  orch.mode === "parallel" ||
+  (Array.isArray(orch.parallel_groups) && orch.parallel_groups.length > 0);
+
 const territoryItems = workItemsWithTerritory(planDoc);
-const territoryOverlaps = findTerritoryOverlaps(territoryItems);
+const activeTerritory = activeTerritoryItems(planDoc, territoryItems);
+const activeIds = planDoc?.progress?.active_work_item_ids ?? [];
+const activeOverlaps =
+  activeTerritory.length >= 2 ? findTerritoryOverlaps(activeTerritory) : [];
+const planOverlaps =
+  parallel && activeTerritory.length < 2 ? findTerritoryOverlaps(territoryItems) : [];
 
 console.log("扶摇 · Nomad contention check (advisory)\n");
 console.log(`project: ${projectRoot}`);
 console.log(`plan: ${planPath}`);
 console.log(`roster: ${rosterPath}`);
 
-const orch = rosterDoc?.orchestration ?? {};
-const parallel =
-  orch.mode === "parallel" ||
-  (Array.isArray(orch.parallel_groups) && orch.parallel_groups.length > 0);
 const policy = orch.contention_policy ?? "escalate_to_progress";
 const blockers = planDoc?.progress?.blockers ?? [];
 const activeSlot = planDoc?.progress?.active_slot_id;
 
 console.log(`orchestration: mode=${orch.mode ?? "?"} parallel=${parallel} policy=${policy}`);
 console.log(`active_slot: ${activeSlot ?? "—"}`);
+console.log(
+  `active_work_item_ids: ${activeIds.length ? activeIds.join(", ") : "—"}`
+);
 console.log(`blockers: ${blockers.length}`);
 console.log(`work_items with territory: ${territoryItems.length}`);
+console.log(`active territory work_items: ${activeTerritory.length}`);
 
-if (territoryOverlaps.length) {
-  console.log(`territory overlaps: ${territoryOverlaps.length}`);
-  territoryOverlaps.forEach((o) => {
+if (activeOverlaps.length) {
+  console.log(`active territory overlaps: ${activeOverlaps.length}`);
+  activeOverlaps.forEach((o) => {
+    console.log(`  · ${o.work_items.join(" ↔ ")} (${o.paths.join(" ∩ ")})`);
+  });
+}
+
+if (planOverlaps.length) {
+  console.log(`plan territory overlaps (parallel): ${planOverlaps.length}`);
+  planOverlaps.forEach((o) => {
     console.log(`  · ${o.work_items.join(" ↔ ")} (${o.paths.join(" ∩ ")})`);
   });
 }
@@ -170,21 +211,39 @@ if (dirty === null) {
 
 let warn = false;
 
-if (territoryOverlaps.length > 0) {
-  console.log("\n⚠ overlapping territories in plan — parallel may contend:");
+if (activeOverlaps.length > 0) {
+  console.log("\n⚠ overlapping territories among active work_items:");
+  console.log("  · reduce active_work_item_ids or split territory paths");
+  console.log("  · see file-lock-contract.md");
+  warn = true;
+}
+
+if (planOverlaps.length > 0) {
+  console.log("\n⚠ overlapping territories in plan (parallel roster):");
   console.log("  · split paths or serialize slots");
   console.log("  · see file-lock-contract.md");
   warn = true;
 }
 
-if (parallel && dirty && dirty.length > 0 && blockers.length === 0) {
-  const outside = dirtyOutsideTerritories(dirty, territoryItems);
+const multiActiveDirty = dirtyHitsMultipleActiveTerritories(dirty, activeTerritory);
+if (multiActiveDirty.hit && blockers.length === 0) {
+  console.log("\n⚠ dirty files span multiple active work_item territories:");
+  console.log(`  · work_items: ${multiActiveDirty.workItemIds.join(", ")}`);
+  console.log("  · add progress.blockers or message request (contention)");
+  console.log(`  · contention_policy: ${policy}`);
+  warn = true;
+}
+
+if (parallel && dirty && dirty.length > 0 && blockers.length === 0 && !multiActiveDirty.hit) {
+  const scopeItems = activeTerritory.length ? activeTerritory : territoryItems;
+  const outside = dirtyOutsideTerritories(dirty, scopeItems);
   console.log("\n⚠ parallel roster + dirty files — consider:");
   console.log("  · declare territories in plan.work_items");
+  console.log("  · set active_work_item_ids when multiple slots run");
   console.log("  · add progress.blockers or message request (contention)");
   console.log(`  · contention_policy: ${policy}`);
   if (outside.length) {
-    console.log(`  · dirty outside declared territories: ${outside.length}`);
+    console.log(`  · dirty outside scoped territories: ${outside.length}`);
     outside.slice(0, 10).forEach((f) => console.log(`    - ${f}`));
   }
   warn = true;

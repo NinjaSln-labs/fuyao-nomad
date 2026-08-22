@@ -46,6 +46,20 @@ test("check:contention strict fails on territory overlap fixture", () => {
   assert.equal(r.status, 1, r.stdout + r.stderr);
 });
 
+test("check:contention strict fails on active work_item overlap fixture", () => {
+  const r = run("npm", [
+    "run",
+    "check:contention",
+    "--",
+    "--project",
+    ROOT,
+    "--plan",
+    join(ROOT, "tests/fixtures/plan-active-contention.yaml"),
+    "--strict",
+  ]);
+  assert.equal(r.status, 1, r.stdout + r.stderr);
+});
+
 test("pack install to temp project", () => {
   const scratchBase = join(ROOT, ".scratch");
   mkdirSync(scratchBase, { recursive: true });

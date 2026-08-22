@@ -2,6 +2,18 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.6.0] - 2026-08-22
+
+### Added
+
+- progress · auditor harness 片段：`harness/cli/runners/` · `harness/openhands/agents/`
+- `check:contention` 与 `progress.active_work_item_ids` 联动（active territory 重叠 · 脏文件跨领地）
+
+### Changed
+
+- 设计文档验收项收口（composition · escalation · plan-progress · capability-model 索引）
+- `0-1-path` 阶段 ⑥ 标记完成
+
 ## [0.5.0] - 2026-08-22
 
 ### Added
@@ -79,6 +91,7 @@
 - **不做 harness** — `harness/` 仅为薄适配
 - **无固定官方编制** — `agents/examples/` 可删改
 
+[0.6.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.6.0
 [0.5.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.5.0
 [0.4.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.4.0
 [0.3.1]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.3.1

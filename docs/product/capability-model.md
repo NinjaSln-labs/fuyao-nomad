@@ -275,7 +275,7 @@
 |--------|----------|------------------|
 | 1 编制 | composition-protocol | `packages/core/` · `agents/` |
 | 2 编排 | architecture（待扩） | `packages/core/` |
-| 3 推进 | plan-progress 契约（待写） | `.agents/` |
+| 3 推进 | plan-progress-contract | `.agents/` |
 | 4 交付 | delivery-model | `docs/product/` 模板 |
 | 5 质量 | verification + audit-by-flow-weight | `skills/` |
 | 6 治理 | delivery-model 继承表 | rules 模板 |

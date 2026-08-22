@@ -41,7 +41,7 @@ npm run check:contention -- --project .
 | roster（`--roster` 或示例） | 读 `parallel_groups` · `contention_policy` |
 | git 工作区 | 列出已修改文件（若在 git 仓库内） |
 
-输出为 **顾问报告**（默认 exit 0）；`--strict` 时在「并行 + 有脏文件 + 无 blockers」时 exit 1。
+输出为 **顾问报告**（默认 exit 0）；`--strict` 时在顾问告警时 exit 1（含 **active work_items** territory 重叠）。
 
 ## 与 harness
 

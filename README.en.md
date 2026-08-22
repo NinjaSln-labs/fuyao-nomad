@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v0.5.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.5.0)
+[![Release](https://img.shields.io/badge/Release-v0.6.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.6.0)
 
 **[中文](README.md)** | English
 
@@ -39,7 +39,7 @@ Open-source **agent team framework** — defines how multi-role teams collaborat
 | Harness thin adapters | ✅ Cursor (install script) · CLI · OpenHands (docs + snippets) |
 | Message protocol + contention advisory | ✅ message validate · `check:contention` (territory overlap + CI `--strict`) |
 | Validation & tests | ✅ `validate` 24 checks · `npm test` 6 tests · GitHub Actions |
-| Open release | ✅ **v0.5.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+| Open release | ✅ **v0.6.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
 Maintainer audits are **local only** (`.agents/audit/`, not in repo). Public contract: [docs/audit/README.md](docs/audit/README.md).
 
@@ -76,7 +76,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ## Roadmap
 
-**Current: v0.5.0** — `territory` schema · harness snippets · CI contention `--strict`.
+**Current: v0.6.0** — full harness snippets · active work_items contention.
 
 See [ROADMAP.md](ROADMAP.md) · [Post-v0.1 plan](docs/product/post-v01-roadmap.md) · [README.md](README.md) (Chinese) for full version table.
 

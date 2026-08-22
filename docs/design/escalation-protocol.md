@@ -55,4 +55,4 @@ orchestration:
 
 - [x] 文档与 roster `contention_policy` schema
 - [x] plan-progress `messages_dir`
-- [ ] 自动争用检测（git / 文件锁）— [file-lock-contract.md](./file-lock-contract.md) · `npm run check:contention`
+- [x] 自动争用检测（git / territory / active work_items）— [file-lock-contract.md](./file-lock-contract.md) · `npm run check:contention`

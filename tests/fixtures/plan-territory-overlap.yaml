@@ -21,4 +21,5 @@ plan:
           - src/ui/components/
 
 progress:
+  active_work_item_ids: [wi-a, wi-b]
   blockers: []
