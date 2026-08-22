@@ -1,15 +1,15 @@
 # 文件归属与争用检测契约
 
-> **状态：③ 设计 · v0.4 草案**  
+> **状态：③ 设计 · v0.5**  
 > 实现：[contention-rules.md](./contention-rules.md) · [escalation-protocol.md](./escalation-protocol.md)
 
 ## 问题
 
-并行槽位同时修改同一文件/模块 → 争用。框架 V0.4 提供 **轻量检测 + 人工升级**，非自动 merge。
+并行槽位同时修改同一文件/模块 → 争用。框架提供 **轻量检测 + 人工升级**（`check:contention`），非自动 merge。
 
 ## 归属声明（建议）
 
-在 `plan.work_items` 或 handoff message 的 payload 中声明领地（可选字段，文档约定）：
+在 `plan.work_items`（schema：`territory.paths`）或 handoff message 的 payload 中声明领地：
 
 ```yaml
 work_items:

@@ -1,46 +1,88 @@
+<div align="center">
+
 # 扶摇 · Nomad
+
+> **鹏之徙于南冥也，水击三千里，抟扶摇而上者九万里** · *Rise on the Wind*
+> 开源 **Agent 团队框架** — 团队优先，DDD 驱动，挂到任意 harness（**不做 harness**）。
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
+[![Release](https://img.shields.io/badge/Release-v0.5.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.5.0)
 
-开源 **Agent 团队框架** — 团队优先，DDD 驱动，挂到任意 harness（**不做 harness**）。
+**[English](README.en.md)** | 中文
 
-- **扶摇** — 团队之魂：多角色协作，逍遥于任意天地  
-- **Nomad** — 团队之能：规格可迁移，随处可栖  
+</div>
 
-> English: [README.en.md](README.en.md)
+---
 
-## 这是什么
+## 简介
 
-扶摇 · Nomad 定义 **团队层** 的可移植规格：编制（roster）、交接（handoff）、计划进度、DoD/验证/DDD 门模板，以及随 `flow_weight`（轻-重流程重量）伸缩的质量与审计。  
-编排引擎（LangGraph、CrewAI 等）与 IDE harness（Cursor 等）通过 **薄适配** 挂载，框架本身不替代它们。
+**扶摇（fú yáo）**——「扶摇」= 旋风、上举之力；出处：《庄子·逍遥游》「抟**扶摇**而上者九万里」。**Nomad** = 团队规格可迁移，不绑单一 harness。
 
-**适合谁**：Agent Builder → 小团队 → 单人 — 需要可复用「组队协议」而非单体 prompt 堆砌。
+开源 **Agent 团队框架** — 定义多角色如何协作、按轻-重流程重量交付，通过薄适配挂到 Cursor / CLI / OpenHands 等运行时（**不替代 harness**）。
 
-## 快速开始
+- **一句话目标**：让 Builder、小团队、单人用同一套 **组队协议**（编制、交接、计划进度、DoD/验证/DDD 门）完成真实工程与产品工作，而非单体 prompt 堆砌。
+- **全球定位对位**：AI 员工产品卖「强个体」；编排框架卖 runtime API；IDE 内置 agent 偏浅层 subagent — 扶摇卖 **团队层规格 + DDD 底座 + 开源可扩展**。
+- **双名**：**扶摇** = 团队之魂（多角色逍遥协作）；**Nomad** = 团队之能（规格随处可栖）。
+- **八能力域**：编制 · 编排与争用 · 推进 · 交付模式（`flow_weight`）· 质量验证 · 治理审计 · 研究产品 · 可移植挂载。
+- **薄适配原则**：roster / pack 为 harness 无关源；`harness/` 只做槽位映射，**不做**通用 IDE runtime。
+
+## 当前状态
+
+| 域 | 状态 |
+|----|------|
+| 产品 / 设计文档 `docs/` | ✅ 定稿（问题陈述 · 北极星 · 能力模型 · 编制协议） |
+| JSON Schema + 六档 `flow_weight` 模板 | ✅ roster · plan-progress · DoD · verification · DDD 门 · audit-record |
+| 团队包 `packs/minimal-research-to-spec` | ✅ pack validate / install |
+| Harness 薄适配 POC | ✅ Cursor（install 脚本）· CLI · OpenHands（文档 + 片段） |
+| 消息协议 + 争用顾问 | ✅ message validate · `check:contention`（territory 重叠 + CI `--strict`） |
+| 校验与测试 | ✅ `validate` 24 项 · `npm test` 6 项 · GitHub Actions |
+| 开源发布 | ✅ **v0.5.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+
+维护者审计为**本地私有**（`.agents/audit/`，不入库）。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
+
+## 目录结构
+
+| 目录/文件 | 内容 |
+|-----------|------|
+| `docs/product/` | 问题陈述 · 北极星 · 交付模式 · 能力模型 · Builder 指南 · 路线图 |
+| `docs/design/` | 编制协议 · handoff · 计划进度 · 消息/升级/争用契约 · JSON Schema |
+| `docs/templates/` | 六档 `flow_weight` 模板（轻 · 轻中 · 中 · 中重 · 重 · 全流程） |
+| `agents/examples/` | minimal-roster · plan-progress · messages 示例 |
+| `packs/` | 官方团队包示例（roster + 模板 + harness 映射 + skills） |
+| `harness/` | Cursor / CLI / OpenHands **薄适配**（非产品核心） |
+| `skills/` | 可移植技能（**不同步**到 harness 路径） |
+| `scripts/` | `validate` · `pack` · `check:contention` · `install:cursor-agents` |
+| `packages/core/` | Schema 索引 |
+| `ROADMAP.md` | 版本里程碑与后续候选 |
+
+## 开发
 
 ```bash
 git clone https://github.com/NinjaSln-labs/fuyao-nomad.git
 cd fuyao-nomad
 npm install
-npm run validate
-npm test
-npm run install:cursor-agents -- --project .
+
+npm run validate          # schema 校验（示例 · 模板 · pack · message）
+npm test                  # 脚本与 pack install 测试
+npm run install:cursor-agents -- --project .   # 同步 Cursor subagent 映射
+npm run check:contention -- --project .        # 争用顾问（默认 advisory）
+npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 ```
 
-- [Builder 指南](docs/product/builder-guide.md)  
-- [贡献指南](CONTRIBUTING.md)  
-- [变更日志](CHANGELOG.md)  
+- [Builder 指南](docs/product/builder-guide.md)
+- [贡献指南](CONTRIBUTING.md)
 
 ## 核心概念
 
 | 概念 | 说明 |
 |------|------|
-| **Roster** | 槽位编制：加减角色、串行/并行、正交槽位（推进/审计） |
-| **flow_weight** | 轻-重连续谱：联动 DoD、验证、DDD 门、分层审计深度 |
+| **Roster** | 槽位编制：加减角色、串行/并行、`contention_policy`、正交槽位 |
+| **flow_weight** | 轻-重连续谱：联动 DoD、验证、DDD 门、分层审计 |
+| **territory** | 并行时 `work_items[].territory.paths` 路径归属 |
 | **handoff** | 默认行为 + 可选 `handoff.rules` |
 | **Plan / Progress** | `.agents/plan-progress.yaml` — 意图、里程碑、`audit_gate` |
-| **Harness 薄适配** | 如 `harness/cursor/` — 映射到 subagent，不改 roster 本体 |
+| **Team Pack** | 可发布的 roster + 模板 + 映射 + skills 单元 |
 
 ## 文档导航
 
@@ -57,55 +99,29 @@ npm run install:cursor-agents -- --project .
 
 ## 路线图
 
-**当前：v0.5.0** — `territory` schema · harness 示例片段 · CI 争用 strict。
+**当前：v0.5.0** — `territory` schema · harness 示例片段 · CI 争用 `--strict`。
 
 | 版本 | 目标 |
 |------|------|
 | **v0.1.0** ✅ | 开源基线 |
-| **v0.2.0** ✅ | 团队包 pack · 消息协议 schema |
+| **v0.2.0** ✅ | 团队包 · 消息协议 schema |
 | **v0.3.0** ✅ | 六档模板 · CLI POC · 升级协议 |
-| **v0.4.0** ✅ | message validate · check:contention · OpenHands POC |
+| **v0.4.0** ✅ | message validate · `check:contention` · OpenHands POC |
 | **v0.5.0** ✅ | territory schema · harness 片段 · CI strict |
 | **v0.6.x** | 更多 harness 片段 |
 
-详见 [ROADMAP.md](ROADMAP.md) · [后 v0.1 路线](docs/product/post-v01-roadmap.md) · [0→1 路径](docs/product/0-1-path.md)
+详见 [后 v0.1 路线](docs/product/post-v01-roadmap.md) · [0→1 路径](docs/product/0-1-path.md)
 
 ### 明确不做
 
-- 不做通用 harness / IDE runtime  
-- 不预设「官方固定编制」  
-- 竞品调研不自动升格产品 scope  
+- 不做通用 harness / IDE runtime
+- 不预设「官方固定编制」
+- 竞品调研不自动升格产品 scope
 
-## 仓库结构
+## Git
 
-```
-fuyao-nomad/
-├── docs/            # 产品、设计、调研、审计
-├── skills/          # 可移植技能
-├── harness/         # harness 薄适配（非产品核心）
-├── packages/core/   # schema 索引
-├── scripts/         # validate · install-cursor-agents
-└── agents/          # 团队包示例（可删改）
-```
+- 分支 `main`；提交规范见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
-## 状态
+## License
 
-**v0.5.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md)
-
-维护者审计为**本地私有**（`.agents/audit/`，不入库）。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
-
-## 许可
-
-[Apache-2.0](LICENSE) — Copyright © 2026 NinjaSln Labs
-
-## 组织
-
-由 [NinjaSln-labs](https://github.com/NinjaSln-labs) 维护。
-
----
-
-## English (summary)
-
-**Fuyao · Nomad** is an open-source **agent team framework**: team-first, DDD-oriented specs (roster, handoff, plan/progress, DoD/verification/DDD gates) with adjustable **flow_weight**. It mounts onto existing harnesses via thin adapters — **not** a harness itself.
-
-Full English readme: [README.en.md](README.en.md)
+[Apache-2.0](LICENSE) © 2026 NinjaSln Labs · [NinjaSln-labs](https://github.com/NinjaSln-labs)

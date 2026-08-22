@@ -1,98 +1,91 @@
-# Fuyao · Nomad
+<div align="center">
+
+# Fuyao · Nomad · 扶摇
+
+> *Rise on the Wind* · **鹏之徙于南冥也，水击三千里，抟扶摇而上者九万里**
+> Open-source **agent team framework** — team-first, DDD-driven, mounts on any harness (**not a harness**).
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
+[![Release](https://img.shields.io/badge/Release-v0.5.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.5.0)
 
-Open-source **agent team framework** — team-first, DDD-driven, mounts on any harness (**not a harness**).
+**[中文](README.md)** | English
 
-- **Fuyao (扶摇)** — the soul of the team: multi-role collaboration  
-- **Nomad** — portable specs that travel with your team  
+</div>
 
-> 中文主文档：[README.md](README.md)
+---
 
-## What it is
+## About
 
-Fuyao · Nomad defines a **portable team layer**: roster composition, handoff rules, plan/progress contracts, DoD / verification / DDD-gate templates, and quality audits scaled by **flow_weight** (light-to-heavy process weight). Orchestrators (LangGraph, CrewAI, …) and IDE harnesses (Cursor, …) integrate via **thin adapters** — the framework does not replace them.
+**Fuyao (fú yáo, "soaring wind")** — from Zhuangzi’s *Free and Easy Wandering*: *"Rising ninety thousand li on the whirlwind."* **Nomad** = portable team specs that do not lock you to one harness.
 
-**Audience**: agent builders, small teams, and solo developers who want reusable **team protocols** instead of one-off prompt stacks.
+Open-source **agent team framework** — defines how multi-role teams collaborate and deliver with adjustable process weight (`flow_weight`), mounted via thin adapters onto Cursor / CLI / OpenHands (**does not replace harnesses**).
 
-## Quick start
+- **One-line goal**: give builders, small teams, and solo developers reusable **team protocols** (roster, handoff, plan/progress, DoD/verification/DDD gates) instead of one-off prompt stacks.
+- **Positioning**: AI-employee products sell a strong individual; orchestration frameworks sell runtime APIs; IDE agents stay shallow — Fuyao sells **team-layer specs + DDD foundation + open extensibility**.
+- **Dual name**: **Fuyao (扶摇)** = soul of the team (multi-role collaboration); **Nomad** = portable specs (works anywhere).
+- **Eight capability domains**: composition · orchestration & contention · progress · delivery (`flow_weight`) · quality · governance · research/product · harness mount.
+- **Thin adapter rule**: roster / pack are harness-agnostic; `harness/` only maps slots — **no** generic IDE runtime.
+
+> **Primary documentation is Chinese.** See [README.md](README.md) for full product/design navigation and roadmap.
+
+## Status
+
+| Area | Status |
+|------|--------|
+| Product / design docs `docs/` | ✅ Finalized (problem statement · north star · capability model · composition protocol) |
+| JSON Schema + six `flow_weight` tiers | ✅ roster · plan-progress · DoD · verification · DDD gate · audit-record |
+| Team pack `packs/minimal-research-to-spec` | ✅ pack validate / install |
+| Harness thin adapters | ✅ Cursor (install script) · CLI · OpenHands (docs + snippets) |
+| Message protocol + contention advisory | ✅ message validate · `check:contention` (territory overlap + CI `--strict`) |
+| Validation & tests | ✅ `validate` 24 checks · `npm test` 6 tests · GitHub Actions |
+| Open release | ✅ **v0.5.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+
+Maintainer audits are **local only** (`.agents/audit/`, not in repo). Public contract: [docs/audit/README.md](docs/audit/README.md).
+
+## Layout
+
+| Path | Content |
+|------|---------|
+| `docs/product/` | Problem statement · north star · delivery model · capability model · builder guide · roadmap (Chinese) |
+| `docs/design/` | Composition protocol · handoff · plan-progress · message/escalation/contention contracts · JSON Schema |
+| `docs/templates/` | Six `flow_weight` template tiers |
+| `agents/examples/` | minimal-roster · plan-progress · message examples |
+| `packs/` | Official team pack example (roster + templates + harness mapping + skills) |
+| `harness/` | Cursor / CLI / OpenHands **thin adapters** (not core product) |
+| `skills/` | Portable skills (**not** synced to harness paths) |
+| `scripts/` | `validate` · `pack` · `check:contention` · `install:cursor-agents` |
+| `ROADMAP.md` | Version milestones and backlog |
+
+## Development
 
 ```bash
 git clone https://github.com/NinjaSln-labs/fuyao-nomad.git
 cd fuyao-nomad
 npm install
+
 npm run validate
 npm test
 npm run install:cursor-agents -- --project .
+npm run check:contention -- --project .
+npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 ```
 
-- [Builder guide](docs/product/builder-guide.md) (Chinese)  
-- [Contributing](CONTRIBUTING.md)  
-- [Changelog](CHANGELOG.md)  
-
-## Core concepts
-
-| Concept | Description |
-|---------|-------------|
-| **Roster** | Slot composition: add/remove roles, serial/parallel, orthogonal slots (progress/audit) |
-| **flow_weight** | Light-to-heavy spectrum: binds DoD, verification, DDD gate, audit depth |
-| **handoff** | Defaults + optional `handoff.rules` |
-| **Plan / Progress** | `.agents/plan-progress.yaml` — intent, milestones, `audit_gate` |
-| **Thin harness adapter** | e.g. `harness/cursor/` — maps slots to subagents without changing roster |
-
-## Documentation
-
-| # | Doc |
-|---|-----|
-| 1 | [Product index](docs/product/README.md) |
-| 2 | [Problem statement](docs/product/problem-statement.md) |
-| 3 | [North star](docs/product/north-star.md) |
-| 4 | [Delivery model](docs/product/delivery-model.md) |
-| 5 | [Capability model](docs/product/capability-model.md) |
-| 6 | [Composition protocol](docs/design/composition-protocol.md) |
-| 7 | [Domain language](docs/design/domain-language.md) |
-| 8 | [Landscape snapshot](docs/research/2026-08-22-agent-team-landscape.md) (non-authoritative) |
+- [Builder guide](docs/product/builder-guide.md) (Chinese)
+- [Contributing](CONTRIBUTING.md)
 
 ## Roadmap
 
-**Current: v0.5.0** — `territory` schema · harness snippets · CI contention strict.
+**Current: v0.5.0** — `territory` schema · harness snippets · CI contention `--strict`.
 
-| Version | Goal |
-|---------|------|
-| **v0.1.0** ✅ | Open baseline |
-| **v0.2.0** ✅ | Team pack · message protocol schema |
-| **v0.3.0** ✅ | Extended templates · CLI POC · escalation |
-| **v0.4.0** ✅ | Message validate · contention advisory · OpenHands POC |
-| **v0.5.0** ✅ | Territory schema · harness snippets · CI strict |
-| **v0.6.x** | More harness snippets |
-
-See [ROADMAP.md](ROADMAP.md) · [Post-v0.1 plan](docs/product/post-v01-roadmap.md)
+See [ROADMAP.md](ROADMAP.md) · [Post-v0.1 plan](docs/product/post-v01-roadmap.md) · [README.md](README.md) (Chinese) for full version table.
 
 ### Non-goals
 
-- No generic harness / IDE runtime  
-- No mandatory “official roster”  
-- Research snapshots do not auto-expand product scope  
-
-## Repository layout
-
-```
-fuyao-nomad/
-├── docs/            # product, design, research, audits
-├── skills/          # portable skills
-├── harness/         # thin harness adapters (not core product)
-├── packages/core/   # schema index
-├── scripts/         # validate · install-cursor-agents
-└── agents/          # example team packs (optional)
-```
-
-## Status
-
-**v0.5.0** — see [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md). Maintainer audits are **local only** (`.agents/audit/`). See [docs/audit/README.md](docs/audit/README.md).
+- No generic harness / IDE runtime
+- No mandatory “official roster”
+- Research snapshots do not auto-expand product scope
 
 ## License
 
-[Apache-2.0](LICENSE) — Copyright © 2026 NinjaSln Labs
-
-Maintained by [NinjaSln-labs](https://github.com/NinjaSln-labs).
+[Apache-2.0](LICENSE) © 2026 NinjaSln Labs · [NinjaSln-labs](https://github.com/NinjaSln-labs)
