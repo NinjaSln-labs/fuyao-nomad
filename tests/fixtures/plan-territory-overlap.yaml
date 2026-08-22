@@ -1,0 +1,24 @@
+# 争用测试 fixture — territory 路径重叠（勿用于生产）
+
+version: "0.1"
+intent: contention fixture — overlapping territories
+
+plan:
+  goal: test overlap detection
+  scope: fixture only
+  work_items:
+    - id: wi-a
+      title: frontend
+      slot_id: frontend
+      territory:
+        paths:
+          - src/ui/
+    - id: wi-b
+      title: ui components
+      slot_id: frontend-alt
+      territory:
+        paths:
+          - src/ui/components/
+
+progress:
+  blockers: []

@@ -51,5 +51,5 @@ npm run check:contention -- --project .
 ## V0.4 验收
 
 - [x] 本文档
-- [x] `scripts/check-contention.mjs`
-- [ ] plan-progress schema 正式 `territory` 字段 — 可选 v0.5
+- [x] `scripts/check-contention.mjs`（含 territory 重叠检测）
+- [x] plan-progress schema 正式 `territory` 字段 — v0.5

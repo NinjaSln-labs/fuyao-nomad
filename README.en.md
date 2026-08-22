@@ -56,14 +56,16 @@ npm run install:cursor-agents -- --project .
 
 ## Roadmap
 
-**Current: v0.3.0** — six `flow_weight` tiers · CLI mapping POC · escalation protocol.
+**Current: v0.5.0** — `territory` schema · harness snippets · CI contention strict.
 
 | Version | Goal |
 |---------|------|
 | **v0.1.0** ✅ | Open baseline |
 | **v0.2.0** ✅ | Team pack · message protocol schema |
 | **v0.3.0** ✅ | Extended templates · CLI POC · escalation |
-| **v0.4.x** | Contention detection · more harness docs |
+| **v0.4.0** ✅ | Message validate · contention advisory · OpenHands POC |
+| **v0.5.0** ✅ | Territory schema · harness snippets · CI strict |
+| **v0.6.x** | More harness snippets |
 
 See [ROADMAP.md](ROADMAP.md) · [Post-v0.1 plan](docs/product/post-v01-roadmap.md)
 
@@ -87,7 +89,7 @@ fuyao-nomad/
 
 ## Status
 
-**v0.3.0** — see [CHANGELOG](CHANGELOG.md). Maintainer audits are **local only** (`.agents/audit/`). See [docs/audit/README.md](docs/audit/README.md).
+**v0.5.0** — see [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md). Maintainer audits are **local only** (`.agents/audit/`). See [docs/audit/README.md](docs/audit/README.md).
 
 ## License
 

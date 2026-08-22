@@ -17,10 +17,19 @@ plan:
       title: 竞品快照
       slot_id: research
       phase_id: p1
+      territory:
+        paths:
+          - docs/research/
+        description: 调研快照与引用来源
     - id: wi-spec
       title: capability-model 定稿
       slot_id: spec
       phase_id: p1
+      territory:
+        paths:
+          - docs/product/
+          - docs/design/schemas/
+        description: 产品定义与 schema 契约
   milestones:
     - id: m-define
       name: ② 定义完成

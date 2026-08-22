@@ -14,7 +14,7 @@
 |------|-------------------|
 | `agents/packs/<id>/roster.yaml` | 委派图 / agent 配置输入 |
 | `harness/openhands/mapping.yaml` | 槽位 id → OpenHands agent 角色名 |
-| `harness/openhands/agents/` | 角色 prompt 片段（可选，未纳入 V0.4） |
+| `harness/openhands/agents/` | 角色 prompt 片段（v0.5 POC） |
 
 ## 映射示例
 
@@ -37,4 +37,4 @@
 ## V0.4 验收
 
 - [x] MAPPING.md + mapping.example.yaml
-- [ ] 示例 agent 片段 — v0.5
+- [x] 示例 agent 片段 — `agents/ResearchAgent.md` · `SpecAgent.md`（v0.5）

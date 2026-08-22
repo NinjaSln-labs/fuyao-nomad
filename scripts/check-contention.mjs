@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Advisory contention check: plan-progress + roster + git dirty files.
+ * Advisory contention check: plan-progress + roster + git dirty files + territory overlap.
  *
  * Usage:
  *   node scripts/check-contention.mjs --project <root> [--strict]
@@ -47,6 +47,23 @@ Usage: npm run check:contention -- [--project <root>] [--plan <path>] [--roster 
   return { projectRoot, planPath, rosterPath, strict };
 }
 
+function normPath(p) {
+  return p.replace(/\\/g, "/").replace(/\/+$/, "");
+}
+
+function pathUnderTerritory(filePath, territoryPath) {
+  const f = normPath(filePath);
+  const t = normPath(territoryPath);
+  if (!t) return false;
+  return f === t || f.startsWith(`${t}/`);
+}
+
+function pathsOverlap(a, b) {
+  const na = normPath(a);
+  const nb = normPath(b);
+  return na === nb || pathUnderTerritory(na, nb) || pathUnderTerritory(nb, na);
+}
+
 function gitDirtyFiles(cwd) {
   const inside = spawnSync("git", ["rev-parse", "--is-inside-work-tree"], {
     cwd,
@@ -71,11 +88,52 @@ function loadYaml(path) {
   return YAML.parse(readFileSync(path, "utf8"));
 }
 
+function workItemsWithTerritory(planDoc) {
+  const items = planDoc?.plan?.work_items ?? [];
+  return items
+    .filter((wi) => Array.isArray(wi.territory?.paths) && wi.territory.paths.length > 0)
+    .map((wi) => ({
+      id: wi.id,
+      slot_id: wi.slot_id,
+      paths: wi.territory.paths,
+    }));
+}
+
+function findTerritoryOverlaps(items) {
+  const overlaps = [];
+  for (let i = 0; i < items.length; i++) {
+    for (let j = i + 1; j < items.length; j++) {
+      const a = items[i];
+      const b = items[j];
+      for (const pa of a.paths) {
+        for (const pb of b.paths) {
+          if (pathsOverlap(pa, pb)) {
+            overlaps.push({
+              work_items: [a.id, b.id],
+              slots: [a.slot_id, b.slot_id],
+              paths: [pa, pb],
+            });
+          }
+        }
+      }
+    }
+  }
+  return overlaps;
+}
+
+function dirtyOutsideTerritories(dirty, items) {
+  if (!dirty?.length || !items.length) return [];
+  const allPaths = items.flatMap((wi) => wi.paths);
+  return dirty.filter((file) => !allPaths.some((t) => pathUnderTerritory(file, t)));
+}
+
 const { projectRoot, planPath, rosterPath, strict } = parseArgs(process.argv.slice(2));
 
 const planDoc = loadYaml(planPath);
 const rosterDoc = loadYaml(rosterPath);
 const dirty = gitDirtyFiles(projectRoot);
+const territoryItems = workItemsWithTerritory(planDoc);
+const territoryOverlaps = findTerritoryOverlaps(territoryItems);
 
 console.log("扶摇 · Nomad contention check (advisory)\n");
 console.log(`project: ${projectRoot}`);
@@ -93,6 +151,14 @@ const activeSlot = planDoc?.progress?.active_slot_id;
 console.log(`orchestration: mode=${orch.mode ?? "?"} parallel=${parallel} policy=${policy}`);
 console.log(`active_slot: ${activeSlot ?? "—"}`);
 console.log(`blockers: ${blockers.length}`);
+console.log(`work_items with territory: ${territoryItems.length}`);
+
+if (territoryOverlaps.length) {
+  console.log(`territory overlaps: ${territoryOverlaps.length}`);
+  territoryOverlaps.forEach((o) => {
+    console.log(`  · ${o.work_items.join(" ↔ ")} (${o.paths.join(" ∩ ")})`);
+  });
+}
 
 if (dirty === null) {
   console.log("git: not a repository — skip dirty file scan");
@@ -103,11 +169,24 @@ if (dirty === null) {
 }
 
 let warn = false;
+
+if (territoryOverlaps.length > 0) {
+  console.log("\n⚠ overlapping territories in plan — parallel may contend:");
+  console.log("  · split paths or serialize slots");
+  console.log("  · see file-lock-contract.md");
+  warn = true;
+}
+
 if (parallel && dirty && dirty.length > 0 && blockers.length === 0) {
+  const outside = dirtyOutsideTerritories(dirty, territoryItems);
   console.log("\n⚠ parallel roster + dirty files — consider:");
-  console.log("  · declare territories in plan/handoff");
+  console.log("  · declare territories in plan.work_items");
   console.log("  · add progress.blockers or message request (contention)");
   console.log(`  · contention_policy: ${policy}`);
+  if (outside.length) {
+    console.log(`  · dirty outside declared territories: ${outside.length}`);
+    outside.slice(0, 10).forEach((f) => console.log(`    - ${f}`));
+  }
   warn = true;
 }
 

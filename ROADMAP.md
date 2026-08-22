@@ -4,6 +4,13 @@
 
 ## 已完成
 
+### v0.5.0（2026-08-22）
+
+- plan-progress `territory` schema + 示例
+- `check:contention` territory 重叠检测
+- CLI / OpenHands 示例 agent 片段
+- CI `check:contention --strict` 门禁
+
 ### v0.4.0（2026-08-22）
 
 - 运行时 message 校验：`agents/examples/messages/` · `.agents/messages/`
@@ -22,14 +29,13 @@
 
 | 优先级 | 主题 |
 |--------|------|
-| P2 | plan-progress `territory` 字段 schema |
-| P2 | OpenHands / CLI 示例 agent 片段 |
-| P3 | 争用 `--strict` 与 CI 可选门禁 |
+| P2 | 更多 harness 示例片段（progress · auditor） |
+| P3 | territory 与争用检测深化（active work_items） |
 
 ## 里程碑
 
 ```
-v0.3.x ✅ → v0.4.0 ✅ → v0.5.x  schema 深化
+v0.4.0 ✅ → v0.5.0 ✅ → v0.6.x  harness 片段扩展
 ```
 
 ## 原则

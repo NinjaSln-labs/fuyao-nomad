@@ -67,4 +67,4 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 - [x] team-pack schema
 - [x] 官方示例 pack
 - [x] validate + install 脚本
-- [ ] 消息协议运行时目录约定（`.agents/messages/`）文档化进 plan-progress — v0.3
+- [x] 消息协议运行时目录约定（`.agents/messages/`）文档化进 plan-progress — v0.3

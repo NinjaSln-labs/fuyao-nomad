@@ -1,6 +1,6 @@
 # 领域语言 · 扶摇 · Nomad
 
-> **状态：③ 设计 · v0.3**  
+> **状态：③ 设计 · v0.5**  
 > 框架自身 dogfood DDD：术语与边界上下文，供文档、schema、审计对齐。
 
 ## 愿景
@@ -24,6 +24,10 @@
 | **Skill** | harness 无关能力单元，绑到槽位（路径引用，不同步 harness） |
 | **Slot Message** | 结构化槽位 payload；见 message-protocol |
 | **contention_policy** | 并行争用策略；见 escalation-protocol |
+| **messages_dir** | 运行时 Slot Message 目录；plan-progress 可选字段 |
+| **Territory（领地）** | work_item 可选路径归属；并行争用见 file-lock-contract |
+| **争用顾问（contention check）** | `npm run check:contention` — territory 重叠 + git 脏文件 + 并行 roster |
+| **文件锁契约** | 并行槽位对路径的争用约定；见 file-lock-contract |
 
 ## 边界上下文
 

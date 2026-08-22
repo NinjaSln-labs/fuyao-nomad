@@ -14,7 +14,7 @@
 | 4 | [能力模型](capability-model.md) | ✅ 定稿 |
 | 5 | [0→1 路径](0-1-path.md) | ✅ |
 | 6 | [Builder 指南](builder-guide.md) | v0.1 |
-| 7 | [后 v0.1 路线](post-v01-roadmap.md) | v0.3 ✅ |
+| 7 | [后 v0.1 路线](post-v01-roadmap.md) | v0.5 ✅ |
 | 8 | [竞品快照](../research/2026-08-22-agent-team-landscape.md) | ✅ |
 
 ## 设计（③ 阶段）
@@ -30,6 +30,7 @@
 | [团队包](../design/team-pack.md) | v0.2 |
 | [消息协议](../design/message-protocol.md) | v0.2 |
 | [升级协议](../design/escalation-protocol.md) | v0.3 |
+| [文件锁契约](../design/file-lock-contract.md) | v0.4 |
 | [Schema](../design/schemas/) | v0.1 |
 | [架构概览](../design/architecture.md) | 草案 |
 

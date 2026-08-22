@@ -23,7 +23,7 @@
 | `goal` | ● | 目标 |
 | `scope` | ● | 范围 |
 | `phases` | ○ | 阶段/波次；重端建议填 |
-| `work_items` | ○ | 可绑 `slot_id` |
+| `work_items` | ○ | 可绑 `slot_id`；并行时可声明 `territory.paths` |
 | `milestones` | ○ | 完成标准；可设 `audit_gate`（design / implementation / code_quality） |
 | `dependencies` | ○ | 外部依赖 |
 

@@ -32,6 +32,20 @@ test("check:contention advisory passes on repo", () => {
   assert.equal(r.status, 0, r.stdout + r.stderr);
 });
 
+test("check:contention strict fails on territory overlap fixture", () => {
+  const r = run("npm", [
+    "run",
+    "check:contention",
+    "--",
+    "--project",
+    ROOT,
+    "--plan",
+    join(ROOT, "tests/fixtures/plan-territory-overlap.yaml"),
+    "--strict",
+  ]);
+  assert.equal(r.status, 1, r.stdout + r.stderr);
+});
+
 test("pack install to temp project", () => {
   const scratchBase = join(ROOT, ".scratch");
   mkdirSync(scratchBase, { recursive: true });

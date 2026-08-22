@@ -40,4 +40,4 @@
 ## V0.3 验收
 
 - [x] MAPPING.md + mapping.example.yaml
-- [ ] 示例 runner 片段 — 可选后续
+- [x] 示例 runner 片段 — `runners/research-runner.md` · `spec-runner.md`（v0.5）

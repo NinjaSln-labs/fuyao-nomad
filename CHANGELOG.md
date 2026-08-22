@@ -2,6 +2,20 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.5.0] - 2026-08-22
+
+### Added
+
+- plan-progress `work_items[].territory` schema 字段 + 示例
+- `check:contention` territory 重叠检测
+- CLI runner 片段：`harness/cli/runners/`
+- OpenHands agent 片段：`harness/openhands/agents/`
+- CI：`check:contention --strict` 门禁步骤
+
+### Changed
+
+- v0.4 审计文档对齐（README · product 索引 · domain-language）
+
 ## [0.4.0] - 2026-08-22
 
 ### Added
@@ -65,6 +79,7 @@
 - **不做 harness** — `harness/` 仅为薄适配
 - **无固定官方编制** — `agents/examples/` 可删改
 
+[0.5.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.5.0
 [0.4.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.4.0
 [0.3.1]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.3.1
 [0.3.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.3.0
