@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
-import { mkdtempSync, existsSync } from "node:fs";
+import { mkdtempSync, existsSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -28,7 +28,9 @@ test("pack validate minimal-research-to-spec", () => {
 });
 
 test("pack install to temp project", () => {
-  const tmp = mkdtempSync(join(ROOT, ".scratch/fuyao-pack-"));
+  const scratchBase = join(ROOT, ".scratch");
+  mkdirSync(scratchBase, { recursive: true });
+  const tmp = mkdtempSync(join(scratchBase, "fuyao-pack-"));
   const r = run("npm", [
     "run",
     "pack:install",
