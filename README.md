@@ -103,8 +103,13 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 | 版本 | 目标 |
 |------|------|
-| **v0.6.0** ✅ | harness 片段齐 · active 争用 |
-| **v0.7.0** ✅ | pack 版本 · model_hint · ADR/commit/stage · dogfood 链 |
+| **v0.1.0** ✅ | 开源基线 |
+| **v0.2.0** ✅ | 团队包 · 消息 schema |
+| **v0.3.0** ✅ | 六档模板 · CLI POC |
+| **v0.4.0** ✅ | message · contention · OpenHands |
+| **v0.5.0** ✅ | territory · harness 片段 |
+| **v0.6.0** ✅ | harness 齐 · active 争用 |
+| **v0.7.0** ✅ | pack 元数据 · model_hint · 治理模板 · dogfood 链 |
 | **v0.8.x** | 追溯链 · 编排导出 POC |
 
 详见 [后 v0.1 路线](docs/product/post-v01-roadmap.md) · [0→1 路径](docs/product/0-1-path.md)
