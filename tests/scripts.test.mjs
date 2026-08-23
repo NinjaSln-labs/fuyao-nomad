@@ -60,6 +60,33 @@ test("check:contention strict fails on active work_item overlap fixture", () => 
   assert.equal(r.status, 1, r.stdout + r.stderr);
 });
 
+test("check:traceability advisory passes on dogfood plan", () => {
+  const r = run("npm", [
+    "run",
+    "check:traceability",
+    "--",
+    "--project",
+    ROOT,
+    "--plan",
+    join(ROOT, "agents/examples/plan-research-spec-impl.example.yaml"),
+  ]);
+  assert.equal(r.status, 0, r.stdout + r.stderr);
+});
+
+test("check:traceability strict passes on dogfood plan", () => {
+  const r = run("npm", [
+    "run",
+    "check:traceability",
+    "--",
+    "--project",
+    ROOT,
+    "--plan",
+    join(ROOT, "agents/examples/plan-research-spec-impl.example.yaml"),
+    "--strict",
+  ]);
+  assert.equal(r.status, 0, r.stdout + r.stderr);
+});
+
 test("pack install to temp project", () => {
   const scratchBase = join(ROOT, ".scratch");
   mkdirSync(scratchBase, { recursive: true });

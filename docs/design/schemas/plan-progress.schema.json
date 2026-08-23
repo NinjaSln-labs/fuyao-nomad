@@ -21,10 +21,51 @@
       "minLength": 1,
       "description": "任务/意图一句话"
     },
+    "traceability": {
+      "$ref": "#/$defs/traceability",
+      "description": "可选：意图→领域→任务追溯链；轻端可省略"
+    },
     "plan": { "$ref": "#/$defs/plan" },
     "progress": { "$ref": "#/$defs/progress" }
   },
   "$defs": {
+    "traceability": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "domain_concepts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "name"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "description": { "type": "string" },
+              "source": {
+                "type": "string",
+                "description": "权威出处路径或锚点，如 docs/design/domain-language.md"
+              }
+            }
+          }
+        },
+        "links": {
+          "type": "array",
+          "description": "领域概念 ↔ 工作项显式链接",
+          "items": {
+            "type": "object",
+            "required": ["domain_concept_id", "work_item_id"],
+            "additionalProperties": false,
+            "properties": {
+              "domain_concept_id": { "type": "string" },
+              "work_item_id": { "type": "string" },
+              "note": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
     "plan": {
       "type": "object",
       "required": ["goal", "scope"],
@@ -55,6 +96,16 @@
               "title": { "type": "string" },
               "slot_id": { "type": "string" },
               "phase_id": { "type": "string" },
+              "domain_concept_ids": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "本工作项覆盖的领域概念 id（与 traceability.domain_concepts 对齐）"
+              },
+              "dod_checklist_ids": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "完成本工作项须满足的 DoD checklist id"
+              },
               "territory": {
                 "type": "object",
                 "additionalProperties": false,
@@ -85,6 +136,11 @@
                 "type": "string",
                 "enum": ["design", "implementation", "code_quality"],
                 "description": "可选：里程碑为审计门时声明类型"
+              },
+              "dod_checklist_ids": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "达成里程碑须满足的 DoD checklist id（与 flow_weight 模板联动）"
               }
             }
           }

@@ -4,6 +4,12 @@
 
 ## 已完成
 
+### v0.8.0（2026-08-23）
+
+- 追溯链 schema · [traceability-contract.md](docs/design/traceability-contract.md)
+- 计划↔DoD 双向 `plan_refs` · dogfood 示例
+- `check:traceability`（本地 · 未入 CI）
+
 ### v0.7.0（2026-08-23）
 
 - team-pack `pack_revision` · `fork` 元数据
@@ -22,15 +28,15 @@
 
 ## 后续
 
-| 优先级 | 主题 |
-|--------|------|
-| P1 | 计划↔DoD 联动示例深化 |
-| P2 | LangGraph / CrewAI Flow 导出映射 POC |
+| 优先级 | 主题 | 状态 |
+|--------|------|------|
+| P1 | 计划↔DoD 联动示例深化 · 追溯链 | ✅ v0.8.0 |
+| P2 | LangGraph / CrewAI Flow 导出映射 POC | 待办 |
 
 ## 里程碑
 
 ```
-v0.6.0 ✅ → v0.7.0 ✅ → v0.8.x  编排导出与追溯链
+v0.6.0 ✅ → v0.7.0 ✅ → v0.8.0 ✅ → v0.9.x  编排导出 POC
 ```
 
 ## 原则

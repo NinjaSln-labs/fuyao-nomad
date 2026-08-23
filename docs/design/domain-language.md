@@ -74,3 +74,4 @@
 | 能力 | capability-model |
 | 结构 | composition-protocol · schemas |
 | 交付 | delivery-model · templates/ |
+| 追溯链 | traceability-contract · plan-progress `traceability` 块 |

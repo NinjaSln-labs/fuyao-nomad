@@ -6,6 +6,20 @@ flow_weight: 中
 
 intent: 为扶摇 Nomad 完成竞品快照后的能力模型定稿
 
+traceability:
+  domain_concepts:
+    - id: dc-landscape
+      name: AgentTeamLandscape
+      source: docs/research/2026-08-22-agent-team-landscape.md
+    - id: dc-capability
+      name: CapabilityModel
+      source: docs/product/capability-model.md
+  links:
+    - domain_concept_id: dc-landscape
+      work_item_id: wi-research
+    - domain_concept_id: dc-capability
+      work_item_id: wi-spec
+
 plan:
   goal: 定稿能力模型与 north-star，进入设计阶段 schema
   scope: 产品文档；不含代码实现

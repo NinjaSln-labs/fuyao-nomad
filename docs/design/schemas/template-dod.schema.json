@@ -20,7 +20,22 @@
             "properties": {
               "id": { "type": "string" },
               "required": { "type": "boolean" },
-              "description": { "type": "string" }
+              "description": { "type": "string" },
+              "plan_refs": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "与 plan-progress 里程碑/工作项的双向联动引用",
+                "properties": {
+                  "milestone_ids": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  },
+                  "work_item_ids": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
+                }
+              }
             }
           }
         }

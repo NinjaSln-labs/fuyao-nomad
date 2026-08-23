@@ -13,10 +13,21 @@ dod:
   checklist:
     - id: intent_clear
       required: true
+      plan_refs:
+        milestone_ids: [m-spec]
+        work_item_ids: [wi-research, wi-spec]
     - id: plan_progress_synced
       required: true
+      plan_refs:
+        milestone_ids: [m-spec, m-impl]
+        work_item_ids: [wi-spec, wi-impl]
     - id: handoff_snippet_updated
       required: true
+      plan_refs:
+        milestone_ids: [m-impl]
+        work_item_ids: [wi-impl]
     - id: audit_gates_passed
       required: true
       description: 里程碑 audit_gate 已通过或 N/A
+      plan_refs:
+        milestone_ids: [m-spec, m-impl]

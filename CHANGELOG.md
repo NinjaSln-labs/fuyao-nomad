@@ -2,6 +2,21 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.8.0] - 2026-08-23
+
+### Added
+
+- 追溯链契约 [traceability-contract.md](docs/design/traceability-contract.md)（意图→领域→任务）
+- plan-progress `traceability` · `domain_concept_ids` · `dod_checklist_ids`
+- DoD 模板 `checklist[].plan_refs`（里程碑/工作项双向联动）
+- `npm run check:traceability`（本地 advisory · `--strict` 用于 dogfood）
+- [plan-dod-traceability-chain.md](docs/product/examples/plan-dod-traceability-chain.md) 示例
+
+### Changed
+
+- dogfood 计划与 `dod-中` / pack `dod.yaml` 补全联动引用
+- `npm test` 增至 9 项（含 traceability 校验）
+
 ## [0.7.0] - 2026-08-23
 
 ### Added
@@ -101,6 +116,7 @@
 - **不做 harness** — `harness/` 仅为薄适配
 - **无固定官方编制** — `agents/examples/` 可删改
 
+[0.8.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.8.0
 [0.7.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.7.0
 [0.6.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.6.0
 [0.5.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.5.0

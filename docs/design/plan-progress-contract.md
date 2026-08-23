@@ -28,7 +28,17 @@
 | `dependencies` | ○ | 外部依赖 |
 
 **轻端**：`intent` + `goal` + `scope` + 少量 `work_items` 即可。  
-**重端**：补全 `phases`、`milestones`、与 DoD/追溯引用。
+**重端**：补全 `phases`、`milestones`、追溯链与 DoD 联动（见 [traceability-contract.md](./traceability-contract.md)）。
+
+## 追溯与 DoD 联动
+
+| 机制 | 字段 |
+|------|------|
+| 意图→领域→任务 | `intent` · `traceability` · `work_items[].domain_concept_ids` |
+| 计划→DoD | `milestones[].dod_checklist_ids` · `work_items[].dod_checklist_ids` |
+| DoD→计划 | `dod.checklist[].plan_refs` |
+
+校验：`npm run check:traceability -- --project .`
 
 ## 进度块（Progress）
 

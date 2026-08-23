@@ -15,7 +15,8 @@ research（调研）→ spec（规格）→ spec/主 agent（实现）→ audito
 | 文件 | 用途 |
 |------|------|
 | [minimal-roster.yaml](../../agents/examples/minimal-roster.yaml) | 团队编制 |
-| [plan-research-spec-impl.example.yaml](../../agents/examples/plan-research-spec-impl.example.yaml) | 三阶段 work_items + territory |
+| [plan-research-spec-impl.example.yaml](../../agents/examples/plan-research-spec-impl.example.yaml) | 三阶段 work_items + territory + 追溯链 |
+| [plan-dod-traceability-chain.md](plan-dod-traceability-chain.md) | 计划↔DoD 联动与校验 |
 | [packs/minimal-research-to-spec](../../packs/minimal-research-to-spec/) | 可安装团队包 |
 
 ## 模型调用（harness）
