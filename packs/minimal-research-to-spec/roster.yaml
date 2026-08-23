@@ -41,5 +41,6 @@ slots:
     purpose: 设计/实现/代码质量审计
     slot_kind: auditor
     gate_level: auto
+    model_hint: inherit
 
 harness_mapping_ref: harness/cursor/mapping.yaml

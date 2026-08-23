@@ -115,6 +115,11 @@
           "type": "string",
           "enum": ["generic", "progress", "verifier", "auditor"],
           "description": "generic=通用；progress=推进；verifier=验证跑通；auditor=设计/实现/代码质量评审"
+        },
+        "model_hint": {
+          "type": "string",
+          "minLength": 1,
+          "description": "模型策略提示（harness 翻译）；如 inherit · fast · quality。见 model-harness-contract.md"
         }
       }
     },

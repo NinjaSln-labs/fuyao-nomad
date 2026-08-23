@@ -29,6 +29,9 @@ skills/            # 可选：可移植技能目录
 | `flow_weight` | 与模板族一致 |
 | `roster` | roster 文件相对路径 |
 | `templates` | `dod` · `verification` · `ddd_gate` 路径 |
+| `pack_revision` | 团队包内容版本（SemVer） |
+| `published_at` | 发布/修订时间 |
+| `fork` | 可选 fork 元数据（`upstream_id` · `upstream_revision`） |
 | `harness_adapters.cursor` | `mapping` + `agents_dir` |
 | `skills` | 包内技能目录列表（校验 + 随包分发；**不**同步到 harness） |
 

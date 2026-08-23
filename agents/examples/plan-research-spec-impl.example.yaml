@@ -1,0 +1,58 @@
+# 调研→规格→实现 · 计划示例（dogfood）
+
+version: "0.1"
+roster_id: minimal-research-to-spec
+flow_weight: 中
+
+intent: 完成竞品调研、规格定稿与最小实现验证
+
+plan:
+  goal: 跑通调研→规格→实现链，validate/test 绿灯
+  scope: 文档与脚本示例；不含生产部署
+  phases:
+    - id: p1
+      name: 发现与定义
+    - id: p2
+      name: 实现
+  work_items:
+    - id: wi-research
+      title: 竞品快照
+      slot_id: research
+      phase_id: p1
+      territory:
+        paths: [docs/research/]
+    - id: wi-spec
+      title: 规格与 schema
+      slot_id: spec
+      phase_id: p1
+      territory:
+        paths: [docs/product/, docs/design/schemas/]
+    - id: wi-impl
+      title: 最小实现与测试
+      slot_id: spec
+      phase_id: p2
+      territory:
+        paths: [scripts/, tests/]
+        description: 实现链落在脚本与测试（示例）
+  milestones:
+    - id: m-spec
+      name: 规格完成
+      criteria: north-star 与 capability-model 对齐
+      phase_id: p1
+    - id: m-impl
+      name: 实现验证
+      criteria: npm run validate && npm test
+      phase_id: p2
+      audit_gate: implementation
+
+progress:
+  current_phase_id: p1
+  active_slot_id: research
+  active_work_item_ids: [wi-research]
+  blockers: []
+  next_actions:
+    - action: 完成竞品快照
+      slot_id: research
+  handoff_snippet: "调研→规格→实现链示例；见 docs/product/examples/research-spec-impl-chain.md"
+  messages_dir: .agents/messages/minimal-research-to-spec
+  updated_at: "2026-08-23T00:00:00Z"

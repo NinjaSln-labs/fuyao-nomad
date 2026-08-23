@@ -8,5 +8,9 @@ mappings:
   progress: progress-keeper
   auditor: quality-auditor
 
+# 可选：覆盖 agent frontmatter 的 model 字段（见 model-harness-contract.md）
+model_hints:
+  auditor: inherit
+
 # 主 agent 使用项目默认 Agent；或指定：
 # parent: default

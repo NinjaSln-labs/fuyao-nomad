@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-adr/v0",
+  "type": "object",
+  "required": ["flow_weight", "adr"],
+  "additionalProperties": false,
+  "properties": {
+    "flow_weight": { "type": "string", "minLength": 1 },
+    "adr": {
+      "type": "object",
+      "required": ["title", "status", "context", "decision"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string" },
+        "status": { "type": "string", "enum": ["proposed", "accepted", "deprecated"] },
+        "context": { "type": "string" },
+        "decision": { "type": "string" },
+        "consequences": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

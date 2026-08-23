@@ -4,10 +4,10 @@
  * Options: --mapping, --project, --check (drift detection)
  */
 import {
-  copyFileSync,
   mkdirSync,
   existsSync,
   readFileSync,
+  writeFileSync,
 } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -46,11 +46,31 @@ if (!existsSync(mappingPath)) {
 
 const mapping = YAML.parse(readFileSync(mappingPath, "utf8"));
 const mappings = mapping.mappings ?? {};
+const modelHints = mapping.model_hints ?? {};
 const agentsDest = join(targetRoot, ".cursor/agents");
 
-function filesEqual(a, b) {
-  if (!existsSync(a) || !existsSync(b)) return false;
-  return readFileSync(a, "utf8") === readFileSync(b, "utf8");
+function applyModelHint(content, modelValue) {
+  if (!modelValue) return content;
+  if (/^model:\s*.+$/m.test(content)) {
+    return content.replace(/^model:\s*.+$/m, `model: ${modelValue}`);
+  }
+  const lines = content.split("\n");
+  const closeIdx = lines.findIndex((line, i) => i > 0 && line.trim() === "---");
+  if (closeIdx > 0) {
+    lines.splice(closeIdx, 0, `model: ${modelValue}`);
+    return lines.join("\n");
+  }
+  return content;
+}
+
+function readAgentContent(src, modelValue) {
+  const raw = readFileSync(src, "utf8");
+  return applyModelHint(raw, modelValue);
+}
+
+function contentMatchesDest(expected, dest) {
+  if (!existsSync(dest)) return false;
+  return readFileSync(dest, "utf8") === expected;
 }
 
 let installed = 0;
@@ -59,12 +79,14 @@ let drift = 0;
 for (const [slotId, agentName] of Object.entries(mappings)) {
   const src = join(agentsSrc, `${agentName}.md`);
   const dest = join(agentsDest, `${agentName}.md`);
+  const hint = modelHints[slotId];
   if (!existsSync(src)) {
     console.warn(`⚠ skip ${slotId}: missing ${src}`);
     continue;
   }
+  const expected = readAgentContent(src, hint);
   if (checkOnly) {
-    if (!filesEqual(src, dest)) {
+    if (!contentMatchesDest(expected, dest)) {
       console.error(`✗ drift: ${agentName} (update via install or edit harness source)`);
       drift++;
     } else {
@@ -73,7 +95,7 @@ for (const [slotId, agentName] of Object.entries(mappings)) {
     continue;
   }
   mkdirSync(agentsDest, { recursive: true });
-  copyFileSync(src, dest);
+  writeFileSync(dest, expected);
   console.log(`✓ ${slotId} → .cursor/agents/${agentName}.md`);
   installed++;
 }

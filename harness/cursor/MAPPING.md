@@ -27,6 +27,10 @@
 3. 若存在 `harness/cursor/agents/<name>.md`，复制或 symlink 到 `.cursor/agents/`
 4. 主 agent 按 `orchestration` 与默认 handoff 委派
 
+## 模型（harness）
+
+`model_hint` 与 mapping `model_hints` 由 harness 翻译；见 [model-harness-contract.md](./model-harness-contract.md)。
+
 ## 并行
 
 - `orchestration.mode=parallel` → Cursor `/multitask` 或并行 subagent（见 Cursor 文档）

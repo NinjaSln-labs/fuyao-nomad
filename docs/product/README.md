@@ -14,7 +14,7 @@
 | 4 | [能力模型](capability-model.md) | ✅ 定稿 |
 | 5 | [0→1 路径](0-1-path.md) | ✅ |
 | 6 | [Builder 指南](builder-guide.md) | v0.1 |
-| 7 | [后 v0.1 路线](post-v01-roadmap.md) | v0.6 ✅ |
+| 7 | [后 v0.1 路线](post-v01-roadmap.md) | v0.7 ✅ |
 | 8 | [竞品快照](../research/2026-08-22-agent-team-landscape.md) | ✅ |
 
 ## 设计（③ 阶段）

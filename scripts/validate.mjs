@@ -25,6 +25,9 @@ const validators = {
   dod: ajv.compile(loadSchema("template-dod.schema.json")),
   verification: ajv.compile(loadSchema("template-verification.schema.json")),
   ddd_gate: ajv.compile(loadSchema("template-ddd-gate.schema.json")),
+  adr: ajv.compile(loadSchema("template-adr.schema.json")),
+  stage: ajv.compile(loadSchema("template-stage.schema.json")),
+  commit_policy: ajv.compile(loadSchema("template-commit-policy.schema.json")),
   audit: ajv.compile(loadSchema("audit-record.schema.json")),
   pack: ajv.compile(loadSchema("team-pack.schema.json")),
   message: ajv.compile(loadSchema("message.schema.json")),
@@ -55,6 +58,9 @@ function classifyTemplate(name) {
   if (name.startsWith("dod-")) return "dod";
   if (name.startsWith("verification-")) return "verification";
   if (name.startsWith("ddd-gate-")) return "ddd_gate";
+  if (name.startsWith("adr-")) return "adr";
+  if (name.startsWith("stage-")) return "stage";
+  if (name.startsWith("commit-policy-")) return "commit_policy";
   return null;
 }
 
@@ -66,7 +72,7 @@ function validateFile(path, labelOverride) {
     if (name === "pack.yaml") kind = "pack";
     else if (name.endsWith(".audit.yaml")) kind = "audit";
     else if (data?.message) kind = "message";
-    else if (name.includes("plan-progress")) kind = "plan";
+    else if (name.includes("plan-progress") || name.startsWith("plan-")) kind = "plan";
     else if (name.includes("roster") || name === "minimal-roster.yaml") kind = "roster";
     else kind = classifyTemplate(name);
   }

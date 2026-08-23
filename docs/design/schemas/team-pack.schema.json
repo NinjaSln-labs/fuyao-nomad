@@ -23,6 +23,27 @@
     "description": {
       "type": "string"
     },
+    "pack_revision": {
+      "type": "string",
+      "minLength": 1,
+      "description": "团队包内容版本（SemVer），与框架 schema version 无关"
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "包发布或修订时间"
+    },
+    "fork": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "fork 元数据（可选）",
+      "properties": {
+        "upstream_id": { "type": "string", "minLength": 1 },
+        "upstream_revision": { "type": "string", "minLength": 1 },
+        "forked_at": { "type": "string", "format": "date-time" },
+        "note": { "type": "string" }
+      }
+    },
     "flow_weight": {
       "type": "string",
       "minLength": 1

@@ -13,6 +13,14 @@
 | 重 | `dod-重.yaml` | `verification-重.yaml` | `ddd-gate-重.yaml` |
 | 全流程 | `dod-全流程.yaml` | `verification-全流程.yaml` | `ddd-gate-全流程.yaml` |
 
+## 治理与阶段（v0.7+）
+
+| 模板 | 说明 |
+|------|------|
+| `adr-中.yaml` | ADR 草案 |
+| `commit-policy-中.yaml` | commit 策略与 `gate_level` 对齐 |
+| `stage-轻.yaml` | 可配置阶段（非固定 S0–S5） |
+
 同一 `flow_weight` 下三文件一起使用。
 
 ## 设计参考

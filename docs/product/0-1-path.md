@@ -16,7 +16,7 @@
 | 阶段 | 状态 |
 |------|------|
 | ①–⑥ | ✅ **v0.6.0 路线图切片完成** |
-| ⑦+ | ▶ 能力模型 P1 — 见 [post-v01-roadmap.md](post-v01-roadmap.md) |
+| ⑦+ | ▶ 能力模型 P1 深化 — 见 [post-v01-roadmap.md](post-v01-roadmap.md) |
 
 ## 纪律
 

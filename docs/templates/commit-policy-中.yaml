@@ -1,0 +1,21 @@
+# Commit 策略 · 与 roster gate_level 对齐 · flow_weight=中
+
+flow_weight: 中
+
+commit_policy:
+  rules:
+    - gate_level: auto
+      action: 文档/示例/测试通过后可直接 commit
+      examples:
+        - 修正 typo
+        - 通过 validate 的 schema 示例
+    - gate_level: confirm
+      action: 须人工确认后再 commit（规格/架构/依赖变更）
+      examples:
+        - 修改公开 API schema
+        - 升级 major 依赖
+    - gate_level: forbid
+      action: 禁止 agent 自动 commit；仅人操作
+      examples:
+        - 生产配置
+        - 密钥路径

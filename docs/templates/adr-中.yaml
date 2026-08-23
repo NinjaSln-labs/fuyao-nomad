@@ -1,0 +1,14 @@
+# ADR 模板 · flow_weight=中
+
+flow_weight: 中
+
+adr:
+  title: ""
+  status: proposed
+  context: |
+    背景与约束（硬约束须写 ADR）
+  decision: |
+    决策内容
+  consequences:
+    - 正面影响
+    - 代价与风险

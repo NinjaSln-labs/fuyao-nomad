@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-commit-policy/v0",
+  "type": "object",
+  "required": ["flow_weight", "commit_policy"],
+  "additionalProperties": false,
+  "properties": {
+    "flow_weight": { "type": "string", "minLength": 1 },
+    "commit_policy": {
+      "type": "object",
+      "required": ["rules"],
+      "additionalProperties": false,
+      "properties": {
+        "rules": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["gate_level", "action"],
+            "properties": {
+              "gate_level": {
+                "type": "string",
+                "enum": ["auto", "confirm", "forbid"]
+              },
+              "action": { "type": "string" },
+              "examples": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}

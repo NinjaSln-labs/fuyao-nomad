@@ -2,6 +2,16 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.7.0] - 2026-08-23
+
+### Added
+
+- team-pack `pack_revision` · `published_at` · `fork` 元数据
+- roster `model_hint` · Cursor mapping `model_hints`（install 时写入 agent `model`）
+- [model-harness-contract.md](docs/design/model-harness-contract.md)
+- 治理模板：`adr-中` · `stage-轻` · `commit-policy-中`
+- 调研→规格→实现示例链 · [research-spec-impl-chain.md](docs/product/examples/research-spec-impl-chain.md)
+
 ## [0.6.0] - 2026-08-22
 
 ### Added
@@ -91,6 +101,7 @@
 - **不做 harness** — `harness/` 仅为薄适配
 - **无固定官方编制** — `agents/examples/` 可删改
 
+[0.7.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.7.0
 [0.6.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.6.0
 [0.5.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.5.0
 [0.4.0]: https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.4.0

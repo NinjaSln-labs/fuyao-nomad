@@ -1,0 +1,17 @@
+# 可配置阶段模板 · flow_weight=轻
+
+flow_weight: 轻
+
+stages:
+  - id: s1
+    name: 探索
+    goal: 澄清意图与范围
+    exit_criteria:
+      - 问题陈述自洽
+      - 范围边界列出
+  - id: s2
+    name: 交付
+    goal: 完成最小可验证产出
+    exit_criteria:
+      - DoD checklist 完成
+      - npm test 或等价验证
