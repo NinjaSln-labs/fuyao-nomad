@@ -275,9 +275,9 @@
 |--------|----------|------------------|
 | 1 编制 | composition-protocol | `packages/core/` · `agents/` |
 | 2 编排 | architecture（待扩） | `packages/core/` |
-| 3 推进 | plan-progress-contract | `.agents/` |
+| 3 推进 | plan-progress-contract · identity-constraints | `.agents/` |
 | 4 交付 | delivery-model | `docs/product/` 模板 |
-| 5 质量 | verification + audit-by-flow-weight | `skills/` |
+| 5 质量 | verification + audit-by-flow-weight · identity-constraints | `skills/` |
 | 6 治理 | delivery-model 继承表 | rules 模板 |
 | 7 研究 | research 去权威化 | `skills/` |
 | 8 挂载 | harness/README | `harness/cursor/` |

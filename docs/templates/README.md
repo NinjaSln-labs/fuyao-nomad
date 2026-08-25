@@ -39,13 +39,17 @@
 
 DoD `checklist[].plan_refs`（v0.8+，**六档已齐** v0.11）：与 plan-progress 里程碑/工作项双向联动；模板内 id 为**示例**，项目替换为自身 plan id。见 [traceability-contract.md](../design/traceability-contract.md)。
 
+DoD `identity_constraints_held`（v0.16）：中档及以上 required；对照 [identity-constraints.md](../design/identity-constraints.md)。问题陈述 / PRD-lite schema 可选 `identity_constraints` 字段。
+
 ## 设计参考
 
 - [verification-by-flow-weight.md](../design/verification-by-flow-weight.md)
 - [audit-by-flow-weight.md](../design/audit-by-flow-weight.md)
+- [identity-constraints.md](../design/identity-constraints.md)
 - [skills-binding.md](../design/skills-binding.md)
 - [cli-openhands-adapter.md](../design/cli-openhands-adapter.md)
 - [delivery-model.md](../product/delivery-model.md)
 - [problem-prd-chain.md](../product/examples/problem-prd-chain.md)
+- [identity-constraints-lesson.md](../product/examples/identity-constraints-lesson.md)
 
 校验：`npm run validate`（含 `docs/templates/` · `docs/decisions/adr-*.yaml`）

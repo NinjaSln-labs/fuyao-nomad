@@ -42,6 +42,11 @@
           "items": { "type": "string" },
           "description": "成功时可见信号"
         },
+        "identity_constraints": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "标题/一句话中的身份词约束（不可裁剪）"
+        },
         "notes": { "type": "string" }
       }
     }

@@ -12,6 +12,8 @@ readonly: true
 - 实现审计：对齐设计与 DoD、追溯与 handoff
 - 代码质量审计：坏味、安全、可维护性、测试充分性
 
+**身份约束**：对照 `plan-progress.intent` 与 `identity_constraints[]`，不得只对照已漂移的规格。未满足 → blocked + blockers（见 docs/design/identity-constraints.md）。
+
 产出 audit 记录（verdict + findings）；blocked 时更新 plan-progress blockers。
 
 见 docs/design/audit-by-flow-weight.md。

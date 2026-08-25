@@ -6,6 +6,8 @@ flow_weight: 重
 prd:
   title: ""
   intent: ""
+  identity_constraints: []
+  # 从 intent 保留的身份词；裁剪不得删除。见 docs/design/identity-constraints.md
   problem_ref: docs/templates/problem-statement-中.yaml
   users:
     - Builder
@@ -15,6 +17,7 @@ prd:
     - 明确不做的项（含 harness / 编排引擎等框架非目标）
   acceptance:
     - 与 DoD checklist 可对齐的可观察信号
+    - 身份约束仍满足（identity_constraints_held）
   risks:
     - 范围漂移
   plan_refs:

@@ -32,3 +32,9 @@ dod:
       description: 里程碑 audit_gate 已通过或 N/A
       plan_refs:
         milestone_ids: [m-spec, m-impl]
+    - id: identity_constraints_held
+      required: true
+      description: intent 身份约束仍满足；未满足须 blocker 或废除（见 docs/design/identity-constraints.md）
+      plan_refs:
+        milestone_ids: [m-spec, m-impl]
+        work_item_ids: [wi-spec, wi-impl]

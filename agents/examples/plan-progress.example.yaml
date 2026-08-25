@@ -6,6 +6,12 @@ flow_weight: 中
 
 intent: 为扶摇 Nomad 完成竞品快照后的能力模型定稿
 
+identity_constraints:
+  - id: ic-capability-model
+    phrase: 能力模型定稿
+    meaning: 须产出可引用的 capability-model 定稿，不得以未定稿草稿冒充完成
+    enforcement: blocker_if_unmet
+
 traceability:
   domain_concepts:
     - id: dc-landscape

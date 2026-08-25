@@ -22,5 +22,7 @@ problem_statement:
     - 不做 harness / 不做单体 AI 员工产品
   success:
     - 同一套 roster + DoD 可在至少一种 harness 上跑通调研→规格链
+  identity_constraints: []
+  # 从 title / doing 抽出不可裁剪词，如 ["AI", "多用户"]；见 identity-constraints.md
   notes: |
     竞品快照去权威化；升格须 ADR / 规格显式决策。

@@ -20,14 +20,16 @@
 
 | 字段 | 必填 | 说明 |
 |------|:----:|------|
-| `goal` | ● | 目标 |
+| `intent` | ● | 一句话意图（顶层字段） |
+| `identity_constraints` | ○ | 从 intent 抽出的身份约束；裁剪不得删除（见 [identity-constraints.md](./identity-constraints.md)） |
+| `goal` | ● | 目标（`plan` 内） |
 | `scope` | ● | 范围 |
 | `phases` | ○ | 阶段/波次；重端建议填 |
 | `work_items` | ○ | 可绑 `slot_id`；并行时可声明 `territory.paths` |
 | `milestones` | ○ | 完成标准；可设 `audit_gate`（design / implementation / code_quality） |
 | `dependencies` | ○ | 外部依赖 |
 
-**轻端**：`intent` + `goal` + `scope` + 少量 `work_items` 即可。  
+**轻端**：`intent` + `goal` + `scope` + 少量 `work_items` 即可；有品类/形态词时仍建议填 `identity_constraints`。  
 **重端**：补全 `phases`、`milestones`、追溯链与 DoD 联动（见 [traceability-contract.md](./traceability-contract.md)）。
 
 ## 追溯与 DoD 联动

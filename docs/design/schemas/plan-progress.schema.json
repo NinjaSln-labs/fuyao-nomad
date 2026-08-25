@@ -21,6 +21,33 @@
       "minLength": 1,
       "description": "任务/意图一句话"
     },
+    "identity_constraints": {
+      "type": "array",
+      "description": "从 intent 抽出的身份约束；裁剪不得删除，未满足须 blocker 或废除。见 identity-constraints.md",
+      "items": {
+        "type": "object",
+        "required": ["id", "phrase", "meaning"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "phrase": {
+            "type": "string",
+            "minLength": 1,
+            "description": "intent 中的原文词或短语"
+          },
+          "meaning": {
+            "type": "string",
+            "minLength": 1,
+            "description": "该词对交付的不可裁剪含义"
+          },
+          "enforcement": {
+            "type": "string",
+            "enum": ["blocker_if_unmet", "abolish"],
+            "description": "未满足时：记 blocker 或废除项目"
+          }
+        }
+      }
+    },
     "traceability": {
       "$ref": "#/$defs/traceability",
       "description": "可选：意图→领域→任务追溯链；轻端可省略"

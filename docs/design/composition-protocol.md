@@ -53,7 +53,7 @@
 |------|----------|
 | 槽位 DoD 完成 | 按 `orchestration` 顺序或并行策略交给下一责任槽位 |
 | 阻塞 | 若有「推进者」类槽位 → 升级；否则交编排主槽位 |
-| 需人工确认 | `gate_level` 为确认/禁止时暂停，待确认后继续 handoff |
+| 需人工确认 | `gate_level` 为确认/禁止时暂停，待确认后继续 handoff；规格 confirm 须对照 intent / identity_constraints |
 | 交接载体 | HANDOFF 片段 / 检查表 / 槽位 `outputs` 声明的交付物 |
 
 ### Handoff Rule（自定义规则 · 可选）

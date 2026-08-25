@@ -2,6 +2,20 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.16.0] - 2026-08-25
+
+### Added
+
+- 身份约束契约 [identity-constraints.md](docs/design/identity-constraints.md)（intent 品类/形态词不可裁剪）
+- plan-progress / 问题陈述 / PRD-lite schema 可选 `identity_constraints`
+- DoD checklist `identity_constraints_held`（六档 + pack）
+- dogfood 教训 [identity-constraints-lesson.md](docs/product/examples/identity-constraints-lesson.md)
+
+### Changed
+
+- 审计 / confirm 门 / builder 指南：对照 intent + 身份约束，不得只看漂移规格
+- Cursor 槽位 prompt（auditor · spec · progress）对齐身份约束
+
 ## [0.15.0] - 2026-08-25
 
 ### Added

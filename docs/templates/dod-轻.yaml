@@ -19,3 +19,6 @@ dod:
       required: false
       plan_refs:
         work_item_ids: [wi-main]
+    - id: identity_constraints_held
+      required: false
+      description: 若 plan 声明了 identity_constraints，则须仍满足（见 identity-constraints.md）

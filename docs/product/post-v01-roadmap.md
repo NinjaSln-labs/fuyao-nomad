@@ -1,5 +1,11 @@
 # 后 v0.1 路线
 
+## v0.16.0 ✅（2026-08-25）
+
+| 项 | 状态 |
+|----|------|
+| 身份约束（intent 不可裁剪 · DoD · 审计） | ✅ [identity-constraints.md](../design/identity-constraints.md) |
+
 ## v0.15.0 ✅（2026-08-25）
 
 | 项 | 状态 |

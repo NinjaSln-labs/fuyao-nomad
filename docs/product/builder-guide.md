@@ -46,6 +46,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 `.agents/plan-progress.yaml` — [plan-progress-contract.md](../design/plan-progress-contract.md)
 
+从 intent 抽出 **身份约束**（不可裁剪）：[identity-constraints.md](../design/identity-constraints.md)  
 结构化槽位消息（可选）：[message-protocol.md](../design/message-protocol.md)  
 追溯与 DoD 联动：[traceability-contract.md](../design/traceability-contract.md) · `npm run check:traceability`  
 运行时建议目录：`.agents/messages/<roster-id>/`

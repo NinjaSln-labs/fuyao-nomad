@@ -39,6 +39,11 @@
           "items": { "type": "string" },
           "description": "可验收信号（可链 DoD checklist id）"
         },
+        "identity_constraints": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "从 intent 保留的身份约束（不可裁剪）；见 identity-constraints.md"
+        },
         "risks": {
           "type": "array",
           "items": { "type": "string" }

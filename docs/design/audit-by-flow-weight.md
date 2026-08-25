@@ -89,8 +89,21 @@ audit:
 | 三层层文档审计 | 设计审计重端启用 |
 | — | 不用 R1/R2/R3 作默认反指标；用 [anti-metrics-重.yaml](../templates/anti-metrics-重.yaml) 自定义 |
 
+## 身份约束（不可裁剪）
+
+审计**不得只对照已可能漂移的规格正文**。须同时核对：
+
+1. `plan-progress.intent` 原文  
+2. `identity_constraints[]`（若有）— phrase 是否仍在交付物中成立  
+3. DoD `identity_constraints_held`
+
+未满足 → `verdict: blocked`，写入 `progress.blockers`（或按 `enforcement: abolish` 建议废除），**不得**因「规格已改成不依赖 X」而判 pass。
+
+见 [identity-constraints.md](./identity-constraints.md)。
+
 ## V1 验收
 
 - [x] `中` flow_weight 示例含三类审计各至少 1 条检查项（`verification-中.yaml`）
 - [x] 里程碑可表达 `audit_gate`（`plan-progress.example.yaml` · `m-design-audit`）
 - [x] 与 verification 模板并列，不重复「测试已通过」与「代码质量审计」职责
+- [x] 身份约束对照规则写入本文件（v0.16）
