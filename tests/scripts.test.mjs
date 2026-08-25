@@ -8,6 +8,12 @@ import { fileURLToPath } from "node:url";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 function run(cmd, args, cwd = ROOT) {
+  // Cross-platform npm: bare "npm" / "npm.cmd" fail under Node 24 on Windows
+  // (ENOENT / EINVAL). Invoke npm-cli.js with the same node binary instead.
+  if (cmd === "npm") {
+    const npmCli = join(dirname(process.execPath), "node_modules", "npm", "bin", "npm-cli.js");
+    return spawnSync(process.execPath, [npmCli, ...args], { cwd, encoding: "utf8" });
+  }
   return spawnSync(cmd, args, { cwd, encoding: "utf8" });
 }
 
