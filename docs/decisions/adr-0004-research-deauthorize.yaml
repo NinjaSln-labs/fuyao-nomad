@@ -1,0 +1,16 @@
+# ADR-0004 · 竞品快照去权威化
+
+flow_weight: 中
+
+adr:
+  title: 竞品/调研快照不自动升格为产品 scope
+  status: accepted
+  context: |
+    调研文档易被误当作需求权威；BMAD 式「PRD 最高权威」不符合扶摇「DDD + 意图/任务链」主轴。
+  decision: |
+    docs/research 快照为去权威化参考；升格须经问题陈述 / 规格 / ADR 显式决策。
+    PRD 是重端可选产物模板，非框架全局权威。
+  consequences:
+    - 降低「调研即 scope」漂移
+    - Builder 须显式写决策与规格
+    - 与 delivery-model 去权威化规则一致

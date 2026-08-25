@@ -1,0 +1,26 @@
+# 问题陈述模板 · flow_weight=中
+# 权威产品叙述仍见 docs/product/problem-statement.md；本文件供项目实例化。
+
+flow_weight: 中
+
+problem_statement:
+  title: ""
+  for_whom:
+    - Agent Builder
+    - 小团队
+    - 单人（可选）
+  doing: |
+    用多角色 agent 团队完成真实工程/产品工作（而非单体助手）。
+  but:
+    - 单体优先，协作非一等公民
+    - 工作流绑死某一 harness
+    - 流程过重或过轻
+  because:
+    - harness 会变，团队定义须可迁移
+    - 复杂任务需要 DDD 底座与可调 flow_weight
+  non_goals:
+    - 不做 harness / 不做单体 AI 员工产品
+  success:
+    - 同一套 roster + DoD 可在至少一种 harness 上跑通调研→规格链
+  notes: |
+    竞品快照去权威化；升格须 ADR / 规格显式决策。

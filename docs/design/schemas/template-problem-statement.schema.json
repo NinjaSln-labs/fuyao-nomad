@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-problem-statement/v0",
+  "title": "Fuyao Nomad Problem Statement Template",
+  "type": "object",
+  "required": ["flow_weight", "problem_statement"],
+  "additionalProperties": false,
+  "properties": {
+    "flow_weight": { "type": "string", "minLength": 1 },
+    "problem_statement": {
+      "type": "object",
+      "required": ["for_whom", "doing", "but", "because", "success"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string" },
+        "for_whom": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" },
+          "description": "受众优先级（Builder / 小团队 / 单人等）"
+        },
+        "doing": { "type": "string", "description": "当前在做什么" },
+        "but": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" },
+          "description": "痛点列表"
+        },
+        "because": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" },
+          "description": "根因 / 约束"
+        },
+        "non_goals": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "success": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" },
+          "description": "成功时可见信号"
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

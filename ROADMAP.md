@@ -4,6 +4,11 @@
 
 ## 已完成
 
+### v0.12.0（2026-08-25）
+
+- ADR 回填 · decisions 索引 · `validate` 扫描 decisions
+- 问题陈述（中）· PRD-lite（重）模板 + 示例链
+
 ### v0.11.0（2026-08-25）
 
 - 六档 DoD `plan_refs` 铺齐
@@ -11,34 +16,9 @@
 
 ### v0.10.0（2026-08-25）
 
-- roster `model_policy` · 多 harness 统一解析优先级
-- `install:cursor-agents --roster`
+- roster `model_policy` · `install:cursor-agents --roster`
 
-### v0.9.0（2026-08-25）
-
-- 编排导出映射契约 · [export-orchestration-mapping.md](docs/design/export-orchestration-mapping.md)
-- LangGraph / CrewAI Flow 薄适配 POC（MAPPING · mapping.example · 角色片段）
-- 示例 · [orchestration-export-mapping.md](docs/product/examples/orchestration-export-mapping.md)
-
-### v0.8.0（2026-08-23）
-
-- 追溯链 schema · [traceability-contract.md](docs/design/traceability-contract.md)
-- 计划↔DoD 双向 `plan_refs` · dogfood 示例
-- `check:traceability`（本地 · 未入 CI）
-
-### v0.7.0（2026-08-23）
-
-- team-pack `pack_revision` · `fork` 元数据
-- roster `model_hint` · Cursor `model_hints` 安装
-- 治理模板：ADR · stage · commit-policy
-- 调研→规格→实现 dogfood 链
-
-### v0.6.0（2026-08-22）
-
-- progress · auditor harness 片段
-- `active_work_item_ids` 争用联动
-
-### v0.5.0 及更早
+### v0.9.0 及更早
 
 见 [CHANGELOG.md](CHANGELOG.md)
 
@@ -46,16 +26,20 @@
 
 | 优先级 | 主题 | 状态 |
 |--------|------|------|
-| P1 | 计划↔DoD 联动示例深化 · 追溯链 | ✅ v0.8.0 |
-| P2 | LangGraph / CrewAI Flow 导出映射 POC | ✅ v0.9.0 |
-| 可选 | roster 级 `model_policy` | ✅ v0.10.0 |
-| 可选 | 其余 flow_weight DoD `plan_refs` 铺开 | ✅ v0.11.0 |
+| P1 | 治理可检索 + 产物模板 | ✅ v0.12.0 |
+| 候选 | 反指标模板 · skills 绑定深化 | v0.13 |
 
 ## 里程碑
 
 ```
-v0.9.0 ✅ → v0.10.0 ✅ → v0.11.0 ✅ DoD plan_refs 六档
+v0.11.0 ✅ → v0.12.0 ✅ 治理可检索 + 产物模板 → v0.13 候选
 ```
+
+## 不做
+
+- 编排引擎 / 新 harness runtime
+- `check:traceability` 入 CI
+- 团队包市场 · Jira/Linear · Eval 三门禁
 
 ## 原则
 

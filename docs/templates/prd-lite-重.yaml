@@ -1,0 +1,25 @@
+# PRD-lite 模板 · flow_weight=重
+# 重端可选产物；非框架全局权威（见 delivery-model · ADR-0004）。
+
+flow_weight: 重
+
+prd:
+  title: ""
+  intent: ""
+  problem_ref: docs/templates/problem-statement-中.yaml
+  users:
+    - Builder
+  scope_in:
+    - 本里程碑必须交付的能力
+  scope_out:
+    - 明确不做的项（含 harness / 编排引擎等框架非目标）
+  acceptance:
+    - 与 DoD checklist 可对齐的可观察信号
+  risks:
+    - 范围漂移
+  plan_refs:
+    milestone_ids: [m-spec]
+    work_item_ids: [wi-spec]
+  authority_note: |
+    本 PRD-lite 为重端产物之一，不是全局最高权威。
+    冲突时以 ADR、领域模型与 plan.intent / 工作项为准；调研快照不自动升格。

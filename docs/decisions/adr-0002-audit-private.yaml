@@ -1,0 +1,17 @@
+# ADR-0002 · 审计报告本地私有
+
+flow_weight: 中
+
+adr:
+  title: 审计报告本地私有，不入公开仓库
+  status: accepted
+  context: |
+    发版审计含项目内部 findings 与分数；公开仓只需契约与规则，避免噪声与敏感过程细节外泄。
+  decision: |
+    公开：docs/audit/README.md · audit-record.schema.json · audit-by-flow-weight 规则。
+    私有：.agents/audit/*.md · *.audit.yaml（gitignore）。
+    发版前本地审计 100/100 仍为维护者门禁，但不强制把报告入库。
+  consequences:
+    - 开源边界清晰
+    - 新维护者需向既有维护者索取历史审计或自建
+    - CI 不依赖私有审计文件

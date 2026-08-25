@@ -1,7 +1,14 @@
 # 架构决策记录（ADR）
 
-本目录记录关键设计决策。
+本目录存放**已接受/进行中**的决策 YAML（与 [adr-中 模板](../templates/adr-中.yaml) 同 schema）。
 
-| ADR | 标题 | 状态 |
-|-----|------|------|
-| — | 待补充 | — |
+校验：`npm run validate`（扫描本目录 `adr-*.yaml`）。
+
+| ADR | 文件 | 标题 | 状态 |
+|-----|------|------|------|
+| 0001 | [adr-0001-no-harness.yaml](./adr-0001-no-harness.yaml) | 不做 harness，不实现编排 runtime | accepted |
+| 0002 | [adr-0002-audit-private.yaml](./adr-0002-audit-private.yaml) | 审计报告本地私有 | accepted |
+| 0003 | [adr-0003-traceability-not-in-ci.yaml](./adr-0003-traceability-not-in-ci.yaml) | check:traceability 不入 CI | accepted |
+| 0004 | [adr-0004-research-deauthorize.yaml](./adr-0004-research-deauthorize.yaml) | 竞品快照去权威化 | accepted |
+
+新增：复制模板 → `adr-NNNN-slug.yaml` → 更新本表 → `npm run validate`。

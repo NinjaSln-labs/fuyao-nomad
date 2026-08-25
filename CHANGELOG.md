@@ -2,6 +2,20 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.12.0] - 2026-08-25
+
+### Added
+
+- ADR 回填：`docs/decisions/adr-0001`–`0004` + 索引 README
+- `validate` 扫描 `docs/decisions/adr-*.yaml`
+- 问题陈述模板 `problem-statement-中.yaml` + schema
+- PRD-lite 模板 `prd-lite-重.yaml` + schema（重端可选 · 非全局权威）
+- 示例链 [problem-prd-chain.md](docs/product/examples/problem-prd-chain.md)
+
+### Changed
+
+- ROADMAP / post-v01：v0.12 主题落地；v0.13 候选（反指标 · skills）
+
 ## [0.11.0] - 2026-08-25
 
 ### Added

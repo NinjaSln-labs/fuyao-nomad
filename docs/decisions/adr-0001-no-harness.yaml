@@ -1,0 +1,18 @@
+# ADR-0001 · 不做 harness / 不实现编排引擎
+
+flow_weight: 中
+
+adr:
+  title: 不做 harness，不实现编排 runtime
+  status: accepted
+  context: |
+    竞品在 IDE / Python 编排层已强；扶摇定位是团队层规格。
+    若自建 harness 或内置 LangGraph/CrewAI 级引擎，将与定位冲突并拖垮可移植性。
+  decision: |
+    harness/ 仅薄适配（映射表 + 片段 + 可选安装脚本）。
+    LangGraph / CrewAI 只做导出映射文档，不发布可运行编排引擎。
+    LLM 调用留在 harness / 用户 runtime。
+  consequences:
+    - 同一 roster 可换 Cursor / CLI / OpenHands / 导出映射
+    - 不与 CrewAI/LangGraph 竞争 runtime 份额
+    - 用户须自备或挂载外部运行时

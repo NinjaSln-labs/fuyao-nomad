@@ -1,0 +1,18 @@
+# ADR-0003 · check:traceability 不入 CI
+
+flow_weight: 中
+
+adr:
+  title: check:traceability 仅本地 / npm test，不入 CI 门禁
+  status: accepted
+  context: |
+    追溯与计划↔DoD 联动在 dogfood 与本地校验已覆盖；CI 已含 validate/test/contention/install-check。
+    将 traceability 升为 CI 硬门会迫使所有 fork 立即写满 domain_concepts，过早加重轻端用户。
+  decision: |
+    npm run check:traceability 保持 advisory 默认；--strict 用于 dogfood / 本地。
+    GitHub Actions 不增加 check:traceability 步骤。
+    npm test 可继续包含 advisory/strict 用例。
+  consequences:
+    - 轻端仓库不被追溯字段卡住
+    - 维护者改 plan/dod 联动时须自觉跑本地检查
+    - 文档须标明「未入 CI」以免误判

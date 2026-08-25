@@ -1,4 +1,5 @@
 # ADR 模板 · flow_weight=中
+# 已接受决策记录放在 docs/decisions/adr-NNNN-*.yaml
 
 flow_weight: 中
 

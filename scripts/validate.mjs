@@ -31,6 +31,8 @@ const validators = {
   audit: ajv.compile(loadSchema("audit-record.schema.json")),
   pack: ajv.compile(loadSchema("team-pack.schema.json")),
   message: ajv.compile(loadSchema("message.schema.json")),
+  problem_statement: ajv.compile(loadSchema("template-problem-statement.schema.json")),
+  prd_lite: ajv.compile(loadSchema("template-prd-lite.schema.json")),
 };
 
 function parseYaml(path) {
@@ -58,9 +60,11 @@ function classifyTemplate(name) {
   if (name.startsWith("dod-")) return "dod";
   if (name.startsWith("verification-")) return "verification";
   if (name.startsWith("ddd-gate-")) return "ddd_gate";
-  if (name.startsWith("adr-")) return "adr";
+  if (name.startsWith("adr-") || name.startsWith("ADR-")) return "adr";
   if (name.startsWith("stage-")) return "stage";
   if (name.startsWith("commit-policy-")) return "commit_policy";
+  if (name.startsWith("problem-statement-")) return "problem_statement";
+  if (name.startsWith("prd-lite-")) return "prd_lite";
   return null;
 }
 
@@ -145,6 +149,12 @@ if (args[0] === "--path" && args[1]) {
   const tpl = validateDir(join(ROOT, "docs/templates"), (n) => n !== "README.md");
   passed += tpl.passed;
   failed += tpl.failed;
+
+  const decisions = validateDir(join(ROOT, "docs/decisions"), (n) =>
+    n !== "README.md" && (n.startsWith("adr-") || n.startsWith("ADR-")),
+  );
+  passed += decisions.passed;
+  failed += decisions.failed;
 
   const packsDir = join(ROOT, "packs");
   if (existsSync(packsDir)) {
