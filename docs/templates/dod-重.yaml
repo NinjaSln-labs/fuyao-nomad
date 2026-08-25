@@ -1,4 +1,5 @@
 # DoD 模板 · flow_weight=重
+# plan_refs：重端里程碑+工作项双向（示例 id，项目可替换）
 
 flow_weight: 重
 
@@ -13,14 +14,32 @@ dod:
   checklist:
     - id: trace_matrix_complete
       required: true
+      plan_refs:
+        milestone_ids: [m-spec, m-impl]
+        work_item_ids: [wi-research, wi-spec, wi-impl]
     - id: design_audit_pass
       required: true
+      plan_refs:
+        milestone_ids: [m-spec]
+        work_item_ids: [wi-spec]
     - id: implementation_audit_pass
       required: true
+      plan_refs:
+        milestone_ids: [m-impl]
+        work_item_ids: [wi-impl]
     - id: code_quality_audit_pass
       required: true
+      plan_refs:
+        milestone_ids: [m-impl]
+        work_item_ids: [wi-impl]
     - id: verifier_signoff
       required: true
       description: verifier 或 auditor 槽位复核
+      plan_refs:
+        milestone_ids: [m-impl]
+        work_item_ids: [wi-impl]
     - id: gate_confirm_resolved
       required: true
+      plan_refs:
+        milestone_ids: [m-spec, m-impl]
+        work_item_ids: [wi-spec, wi-impl]

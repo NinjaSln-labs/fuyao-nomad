@@ -2,6 +2,21 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.11.0] - 2026-08-25
+
+### Added
+
+- 六档 DoD 模板均含 `checklist[].plan_refs`（轻 · 轻中 · 中 · 中重 · 重 · 全流程）
+- 追溯契约轻/重端表补齐六档联动说明
+
+### Fixed
+
+- Windows 下 `validate` 用 `basename` 识别模板（此前路径含 `\` 导致模板被 skip）
+
+### Changed
+
+- `docs/templates/README` · pack `dod.yaml` 注释对齐
+
 ## [0.10.0] - 2026-08-25
 
 ### Added

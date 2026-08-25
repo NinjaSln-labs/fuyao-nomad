@@ -1,4 +1,5 @@
 # DoD 模板 · flow_weight=全流程
+# plan_refs：全流程端端到端双向（示例 id，项目可替换）
 
 flow_weight: 全流程
 
@@ -12,12 +13,26 @@ dod:
   checklist:
     - id: doc_set_complete
       required: true
+      plan_refs:
+        milestone_ids: [m-spec, m-impl, m-release]
+        work_item_ids: [wi-research, wi-spec, wi-impl]
     - id: trace_end_to_end
       required: true
+      plan_refs:
+        milestone_ids: [m-spec, m-impl, m-release]
+        work_item_ids: [wi-research, wi-spec, wi-impl]
     - id: all_audit_gates_pass
       required: true
+      plan_refs:
+        milestone_ids: [m-spec, m-impl, m-release]
     - id: explicit_authorization_gates
       required: true
+      plan_refs:
+        milestone_ids: [m-release]
+        work_item_ids: [wi-impl]
     - id: optional_modules_declared
       required: true
       description: 对抗/边界等可选模块是否启用已声明
+      plan_refs:
+        milestone_ids: [m-release]
+        work_item_ids: [wi-impl]

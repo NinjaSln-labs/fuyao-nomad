@@ -3,7 +3,7 @@
  * Validate rosters, plan-progress, and docs/templates against JSON schemas.
  */
 import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
-import { join, dirname, isAbsolute } from "node:path";
+import { join, dirname, isAbsolute, basename } from "node:path";
 import { fileURLToPath } from "node:url";
 import YAML from "yaml";
 import Ajv2020 from "ajv/dist/2020.js";
@@ -65,7 +65,7 @@ function classifyTemplate(name) {
 }
 
 function validateFile(path, labelOverride) {
-  const name = path.split("/").pop();
+  const name = basename(path);
   const data = parseYaml(path);
   let kind = labelOverride;
   if (!kind) {

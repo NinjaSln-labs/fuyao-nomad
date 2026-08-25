@@ -1,4 +1,5 @@
 # DoD 模板 · flow_weight=轻中
+# plan_refs：轻中端示例 id（项目可替换）
 
 flow_weight: 轻中
 
@@ -11,8 +12,17 @@ dod:
   checklist:
     - id: intent_clear
       required: true
+      plan_refs:
+        milestone_ids: [m-done]
+        work_item_ids: [wi-main]
     - id: handoff_snippet_updated
       required: true
+      plan_refs:
+        milestone_ids: [m-done]
+        work_item_ids: [wi-main]
     - id: smoke_verified
       required: true
       description: 变更路径 smoke 或可读性自检
+      plan_refs:
+        milestone_ids: [m-done]
+        work_item_ids: [wi-main]

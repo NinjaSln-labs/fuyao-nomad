@@ -23,6 +23,8 @@
 
 同一 `flow_weight` 下三文件一起使用。
 
+DoD `checklist[].plan_refs`（v0.8+，**六档已齐** v0.11）：与 plan-progress 里程碑/工作项双向联动；模板内 id 为**示例**，项目替换为自身 plan id。见 [traceability-contract.md](../design/traceability-contract.md)。
+
 ## 设计参考
 
 - [verification-by-flow-weight.md](../design/verification-by-flow-weight.md)

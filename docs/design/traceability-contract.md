@@ -64,9 +64,15 @@ dod:
 
 | 重量 | 追溯 | 计划↔DoD |
 |------|------|----------|
-| **轻** | 仅 `intent` + `work_items` | 口头/模板默认 checklist，可不写 id 联动 |
-| **中** | `domain_concepts` + 部分 `links` | 里程碑级 `dod_checklist_ids` |
-| **重** | 全链 + 多源 `source` | 里程碑 + 工作项双向 `plan_refs` |
+| **轻** | 仅 `intent` + `work_items` | checklist 可带轻量 `plan_refs`（工作项级） |
+| **轻中** | 同上 + 可选里程碑 | 里程碑 + 工作项示例联动 |
+| **中** | `domain_concepts` + 部分 `links` | 里程碑级 `dod_checklist_ids` + DoD `plan_refs` |
+| **中重** | 同上 | 双向 `plan_refs` + 集成风险项 |
+| **重** | 全链 + 多源 `source` | 里程碑 + 工作项双向；分层审计 checklist |
+| **全流程** | 全链 + 文档齐套 | 端到端 `plan_refs`；授权门与可选模块声明 |
+
+六档 DoD 模板均已提供 `plan_refs` 示例字段（v0.11）；轻端仍允许省略，但官方模板默认写出以便 dogfood / 校验。
+
 
 ## 校验
 
@@ -85,3 +91,4 @@ npm run check:traceability -- --project . --strict # 交叉引用须一致
 
 - [plan-dod-traceability-chain.md](../product/examples/plan-dod-traceability-chain.md)
 - [plan-research-spec-impl.example.yaml](../../agents/examples/plan-research-spec-impl.example.yaml)
+- 六档 DoD：`docs/templates/dod-*.yaml`（均含 `plan_refs` 示例）

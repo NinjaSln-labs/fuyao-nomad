@@ -4,6 +4,11 @@
 
 ## 已完成
 
+### v0.11.0（2026-08-25）
+
+- 六档 DoD `plan_refs` 铺齐
+- `validate` Windows 模板识别修复
+
 ### v0.10.0（2026-08-25）
 
 - roster `model_policy` · 多 harness 统一解析优先级
@@ -44,12 +49,12 @@
 | P1 | 计划↔DoD 联动示例深化 · 追溯链 | ✅ v0.8.0 |
 | P2 | LangGraph / CrewAI Flow 导出映射 POC | ✅ v0.9.0 |
 | 可选 | roster 级 `model_policy` | ✅ v0.10.0 |
-| 可选 | 其余 flow_weight DoD `plan_refs` 铺开 | 待办 |
+| 可选 | 其余 flow_weight DoD `plan_refs` 铺开 | ✅ v0.11.0 |
 
 ## 里程碑
 
 ```
-v0.8.0 ✅ → v0.9.0 ✅ → v0.10.0 ✅ model_policy
+v0.9.0 ✅ → v0.10.0 ✅ → v0.11.0 ✅ DoD plan_refs 六档
 ```
 
 ## 原则

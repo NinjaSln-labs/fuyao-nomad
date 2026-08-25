@@ -1,5 +1,6 @@
 # DoD 模板 · flow_weight=中
 # 配对：verification-中.yaml · ddd-gate-中.yaml
+# plan_refs：示例 id 对齐 dogfood plan-research-spec-impl（项目可替换）
 
 flow_weight: 中
 
