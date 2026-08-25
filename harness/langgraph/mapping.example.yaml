@@ -1,0 +1,20 @@
+# 槽位 id → LangGraph node 名（示意）
+
+roster_id: minimal-research-to-spec
+
+mappings:
+  research: ResearchNode
+  spec: SpecNode
+  progress: ProgressNode
+  auditor: AuditorNode
+
+# 拓扑提示（由用户在 StateGraph 中实现；扶摇只声明语义）
+topology:
+  mode: serial
+  edges:
+    - [research, spec]
+  orthogonal:
+    - progress
+    - auditor
+
+# LangGraph 图代码、checkpoint、LLM 由用户/runtime 实现；扶摇只定义映射语义。

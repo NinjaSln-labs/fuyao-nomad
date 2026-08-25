@@ -223,7 +223,7 @@
 | **P0 框架提供** | Cursor 适配 POC 路径（`.cursor/agents/` 映射） |
 | **P1** | CLI 适配；OpenHands delegation 映射说明 |
 | **P1** | 团队包导入/导出（同 spec 换映射表） |
-| **P2** | LangGraph / CrewAI Flow **导出映射**（非内置引擎） |
+| **P2** | LangGraph / CrewAI Flow **导出映射**（非内置引擎）✅ v0.9 文档 POC |
 | **不做** | 构建 harness、IDE、沙箱 runtime |
 | **竞品差异** | 全行业 harness 绑定 → 扶摇 **spec 不变，只换映射** |
 

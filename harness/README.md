@@ -16,5 +16,9 @@
 | [cursor/](./cursor/) | Cursor IDE | POC + `install:cursor-agents` |
 | [cli/](./cli/) | 命令行 | v0.3 文档 POC |
 | [openhands/](./openhands/) | OpenHands | v0.4 文档 POC |
+| [langgraph/](./langgraph/) | LangGraph 编排导出 | v0.9 文档 POC |
+| [crewai/](./crewai/) | CrewAI Flow / Crew 导出 | v0.9 文档 POC |
 
 换 harness 只换映射表，不换 roster / pack。
+
+编排导出公共契约：[export-orchestration-mapping.md](../docs/design/export-orchestration-mapping.md)。

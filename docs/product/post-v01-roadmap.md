@@ -1,5 +1,13 @@
 # 后 v0.1 路线
 
+## v0.9.0 ✅（2026-08-25）
+
+| 项 | 状态 |
+|----|------|
+| 编排导出映射契约 | ✅ |
+| LangGraph 薄适配 POC | ✅ 文档 + node 片段 |
+| CrewAI Flow/Crew 薄适配 POC | ✅ 文档 + agent 片段 |
+
 ## v0.8.0 ✅（2026-08-23）
 
 | 项 | 状态 |
@@ -24,13 +32,13 @@
 | progress · auditor 片段 | ✅ |
 | active_work_item_ids 争用 | ✅ |
 
-## v0.8+ 候选
+## v0.9+ 候选
 
 | P | 主题 | 状态 |
 |---|------|------|
-| P1 | 追溯链 · 计划↔DoD 联动示例 | ✅ v0.8.0 |
-| P2 | LangGraph / CrewAI 导出 POC | 待办 |
+| 可选 | roster 级 `model_policy` 深化 | 待办 |
+| 可选 | 其余 flow_weight DoD `plan_refs` 铺开 | 待办 |
 
 ## 纪律
 
-不做 harness · 技能不同步 harness · 审计 `.agents/audit/` 本地私有
+不做 harness · 技能不同步 harness · 审计 `.agents/audit/` 本地私有 · **不做** LangGraph/CrewAI 引擎

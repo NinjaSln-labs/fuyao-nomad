@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v0.8.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.8.0)
+[![Release](https://img.shields.io/badge/Release-v0.9.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.9.0)
 
 **[English](README.en.md)** | 中文
 
@@ -19,7 +19,7 @@
 
 **扶摇（fú yáo）**——「扶摇」= 旋风、上举之力；出处：《庄子·逍遥游》「抟**扶摇**而上者九万里」。**Nomad** = 团队规格可迁移，不绑单一 harness。
 
-开源 **Agent 团队框架** — 定义多角色如何协作、按轻-重流程重量交付，通过薄适配挂到 Cursor / CLI / OpenHands 等运行时（**不替代 harness**）。
+开源 **Agent 团队框架** — 定义多角色如何协作、按轻-重流程重量交付，通过薄适配挂到 Cursor / CLI / OpenHands / LangGraph / CrewAI 等（**不替代 harness / 编排引擎**）。
 
 - **一句话目标**：让 Builder、小团队、单人用同一套 **组队协议**（编制、交接、计划进度、DoD/验证/DDD 门）完成真实工程与产品工作，而非单体 prompt 堆砌。
 - **全球定位对位**：AI 员工产品卖「强个体」；编排框架卖 runtime API；IDE 内置 agent 偏浅层 subagent — 扶摇卖 **团队层规格 + DDD 底座 + 开源可扩展**。
@@ -34,10 +34,10 @@
 | 产品 / 设计文档 `docs/` | ✅ 定稿（问题陈述 · 北极星 · 能力模型 · 编制协议） |
 | JSON Schema + 六档 `flow_weight` 模板 | ✅ roster · plan-progress · DoD · verification · DDD 门 · audit-record |
 | 团队包 `packs/minimal-research-to-spec` | ✅ pack validate / install |
-| Harness 薄适配 POC | ✅ Cursor（install 脚本）· CLI · OpenHands（文档 + 片段） |
+| Harness 薄适配 POC | ✅ Cursor（install）· CLI · OpenHands · **LangGraph / CrewAI 导出**（文档 + 片段） |
 | 消息协议 + 争用顾问 | ✅ message validate · `check:contention`（territory 重叠 + CI `--strict`） |
 | 校验与测试 | ✅ `validate` 28 项 · `npm test` 9 项 · GitHub Actions |
-| 开源发布 | ✅ **v0.8.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+| 开源发布 | ✅ **v0.9.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
 维护者审计为**本地私有**（`.agents/audit/`，不入库）。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
 
@@ -50,7 +50,7 @@
 | `docs/templates/` | 六档 `flow_weight` 模板（轻 · 轻中 · 中 · 中重 · 重 · 全流程） |
 | `agents/examples/` | minimal-roster · plan-progress · messages 示例 |
 | `packs/` | 官方团队包示例（roster + 模板 + harness 映射 + skills） |
-| `harness/` | Cursor / CLI / OpenHands **薄适配**（非产品核心） |
+| `harness/` | Cursor / CLI / OpenHands / LangGraph / CrewAI **薄适配**（非产品核心） |
 | `skills/` | 可移植技能（**不同步**到 harness 路径） |
 | `scripts/` | `validate` · `pack` · `check:contention` · `install:cursor-agents` |
 | `packages/core/` | Schema 索引 |
@@ -99,7 +99,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ## 路线图
 
-**当前：v0.8.0** — 追溯链 · 计划↔DoD 联动 · `check:traceability`（本地）。
+**当前：v0.9.0** — LangGraph / CrewAI 编排导出映射 POC（文档级）。
 
 | 版本 | 目标 |
 |------|------|
@@ -111,13 +111,14 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 | **v0.6.0** ✅ | harness 齐 · active 争用 |
 | **v0.7.0** ✅ | pack 元数据 · model_hint · 治理模板 · dogfood 链 |
 | **v0.8.0** ✅ | 追溯链 · plan↔DoD · check:traceability |
-| **v0.9.x** | 编排导出 POC |
+| **v0.9.0** ✅ | 编排导出 POC（LangGraph · CrewAI） |
 
 详见 [后 v0.1 路线](docs/product/post-v01-roadmap.md) · [0→1 路径](docs/product/0-1-path.md)
 
 ### 明确不做
 
 - 不做通用 harness / IDE runtime
+- 不做 LangGraph / CrewAI 等编排引擎（仅导出映射）
 - 不预设「官方固定编制」
 - 竞品调研不自动升格产品 scope
 

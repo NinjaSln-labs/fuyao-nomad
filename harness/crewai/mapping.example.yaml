@@ -1,0 +1,21 @@
+# 槽位 id → CrewAI Agent / Flow step 名（示意）
+
+roster_id: minimal-research-to-spec
+
+mappings:
+  research: ResearchAgent
+  spec: SpecAgent
+  progress: ProgressAgent
+  auditor: AuditorAgent
+
+# Flow 拓扑提示（由用户在 CrewAI Flow 中实现；扶摇只声明语义）
+topology:
+  mode: serial
+  flow_steps:
+    - research
+    - spec
+  listeners:
+    - progress
+    - auditor
+
+# Crews / Flows / LLM 由用户/runtime 实现；扶摇只定义映射语义。

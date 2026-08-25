@@ -2,6 +2,19 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.9.0] - 2026-08-25
+
+### Added
+
+- 编排导出映射契约 [export-orchestration-mapping.md](docs/design/export-orchestration-mapping.md)
+- LangGraph 薄适配 POC：`harness/langgraph/`（MAPPING · mapping.example · nodes 片段）
+- CrewAI Flow/Crew 薄适配 POC：`harness/crewai/`（MAPPING · mapping.example · agents 片段）
+- 示例 [orchestration-export-mapping.md](docs/product/examples/orchestration-export-mapping.md)
+
+### Changed
+
+- `harness/README` · ROADMAP · 产品后 v0.1 路线：P2 导出映射勾选完成
+
 ## [0.8.0] - 2026-08-23
 
 ### Added

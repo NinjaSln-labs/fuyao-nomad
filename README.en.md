@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v0.8.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.8.0)
+[![Release](https://img.shields.io/badge/Release-v0.9.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.9.0)
 
 **[中文](README.md)** | English
 
@@ -19,7 +19,7 @@
 
 **Fuyao (fú yáo, "soaring wind")** — from Zhuangzi’s *Free and Easy Wandering*: *"Rising ninety thousand li on the whirlwind."* **Nomad** = portable team specs that do not lock you to one harness.
 
-Open-source **agent team framework** — defines how multi-role teams collaborate and deliver with adjustable process weight (`flow_weight`), mounted via thin adapters onto Cursor / CLI / OpenHands (**does not replace harnesses**).
+Open-source **agent team framework** — defines how multi-role teams collaborate and deliver with adjustable process weight (`flow_weight`), mounted via thin adapters onto Cursor / CLI / OpenHands / LangGraph / CrewAI (**does not replace harnesses or orchestration engines**).
 
 - **One-line goal**: give builders, small teams, and solo developers reusable **team protocols** (roster, handoff, plan/progress, DoD/verification/DDD gates) instead of one-off prompt stacks.
 - **Positioning**: AI-employee products sell a strong individual; orchestration frameworks sell runtime APIs; IDE agents stay shallow — Fuyao sells **team-layer specs + DDD foundation + open extensibility**.
@@ -36,10 +36,10 @@ Open-source **agent team framework** — defines how multi-role teams collaborat
 | Product / design docs `docs/` | ✅ Finalized (problem statement · north star · capability model · composition protocol) |
 | JSON Schema + six `flow_weight` tiers | ✅ roster · plan-progress · DoD · verification · DDD gate · audit-record |
 | Team pack `packs/minimal-research-to-spec` | ✅ pack validate / install |
-| Harness thin adapters | ✅ Cursor (install script) · CLI · OpenHands (docs + snippets) |
+| Harness thin adapters | ✅ Cursor (install) · CLI · OpenHands · **LangGraph / CrewAI export** (docs + snippets) |
 | Message protocol + contention advisory | ✅ message validate · `check:contention` (territory overlap + CI `--strict`) |
-| Validation & tests | ✅ `validate` 24 checks · `npm test` 6 tests · GitHub Actions |
-| Open release | ✅ **v0.8.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+| Validation & tests | ✅ `validate` 28 checks · `npm test` 9 tests · GitHub Actions |
+| Open release | ✅ **v0.9.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
 Maintainer audits are **local only** (`.agents/audit/`, not in repo). Public contract: [docs/audit/README.md](docs/audit/README.md).
 
@@ -52,7 +52,7 @@ Maintainer audits are **local only** (`.agents/audit/`, not in repo). Public con
 | `docs/templates/` | Six `flow_weight` template tiers |
 | `agents/examples/` | minimal-roster · plan-progress · message examples |
 | `packs/` | Official team pack example (roster + templates + harness mapping + skills) |
-| `harness/` | Cursor / CLI / OpenHands **thin adapters** (not core product) |
+| `harness/` | Cursor / CLI / OpenHands / LangGraph / CrewAI **thin adapters** (not core product) |
 | `skills/` | Portable skills (**not** synced to harness paths) |
 | `scripts/` | `validate` · `pack` · `check:contention` · `install:cursor-agents` |
 | `ROADMAP.md` | Version milestones and backlog |
@@ -76,13 +76,14 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ## Roadmap
 
-**Current: v0.8.0** — traceability chain · plan↔DoD linkage · `check:traceability` (local).
+**Current: v0.9.0** — LangGraph / CrewAI orchestration export mapping POC (docs).
 
 See [ROADMAP.md](ROADMAP.md) · [Post-v0.1 plan](docs/product/post-v01-roadmap.md) · [README.md](README.md) (Chinese) for full version table.
 
 ### Non-goals
 
 - No generic harness / IDE runtime
+- No LangGraph / CrewAI engines (export mapping only)
 - No mandatory “official roster”
 - Research snapshots do not auto-expand product scope
 
