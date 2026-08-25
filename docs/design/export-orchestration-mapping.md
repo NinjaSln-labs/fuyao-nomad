@@ -40,7 +40,7 @@ LangGraph   CrewAI Flow
 | `handoff` / messages | `state` 通道字段 | Flow state / task output |
 | `plan-progress` | checkpoint 外挂状态文件路径 | Flow state 引用路径 |
 | `gate_level: confirm` | `interrupt_before` / HITL | human feedback / Flow pause |
-| `model_hint` | node 可配置 model（runtime） | Agent LLM 配置（runtime） |
+| `model_policy` / `model_hint` | node 可配置 model（runtime） | Agent LLM 配置（runtime） |
 | `check:contention` | **仍在扶摇侧**跑顾问；不进图引擎 | 同左 |
 
 ## 导出产物（建议布局）

@@ -82,9 +82,38 @@
     "harness_mapping_ref": {
       "type": "string",
       "description": "可选：指向 harness 映射文件路径"
+    },
+    "model_policy": {
+      "$ref": "#/$defs/modelPolicy",
+      "description": "团队级模型策略；槽位无 model_hint 时由 harness 按优先级翻译。见 model-harness-contract.md"
     }
   },
   "$defs": {
+    "modelPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "default": {
+          "type": "string",
+          "minLength": 1,
+          "description": "全队默认提示（如 inherit · fast · quality）"
+        },
+        "by_slot_kind": {
+          "type": "object",
+          "additionalProperties": { "type": "string", "minLength": 1 },
+          "description": "按 slot_kind 默认（auditor · progress · verifier · generic）"
+        },
+        "by_slot": {
+          "type": "object",
+          "additionalProperties": { "type": "string", "minLength": 1 },
+          "description": "按槽位 id 默认（弱于 slots[].model_hint）"
+        },
+        "notes": {
+          "type": "string",
+          "description": "人类可读说明；不进 runtime"
+        }
+      }
+    },
     "roleSlot": {
       "type": "object",
       "required": ["id", "purpose"],

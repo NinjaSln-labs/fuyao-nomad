@@ -27,7 +27,8 @@
 | **messages_dir** | 运行时 Slot Message 目录；plan-progress 可选字段 |
 | **Territory（领地）** | work_item 可选路径归属；并行争用见 file-lock-contract |
 | **争用顾问（contention check）** | `npm run check:contention` — territory + active work_items |
-| **model_hint** | 模型策略提示；harness 翻译，见 model-harness-contract.md |
+| **model_hint** | 槽位模型策略提示；harness 翻译 |
+| **model_policy** | 团队级模型策略（default / by_slot_kind / by_slot）；见 model-harness-contract.md |
 | **文件锁契约** | 并行槽位对路径的争用约定；见 file-lock-contract |
 
 ## 边界上下文

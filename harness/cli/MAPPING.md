@@ -28,6 +28,7 @@
 2. 查 `mapping.yaml` 得 runner 名
 3. CLI 编排器按 `orchestration` 顺序或 `parallel_groups` 调用 runner
 4. handoff 载体：`plan-progress.progress.handoff_snippet` 或 message 文件
+5. 模型：读 roster `model_policy` / `model_hint`（优先级见 [model-harness-contract.md](../../docs/design/model-harness-contract.md)）
 
 ## 与 Cursor 差异
 
@@ -35,7 +36,8 @@
 |----|--------|---------|
 | 运行时 | `.cursor/agents/*.md` | 进程/子命令（由用户 CLI 实现） |
 | 并行 | subagent / multitask | 进程池或任务队列 |
-| 安装 | `install:cursor-agents` | **无** — 仅文档与 mapping |
+| 安装 | `install:cursor-agents`（可 `--roster`） | **无** — 仅文档与 mapping |
+| 模型 | 写入 agent `model:` | runner 读有效 hint / 环境变量 |
 
 ## V0.3 验收
 

@@ -1,5 +1,13 @@
 # 后 v0.1 路线
 
+## v0.10.0 ✅（2026-08-25）
+
+| 项 | 状态 |
+|----|------|
+| roster `model_policy` | ✅ |
+| install `--roster` 合并解析 | ✅ |
+| 多 harness 文档对齐 | ✅ |
+
 ## v0.9.0 ✅（2026-08-25）
 
 | 项 | 状态 |
@@ -36,7 +44,7 @@
 
 | P | 主题 | 状态 |
 |---|------|------|
-| 可选 | roster 级 `model_policy` 深化 | 待办 |
+| 可选 | roster 级 `model_policy` 深化 | ✅ v0.10.0 |
 | 可选 | 其余 flow_weight DoD `plan_refs` 铺开 | 待办 |
 
 ## 纪律

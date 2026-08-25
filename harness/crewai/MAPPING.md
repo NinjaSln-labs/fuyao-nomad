@@ -30,6 +30,7 @@
 5. handoff / plan-progress → Flow `state` 字段或外挂 YAML 路径
 6. `gate_level: confirm` → human feedback / Flow pause（HITL）
 7. 争用 · 追溯仍用扶摇脚本：`check:contention` · `check:traceability`
+8. 模型：按 [model-harness-contract.md](../../docs/design/model-harness-contract.md) 解析有效 hint → Agent LLM 配置（**用户实现**）
 
 ## 示意 Flow（serial + 正交）
 

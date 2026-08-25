@@ -26,13 +26,15 @@
 2. 查 `mapping.yaml` 映射到 OpenHands 侧 agent/delegate 配置
 3. handoff：`plan-progress.progress.handoff_snippet` 或 `.agents/messages/`
 4. 并行：遵循 [file-lock-contract.md](../../docs/design/file-lock-contract.md)
+5. 模型：roster `model_policy` / `model_hint` → runtime agent 配置（见 [model-harness-contract.md](../../docs/design/model-harness-contract.md)）
 
 ## 与 Cursor 差异
 
 | 项 | OpenHands POC | Cursor POC |
 |----|---------------|------------|
-| 安装脚本 | **无** | `install:cursor-agents` |
+| 安装脚本 | **无** | `install:cursor-agents`（可 `--roster`） |
 | 运行时 | OpenHands SDK / 服务 | `.cursor/agents/` |
+| 模型 | 用户侧读有效 hint | 安装写入 `model:` |
 
 ## V0.4 验收
 

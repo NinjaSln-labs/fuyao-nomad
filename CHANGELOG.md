@@ -2,6 +2,19 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.10.0] - 2026-08-25
+
+### Added
+
+- roster 级 `model_policy`（`default` · `by_slot_kind` · `by_slot`）· [model-harness-contract.md](docs/design/model-harness-contract.md)
+- `install:cursor-agents --roster`：按优先级合并 mapping / slot / policy
+- 示例与 pack roster 含 `model_policy`
+- 多 harness 映射文档引用统一解析优先级（CLI · OpenHands · LangGraph · CrewAI）
+
+### Changed
+
+- `npm test` 增至 10 项（含 `--roster` model_policy 解析）
+
 ## [0.9.0] - 2026-08-25
 
 ### Added

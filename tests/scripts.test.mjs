@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
-import { mkdtempSync, existsSync, mkdirSync } from "node:fs";
+import { mkdtempSync, existsSync, mkdirSync, readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -26,6 +26,26 @@ test("install --check detects no drift after install", () => {
   run("npm", ["run", "install:cursor-agents", "--", "--project", ROOT]);
   const r = run("npm", ["run", "install:cursor-agents", "--", "--check", "--project", ROOT]);
   assert.equal(r.status, 0, r.stdout + r.stderr);
+});
+
+test("install --roster applies model_policy hints", () => {
+  const r = run("npm", [
+    "run",
+    "install:cursor-agents",
+    "--",
+    "--project",
+    ROOT,
+    "--roster",
+    join(ROOT, "agents/examples/minimal-roster.yaml"),
+  ]);
+  assert.equal(r.status, 0, r.stdout + r.stderr);
+  const research = readFileSync(join(ROOT, ".cursor/agents/research-analyst.md"), "utf8");
+  assert.match(research, /^model:\s*fast$/m);
+  const auditor = readFileSync(join(ROOT, ".cursor/agents/quality-auditor.md"), "utf8");
+  assert.match(auditor, /^model:\s*inherit$/m);
+  // restore mapping-only install so later --check stays green
+  const restore = run("npm", ["run", "install:cursor-agents", "--", "--project", ROOT]);
+  assert.equal(restore.status, 0, restore.stdout + restore.stderr);
 });
 
 test("pack validate minimal-research-to-spec", () => {

@@ -17,6 +17,16 @@ orchestration:
 handoff:
   use_defaults: true
 
+# 团队级模型策略（多 harness 共用；见 model-harness-contract.md）
+model_policy:
+  default: inherit
+  by_slot_kind:
+    auditor: inherit
+    progress: fast
+  by_slot:
+    research: fast
+  notes: "调研 fast；推进 fast；审计跟主模型"
+
 slots:
   - id: research
     purpose: 竞品与问题澄清

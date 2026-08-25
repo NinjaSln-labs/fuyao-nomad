@@ -29,6 +29,7 @@
 4. `orthogonal_slots`（progress · auditor）→ 条件边 / `interrupt_before` / 旁路 node（由用户选型）
 5. handoff / plan-progress → 作为 **外挂状态**（读 `.agents/` 或注入 `state` 字段）；图引擎不替代争用顾问
 6. `gate_level: confirm` → `interrupt_before` 该 node（HITL）
+7. 模型：按 [model-harness-contract.md](../../docs/design/model-harness-contract.md) 解析有效 hint → node / 可配置 model（**用户实现**）
 
 ## 示意拓扑（serial + 正交）
 

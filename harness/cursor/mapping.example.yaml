@@ -8,5 +8,9 @@ mappings:
   progress: progress-keeper
   auditor: quality-auditor
 
+# 可选：覆盖 roster model_policy / model_hint（最高优先）
+# model_hints:
+#   auditor: inherit
+
 # 主 agent 使用项目默认 Agent；或指定：
 # parent: default

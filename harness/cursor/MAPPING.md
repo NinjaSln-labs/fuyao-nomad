@@ -29,7 +29,19 @@
 
 ## 模型（harness）
 
-`model_hint` 与 mapping `model_hints` 由 harness 翻译；见 [model-harness-contract.md](./model-harness-contract.md)。
+解析优先级见 [model-harness-contract.md](../../docs/design/model-harness-contract.md)：
+
+```
+mapping.model_hints > slot.model_hint > model_policy.by_slot
+> model_policy.by_slot_kind > model_policy.default
+```
+
+```bash
+npm run install:cursor-agents -- --project . \
+  --roster agents/examples/minimal-roster.yaml
+```
+
+未传 `--roster` 时仅应用 mapping `model_hints`（与 v0.7 兼容）。
 
 ## 并行
 
@@ -40,3 +52,4 @@
 
 - [x] `minimal-roster.yaml` 可映射到 ≥2 个 `.cursor/agents/*.md`
 - [x] 换映射表不修改 roster 本体
+- [x] `--roster` 合并 `model_policy`（v0.10）
