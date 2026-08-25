@@ -40,7 +40,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 - **不同步到 harness** — 不写 `.cursor/skills`；扶摇不替 IDE 挂载技能
 - **agents** 可经 `install:cursor-agents` 或 `pack:install` 写入 `.cursor/agents/`
 
-见 [skills/README.md](../../skills/README.md) · [team-pack.md](../design/team-pack.md)
+见 [skills-binding.md](../design/skills-binding.md) · [skills/README.md](../../skills/README.md) · [team-pack.md](../design/team-pack.md)
 
 ## 计划与进度
 

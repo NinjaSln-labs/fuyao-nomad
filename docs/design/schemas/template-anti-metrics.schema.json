@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-anti-metrics/v0",
+  "title": "Fuyao Nomad Anti-Metrics Template",
+  "description": "项目/团队包自定义反指标机制。非 Voyage R1/R2/R3；北极星默认反指标可作起点。",
+  "type": "object",
+  "required": ["flow_weight", "anti_metrics"],
+  "additionalProperties": false,
+  "properties": {
+    "flow_weight": { "type": "string", "minLength": 1 },
+    "anti_metrics": {
+      "type": "object",
+      "required": ["enabled", "items"],
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "是否启用反指标门；轻端通常 false"
+        },
+        "purpose": {
+          "type": "string",
+          "description": "本项目为何启用反指标（一句话）"
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "statement", "signal"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "statement": {
+                "type": "string",
+                "description": "应避免的行为或结果（反指标陈述）"
+              },
+              "signal": {
+                "type": "string",
+                "description": "如何判定触碰（可观察信号）"
+              },
+              "remedy": {
+                "type": "string",
+                "description": "触碰后建议动作（降级 / 阻塞 / 仅记录）"
+              },
+              "severity_level": {
+                "type": "string",
+                "enum": ["record", "warn", "block"]
+              },
+              "source": {
+                "type": "string",
+                "description": "来源：framework_default | pack | project"
+              }
+            }
+          }
+        },
+        "exclusions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "明确不采用的外来反指标（如 R1/R2/R3）"
+        },
+        "dod_checklist_ids": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "可选：关联 DoD checklist id（启用时勾选）"
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

@@ -4,6 +4,12 @@
 
 ## 已完成
 
+### v0.13.0（2026-08-25）
+
+- 反指标模板 `anti-metrics-重` + schema
+- skills 引用/绑定指南 [skills-binding.md](docs/design/skills-binding.md)
+- `check:traceability --strict` 成功文案修正
+
 ### v0.12.0（2026-08-25）
 
 - ADR 回填 · decisions 索引 · `validate` 扫描 decisions
@@ -14,11 +20,7 @@
 - 六档 DoD `plan_refs` 铺齐
 - `validate` Windows 模板识别修复
 
-### v0.10.0（2026-08-25）
-
-- roster `model_policy` · `install:cursor-agents --roster`
-
-### v0.9.0 及更早
+### v0.10.0 及更早
 
 见 [CHANGELOG.md](CHANGELOG.md)
 
@@ -26,13 +28,14 @@
 
 | 优先级 | 主题 | 状态 |
 |--------|------|------|
-| P1 | 治理可检索 + 产物模板 | ✅ v0.12.0 |
-| 候选 | 反指标模板 · skills 绑定深化 | v0.13 |
+| P1 | 反指标 · skills 绑定 · strict 文案 | ✅ v0.13.0 |
+| 候选 | 对抗/边界测试可选模块深化 | 远期 |
+| 候选 | CLI / OpenHands 适配深化 | 远期 |
 
 ## 里程碑
 
 ```
-v0.11.0 ✅ → v0.12.0 ✅ 治理可检索 + 产物模板 → v0.13 候选
+v0.12.0 ✅ → v0.13.0 ✅ 反指标 + skills 绑定 → 后续候选
 ```
 
 ## 不做

@@ -1,0 +1,42 @@
+# 反指标模板 · flow_weight=重（可选模块）
+# 机制保留、指标自定义；不用 Voyage R1/R2/R3。
+# 北极星默认反指标见 docs/product/north-star.md — 项目可删改增补。
+
+flow_weight: 重
+
+anti_metrics:
+  enabled: true
+  purpose: |
+    防止交付退化为「过重 ceremony / 写死编制 / harness 渗透 / 单体回退」。
+  exclusions:
+    - Voyage R1/R2/R3（AIOps 专属，不进入扶摇默认）
+  items:
+    - id: ceremony_overweight
+      statement: 小任务也要求满配文档与百波审计
+      signal: 轻/中档任务启用了全流程文档齐套或强制百波审计
+      remedy: 按 flow_weight 缩减；审计深度随重量调节
+      severity_level: block
+      source: framework_default
+    - id: roster_frozen
+      statement: 用户必须接受「官方角色表」才能用
+      signal: 文档或 pack 把示例角色名当作不可删改的标准编制
+      remedy: 删改槽位；示例非本体（编制协议）
+      severity_level: warn
+      source: framework_default
+    - id: harness_bleed
+      statement: 团队核心逻辑依赖某一 IDE 私有 API
+      signal: roster/DoD/技能路径写入 .cursor/skills 或其它 harness 私有目录作为权威源
+      remedy: 权威保留在 agents/packs 与 skills/；harness 仅薄适配
+      severity_level: block
+      source: framework_default
+    - id: mono_agent_regress
+      statement: 实际运行退化为单 agent + 长 prompt
+      signal: 多槽位 roster 未使用；交接与 DoD 被合并进单一超长 system prompt
+      remedy: 恢复槽位边界与 handoff；能力用 capabilities 路径引用
+      severity_level: warn
+      source: framework_default
+  dod_checklist_ids:
+    - anti_metrics_reviewed
+  notes: |
+    轻端可关闭 enabled 或省略本文件。
+    团队包可 fork 本模板并替换 items；勿升格为全局唯一质量门。

@@ -14,6 +14,7 @@ Harness 无关的核心契约与校验。
 | [template-adr.schema.json](../../docs/design/schemas/template-adr.schema.json) | ADR 模板 |
 | [template-problem-statement.schema.json](../../docs/design/schemas/template-problem-statement.schema.json) | 问题陈述模板 |
 | [template-prd-lite.schema.json](../../docs/design/schemas/template-prd-lite.schema.json) | PRD-lite（重端可选） |
+| [template-anti-metrics.schema.json](../../docs/design/schemas/template-anti-metrics.schema.json) | 反指标机制（自定义） |
 | [audit-record.schema.json](../../docs/design/schemas/audit-record.schema.json) | 审计记录 |
 | [message.schema.json](../../docs/design/schemas/message.schema.json) | 槽位消息 |
 | [team-pack.schema.json](../../docs/design/schemas/team-pack.schema.json) | 团队包清单 |

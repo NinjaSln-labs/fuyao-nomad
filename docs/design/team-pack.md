@@ -50,7 +50,8 @@ agents/packs/<pack-id>/
 ```
 
 Roster 内 `harness_mapping_ref` 建议指向包内路径，例如 `harness/cursor/mapping.yaml`。  
-`capabilities` 引用包内技能，例如 `agents/packs/<id>/skills/audit-readonly`。
+`capabilities` 引用包内技能，例如 `agents/packs/<id>/skills/audit-readonly`。  
+绑定细则：[skills-binding.md](./skills-binding.md)。
 
 ## 命令
 

@@ -87,7 +87,7 @@ audit:
 | 发现表（severity、fixed/recorded） | 不默认每波独立 md 文件 |
 | 旋转审计维度 | 重端/全流程可选 |
 | 三层层文档审计 | 设计审计重端启用 |
-| — | 不用 R1/R2/R3 作默认反指标 |
+| — | 不用 R1/R2/R3 作默认反指标；用 [anti-metrics-重.yaml](../templates/anti-metrics-重.yaml) 自定义 |
 
 ## V1 验收
 

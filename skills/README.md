@@ -21,4 +21,13 @@ skills/<skill-name>/
 
 团队包安装（`pack:install`）只复制整包到 `agents/packs/<id>/`（含包内 `skills/`），**仅** Cursor **agents** 经薄适配写入 `.cursor/agents/`。
 
+## 绑定指南（v0.13）
+
+完整说明见 **[skills-binding.md](../docs/design/skills-binding.md)**：
+
+- roster `capabilities` 路径约定
+- `pack.yaml` `skills` 清单
+- 与 agent-skills 类仓库的拷贝/引用方式
+- Builder 检查清单与明确不做项
+
 示例：[audit-readonly/README.md](./audit-readonly/README.md)

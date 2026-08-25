@@ -28,6 +28,12 @@
 | `problem-statement-中.yaml` | 问题陈述实例化（叙述权威仍见 product/problem-statement.md） |
 | `prd-lite-重.yaml` | 重端可选 PRD-lite；**非**全局最高权威 |
 
+## 质量模块（v0.13+）
+
+| 模板 | 说明 |
+|------|------|
+| `anti-metrics-重.yaml` | 反指标机制（自定义指标；非 R1/R2/R3）；轻端可关闭 |
+
 同一 `flow_weight` 下 DoD / verification / ddd-gate 三文件一起使用。
 
 DoD `checklist[].plan_refs`（v0.8+，**六档已齐** v0.11）：与 plan-progress 里程碑/工作项双向联动；模板内 id 为**示例**，项目替换为自身 plan id。见 [traceability-contract.md](../design/traceability-contract.md)。
@@ -36,6 +42,7 @@ DoD `checklist[].plan_refs`（v0.8+，**六档已齐** v0.11）：与 plan-progr
 
 - [verification-by-flow-weight.md](../design/verification-by-flow-weight.md)
 - [audit-by-flow-weight.md](../design/audit-by-flow-weight.md)
+- [skills-binding.md](../design/skills-binding.md)
 - [delivery-model.md](../product/delivery-model.md)
 - [problem-prd-chain.md](../product/examples/problem-prd-chain.md)
 

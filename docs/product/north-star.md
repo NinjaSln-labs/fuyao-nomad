@@ -60,6 +60,8 @@ Agent Builder  →  小团队  →  单人
 | Harness 渗透 | 团队核心逻辑依赖某一 IDE 私有 API |
 | 单体回退 | 实际运行退化为单 agent + 长 prompt |
 
+项目实例化模板：[anti-metrics-重.yaml](../templates/anti-metrics-重.yaml)（可删改增补；不用 R1/R2/R3）。
+
 ## 与竞品差异
 
 > 详见 [竞品快照](../research/2026-08-22-agent-team-landscape.md)。

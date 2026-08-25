@@ -11,13 +11,14 @@
 | **⑤ 开源发布** | LICENSE、README、CHANGELOG | ✅ **v0.1.0** |
 | **⑥ 后 v0.1** | pack · 消息 · 六档 · territory · harness · 争用 · 追溯 · 导出 · model_policy · DoD plan_refs | ✅ **v0.11.0** |
 | **⑦ P1 深化** | 治理可检索（ADR）· 研究/产品产物模板 | ✅ **v0.12.0** |
+| **⑧ 质量/技能 P1** | 反指标模板 · skills 绑定指南 | ✅ **v0.13.0** |
 
 ## 当前落点
 
 | 阶段 | 状态 |
 |------|------|
-| ①–⑦ | ✅ 至 **v0.12.0** |
-| ⑧+ | ▶ v0.13 候选 — 见 [post-v01-roadmap.md](post-v01-roadmap.md) |
+| ①–⑧ | ✅ 至 **v0.13.0** |
+| ⑨+ | ▶ 见 [post-v01-roadmap.md](post-v01-roadmap.md) |
 
 ## 纪律
 

@@ -1,5 +1,13 @@
 # 后 v0.1 路线
 
+## v0.13.0 ✅（2026-08-25）
+
+| 项 | 状态 |
+|----|------|
+| 反指标机制模板（§5 P1） | ✅ `anti-metrics-重` + schema |
+| skills 引用/绑定说明深化（§7 P1） | ✅ [skills-binding.md](../design/skills-binding.md) |
+| `check:traceability --strict` 成功文案 | ✅ |
+
 ## v0.12.0 ✅（2026-08-25）
 
 | 项 | 状态 |
@@ -16,24 +24,16 @@
 | 六档 DoD `plan_refs` | ✅ |
 | validate Windows 模板识别 | ✅ |
 
-## v0.10.0 ✅（2026-08-25）
-
-| 项 | 状态 |
-|----|------|
-| roster `model_policy` | ✅ |
-| install `--roster` | ✅ |
-
 ## 更早
 
 见 [CHANGELOG.md](../../CHANGELOG.md)
 
-## v0.13 候选
+## 后续候选
 
 | P | 主题 | 状态 |
 |---|------|------|
-| 候选 | 反指标机制模板（§5 P1） | 待办 |
-| 候选 | skills 引用/绑定说明深化（§7 P1） | 待办 |
-| 候选 | `check:traceability --strict` 成功文案修正 | 待办 |
+| 候选 | 对抗/边界测试可选模块深化（§5 P1） | 待办 |
+| 候选 | CLI / OpenHands 适配深化 | 待办 |
 
 ## 纪律
 

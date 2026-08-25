@@ -153,7 +153,11 @@ for (const w of result.warnings) console.log(`⚠ ${w}`);
 for (const i of result.issues) console.log(`✗ ${i}`);
 
 if (result.issues.length === 0) {
-  console.log("✓ traceability check passed (advisory)");
+  console.log(
+    args.strict
+      ? "✓ traceability check passed (strict)"
+      : "✓ traceability check passed (advisory)"
+  );
   process.exit(0);
 }
 

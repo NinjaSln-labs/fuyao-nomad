@@ -2,6 +2,22 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.13.0] - 2026-08-25
+
+### Added
+
+- 反指标模板 `anti-metrics-重.yaml` + `template-anti-metrics.schema.json`
+- skills 引用/绑定指南 [skills-binding.md](docs/design/skills-binding.md)
+- 全流程 DoD 可选项 `anti_metrics_reviewed`
+
+### Fixed
+
+- `check:traceability --strict` 成功时输出 `(strict)` 而非误标 `(advisory)`
+
+### Changed
+
+- ROADMAP / post-v01 / 0-1-path：v0.13 落地；后续候选更新
+
 ## [0.12.0] - 2026-08-25
 
 ### Added

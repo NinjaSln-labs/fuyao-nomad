@@ -32,7 +32,13 @@ dod:
         work_item_ids: [wi-impl]
     - id: optional_modules_declared
       required: true
-      description: 对抗/边界等可选模块是否启用已声明
+      description: 对抗/边界/反指标等可选模块是否启用已声明
+      plan_refs:
+        milestone_ids: [m-release]
+        work_item_ids: [wi-impl]
+    - id: anti_metrics_reviewed
+      required: false
+      description: 若启用反指标模块，已按 anti-metrics 模板评审（见 docs/templates/anti-metrics-重.yaml）
       plan_refs:
         milestone_ids: [m-release]
         work_item_ids: [wi-impl]

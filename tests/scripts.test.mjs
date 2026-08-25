@@ -111,6 +111,21 @@ test("check:traceability strict passes on dogfood plan", () => {
     "--strict",
   ]);
   assert.equal(r.status, 0, r.stdout + r.stderr);
+  assert.match(r.stdout, /traceability check passed \(strict\)/);
+});
+
+test("check:traceability advisory success message", () => {
+  const r = run("npm", [
+    "run",
+    "check:traceability",
+    "--",
+    "--project",
+    ROOT,
+    "--plan",
+    join(ROOT, "agents/examples/plan-research-spec-impl.example.yaml"),
+  ]);
+  assert.equal(r.status, 0, r.stdout + r.stderr);
+  assert.match(r.stdout, /traceability check passed \(advisory\)/);
 });
 
 test("pack install to temp project", () => {
