@@ -1,17 +1,18 @@
 #!/usr/bin/env node
 /**
- * Team pack: validate and install portable team bundles.
+ * Team pack: validate, install/import, and export portable team bundles.
  *
  * Usage:
  *   node scripts/pack.mjs validate <pack-dir>
- *   node scripts/pack.mjs install --pack <pack-dir> --project <root>
+ *   node scripts/pack.mjs install|import --pack <pack-dir> --project <root>
+ *   node scripts/pack.mjs export --pack <pack-dir> --out <dir> [--id <new-id>] [--no-fork]
  */
 import {
   cpSync,
   existsSync,
   mkdirSync,
   readFileSync,
-  readdirSync,
+  writeFileSync,
 } from "node:fs";
 import { join, dirname, isAbsolute, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -61,6 +62,11 @@ function resolvePackDir(arg) {
   return isAbsolute(arg) ? arg : resolve(process.cwd(), arg);
 }
 
+function resolveOutDir(arg) {
+  if (!arg) throw new Error("--out <dir> required");
+  return isAbsolute(arg) ? arg : resolve(process.cwd(), arg);
+}
+
 function loadPack(packDir) {
   const manifestPath = join(packDir, "pack.yaml");
   if (!existsSync(manifestPath)) {
@@ -69,6 +75,23 @@ function loadPack(packDir) {
   const manifest = parseYaml(manifestPath);
   validateData(manifest, validators.pack, "pack", manifestPath);
   return { manifest, manifestPath, packDir };
+}
+
+function validateAdapterMapping(packDir, label, mappingRel, agentsOrRunnersDir) {
+  const mapPath = join(packDir, mappingRel);
+  if (!existsSync(mapPath)) throw new Error(`Missing ${label} mapping: ${mapPath}`);
+  console.log(`✓ ${label} mapping: ${mapPath}`);
+  if (!agentsOrRunnersDir) return;
+  const dirPath = join(packDir, agentsOrRunnersDir);
+  if (!existsSync(dirPath)) throw new Error(`Missing ${label} dir: ${dirPath}`);
+  const mappingData = parseYaml(mapPath);
+  for (const name of Object.values(mappingData.mappings ?? {})) {
+    const file = join(dirPath, `${name}.md`);
+    if (!existsSync(file)) {
+      throw new Error(`Missing ${label} fragment: ${file}`);
+    }
+  }
+  console.log(`✓ ${label} fragments: ${dirPath}`);
 }
 
 function validatePackPaths(packDir, manifest) {
@@ -86,21 +109,25 @@ function validatePackPaths(packDir, manifest) {
     console.log(`✓ ${label}: ${p}`);
   }
 
-  if (manifest.harness_adapters?.cursor) {
-    const { mapping, agents_dir } = manifest.harness_adapters.cursor;
-    const mapPath = join(packDir, mapping);
-    if (!existsSync(mapPath)) throw new Error(`Missing cursor mapping: ${mapPath}`);
-    console.log(`✓ cursor mapping: ${mapPath}`);
-    const agentsPath = join(packDir, agents_dir);
-    if (!existsSync(agentsPath)) throw new Error(`Missing agents_dir: ${agentsPath}`);
-    const mappingData = parseYaml(mapPath);
-    for (const agentName of Object.values(mappingData.mappings ?? {})) {
-      const agentFile = join(agentsPath, `${agentName}.md`);
-      if (!existsSync(agentFile)) {
-        throw new Error(`Missing agent file: ${agentFile}`);
-      }
-    }
-    console.log(`✓ cursor agents_dir: ${agentsPath}`);
+  const adapters = manifest.harness_adapters ?? {};
+  if (adapters.cursor) {
+    validateAdapterMapping(
+      packDir,
+      "cursor",
+      adapters.cursor.mapping,
+      adapters.cursor.agents_dir
+    );
+  }
+  if (adapters.cli) {
+    validateAdapterMapping(packDir, "cli", adapters.cli.mapping, adapters.cli.runners_dir);
+  }
+  if (adapters.openhands) {
+    validateAdapterMapping(
+      packDir,
+      "openhands",
+      adapters.openhands.mapping,
+      adapters.openhands.agents_dir
+    );
   }
 
   for (const rel of manifest.skills ?? []) {
@@ -150,6 +177,83 @@ function installPack(packDir, projectRoot) {
   console.log(`\nInstalled pack "${manifest.id}" to ${projectRoot}`);
 }
 
+function exportPack(packDir, outDir, { newId = null, writeFork = true } = {}) {
+  const { manifest, manifestPath } = loadPack(packDir);
+  validatePackPaths(packDir, manifest);
+
+  if (existsSync(outDir)) {
+    const hasContent = existsSync(join(outDir, "pack.yaml"));
+    if (hasContent) {
+      throw new Error(`Refusing to overwrite existing pack at ${outDir}`);
+    }
+  }
+  mkdirSync(outDir, { recursive: true });
+  cpSync(packDir, outDir, { recursive: true });
+
+  const outManifestPath = join(outDir, "pack.yaml");
+  const outManifest = parseYaml(outManifestPath);
+  const upstreamId = manifest.id;
+  const upstreamRevision = manifest.pack_revision ?? "unknown";
+
+  if (newId && newId !== manifest.id) {
+    if (!/^[a-z0-9][a-z0-9-]*$/.test(newId)) {
+      throw new Error(`Invalid --id (expected a-z0-9-): ${newId}`);
+    }
+    outManifest.id = newId;
+    if (writeFork) {
+      outManifest.fork = {
+        upstream_id: upstreamId,
+        upstream_revision: String(upstreamRevision),
+        forked_at: new Date().toISOString(),
+        note: outManifest.fork?.note ?? "exported fork; swap harness mapping as needed",
+      };
+    }
+    outManifest.published_at = new Date().toISOString();
+    writeFileSync(outManifestPath, YAML.stringify(outManifest), "utf8");
+    validateData(outManifest, validators.pack, "pack", outManifestPath);
+    console.log(`✓ rewrote id: ${upstreamId} → ${newId}`);
+    if (writeFork) console.log(`✓ fork metadata → upstream ${upstreamId}@${upstreamRevision}`);
+  } else {
+    console.log(`✓ exported id unchanged: ${manifest.id}`);
+  }
+
+  console.log(`✓ exported pack → ${outDir}`);
+  console.log(`  source manifest: ${manifestPath}`);
+  console.log(`\nNext: npm run pack -- validate ${outDir}`);
+  console.log(`      npm run pack:import -- --pack ${outDir} --project <root>`);
+  console.log(`      (swap harness mapping under harness/<runtime>/; keep roster/templates/skills)`);
+}
+
+function parseInstallArgs(argv) {
+  let packDir = null;
+  let projectRoot = process.cwd();
+  for (let i = 0; i < argv.length; i++) {
+    if (argv[i] === "--pack" && argv[i + 1]) packDir = resolvePackDir(argv[++i]);
+    else if (argv[i] === "--project" && argv[i + 1]) {
+      const p = argv[++i];
+      projectRoot = isAbsolute(p) ? p : resolve(process.cwd(), p);
+    }
+  }
+  if (!packDir) throw new Error("install/import requires --pack <dir>");
+  return { packDir, projectRoot };
+}
+
+function parseExportArgs(argv) {
+  let packDir = null;
+  let outDir = null;
+  let newId = null;
+  let writeFork = true;
+  for (let i = 0; i < argv.length; i++) {
+    if (argv[i] === "--pack" && argv[i + 1]) packDir = resolvePackDir(argv[++i]);
+    else if (argv[i] === "--out" && argv[i + 1]) outDir = resolveOutDir(argv[++i]);
+    else if (argv[i] === "--id" && argv[i + 1]) newId = argv[++i];
+    else if (argv[i] === "--no-fork") writeFork = false;
+  }
+  if (!packDir) throw new Error("export requires --pack <dir>");
+  if (!outDir) throw new Error("export requires --out <dir>");
+  return { packDir, outDir, newId, writeFork };
+}
+
 function parseArgs(argv) {
   const cmd = argv[0];
   if (cmd === "validate") {
@@ -160,18 +264,15 @@ function parseArgs(argv) {
     return;
   }
 
-  if (cmd === "install") {
-    let packDir = null;
-    let projectRoot = process.cwd();
-    for (let i = 1; i < argv.length; i++) {
-      if (argv[i] === "--pack" && argv[i + 1]) packDir = resolvePackDir(argv[++i]);
-      else if (argv[i] === "--project" && argv[i + 1]) {
-        const p = argv[++i];
-        projectRoot = isAbsolute(p) ? p : resolve(process.cwd(), p);
-      }
-    }
-    if (!packDir) throw new Error("install requires --pack <dir>");
+  if (cmd === "install" || cmd === "import") {
+    const { packDir, projectRoot } = parseInstallArgs(argv.slice(1));
     installPack(packDir, projectRoot);
+    return;
+  }
+
+  if (cmd === "export") {
+    const { packDir, outDir, newId, writeFork } = parseExportArgs(argv.slice(1));
+    exportPack(packDir, outDir, { newId, writeFork });
     return;
   }
 
@@ -179,11 +280,14 @@ function parseArgs(argv) {
     console.log(`
 Usage:
   node scripts/pack.mjs validate <pack-dir>
-  node scripts/pack.mjs install --pack <pack-dir> --project <root>
+  node scripts/pack.mjs install|import --pack <pack-dir> --project <root>
+  node scripts/pack.mjs export --pack <pack-dir> --out <dir> [--id <new-id>] [--no-fork]
 
 Examples:
   npm run pack -- validate packs/minimal-research-to-spec
   npm run pack:install -- --pack packs/minimal-research-to-spec --project .
+  npm run pack:export -- --pack packs/minimal-research-to-spec --out .scratch/exported-pack --id my-team-pack
+  npm run pack:import -- --pack .scratch/exported-pack --project .
 `);
     return;
   }

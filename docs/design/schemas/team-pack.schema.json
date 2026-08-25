@@ -66,10 +66,29 @@
     "harness_adapters": {
       "type": "object",
       "additionalProperties": false,
+      "description": "可选薄适配；同 roster 可多套映射，换 harness 只换本块",
       "properties": {
         "cursor": {
           "type": "object",
           "required": ["mapping", "agents_dir"],
+          "additionalProperties": false,
+          "properties": {
+            "mapping": { "type": "string", "minLength": 1 },
+            "agents_dir": { "type": "string", "minLength": 1 }
+          }
+        },
+        "cli": {
+          "type": "object",
+          "required": ["mapping"],
+          "additionalProperties": false,
+          "properties": {
+            "mapping": { "type": "string", "minLength": 1 },
+            "runners_dir": { "type": "string", "minLength": 1 }
+          }
+        },
+        "openhands": {
+          "type": "object",
+          "required": ["mapping"],
           "additionalProperties": false,
           "properties": {
             "mapping": { "type": "string", "minLength": 1 },

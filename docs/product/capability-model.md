@@ -48,7 +48,7 @@
 | **P0 框架提供** | **默认 Handoff 行为** — 使用者未配置自定义规则时仍生效（见 [composition-protocol](../design/composition-protocol.md)） |
 | **P0 框架提供** | 槽位加减、替换、禁用操作契约 |
 | **P0 框架提供** | `flow_weight` 与 roster 绑定声明 |
-| **P1** | 团队包打包/发布格式（`team pack`）、版本与 fork 元数据 |
+| **P1** | 团队包打包/发布格式（`team pack`）、版本与 fork 元数据 ✅ v0.2+ · export/import v0.15 |
 | **P2** | 团队包市场/注册发现（非 V1） |
 | **用户/Builder 提供** | 具体槽位定义、技能绑定；**自定义** `handoff.rules`（可选） |
 | **不做** | 强制使用者填写完整交接规则表；官方固定编制 |
@@ -222,7 +222,7 @@
 | **P0 框架提供** | 团队 spec（roster + handoff + flow_weight）**与 harness 解耦** |
 | **P0 框架提供** | Cursor 适配 POC 路径（`.cursor/agents/` 映射） |
 | **P1** | CLI 适配；OpenHands delegation 映射说明 ✅ v0.14 [cli-openhands-adapter.md](../design/cli-openhands-adapter.md) |
-| **P1** | 团队包导入/导出（同 spec 换映射表） |
+| **P1** | 团队包导入/导出（同 spec 换映射表） ✅ v0.15 [pack-import-export.md](../design/pack-import-export.md) |
 | **P2** | LangGraph / CrewAI Flow **导出映射**（非内置引擎）✅ v0.9 文档 POC |
 | **不做** | 构建 harness、IDE、沙箱 runtime |
 | **竞品差异** | 全行业 harness 绑定 → 扶摇 **spec 不变，只换映射** |

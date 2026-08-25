@@ -54,8 +54,12 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ```bash
 npm run pack -- validate packs/<pack-id>
+npm run pack:export -- --pack packs/<pack-id> --out .scratch/<id> [--id <new-id>]
+npm run pack:import -- --pack .scratch/<id> --project /path/to/project
 npm run pack:install -- --pack packs/<pack-id> --project /path/to/project
 ```
+
+导入/导出与换映射：[pack-import-export.md](../design/pack-import-export.md)
 
 ## 领域与审计
 

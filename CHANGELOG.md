@@ -2,6 +2,19 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.15.0] - 2026-08-25
+
+### Added
+
+- `pack export` / `pack import`（import ≡ install）· fork 元数据（`--id`）
+- 导入/导出指南 [pack-import-export.md](docs/design/pack-import-export.md)
+- `harness_adapters.cli` / `openhands` 可选字段（同 spec 换映射）
+
+### Changed
+
+- team-pack 契约与 packs README / Builder 指南对齐 v0.15
+- ROADMAP / post-v01 / 0-1-path：v0.15 落地
+
 ## [0.14.0] - 2026-08-25
 
 ### Added

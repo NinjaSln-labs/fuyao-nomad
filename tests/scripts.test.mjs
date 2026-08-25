@@ -147,3 +147,39 @@ test("pack install to temp project", () => {
   assert.ok(existsSync(join(tmp, ".cursor/agents/research-analyst.md")));
   assert.ok(!existsSync(join(tmp, ".cursor/skills")));
 });
+
+test("pack export with --id writes fork then import", () => {
+  const scratchBase = join(ROOT, ".scratch");
+  mkdirSync(scratchBase, { recursive: true });
+  const out = mkdtempSync(join(scratchBase, "fuyao-export-"));
+  const exportDir = join(out, "my-fork-pack");
+  const rExport = run("npm", [
+    "run",
+    "pack:export",
+    "--",
+    "--pack",
+    join(ROOT, "packs/minimal-research-to-spec"),
+    "--out",
+    exportDir,
+    "--id",
+    "my-fork-pack",
+  ]);
+  assert.equal(rExport.status, 0, rExport.stdout + rExport.stderr);
+  const manifest = readFileSync(join(exportDir, "pack.yaml"), "utf8");
+  assert.match(manifest, /id:\s*my-fork-pack/);
+  assert.match(manifest, /upstream_id:\s*minimal-research-to-spec/);
+
+  const project = mkdtempSync(join(scratchBase, "fuyao-import-"));
+  const rImport = run("npm", [
+    "run",
+    "pack:import",
+    "--",
+    "--pack",
+    exportDir,
+    "--project",
+    project,
+  ]);
+  assert.equal(rImport.status, 0, rImport.stdout + rImport.stderr);
+  assert.ok(existsSync(join(project, "agents/packs/my-fork-pack/pack.yaml")));
+  assert.ok(existsSync(join(project, ".cursor/agents/research-analyst.md")));
+});

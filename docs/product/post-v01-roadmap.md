@@ -1,5 +1,11 @@
 # 后 v0.1 路线
 
+## v0.15.0 ✅（2026-08-25）
+
+| 项 | 状态 |
+|----|------|
+| 团队包导入/导出（§8 P1） | ✅ `pack export` / `import` · [pack-import-export.md](../design/pack-import-export.md) |
+
 ## v0.14.0 ✅（2026-08-25）
 
 | 项 | 状态 |
@@ -11,18 +17,9 @@
 
 | 项 | 状态 |
 |----|------|
-| 反指标机制模板（§5 P1） | ✅ `anti-metrics-重` + schema |
-| skills 引用/绑定说明深化（§7 P1） | ✅ [skills-binding.md](../design/skills-binding.md) |
+| 反指标机制模板（§5 P1） | ✅ |
+| skills 引用/绑定说明深化（§7 P1） | ✅ |
 | `check:traceability --strict` 成功文案 | ✅ |
-
-## v0.12.0 ✅（2026-08-25）
-
-| 项 | 状态 |
-|----|------|
-| ADR 回填 + decisions 索引 | ✅ |
-| `validate` 扫描 `docs/decisions/` | ✅ |
-| 问题陈述模板（中） | ✅ |
-| PRD-lite 模板（重） | ✅ |
 
 ## 更早
 
@@ -32,9 +29,8 @@
 
 | P | 主题 | 状态 |
 |---|------|------|
-| 候选 | 团队包导入/导出体验深化（§8 P1） | 待办 |
-| 候选 | Eval 三门禁类（§5 P2，高风险可选） | 远期 |
+| P2 | Eval 三门禁类（§5，高风险可选） | 远期 |
 
 ## 纪律
 
-不做 harness · 技能不同步 harness · 审计 `.agents/audit/` 本地私有 · **不做** 编排引擎 · `check:traceability` **不入 CI**
+不做 harness · 技能不同步 harness · 审计 `.agents/audit/` 本地私有 · **不做** 编排引擎 · `check:traceability` **不入 CI** · **不做** 团队包市场

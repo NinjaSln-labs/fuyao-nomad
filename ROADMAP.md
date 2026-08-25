@@ -4,23 +4,21 @@
 
 ## 已完成
 
+### v0.15.0（2026-08-25）
+
+- 团队包 `export` / `import` + fork 元数据
+- 同 spec 换映射指南 [pack-import-export.md](docs/design/pack-import-export.md)
+- `harness_adapters` 支持可选 cli / openhands
+
 ### v0.14.0（2026-08-25）
 
-- 对抗/边界可选模块 `adversarial-boundary-全流程` + schema
-- CLI / OpenHands 适配深化 [cli-openhands-adapter.md](docs/design/cli-openhands-adapter.md)
+- 对抗/边界可选模块 · CLI/OpenHands 适配深化
 
 ### v0.13.0（2026-08-25）
 
-- 反指标模板 `anti-metrics-重` + schema
-- skills 引用/绑定指南 [skills-binding.md](docs/design/skills-binding.md)
-- `check:traceability --strict` 成功文案修正
+- 反指标模板 · skills 绑定 · traceability strict 文案
 
-### v0.12.0（2026-08-25）
-
-- ADR 回填 · decisions 索引 · `validate` 扫描 decisions
-- 问题陈述（中）· PRD-lite（重）模板 + 示例链
-
-### v0.11.0 及更早
+### 更早
 
 见 [CHANGELOG.md](CHANGELOG.md)
 
@@ -28,14 +26,13 @@
 
 | 优先级 | 主题 | 状态 |
 |--------|------|------|
-| P1 | 对抗/边界 · CLI/OpenHands 深化 | ✅ v0.14.0 |
-| 候选 | 团队包导入/导出体验深化 | 远期 |
+| P1 | 团队包导入/导出 | ✅ v0.15.0 |
 | 候选 | Eval 三门禁（高风险可选） | P2 / 远期 |
 
 ## 里程碑
 
 ```
-v0.13.0 ✅ → v0.14.0 ✅ 对抗/边界 + CLI/OpenHands → 后续候选
+v0.14.0 ✅ → v0.15.0 ✅ 团队包 import/export → 后续候选
 ```
 
 ## 不做

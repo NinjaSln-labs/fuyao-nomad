@@ -1,17 +1,18 @@
 # 团队包（Team Pack）
 
-> **状态：③ 设计 · v0.2 草案**  
-> 聚合：[domain-language.md](./domain-language.md) · **TeamPack**
+> **状态：③ 设计 · v0.15**  
+> 聚合：[domain-language.md](./domain-language.md) · **TeamPack**  
+> 导入/导出：[pack-import-export.md](./pack-import-export.md)
 
 ## 是什么
 
-**团队包** = 可发布、可安装的一整套团队规格，.harness 无关核心 + 可选薄适配：
+**团队包** = 可发布、可安装的一整套团队规格，harness 无关核心 + 可选薄适配：
 
 ```
 pack.yaml          # 清单（本契约）
 roster.yaml        # 团队实例
 templates/         # 与 flow_weight 绑定的 dod · verification · ddd_gate
-harness/cursor/    # 可选：mapping + agents
+harness/<runtime>/ # 可选：mapping + agents/runners
 skills/            # 可选：可移植技能目录
 ```
 
@@ -32,7 +33,9 @@ skills/            # 可选：可移植技能目录
 | `pack_revision` | 团队包内容版本（SemVer） |
 | `published_at` | 发布/修订时间 |
 | `fork` | 可选 fork 元数据（`upstream_id` · `upstream_revision`） |
-| `harness_adapters.cursor` | `mapping` + `agents_dir` |
+| `harness_adapters.cursor` | `mapping` + `agents_dir`（可 install） |
+| `harness_adapters.cli` | 可选 `mapping` + `runners_dir`（文档级） |
+| `harness_adapters.openhands` | 可选 `mapping` + `agents_dir`（文档级） |
 | `skills` | 包内技能目录列表（校验 + 随包分发；**不**同步到 harness） |
 
 Schema：`docs/design/schemas/team-pack.schema.json`
@@ -45,8 +48,8 @@ agents/packs/<pack-id>/
   roster.yaml
   templates/
   skills/            # harness 无关，留在包内
-  harness/cursor/    # 仅此块为薄适配副本
-.cursor/agents/      # 仅 subagent 定义（mapping 安装）
+  harness/cursor/    # 仅此块为薄适配副本（若有）
+.cursor/agents/      # 仅 subagent 定义（Cursor mapping 安装）
 ```
 
 Roster 内 `harness_mapping_ref` 建议指向包内路径，例如 `harness/cursor/mapping.yaml`。  
@@ -57,8 +60,12 @@ Roster 内 `harness_mapping_ref` 建议指向包内路径，例如 `harness/curs
 
 ```bash
 npm run pack -- validate packs/minimal-research-to-spec
+npm run pack:export -- --pack packs/minimal-research-to-spec --out .scratch/exported --id my-pack
+npm run pack:import -- --pack .scratch/exported --project .
 npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 ```
+
+`import` ≡ `install`。详见 [pack-import-export.md](./pack-import-export.md)。
 
 校验：`npm run validate` 会扫描 `packs/*/pack.yaml`。
 
@@ -66,9 +73,10 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 槽位间结构化 payload 见 [message-protocol.md](./message-protocol.md)（handoff 载体之上的可选层）。
 
-## V0.2 验收
+## 验收
 
 - [x] team-pack schema
 - [x] 官方示例 pack
 - [x] validate + install 脚本
-- [x] 消息协议运行时目录约定（`.agents/messages/`）文档化进 plan-progress — v0.3
+- [x] 消息协议运行时目录约定（`.agents/messages/`）— v0.3
+- [x] export / import + fork 元数据 + 多适配字段（v0.15）
