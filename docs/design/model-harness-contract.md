@@ -79,7 +79,7 @@ model_hints:
 
 | 适配 | 翻译方式 |
 |------|----------|
-| CLI / OpenHands | runner / agent 片段读有效 hint 或环境配置 |
+| CLI / OpenHands | runner / agent 片段读有效 hint 或环境配置；深化见 [cli-openhands-adapter.md](./cli-openhands-adapter.md) |
 | LangGraph | node 可配置 model（见导出映射） |
 | CrewAI | Agent LLM 配置（见导出映射） |
 

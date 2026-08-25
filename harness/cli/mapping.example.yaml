@@ -8,4 +8,10 @@ mappings:
   progress: progress-runner
   auditor: auditor-runner
 
+# 可选：覆盖 roster model_policy / model_hint（最高优先）
+# model_hints:
+#   auditor: inherit
+#   research: fast
+
 # CLI 编排器由用户实现；扶摇只定义映射语义。
+# 见 docs/design/cli-openhands-adapter.md

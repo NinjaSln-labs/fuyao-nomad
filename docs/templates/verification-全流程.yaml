@@ -12,7 +12,7 @@ verification:
       required: true
     - id: optional_adversarial_modules
       required: false
-      description: 对抗/边界模块（若启用）
+      description: 对抗/边界模块（若启用）— 见 docs/templates/adversarial-boundary-全流程.yaml
   non_coding:
     - id: doc_audit_complete
       required: true

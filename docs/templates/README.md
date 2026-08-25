@@ -33,6 +33,7 @@
 | 模板 | 说明 |
 |------|------|
 | `anti-metrics-重.yaml` | 反指标机制（自定义指标；非 R1/R2/R3）；轻端可关闭 |
+| `adversarial-boundary-全流程.yaml` | 对抗/边界/容错可选模块（v0.14；默认 `enabled: false`） |
 
 同一 `flow_weight` 下 DoD / verification / ddd-gate 三文件一起使用。
 
@@ -43,6 +44,7 @@ DoD `checklist[].plan_refs`（v0.8+，**六档已齐** v0.11）：与 plan-progr
 - [verification-by-flow-weight.md](../design/verification-by-flow-weight.md)
 - [audit-by-flow-weight.md](../design/audit-by-flow-weight.md)
 - [skills-binding.md](../design/skills-binding.md)
+- [cli-openhands-adapter.md](../design/cli-openhands-adapter.md)
 - [delivery-model.md](../product/delivery-model.md)
 - [problem-prd-chain.md](../product/examples/problem-prd-chain.md)
 

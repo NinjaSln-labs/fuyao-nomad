@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-adversarial-boundary/v0",
+  "title": "Fuyao Nomad Adversarial / Boundary Testing Module",
+  "description": "重端/全流程可选模块；可并入代码质量审计扩展。非默认；非红蓝 96 项硬 DoD。",
+  "type": "object",
+  "required": ["flow_weight", "adversarial_boundary"],
+  "additionalProperties": false,
+  "properties": {
+    "flow_weight": { "type": "string", "minLength": 1 },
+    "adversarial_boundary": {
+      "type": "object",
+      "required": ["enabled", "cases"],
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "是否启用；轻/中档通常 false"
+        },
+        "purpose": { "type": "string" },
+        "fold_into_code_quality_audit": {
+          "type": "boolean",
+          "description": "为 true 时并入代码质量审计扩展项，不单独开槽"
+        },
+        "cases": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "kind", "statement", "signal"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "kind": {
+                "type": "string",
+                "enum": ["adversarial", "boundary", "fault_tolerance"]
+              },
+              "statement": {
+                "type": "string",
+                "description": "要覆盖的攻击面或边界场景"
+              },
+              "signal": {
+                "type": "string",
+                "description": "如何判定已覆盖（测试/检查/演练）"
+              },
+              "evidence": {
+                "type": "string",
+                "description": "证据落点（测试名、报告路径等）"
+              },
+              "severity_level": {
+                "type": "string",
+                "enum": ["record", "warn", "block"]
+              },
+              "required_when_enabled": {
+                "type": "boolean",
+                "description": "模块启用时本条是否必须"
+              }
+            }
+          }
+        },
+        "exclusions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "明确不作为框架默认的外来清单（如红蓝 96 项硬 DoD）"
+        },
+        "dod_checklist_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "verification_ids": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "关联 verification 模板 id（如 optional_adversarial_modules）"
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

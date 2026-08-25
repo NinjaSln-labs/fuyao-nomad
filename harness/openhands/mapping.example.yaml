@@ -8,4 +8,10 @@ mappings:
   progress: ProgressAgent
   auditor: AuditorAgent
 
+# 可选：覆盖 roster model_policy / model_hint（最高优先）
+# model_hints:
+#   auditor: inherit
+#   research: fast
+
 # OpenHands 委派配置由用户/runtime 实现；扶摇只定义映射语义。
+# delegation 语义表见 docs/design/cli-openhands-adapter.md

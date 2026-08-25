@@ -51,6 +51,16 @@ verification:
 
 `required` 与 `flow_weight` 绑定；未列项视为不适用或 optional。
 
+## 可选模块 · 对抗/边界（v0.14）
+
+重端/全流程可启用独立模板，**默认关闭**：
+
+- 模板：[adversarial-boundary-全流程.yaml](../templates/adversarial-boundary-全流程.yaml)
+- Schema：`template-adversarial-boundary.schema.json`
+- 可 `fold_into_code_quality_audit: true` 并入代码质量审计扩展
+- 与 `verification-全流程` 的 `optional_adversarial_modules`、全流程 DoD `optional_modules_declared` 联动
+- **不做**：红蓝 96 项硬 DoD、每波强制对抗矩阵
+
 ## 与槽位
 
 - `slot_kind: verifier` 槽位负责执行或复核本表对应项。
@@ -60,3 +70,4 @@ verification:
 
 - [x] 至少 **6 个** flow_weight 档位各有 verification 清单（轻 · 轻中 · 中 · 中重 · 重 · 全流程）
 - [x] 与 `agents/examples/` 中 roster 的 `flow_weight` 可配对
+- [x] 对抗/边界可选模块模板（v0.14）

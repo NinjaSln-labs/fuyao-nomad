@@ -2,6 +2,18 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.14.0] - 2026-08-25
+
+### Added
+
+- 对抗/边界可选模块 `adversarial-boundary-全流程.yaml` + schema（默认关闭；可并入代码质量审计）
+- CLI / OpenHands 适配深化 [cli-openhands-adapter.md](docs/design/cli-openhands-adapter.md)（编排 · delegation · 模型 · 争用）
+
+### Changed
+
+- `harness/cli` · `harness/openhands` MAPPING / mapping.example 对齐深化指南
+- ROADMAP / post-v01 / 0-1-path：v0.14 落地
+
 ## [0.13.0] - 2026-08-25
 
 ### Added

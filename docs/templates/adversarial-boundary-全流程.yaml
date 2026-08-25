@@ -1,0 +1,44 @@
+# 对抗/边界测试可选模块 · flow_weight=全流程
+# 高风险面可选；非默认、非每波追加对抗矩阵。
+# 可并入代码质量审计扩展（fold_into_code_quality_audit）。
+
+flow_weight: 全流程
+
+adversarial_boundary:
+  enabled: false
+  purpose: |
+    在重端/全流程对关键路径补充对抗输入、边界条件与容错检查；
+    轻/中档默认关闭。
+  fold_into_code_quality_audit: true
+  exclusions:
+    - 红蓝 96 项闭环作硬 DoD（情境化安全模块，非框架默认）
+    - 每波强制追加对抗矩阵（交付模式修正 ⑤）
+  cases:
+    - id: adversarial_input
+      kind: adversarial
+      statement: 关键入口对畸形/恶意输入有拒绝或安全降级
+      signal: 至少一条对抗输入用例失败路径可观察且不崩溃泄漏敏感信息
+      evidence: tests/ 或安全检查记录路径（项目自定）
+      severity_level: block
+      required_when_enabled: true
+    - id: boundary_limits
+      kind: boundary
+      statement: 容量/权限/空值/越界等边界条件有显式用例或检查表
+      signal: 边界用例或检查项已勾选且与变更范围相关
+      evidence: 测试名或 DoD 备注
+      severity_level: warn
+      required_when_enabled: true
+    - id: fault_degrade
+      kind: fault_tolerance
+      statement: 依赖失败时有降级或明确错误，而非静默错误成功
+      signal: 故障注入或 mock 失败路径有断言/演练记录
+      evidence: 测试或演练纪要
+      severity_level: warn
+      required_when_enabled: false
+  verification_ids:
+    - optional_adversarial_modules
+  dod_checklist_ids:
+    - optional_modules_declared
+  notes: |
+    启用时将 enabled 改为 true，并补齐 evidence。
+    项目可增删 cases；勿升格为轻端默认门禁。

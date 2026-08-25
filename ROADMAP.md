@@ -4,6 +4,11 @@
 
 ## 已完成
 
+### v0.14.0（2026-08-25）
+
+- 对抗/边界可选模块 `adversarial-boundary-全流程` + schema
+- CLI / OpenHands 适配深化 [cli-openhands-adapter.md](docs/design/cli-openhands-adapter.md)
+
 ### v0.13.0（2026-08-25）
 
 - 反指标模板 `anti-metrics-重` + schema
@@ -15,12 +20,7 @@
 - ADR 回填 · decisions 索引 · `validate` 扫描 decisions
 - 问题陈述（中）· PRD-lite（重）模板 + 示例链
 
-### v0.11.0（2026-08-25）
-
-- 六档 DoD `plan_refs` 铺齐
-- `validate` Windows 模板识别修复
-
-### v0.10.0 及更早
+### v0.11.0 及更早
 
 见 [CHANGELOG.md](CHANGELOG.md)
 
@@ -28,21 +28,21 @@
 
 | 优先级 | 主题 | 状态 |
 |--------|------|------|
-| P1 | 反指标 · skills 绑定 · strict 文案 | ✅ v0.13.0 |
-| 候选 | 对抗/边界测试可选模块深化 | 远期 |
-| 候选 | CLI / OpenHands 适配深化 | 远期 |
+| P1 | 对抗/边界 · CLI/OpenHands 深化 | ✅ v0.14.0 |
+| 候选 | 团队包导入/导出体验深化 | 远期 |
+| 候选 | Eval 三门禁（高风险可选） | P2 / 远期 |
 
 ## 里程碑
 
 ```
-v0.12.0 ✅ → v0.13.0 ✅ 反指标 + skills 绑定 → 后续候选
+v0.13.0 ✅ → v0.14.0 ✅ 对抗/边界 + CLI/OpenHands → 后续候选
 ```
 
 ## 不做
 
 - 编排引擎 / 新 harness runtime
 - `check:traceability` 入 CI
-- 团队包市场 · Jira/Linear · Eval 三门禁
+- 团队包市场 · Jira/Linear · Eval 三门禁（默认）
 
 ## 原则
 

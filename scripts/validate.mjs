@@ -34,6 +34,7 @@ const validators = {
   problem_statement: ajv.compile(loadSchema("template-problem-statement.schema.json")),
   prd_lite: ajv.compile(loadSchema("template-prd-lite.schema.json")),
   anti_metrics: ajv.compile(loadSchema("template-anti-metrics.schema.json")),
+  adversarial_boundary: ajv.compile(loadSchema("template-adversarial-boundary.schema.json")),
 };
 
 function parseYaml(path) {
@@ -67,6 +68,7 @@ function classifyTemplate(name) {
   if (name.startsWith("problem-statement-")) return "problem_statement";
   if (name.startsWith("prd-lite-")) return "prd_lite";
   if (name.startsWith("anti-metrics-")) return "anti_metrics";
+  if (name.startsWith("adversarial-boundary-")) return "adversarial_boundary";
   return null;
 }
 

@@ -145,7 +145,7 @@
 | **P0 框架提供** | `verifier` / `auditor` 槽位类型建议（验证跑通 vs 评审审计） |
 | **P0 框架提供** | DoD 勾选与 `flow_weight` 联动 |
 | **P1** | 反指标机制（指标自定义，非 Voyage R1/R2/R3）✅ v0.13 `anti-metrics-重` |
-| **P1** | 对抗/边界测试 — 重端/全流程**可选模块**（可并入代码质量审计扩展项） |
+| **P1** | 对抗/边界测试 — 重端/全流程**可选模块**（可并入代码质量审计扩展项）✅ v0.14 `adversarial-boundary-全流程` |
 | **P2** | Eval 三门禁类（仅高风险 AI 产品可选模块） |
 | **不做** | 157 波审计为默认；轻端强制全量测试 |
 | **竞品差异** | Cursor verifier ◐ → 扶摇 **验证 + 三类审计写入 flow_weight** |
@@ -221,7 +221,7 @@
 | **P0 框架提供** | Harness **薄适配**契约：槽位 → 运行时 agent 映射表 |
 | **P0 框架提供** | 团队 spec（roster + handoff + flow_weight）**与 harness 解耦** |
 | **P0 框架提供** | Cursor 适配 POC 路径（`.cursor/agents/` 映射） |
-| **P1** | CLI 适配；OpenHands delegation 映射说明 |
+| **P1** | CLI 适配；OpenHands delegation 映射说明 ✅ v0.14 [cli-openhands-adapter.md](../design/cli-openhands-adapter.md) |
 | **P1** | 团队包导入/导出（同 spec 换映射表） |
 | **P2** | LangGraph / CrewAI Flow **导出映射**（非内置引擎）✅ v0.9 文档 POC |
 | **不做** | 构建 harness、IDE、沙箱 runtime |

@@ -51,7 +51,7 @@
 | **轻** | lint/格式（若项目有）；无明显安全问题 |
 | **中** | 变更范围代码评审；测试与 build 已过关 |
 | **重** | + 安全面、依赖、可维护性；第二槽位或 readonly auditor |
-| **全流程** | + 更广维度（可选对抗输入/边界模块） |
+| **全流程** | + 更广维度（可选对抗输入/边界模块）→ [adversarial-boundary-全流程.yaml](../templates/adversarial-boundary-全流程.yaml) |
 
 ## 审计产物（契约字段建议）
 

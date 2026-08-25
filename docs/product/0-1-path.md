@@ -12,13 +12,14 @@
 | **⑥ 后 v0.1** | pack · 消息 · 六档 · territory · harness · 争用 · 追溯 · 导出 · model_policy · DoD plan_refs | ✅ **v0.11.0** |
 | **⑦ P1 深化** | 治理可检索（ADR）· 研究/产品产物模板 | ✅ **v0.12.0** |
 | **⑧ 质量/技能 P1** | 反指标模板 · skills 绑定指南 | ✅ **v0.13.0** |
+| **⑨ 验证/挂载 P1** | 对抗/边界模块 · CLI/OpenHands 深化 | ✅ **v0.14.0** |
 
 ## 当前落点
 
 | 阶段 | 状态 |
 |------|------|
-| ①–⑧ | ✅ 至 **v0.13.0** |
-| ⑨+ | ▶ 见 [post-v01-roadmap.md](post-v01-roadmap.md) |
+| ①–⑨ | ✅ 至 **v0.14.0** |
+| ⑩+ | ▶ 见 [post-v01-roadmap.md](post-v01-roadmap.md) |
 
 ## 纪律
 
