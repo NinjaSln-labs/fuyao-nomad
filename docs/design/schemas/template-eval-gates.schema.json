@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-eval-gates/v0",
+  "title": "Fuyao Nomad Eval Gates Module",
+  "description": "高风险 AI 可选评测三门禁；默认关闭；框架不执行评测。见 eval-gates.md",
+  "type": "object",
+  "required": ["flow_weight", "eval_gates"],
+  "additionalProperties": false,
+  "properties": {
+    "flow_weight": { "type": "string", "minLength": 1 },
+    "eval_gates": {
+      "type": "object",
+      "required": ["enabled", "gates"],
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "是否启用；轻/中档通常 false"
+        },
+        "purpose": { "type": "string" },
+        "fold_into_code_quality_audit": {
+          "type": "boolean",
+          "description": "为 true 时并入代码质量审计扩展项"
+        },
+        "gates": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["id", "kind", "statement", "signal"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "kind": {
+                "type": "string",
+                "enum": ["task", "safety", "regression"]
+              },
+              "statement": { "type": "string" },
+              "signal": { "type": "string" },
+              "evidence": { "type": "string" },
+              "severity_level": {
+                "type": "string",
+                "enum": ["record", "warn", "block"]
+              },
+              "required_when_enabled": { "type": "boolean" }
+            }
+          }
+        },
+        "exclusions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "dod_checklist_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "verification_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

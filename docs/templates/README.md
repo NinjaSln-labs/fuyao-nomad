@@ -34,6 +34,7 @@
 |------|------|
 | `anti-metrics-重.yaml` | 反指标机制（自定义指标；非 R1/R2/R3）；轻端可关闭 |
 | `adversarial-boundary-全流程.yaml` | 对抗/边界/容错可选模块（v0.14；默认 `enabled: false`） |
+| `eval-gates-重.yaml` | Eval 三门禁可选模块（v0.17；默认 `enabled: false`；见 [eval-gates.md](../design/eval-gates.md)） |
 
 同一 `flow_weight` 下 DoD / verification / ddd-gate 三文件一起使用。
 
@@ -48,6 +49,7 @@ DoD `blocker_evidence_recorded`（v0.17）：中档及以上 required；身份�
 - [verification-by-flow-weight.md](../design/verification-by-flow-weight.md)
 - [audit-by-flow-weight.md](../design/audit-by-flow-weight.md)
 - [identity-constraints.md](../design/identity-constraints.md)
+- [eval-gates.md](../design/eval-gates.md)
 - [skills-binding.md](../design/skills-binding.md)
 - [cli-openhands-adapter.md](../design/cli-openhands-adapter.md)
 - [delivery-model.md](../product/delivery-model.md)

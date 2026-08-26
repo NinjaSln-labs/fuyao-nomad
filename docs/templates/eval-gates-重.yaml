@@ -1,0 +1,40 @@
+# Eval 三门禁可选模块 · flow_weight=重
+# 高风险 AI 产品可选；默认关闭。框架不执行评测、不调 LLM。
+# 见 docs/design/eval-gates.md
+
+flow_weight: 重
+
+eval_gates:
+  enabled: false
+  purpose: |
+    高风险 AI 产品可选；框架不执行评测，只要求门禁声明与证据落点。
+  fold_into_code_quality_audit: true
+  exclusions:
+    - 框架侧自动跑模型套件
+    - 轻/中档默认启用
+  gates:
+    - id: task_eval
+      kind: task
+      statement: 关键验收信号与身份约束有可复现评测记录
+      signal: 评测笔记路径、用例表或 dogfood A1 类记录可核对
+      evidence: ""
+      severity_level: block
+      required_when_enabled: true
+    - id: safety_eval
+      kind: safety
+      statement: 越权/有害/密钥泄漏等有最小拒答或降级检查
+      signal: 检查表勾选或安全用例可观察
+      evidence: ""
+      severity_level: block
+      required_when_enabled: true
+    - id: regression_eval
+      kind: regression
+      statement: 已知金样或回归清单不回退
+      signal: 金样文件或回归清单路径已声明
+      evidence: ""
+      severity_level: warn
+      required_when_enabled: true
+  dod_checklist_ids: [eval_gates_reviewed]
+  verification_ids: []
+  notes: |
+    启用前须先满足 identity_constraints（或诚实 blocker + evidence）。
