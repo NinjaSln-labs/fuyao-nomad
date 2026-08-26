@@ -1,0 +1,37 @@
+# identity check fixture — cleared without evidence (bad under --strict)
+
+version: "0.1"
+roster_id: minimal-research-to-spec
+flow_weight: 中
+
+intent: 示例 AI 助手 — 假清除
+
+identity_constraints:
+  - id: ic-ai
+    phrase: AI
+    meaning: 主路径须由模型生成建议
+    enforcement: blocker_if_unmet
+
+plan:
+  goal: fixture bad
+  scope: tests only
+  work_items:
+    - id: wi-impl
+      title: impl
+      slot_id: spec
+  milestones:
+    - id: m-impl
+      name: impl
+      criteria: done
+
+progress:
+  completed_work_item_ids: [wi-impl]
+  blockers:
+    - id: blk-ai
+      description: 曾无 AI 主路径
+      related_identity_constraint_ids: [ic-ai]
+      status: cleared
+      cleared_at: "2026-08-26T00:00:00Z"
+      # missing evidence — strict should fail
+  next_actions: []
+  updated_at: "2026-08-26T00:00:00Z"
