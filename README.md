@@ -52,7 +52,7 @@
 | `packs/` | 官方团队包示例（roster + 模板 + harness 映射 + skills） |
 | `harness/` | Cursor / CLI / OpenHands / LangGraph / CrewAI **薄适配**（非产品核心） |
 | `skills/` | 可移植技能（**不同步**到 harness 路径） |
-| `scripts/` | `validate` · `pack` · `check:contention` · `install:cursor-agents` |
+| `scripts/` | `validate` · `pack` · `check:contention` · `check:identity` · `install:cursor-agents` |
 | `packages/core/` | Schema 索引 |
 | `ROADMAP.md` | 版本里程碑与后续候选 |
 
