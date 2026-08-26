@@ -146,7 +146,7 @@
 | **P0 框架提供** | DoD 勾选与 `flow_weight` 联动 |
 | **P1** | 反指标机制（指标自定义，非 Voyage R1/R2/R3）✅ v0.13 `anti-metrics-重` |
 | **P1** | 对抗/边界测试 — 重端/全流程**可选模块**（可并入代码质量审计扩展项）✅ v0.14 `adversarial-boundary-全流程` |
-| **P2** | Eval 三门禁类（仅高风险 AI 产品可选模块） |
+| **P2** | Eval 三门禁类（仅高风险 AI 产品可选模块） ✅ v0.17 [eval-gates.md](../design/eval-gates.md) · 模板 `eval-gates-重`（默认关闭） |
 | **不做** | 157 波审计为默认；轻端强制全量测试 |
 | **竞品差异** | Cursor verifier ◐ → 扶摇 **验证 + 三类审计写入 flow_weight** |
 

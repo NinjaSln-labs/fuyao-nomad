@@ -54,3 +54,9 @@ dod:
       plan_refs:
         milestone_ids: [m-impl]
         work_item_ids: [wi-impl]
+    - id: eval_gates_reviewed
+      required: false
+      description: 仅当 eval-gates.enabled=true 时须勾选；对照三门与证据（见 docs/design/eval-gates.md）
+      plan_refs:
+        milestone_ids: [m-impl]
+        work_item_ids: [wi-impl]
