@@ -25,3 +25,9 @@
 ## 不在本仓
 
 具体 dogfood 产品仓库与问题日志留在各自项目；本页只沉淀可复用的协议教训。
+
+## 闭环验证（2026-08-26）
+
+天气助手 dogfood 在写入 `identity_constraints` 后：假完成被 blocker → 配置真实网关后 A1 通过 → 清 blocker → 关闭。  
+移植：同 pack 声明 cursor/cli/openhands 映射，roster 未改。  
+证明：机制可拦截假完成，且不清空「可演示 AI」证据不放行。
