@@ -7,12 +7,36 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
+/** Resolve npm-cli.js across Windows Node installs and Linux/GHA toolcache layouts. */
+function resolveNpmCli() {
+  const binDir = dirname(process.execPath);
+  const candidates = [
+    // Windows: <prefix>/node.exe + <prefix>/node_modules/npm/...
+    join(binDir, "node_modules", "npm", "bin", "npm-cli.js"),
+    // Unix / actions/setup-node: <prefix>/bin/node + <prefix>/lib/node_modules/npm/...
+    join(binDir, "..", "lib", "node_modules", "npm", "bin", "npm-cli.js"),
+    join(binDir, "..", "lib64", "node_modules", "npm", "bin", "npm-cli.js"),
+  ];
+  for (const p of candidates) {
+    if (existsSync(p)) return p;
+  }
+  return null;
+}
+
 function run(cmd, args, cwd = ROOT) {
   // Cross-platform npm: bare "npm" / "npm.cmd" fail under Node 24 on Windows
-  // (ENOENT / EINVAL). Invoke npm-cli.js with the same node binary instead.
+  // (ENOENT / EINVAL). Prefer npm-cli.js with the same node binary.
   if (cmd === "npm") {
-    const npmCli = join(dirname(process.execPath), "node_modules", "npm", "bin", "npm-cli.js");
-    return spawnSync(process.execPath, [npmCli, ...args], { cwd, encoding: "utf8" });
+    const npmCli = resolveNpmCli();
+    if (npmCli) {
+      return spawnSync(process.execPath, [npmCli, ...args], { cwd, encoding: "utf8" });
+    }
+    const bin = process.platform === "win32" ? "npm.cmd" : "npm";
+    return spawnSync(bin, args, {
+      cwd,
+      encoding: "utf8",
+      shell: process.platform === "win32",
+    });
   }
   return spawnSync(cmd, args, { cwd, encoding: "utf8" });
 }
@@ -69,7 +93,9 @@ test("check:contention strict fails on territory overlap fixture", () => {
     join(ROOT, "tests/fixtures/plan-territory-overlap.yaml"),
     "--strict",
   ]);
-  assert.equal(r.status, 1, r.stdout + r.stderr);
+  const out = r.stdout + r.stderr;
+  assert.equal(r.status, 1, out);
+  assert.match(out, /territory|overlap|contention/i);
 });
 
 test("check:contention strict fails on active work_item overlap fixture", () => {
@@ -83,7 +109,9 @@ test("check:contention strict fails on active work_item overlap fixture", () => 
     join(ROOT, "tests/fixtures/plan-active-contention.yaml"),
     "--strict",
   ]);
-  assert.equal(r.status, 1, r.stdout + r.stderr);
+  const out = r.stdout + r.stderr;
+  assert.equal(r.status, 1, out);
+  assert.match(out, /active|overlap|contention|work_item/i);
 });
 
 test("check:traceability advisory passes on dogfood plan", () => {
