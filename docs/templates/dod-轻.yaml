@@ -22,3 +22,6 @@ dod:
     - id: identity_constraints_held
       required: false
       description: 若 plan 声明了 identity_constraints，则须仍满足（见 identity-constraints.md）
+    - id: blocker_evidence_recorded
+      required: false
+      description: 若曾出现身份类 blocker，清除时建议留 evidence（见 identity-constraints.md）

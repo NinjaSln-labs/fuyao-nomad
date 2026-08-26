@@ -41,6 +41,8 @@ DoD `checklist[].plan_refs`（v0.8+，**六档已齐** v0.11）：与 plan-progr
 
 DoD `identity_constraints_held`（v0.16）：中档及以上 required；对照 [identity-constraints.md](../design/identity-constraints.md)。问题陈述 / PRD-lite schema 可选 `identity_constraints` 字段。
 
+DoD `blocker_evidence_recorded`（v0.17）：中档及以上 required；身份类 blocker 清除须留 evidence。
+
 ## 设计参考
 
 - [verification-by-flow-weight.md](../design/verification-by-flow-weight.md)
