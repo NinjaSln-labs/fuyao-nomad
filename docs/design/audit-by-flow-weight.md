@@ -99,6 +99,8 @@ audit:
 
 未满足 → `verdict: blocked`，写入 `progress.blockers`（或按 `enforcement: abolish` 建议废除），**不得**因「规格已改成不依赖 X」而判 pass。
 
+清除身份类 blocker 时须核对 `evidence`（路径或 `{ path, note }`），禁止空清；见 [identity-constraints.md](./identity-constraints.md)。
+
 见 [identity-constraints.md](./identity-constraints.md)。
 
 ## V1 验收

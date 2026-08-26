@@ -48,10 +48,12 @@
 |------|------|
 | `current_phase_id` / `current_milestone_id` | 当前阶段/里程碑 |
 | `active_work_item_ids` / `active_slot_id` | 正在做什么、谁在做；争用检测优先 scope |
-| `blockers` | 阻塞 + `waiting_on` + 可选 `escalate_to_slot_id` |
+| `blockers` | 阻塞：`description`（必填）+ 可选 `id` · `waiting_on` · `escalate_to_slot_id` · `related_identity_constraint_ids` · `evidence` · `status` · `cleared_at` |
 | `next_actions` | 下一步 + 负责槽位 |
 | `handoff_snippet` | 会话交接用摘要 |
 | `messages_dir` | 槽位消息目录（见 [message-protocol.md](../design/message-protocol.md)） |
+
+**证据（v0.17）：** 身份类 blocker 清除前须填 `evidence`（路径或 `{ path, note }`）；见 [identity-constraints.md](./identity-constraints.md)「清除规则」。字段名用 `description`（不用 `summary`）。
 
 阻塞与升级见 [escalation-protocol.md](../design/escalation-protocol.md)。
 

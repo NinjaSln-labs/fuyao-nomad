@@ -30,9 +30,17 @@ identity_constraints:
 
 Schema：`plan-progress.schema.json` → 可选数组 `identity_constraints`（有则校验结构）。
 
+## 清除规则（v0.17）
+
+1. 未满足 → `progress.blockers` 含 `related_identity_constraint_ids`（对齐约束 `id`），`status` 缺省或 `open`。  
+2. 满足后清除 → 同一 blocker 记 `status: cleared`，**必须**带 `evidence`（审计 md / 实测笔记路径，或 `{ path, note }`）。  
+3. **禁止**：空清、只改 milestone/`work_item` status 不写证据。  
+4. DoD：`identity_constraints_held` 与 `blocker_evidence_recorded` 联读（见 DoD 模板）。
+
 ## DoD
 
-checklist id：`identity_constraints_held`（中档及以上 required；轻档建议 required:false 但仍列出）。
+checklist id：`identity_constraints_held`（中档及以上 required；轻档建议 required:false 但仍列出）。  
+checklist id：`blocker_evidence_recorded`（v0.17；中档及以上 required；轻档 false）。
 
 ## 与反指标
 

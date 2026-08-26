@@ -193,10 +193,45 @@
           "items": {
             "type": "object",
             "required": ["description"],
+            "additionalProperties": false,
             "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "description": "稳定 id，如 blk-ai-key"
+              },
               "description": { "type": "string" },
               "waiting_on": { "type": "string" },
-              "escalate_to_slot_id": { "type": "string" }
+              "escalate_to_slot_id": { "type": "string" },
+              "related_identity_constraint_ids": {
+                "type": "array",
+                "items": { "type": "string", "minLength": 1 },
+                "description": "对齐 identity_constraints[].id"
+              },
+              "evidence": {
+                "description": "清除前须有（身份类）；打开时可空。string 或 { path, note }",
+                "oneOf": [
+                  { "type": "string", "minLength": 1 },
+                  {
+                    "type": "object",
+                    "required": ["path"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "path": { "type": "string", "minLength": 1 },
+                      "note": { "type": "string" }
+                    }
+                  }
+                ]
+              },
+              "status": {
+                "type": "string",
+                "enum": ["open", "cleared"],
+                "description": "缺省视为 open"
+              },
+              "cleared_at": {
+                "type": "string",
+                "format": "date-time"
+              }
             }
           }
         },

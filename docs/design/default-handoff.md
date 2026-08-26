@@ -9,6 +9,7 @@
 |------|------|------|
 | `dod_complete` | 槽位 A 的 DoD 满足 | `serial_order` 下一槽位；**正交槽位**（`orthogonal_slots`）不占用 serial 步序 |
 | `blocked` | `progress.blockers` 非空 | 优先 `slot_kind=progress` 或 `orthogonal_slots` 中的推进槽；否则主 agent |
+| `blocked`（身份清除） | 清除含 `related_identity_constraint_ids` 的 blocker | 须核对 `evidence` 后才可 `status: cleared`；见 [identity-constraints.md](./identity-constraints.md) |
 | `gate_confirm` | `gate_level=confirm` 且动作待执行 | 暂停 handoff，待人工确认后继续 |
 | `gate_confirm`（规格） | 规格门 `confirm` | 确认时对照 **intent 原文**与 `identity_constraints`，身份词须仍在；见 [identity-constraints.md](./identity-constraints.md) |
 | `gate_forbid` | `gate_level=forbid` | 不执行；记录审计 |
