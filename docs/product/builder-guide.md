@@ -48,6 +48,8 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 从 intent 抽出 **身份约束**（不可裁剪）：[identity-constraints.md](../design/identity-constraints.md)  
 阶段复盘（v0.1–v0.16）：[v0.1-v0.16-retrospective.md](./examples/v0.1-v0.16-retrospective.md)  
+官方 dogfood 剧本：[dogfood-playbook.md](./examples/dogfood-playbook.md)  
+`npm run check:identity -- --project .`（advisory；dogfood 用 `--strict`）  
 结构化槽位消息（可选）：[message-protocol.md](../design/message-protocol.md)  
 追溯与 DoD 联动：[traceability-contract.md](../design/traceability-contract.md) · `npm run check:traceability`  
 运行时建议目录：`.agents/messages/<roster-id>/`
