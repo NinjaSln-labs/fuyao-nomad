@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v0.16.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.16.0)
+[![Release](https://img.shields.io/badge/Release-v0.17.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.17.0)
 
 **[English](README.en.md)** | 中文
 
@@ -36,8 +36,8 @@
 | 团队包 `packs/minimal-research-to-spec` | ✅ pack validate / install |
 | Harness 薄适配 POC | ✅ Cursor（install）· CLI · OpenHands · **LangGraph / CrewAI 导出**（文档 + 片段） |
 | 消息协议 + 争用顾问 | ✅ message validate · `check:contention`（territory 重叠 + CI `--strict`） |
-| 校验与测试 | ✅ `validate` 36 项 · `npm test` 12 项 · GitHub Actions |
-| 开源发布 | ✅ **v0.16.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+| 校验与测试 | ✅ `validate` 37 项 · `npm test` 14 项 · GitHub Actions |
+| 开源发布 | ✅ **v0.17.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
 维护者审计为**本地私有**（`.agents/audit/`，不入库）。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
 
@@ -99,7 +99,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ## 路线图
 
-**当前：v0.16.0** — 身份约束（intent 不可裁剪）· DoD/审计对齐。
+**当前：v0.17.0** — 协议硬化（blocker 证据 · check:identity）· Eval 三门可选。
 
 | 版本 | 目标 |
 |------|------|
@@ -119,6 +119,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 | **v0.14.0** ✅ | 对抗/边界模块 · CLI/OpenHands 深化 |
 | **v0.15.0** ✅ | 团队包 export/import · 换映射指南 |
 | **v0.16.0** ✅ | 身份约束 · DoD/审计对照 intent |
+| **v0.17.0** ✅ | 协议硬化 · Eval 三门可选 · 复盘 |
 
 详见 [后 v0.1 路线](docs/product/post-v01-roadmap.md) · [0→1 路径](docs/product/0-1-path.md)
 

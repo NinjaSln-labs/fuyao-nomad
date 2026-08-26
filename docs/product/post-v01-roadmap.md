@@ -1,5 +1,13 @@
 # 后 v0.1 路线
 
+## v0.17.0 ✅（2026-08-26）
+
+| 项 | 状态 |
+|----|------|
+| 协议硬化（blocker evidence · check:identity · dogfood 剧本） | ✅ |
+| Eval 三门禁可选模块（§5 P2） | ✅ [eval-gates.md](../design/eval-gates.md) |
+| 阶段复盘 v0.1–v0.16 | ✅ [v0.1-v0.16-retrospective.md](./examples/v0.1-v0.16-retrospective.md) |
+
 ## v0.16.0 ✅（2026-08-25）
 
 | 项 | 状态 |
@@ -35,7 +43,8 @@
 
 | P | 主题 | 状态 |
 |---|------|------|
-| P2 | Eval 三门禁类（§5，高风险可选） | 远期 |
+| — | 无强制切片 | 稳态 |
+| P2 | 团队包市场等 | 远期 |
 
 ## 纪律
 

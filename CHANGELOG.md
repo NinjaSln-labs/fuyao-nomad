@@ -2,6 +2,28 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.17.0] - 2026-08-26
+
+### Added
+
+#### 协议硬化
+
+- plan-progress blockers：`evidence` · `status` · `related_identity_constraint_ids` 等（清身份 blocker 须留证）
+- DoD `blocker_evidence_recorded`（六档 + pack）
+- `npm run check:identity`（advisory / `--strict`；**不入 CI**）
+- 官方 dogfood 剧本 [dogfood-playbook.md](docs/product/examples/dogfood-playbook.md)
+- 阶段复盘 [v0.1-v0.16-retrospective.md](docs/product/examples/v0.1-v0.16-retrospective.md)
+
+#### Eval 可选模块
+
+- [eval-gates.md](docs/design/eval-gates.md) · 模板 `eval-gates-重.yaml`（默认 `enabled: false`）
+- 重/全流程 DoD `eval_gates_reviewed`；auditor 提示对齐三门
+
+### Changed
+
+- identity-constraints / plan-progress-contract / audit / default-handoff：清除规则与证据核对
+- capability-model §5 P2 Eval → ✅ v0.17 可选模块
+
 ## [0.16.0] - 2026-08-25
 
 ### Added

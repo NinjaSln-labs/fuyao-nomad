@@ -4,6 +4,11 @@
 
 ## 已完成
 
+### v0.17.0（2026-08-26）
+
+- 协议硬化：blocker evidence · `check:identity` · dogfood 剧本 · 复盘
+- Eval 三门禁可选模块（默认关闭）
+
 ### v0.16.0（2026-08-25）
 
 - 身份约束（`identity_constraints` · DoD · 审计/confirm）
@@ -15,14 +20,6 @@
 - 同 spec 换映射指南 [pack-import-export.md](docs/design/pack-import-export.md)
 - `harness_adapters` 支持可选 cli / openhands
 
-### v0.14.0（2026-08-25）
-
-- 对抗/边界可选模块 · CLI/OpenHands 适配深化
-
-### v0.13.0（2026-08-25）
-
-- 反指标模板 · skills 绑定 · traceability strict 文案
-
 ### 更早
 
 见 [CHANGELOG.md](CHANGELOG.md)
@@ -31,21 +28,20 @@
 
 | 优先级 | 主题 | 状态 |
 |--------|------|------|
-| P1 | 团队包导入/导出 | ✅ v0.15.0 |
-| 候选 | 身份约束（dogfood 协议补丁） | ✅ v0.16.0 |
-| 候选 | Eval 三门禁（高风险可选） | P2 / 远期 |
+| — | 无强制功能切片 | 稳态 |
+| 候选 | 更远 P2（包市场等） | 非默认 |
 
 ## 里程碑
 
 ```
-v0.15.0 ✅ → v0.16.0 ✅ 身份约束 → 后续候选（Eval P2）
+v0.16.0 ✅ → v0.17.0 ✅ 质量门加深 → 稳态
 ```
 
 ## 不做
 
 - 编排引擎 / 新 harness runtime
-- `check:traceability` 入 CI
-- 团队包市场 · Jira/Linear · Eval 三门禁（默认）
+- `check:traceability` / `check:identity` 入 CI
+- 团队包市场 · Jira/Linear · Eval 默认开启
 - 框架侧自动 NLP 抽身份词 / 强制调 LLM
 
 ## 原则
@@ -54,4 +50,4 @@ v0.15.0 ✅ → v0.16.0 ✅ 身份约束 → 后续候选（Eval P2）
 
 ---
 
-*Last updated: 2026-08-25*
+*Last updated: 2026-08-26*
