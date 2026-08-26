@@ -156,6 +156,37 @@ test("check:traceability advisory success message", () => {
   assert.match(r.stdout, /traceability check passed \(advisory\)/);
 });
 
+test("check:identity strict passes on ok fixture", () => {
+  const r = run("npm", [
+    "run",
+    "check:identity",
+    "--",
+    "--project",
+    ROOT,
+    "--plan",
+    join(ROOT, "tests/fixtures/plan-identity-ok.yaml"),
+    "--strict",
+  ]);
+  assert.equal(r.status, 0, r.stdout + r.stderr);
+  assert.match(r.stdout, /identity check passed \(strict\)/);
+});
+
+test("check:identity strict fails on bad fixture", () => {
+  const r = run("npm", [
+    "run",
+    "check:identity",
+    "--",
+    "--project",
+    ROOT,
+    "--plan",
+    join(ROOT, "tests/fixtures/plan-identity-bad.yaml"),
+    "--strict",
+  ]);
+  const out = r.stdout + r.stderr;
+  assert.equal(r.status, 1, out);
+  assert.match(out, /missing evidence|identity check failed/i);
+});
+
 test("pack install to temp project", () => {
   const scratchBase = join(ROOT, ".scratch");
   mkdirSync(scratchBase, { recursive: true });
