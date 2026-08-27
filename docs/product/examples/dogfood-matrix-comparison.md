@@ -24,14 +24,12 @@
 
 ## 桥接档（已实跑）
 
-| 维度 | **轻中 · action-list** |
-|------|------------------------|
-| **版本** | v0.23 |
-| **stage** | 3（s1 探索 · s2 规格草稿 · s3 交付） |
-| **DoD** | `smoke_verified` + identity required |
-| **文档** | [v-scenario](./dogfood-v-scenario.md) · [v-close](./dogfood-v-close.md) |
+| 档 | 场景 | stage | 文档 |
+|----|------|-------|------|
+| **轻中** | action-list | 3 | [v-scenario](./dogfood-v-scenario.md) · [v-close](./dogfood-v-close.md) |
+| **中重** | changelog-slice | **5** | [vi-scenario](./dogfood-vi-scenario.md) · [vi-close](./dogfood-vi-close.md) |
 
-**未实跑：** 中重 · 全流程 → [templates README](../../templates/README.md)
+**未实跑：** 全流程 → [templates README](../../templates/README.md)
 
 ## Harness（步 7）
 

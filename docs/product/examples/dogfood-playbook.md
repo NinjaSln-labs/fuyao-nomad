@@ -142,6 +142,7 @@ harness_adapters:
 |-------------|-------------|------|----------|
 | 轻 | s1–s2 | [todo-strip](./dogfood-iii-scenario.md) | `stage-轻` … |
 | **轻中** | **s1–s3** | [action-list](./dogfood-v-scenario.md) | `stage-轻中` … |
+| **中重** | **s1–s5** | [changelog-slice](./dogfood-vi-scenario.md) | `stage-中重` … |
 | 中 | s1–s4 | [reading-card](./dogfood-ii-scenario.md) | `stage-中` … |
 | 重 | s1–s6 | [audit-trail](./dogfood-iv-scenario.md) | `stage-重` … |
 
@@ -165,6 +166,7 @@ harness_adapters:
 
 | 版本 | 主题 | 文档 |
 |------|------|------|
+| v0.24 | **中重** changelog-slice | [vi-scenario](./dogfood-vi-scenario.md) · [close](./dogfood-vi-close.md) |
 | v0.23 | **轻中** action-list | [v-scenario](./dogfood-v-scenario.md) · [close](./dogfood-v-close.md) |
 | v0.22 | 步 7 triple harness | [step7-scenario](./dogfood-step7-scenario.md) · [close](./dogfood-step7-close.md) |
 | v0.21 | 重档 audit-trail | [iv-scenario](./dogfood-iv-scenario.md) · [close](./dogfood-iv-close.md) |
