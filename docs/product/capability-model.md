@@ -74,8 +74,8 @@
 |---|------|
 | **P0 框架提供** | 编排**契约**（非 runtime）：串行 / 并行 / 混合规则声明 |
 | **P0 框架提供** | 与默认 Handoff 联动的触发语义（DoD 完成、阻塞、升级）— 自定义规则优先 |
-| **P1** | 争用规则：同文件/同域冲突时的升级路径；`territory` + `check:contention` |
-| **P1** | 与外部 runtime 映射说明（Cursor subagent、CrewAI Flow） |
+| **P1** | 争用规则：同文件/同域冲突时的升级路径；`territory` + `check:contention` ✅ [contention-rules.md](../design/contention-rules.md) · `npm run check:contention` |
+| **P1** | 与外部 runtime 映射说明（Cursor subagent、CrewAI Flow） ✅ [export-orchestration-mapping.md](../design/export-orchestration-mapping.md) · `harness/cursor` / `crewai` / `langgraph` |
 | **P2** | 内置轻量编排器（仅当映射不足时再议） |
 | **不做** | 与 CrewAI/LangGraph 竞争的编排引擎 |
 | **竞品差异** | 编排层竞品强 → 扶摇 **声明编排，导出映射** |
@@ -92,9 +92,9 @@
 |---|------|
 | **P0 框架提供** | **进度载体契约**（计划 + 执行状态，可对接 HANDOFF） |
 | **P0 框架提供** | 「推进者」槽位类型建议（非固定角色名）— 负责节奏、计划刷新与阻塞升级 |
-| **P1** | 计划 ↔ 里程碑 ↔ DoD 联动；**里程碑审计门**（设计/实现/代码质量） |
-| **P1** | 阻塞 → 升级 handoff（默认或自定义）；审计 `blocked` 写入 blockers |
-| **P1** | 小团队共享进度视图（文件型：如 `plan.yaml` / `progress.yaml`） |
+| **P1** | 计划 ↔ 里程碑 ↔ DoD 联动；**里程碑审计门**（设计/实现/代码质量） ✅ [plan-progress-contract.md](../design/plan-progress-contract.md) · [traceability-contract.md](../design/traceability-contract.md) · DoD `plan_refs` |
+| **P1** | 阻塞 → 升级 handoff（默认或自定义）；审计 `blocked` 写入 blockers ✅ [default-handoff.md](../design/default-handoff.md) · [escalation-protocol.md](../design/escalation-protocol.md) |
+| **P1** | 小团队共享进度视图（文件型：统一为 `plan-progress.yaml`，非拆成 plan.yaml+progress.yaml） ✅ [plan-progress-contract.md](../design/plan-progress-contract.md) |
 | **P2** | 与 Jira/Linear 同步（通过 harness 适配，非核心） |
 | **不做** | 全功能 PM 工具 |
 | **竞品差异** | 行业普遍弱；Devin 协调者 ◐ → 扶摇 **计划+进度显式契约** |
@@ -126,8 +126,8 @@
 | **P0 框架提供** | `flow_weight` 调节机制（轻-重连续谱，档位可扩展） |
 | **P0 框架提供** | DoD / 验证 / 交付物 / 边界 **模板族**（与 flow_weight 绑定） |
 | **P0 框架提供** | 青蚨使/Voyage **机制继承表**（见 [delivery-model.md](delivery-model.md)） |
-| **P1** | stage 模板（可配置阶段，非固定 S0–S5） |
-| **P1** | 追溯链：意图 → 领域 → 任务（轻端可缩） |
+| **P1** | stage 模板（可配置阶段，非固定 S0–S5） ◐ 仅 `stage-轻` → v0.18 六档矩阵 |
+| **P1** | 追溯链：意图 → 领域 → 任务（轻端可缩） ✅ [traceability-contract.md](../design/traceability-contract.md) · `npm run check:traceability` |
 | **不做** | 固定「全工程 vs 敏捷」标签；满配 ceremony 为默认 |
 | **竞品差异** | BMAD 敏捷+PRD 主轴 → 扶摇 **DDD 必要 + flow_weight** |
 
@@ -184,8 +184,8 @@
 | **P0 框架提供** | 槽位 `gate_level`：自动 / 确认后 / 禁止 |
 | **P0 框架提供** | 分级门禁（非一律「授权 S1」）：破坏性、远程、重端须确认 |
 | **P0 框架提供** | 审计产物 schema：治理留痕 + **质量审计结论**（设计/实现/代码质量） |
-| **P1** | ADR 模板与触发条件（硬约束写 ADR） |
-| **P1** | commit 策略分级（自动 / 确认后 / 禁止） |
+| **P1** | ADR 模板与触发条件（硬约束写 ADR） ✅ [`adr-中.yaml`](../templates/adr-中.yaml) · [docs/decisions](../decisions/) |
+| **P1** | commit 策略分级（自动 / 确认后 / 禁止） ◐ 仅 `commit-policy-中` → v0.18 六档矩阵 |
 | **P2** | 分层审计旋转维度（继承 Voyage 结构，非百波体量）→ 见 audit-by-flow-weight |
 | **不做** | 100/100 文档审计为轻端默认 |
 | **竞品差异** | CrewAI HITL ◐ · 青蚨使全阶段授权 → 扶摇 **按风险分级** |
@@ -202,7 +202,7 @@
 |---|------|
 | **P0 框架提供** | 非编码任务链契约：调研 → 定义 → 设计 → 交付（与编码链同级） |
 | **P0 框架提供** | 调研**去权威化**规则（快照不自动升格 scope） |
-| **P1** | 竞品/问题陈述/PRD 产物模板（PRD 为重端产物之一，非全局权威） |
+| **P1** | 竞品/问题陈述/PRD 产物模板（PRD 为重端产物之一，非全局权威） ✅ [`problem-statement-中.yaml`](../templates/problem-statement-中.yaml) · [`prd-lite-重.yaml`](../templates/prd-lite-重.yaml) · 竞品仍以 [research 快照](../research/2026-08-22-agent-team-landscape.md) 为准 |
 | **P1** | 与 agent-skills 类技能包的引用/绑定方式 ✅ v0.13 [skills-binding.md](../design/skills-binding.md) |
 | **P2** | 发现访谈、JTBD 工作流模板 |
 | **不做** | 内置市场研究 API |
@@ -290,3 +290,4 @@
 |------|------|
 | 2026-08-22 | 初稿：8 域 P0/P1/P2 + V1 切片 |
 | 2026-08-22 | 分层审计：设计 / 实现 / 代码质量 + flow_weight |
+| 2026-08-27 | v0.18 U1：已交付 P1 补 ✅；stage/commit-policy 标 ◐ 待六档 |
