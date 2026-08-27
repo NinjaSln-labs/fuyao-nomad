@@ -29,7 +29,23 @@
 | **轻中** | action-list | 3 | [v-scenario](./dogfood-v-scenario.md) · [v-close](./dogfood-v-close.md) |
 | **中重** | changelog-slice | **5** | [vi-scenario](./dogfood-vi-scenario.md) · [vi-close](./dogfood-vi-close.md) |
 
-**未实跑：** 全流程 → [templates README](../../templates/README.md)
+## 全流程（已实跑）
+
+| 维度 | **全流程 · grant-gate** |
+|------|-------------------------|
+| **版本** | v0.25 |
+| **flow_weight** | **全流程** |
+| **stage 数** | **7（s1–s7，s7 可选 N/A）** |
+| **m-release** | **required**（授权门 + optional_modules） |
+| **identity** | `ic-no-silent-exec` |
+| **三层审计** | design + impl + CQ |
+| **源仓** | **独立 sandbox**（不污染源产品仓） |
+
+| 范例 | 场景 | 关仓 |
+|------|------|------|
+| 全流程 | [vii-scenario](./dogfood-vii-scenario.md) | [vii-close](./dogfood-vii-close.md) |
+
+**矩阵：** 六档 + 桥接 + 全流程 **已满**。
 
 ## Harness（步 7）
 
