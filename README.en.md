@@ -34,14 +34,14 @@ Open-source **agent team framework** — defines how multi-role teams collaborat
 | Area | Status |
 |------|--------|
 | Product / design docs `docs/` | ✅ Finalized (problem statement · north star · capability model · composition protocol) |
-| JSON Schema + six `flow_weight` tiers | ✅ roster · plan-progress · DoD · verification · DDD gate · audit-record |
+| JSON Schema + six `flow_weight` tiers | ✅ roster · plan-progress · DoD · verification · DDD gate · **stage · commit-policy** · audit-record |
 | Team pack `packs/minimal-research-to-spec` | ✅ pack validate / install |
 | Harness thin adapters | ✅ Cursor (install) · CLI · OpenHands · **LangGraph / CrewAI export** (docs + snippets) |
 | Message protocol + contention advisory | ✅ message validate · `check:contention` (territory overlap + CI `--strict`) |
 | Validation & tests | ✅ `validate` 47 checks · `npm test` 16 tests · GitHub Actions |
 | Open release | ✅ **v0.18.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
-Maintainer audits are **local only** (`.agents/audit/`, not in repo). Public contract: [docs/audit/README.md](docs/audit/README.md).
+Maintainer **release audits are mandatory** and local-only (`.agents/audit/` 100/100, not in repo; order: audit → release commit → tag → Release). Public contract: [docs/audit/README.md](docs/audit/README.md).
 
 ## Layout
 
@@ -49,7 +49,7 @@ Maintainer audits are **local only** (`.agents/audit/`, not in repo). Public con
 |------|---------|
 | `docs/product/` | Problem statement · north star · delivery model · capability model · builder guide · roadmap (Chinese) |
 | `docs/design/` | Composition protocol · handoff · plan-progress · message/escalation/contention contracts · JSON Schema |
-| `docs/templates/` | Six `flow_weight` template tiers |
+| `docs/templates/` | Six `flow_weight` tiers (DoD · verification · ddd-gate · **stage · commit-policy**, etc.) |
 | `agents/examples/` | minimal-roster · plan-progress · message examples |
 | `packs/` | Official team pack example (roster + templates + harness mapping + skills) |
 | `harness/` | Cursor / CLI / OpenHands / LangGraph / CrewAI **thin adapters** (not core product) |
@@ -76,9 +76,9 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ## Roadmap
 
-**Current: v0.12.0** — ADR index · problem-statement / PRD-lite templates.
+**Current: v0.18.0** — six-tier stage / commit-policy matrix · schema tighten · capability checkmarks · identity tests.
 
-See [ROADMAP.md](ROADMAP.md) · [Post-v0.1 plan](docs/product/post-v01-roadmap.md) · [README.md](README.md) (Chinese) for full version table.
+See [ROADMAP.md](ROADMAP.md) · [Post-v0.1 plan](docs/product/post-v01-roadmap.md) · [README.md](README.md) (Chinese) for full version table through **v0.18.0**.
 
 ### Non-goals
 

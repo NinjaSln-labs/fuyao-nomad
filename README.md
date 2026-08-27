@@ -32,14 +32,14 @@
 | 域 | 状态 |
 |----|------|
 | 产品 / 设计文档 `docs/` | ✅ 定稿（问题陈述 · 北极星 · 能力模型 · 编制协议） |
-| JSON Schema + 六档 `flow_weight` 模板 | ✅ roster · plan-progress · DoD · verification · DDD 门 · audit-record |
+| JSON Schema + 六档 `flow_weight` 模板 | ✅ roster · plan-progress · DoD · verification · DDD 门 · **stage · commit-policy** · audit-record |
 | 团队包 `packs/minimal-research-to-spec` | ✅ pack validate / install |
 | Harness 薄适配 POC | ✅ Cursor（install）· CLI · OpenHands · **LangGraph / CrewAI 导出**（文档 + 片段） |
 | 消息协议 + 争用顾问 | ✅ message validate · `check:contention`（territory 重叠 + CI `--strict`） |
 | 校验与测试 | ✅ `validate` 47 项 · `npm test` 16 项 · GitHub Actions |
 | 开源发布 | ✅ **v0.18.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
-维护者审计为**本地私有**（`.agents/audit/`，不入库）。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
+维护者发版审计为**本地私有必做**（`.agents/audit/` 100/100，不入库；顺序：审计 → 包装 commit → tag → Release）。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
 
 ## 目录结构
 
@@ -47,7 +47,7 @@
 |-----------|------|
 | `docs/product/` | 问题陈述 · 北极星 · 交付模式 · 能力模型 · Builder 指南 · 路线图 |
 | `docs/design/` | 编制协议 · handoff · 计划进度 · 消息/升级/争用契约 · JSON Schema |
-| `docs/templates/` | 六档 `flow_weight` 模板（轻 · 轻中 · 中 · 中重 · 重 · 全流程） |
+| `docs/templates/` | 六档 `flow_weight` 模板（DoD · verification · ddd-gate · **stage · commit-policy** 等） |
 | `agents/examples/` | minimal-roster · plan-progress · messages 示例 |
 | `packs/` | 官方团队包示例（roster + 模板 + harness 映射 + skills） |
 | `harness/` | Cursor / CLI / OpenHands / LangGraph / CrewAI **薄适配**（非产品核心） |
@@ -99,7 +99,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ## 路线图
 
-**当前：v0.17.0** — 协议硬化（blocker 证据 · check:identity）· Eval 三门可选。
+**当前：v0.18.0** — 模板族六档（stage / commit-policy）· schema 收紧 · 能力勾选 · identity 测试。
 
 | 版本 | 目标 |
 |------|------|
@@ -120,6 +120,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 | **v0.15.0** ✅ | 团队包 export/import · 换映射指南 |
 | **v0.16.0** ✅ | 身份约束 · DoD/审计对照 intent |
 | **v0.17.0** ✅ | 协议硬化 · Eval 三门可选 · 复盘 |
+| **v0.18.0** ✅ | stage/commit-policy 六档 · audit-record 可选评分 · identity 测试 |
 
 详见 [后 v0.1 路线](docs/product/post-v01-roadmap.md) · [0→1 路径](docs/product/0-1-path.md)
 
