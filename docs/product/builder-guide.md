@@ -23,8 +23,10 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 | 路径 | 内容 |
 |------|------|
-| `agents/packs/<id>/` | roster · 模板 · 包内 `skills/` · `harness/cursor/` |
-| `.cursor/agents/` | **仅** subagent 定义（薄适配） |
+| `agents/packs/<id>/` | roster · 模板 · 包内 `skills/` · `harness/cursor/` · **`harness/cli/`**（v0.22+ 双 mapping 范例） |
+| `.cursor/agents/` | **仅 Cursor** subagent（CLI/OpenHands **无** install 脚本） |
+
+Dogfood 完整剧本（0–8 步 · 含步 7 双 harness）：[dogfood-playbook.md](./examples/dogfood-playbook.md)
 
 **方式 B — 手写 roster**
 
@@ -50,7 +52,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 从 intent 抽出 **身份约束**（不可裁剪）：[identity-constraints.md](../design/identity-constraints.md)  
 阶段复盘（v0.1–v0.16）：[v0.1-v0.16-retrospective.md](./examples/v0.1-v0.16-retrospective.md)  
-官方 dogfood 剧本：[dogfood-playbook.md](./examples/dogfood-playbook.md)（含 [六档模板绑定](./examples/dogfood-playbook.md#六档模板绑定v019) · [dogfood-ii 范例](./examples/dogfood-ii-scenario.md)）  
+官方 dogfood 剧本：[dogfood-playbook.md](./examples/dogfood-playbook.md)（**完整 0–8 步** · 步 7 CLI 双 harness · [矩阵对照](./examples/dogfood-matrix-comparison.md)）  
 `npm run check:identity -- --project .`（advisory；dogfood 用 `--strict`）  
 结构化槽位消息（可选）：[message-protocol.md](../design/message-protocol.md)  
 追溯与 DoD 联动：[traceability-contract.md](../design/traceability-contract.md) · `npm run check:traceability`  
