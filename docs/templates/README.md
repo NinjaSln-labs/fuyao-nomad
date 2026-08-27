@@ -13,13 +13,22 @@
 | 重 | `dod-重.yaml` | `verification-重.yaml` | `ddd-gate-重.yaml` |
 | 全流程 | `dod-全流程.yaml` | `verification-全流程.yaml` | `ddd-gate-全流程.yaml` |
 
-## 治理与阶段（v0.7+）
+## 治理与阶段（v0.18 六档齐）
+
+| flow_weight | stage | commit-policy |
+|-------------|-------|---------------|
+| 轻 | `stage-轻.yaml` | `commit-policy-轻.yaml` |
+| 轻中 | `stage-轻中.yaml` | `commit-policy-轻中.yaml` |
+| 中 | `stage-中.yaml` | `commit-policy-中.yaml` |
+| 中重 | `stage-中重.yaml` | `commit-policy-中重.yaml` |
+| 重 | `stage-重.yaml` | `commit-policy-重.yaml` |
+| 全流程 | `stage-全流程.yaml` | `commit-policy-全流程.yaml` |
 
 | 模板 | 说明 |
 |------|------|
 | `adr-中.yaml` | ADR 草案；已接受决策见 `docs/decisions/adr-*.yaml` |
-| `commit-policy-中.yaml` | commit 策略与 `gate_level` 对齐 |
-| `stage-轻.yaml` | 可配置阶段（非固定 S0–S5） |
+
+stage 为可配置阶段（非固定 S0–S5）；commit-policy 与 roster `gate_level`（auto / confirm / forbid）对齐。
 
 ## 研究与产品（v0.12+）
 

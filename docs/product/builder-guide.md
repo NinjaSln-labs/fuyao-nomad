@@ -46,6 +46,8 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 `.agents/plan-progress.yaml` — [plan-progress-contract.md](../design/plan-progress-contract.md)
 
+阶段与 commit 策略按 `flow_weight` 选档：[templates README 档位矩阵](../templates/README.md)（stage / commit-policy 六档，v0.18）
+
 从 intent 抽出 **身份约束**（不可裁剪）：[identity-constraints.md](../design/identity-constraints.md)  
 阶段复盘（v0.1–v0.16）：[v0.1-v0.16-retrospective.md](./examples/v0.1-v0.16-retrospective.md)  
 官方 dogfood 剧本：[dogfood-playbook.md](./examples/dogfood-playbook.md)  
