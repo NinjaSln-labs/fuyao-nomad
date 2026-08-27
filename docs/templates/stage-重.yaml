@@ -1,0 +1,42 @@
+# 可配置阶段模板 · flow_weight=重
+# 与 audit-by-flow-weight 重档对齐：设计 / 实现 / 代码质量分列
+
+flow_weight: 重
+
+stages:
+  - id: s1
+    name: 调研
+    goal: 多源证据与约束澄清
+    exit_criteria:
+      - 问题陈述与约束可核对
+      - 快照未升格为权威 scope
+  - id: s2
+    name: 规格
+    goal: 可追溯规格与任务分解
+    exit_criteria:
+      - plan_refs / 追溯链就绪
+      - 身份约束已声明（若适用）
+  - id: s3
+    name: 设计审计
+    goal: 实现前设计门
+    exit_criteria:
+      - 设计审计 pass
+      - DDD 门重档项完成
+  - id: s4
+    name: 实现
+    goal: 按规格交付可验证变更
+    exit_criteria:
+      - DoD checklist 完成
+      - 关键路径测试通过
+  - id: s5
+    name: 实现审计
+    goal: 实现对齐设计与 DoD
+    exit_criteria:
+      - 实现审计 pass 或 pass_with_notes
+      - 身份约束仍满足
+  - id: s6
+    name: 代码质量审计
+    goal: 安全/可维护性/测试充分性核对
+    exit_criteria:
+      - 代码质量审计 pass 或 pass_with_notes
+      - 开放 finding 已记录或修复

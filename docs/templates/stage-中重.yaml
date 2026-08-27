@@ -1,0 +1,35 @@
+# 可配置阶段模板 · flow_weight=中重
+
+flow_weight: 中重
+
+stages:
+  - id: s1
+    name: 调研
+    goal: 证据充分、边界清楚
+    exit_criteria:
+      - 问题陈述可核对
+      - 竞品/约束快照去权威化
+  - id: s2
+    name: 规格
+    goal: 规格可开工且可追溯
+    exit_criteria:
+      - 规格 ↔ plan 双向引用就绪
+      - 范围变更路径明确
+  - id: s3
+    name: 设计审计
+    goal: 实现前设计门通过
+    exit_criteria:
+      - 设计审计 pass 或明确 N/A
+      - DDD 门深度与中重档对齐
+  - id: s4
+    name: 实现
+    goal: 按规格交付
+    exit_criteria:
+      - DoD checklist 完成
+      - 验证模板对应项通过
+  - id: s5
+    name: 实现审计
+    goal: 实现对齐设计与 DoD
+    exit_criteria:
+      - 实现审计 pass 或 pass_with_notes
+      - 阻塞已记录或清除并留证据

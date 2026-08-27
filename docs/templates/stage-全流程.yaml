@@ -1,0 +1,46 @@
+# 可配置阶段模板 · flow_weight=全流程
+# 可配置多阶段（非固定 S0–S5）；对抗/边界等为可选模块，非默认开启
+
+flow_weight: 全流程
+
+stages:
+  - id: s1
+    name: 调研
+    goal: 证据与边界完整
+    exit_criteria:
+      - 问题陈述可核对
+      - 去权威化快照归档
+  - id: s2
+    name: 规格
+    goal: 可追溯规格（可含 PRD-lite）
+    exit_criteria:
+      - 规格/PRD-lite 与 plan 对齐
+      - 身份约束声明完整（若适用）
+  - id: s3
+    name: 设计审计
+    goal: 实现前设计门
+    exit_criteria:
+      - 设计审计 pass
+      - DDD 门全流程深度完成
+  - id: s4
+    name: 实现
+    goal: 按规格交付
+    exit_criteria:
+      - DoD checklist 完成
+      - 验证模板对应项通过
+  - id: s5
+    name: 实现审计
+    goal: 实现对齐设计与 DoD
+    exit_criteria:
+      - 实现审计 pass 或 pass_with_notes
+  - id: s6
+    name: 代码质量审计
+    goal: 质量与安全面核对
+    exit_criteria:
+      - 代码质量审计 pass 或 pass_with_notes
+  - id: s7
+    name: 边界回顾（可选）
+    goal: 对抗/边界/容错模块按需启用后回顾
+    exit_criteria:
+      - 若启用 adversarial-boundary / eval-gates：结论已记录
+      - 未启用则明确 N/A（可选模块非默认）
