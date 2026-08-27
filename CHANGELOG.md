@@ -2,6 +2,20 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.18.0] - 2026-08-27
+
+### Added
+
+- stage / commit-policy **六档**模板矩阵（与 DoD 同构）
+- `audit-record` 可选 `score` / `score_max` / `scope` / `summary` / `evidence`；公开 fixture `tests/fixtures/audit-record-scored.audit.yaml`
+- `check:identity` skip（无约束）与 advisory（非 fatal）测试
+
+### Changed
+
+- stage / commit-policy schema：嵌套 `additionalProperties: false`
+- capability-model：已交付 P1 勾选；stage / commit-policy → ✅ v0.18
+- templates README + builder-guide：档位矩阵入口
+
 ## [0.17.0] - 2026-08-26
 
 ### Added

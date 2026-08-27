@@ -126,7 +126,7 @@
 | **P0 框架提供** | `flow_weight` 调节机制（轻-重连续谱，档位可扩展） |
 | **P0 框架提供** | DoD / 验证 / 交付物 / 边界 **模板族**（与 flow_weight 绑定） |
 | **P0 框架提供** | 青蚨使/Voyage **机制继承表**（见 [delivery-model.md](delivery-model.md)） |
-| **P1** | stage 模板（可配置阶段，非固定 S0–S5） ◐ 仅 `stage-轻` → v0.18 六档矩阵 |
+| **P1** | stage 模板（可配置阶段，非固定 S0–S5） ✅ v0.18 六档 · [templates README](../templates/README.md) |
 | **P1** | 追溯链：意图 → 领域 → 任务（轻端可缩） ✅ [traceability-contract.md](../design/traceability-contract.md) · `npm run check:traceability` |
 | **不做** | 固定「全工程 vs 敏捷」标签；满配 ceremony 为默认 |
 | **竞品差异** | BMAD 敏捷+PRD 主轴 → 扶摇 **DDD 必要 + flow_weight** |
@@ -185,7 +185,7 @@
 | **P0 框架提供** | 分级门禁（非一律「授权 S1」）：破坏性、远程、重端须确认 |
 | **P0 框架提供** | 审计产物 schema：治理留痕 + **质量审计结论**（设计/实现/代码质量） |
 | **P1** | ADR 模板与触发条件（硬约束写 ADR） ✅ [`adr-中.yaml`](../templates/adr-中.yaml) · [docs/decisions](../decisions/) |
-| **P1** | commit 策略分级（自动 / 确认后 / 禁止） ◐ 仅 `commit-policy-中` → v0.18 六档矩阵 |
+| **P1** | commit 策略分级（自动 / 确认后 / 禁止） ✅ v0.18 六档 · [templates README](../templates/README.md) |
 | **P2** | 分层审计旋转维度（继承 Voyage 结构，非百波体量）→ 见 audit-by-flow-weight |
 | **不做** | 100/100 文档审计为轻端默认 |
 | **竞品差异** | CrewAI HITL ◐ · 青蚨使全阶段授权 → 扶摇 **按风险分级** |
@@ -291,3 +291,4 @@
 | 2026-08-22 | 初稿：8 域 P0/P1/P2 + V1 切片 |
 | 2026-08-22 | 分层审计：设计 / 实现 / 代码质量 + flow_weight |
 | 2026-08-27 | v0.18 U1：已交付 P1 补 ✅；stage/commit-policy 标 ◐ 待六档 |
+| 2026-08-27 | v0.18 U10：stage / commit-policy → ✅ v0.18 |

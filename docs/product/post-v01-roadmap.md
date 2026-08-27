@@ -1,5 +1,13 @@
 # 后 v0.1 路线
 
+## v0.18.0 ✅（2026-08-27）
+
+| 项 | 状态 |
+|----|------|
+| stage / commit-policy 六档矩阵（§4 / §6 P1） | ✅ [templates README](../templates/README.md) |
+| audit-record 可选 score/evidence · identity 测试债 | ✅ |
+| capability-model 已交付 P1 勾选 | ✅ [capability-model.md](./capability-model.md) |
+
 ## v0.17.0 ✅（2026-08-26）
 
 | 项 | 状态 |

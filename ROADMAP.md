@@ -4,6 +4,12 @@
 
 ## 已完成
 
+### v0.18.0（2026-08-27）
+
+- stage / commit-policy 六档模板矩阵
+- audit-record 可选评分字段 · identity skip/advisory 测试
+- capability-model 已交付 P1 勾选对齐
+
 ### v0.17.0（2026-08-26）
 
 - 协议硬化：blocker evidence · `check:identity` · dogfood 剧本 · 复盘
@@ -34,7 +40,7 @@
 ## 里程碑
 
 ```
-v0.16.0 ✅ → v0.17.0 ✅ 质量门加深 → 稳态
+v0.17.0 ✅ → v0.18.0 ✅ 模板族补齐 → 稳态
 ```
 
 ## 不做

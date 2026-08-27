@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v0.17.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.17.0)
+[![Release](https://img.shields.io/badge/Release-v0.18.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.18.0)
 
 **[中文](README.md)** | English
 
@@ -38,8 +38,8 @@ Open-source **agent team framework** — defines how multi-role teams collaborat
 | Team pack `packs/minimal-research-to-spec` | ✅ pack validate / install |
 | Harness thin adapters | ✅ Cursor (install) · CLI · OpenHands · **LangGraph / CrewAI export** (docs + snippets) |
 | Message protocol + contention advisory | ✅ message validate · `check:contention` (territory overlap + CI `--strict`) |
-| Validation & tests | ✅ `validate` 37 checks · `npm test` 14 tests · GitHub Actions |
-| Open release | ✅ **v0.17.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+| Validation & tests | ✅ `validate` 47 checks · `npm test` 16 tests · GitHub Actions |
+| Open release | ✅ **v0.18.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
 Maintainer audits are **local only** (`.agents/audit/`, not in repo). Public contract: [docs/audit/README.md](docs/audit/README.md).
 
