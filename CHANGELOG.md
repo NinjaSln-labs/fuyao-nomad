@@ -2,6 +2,18 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.22.0] - 2026-08-27
+
+### Added
+
+- Dogfood playbook **完整 0–8 步**使用指南（路径 A/B/C · 命令速查）
+- 步 7 专档：[dogfood-step7-scenario.md](docs/product/examples/dogfood-step7-scenario.md) · [close](docs/product/examples/dogfood-step7-close.md)
+- `minimal-research-to-spec` 包内置 **CLI 第二 harness**（`pack_revision` 1.1.0）
+
+### Changed
+
+- builder-guide：双 harness 安装说明 · 链到完整 playbook
+
 ## [0.21.0] - 2026-08-27
 
 ### Added

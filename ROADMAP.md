@@ -4,6 +4,11 @@
 
 ## 已完成
 
+### v0.22.0（2026-08-27）
+
+- Dogfood playbook 完整 0–8 步 · 步 7 CLI 双 harness
+- minimal-research-to-spec pack_revision 1.1.0
+
 ### v0.21.0（2026-08-27）
 
 - Dogfood IV：audit-trail · flow_weight=重 · 六阶段 · 三层审计
@@ -55,7 +60,7 @@
 ## 里程碑
 
 ```
-v0.20.0 ✅ → v0.21.0 ✅ Dogfood IV 重档 → 稳态
+v0.21.0 ✅ → v0.22.0 ✅ Playbook 完整 → 稳态
 ```
 
 ## 不做
