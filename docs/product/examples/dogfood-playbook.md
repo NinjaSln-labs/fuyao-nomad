@@ -35,7 +35,7 @@
 **Sandbox 建议：**
 
 1. 在 `.agents/templates/` 复制五文件（或 pin 到 fuyao tag），README 写明来源版本。  
-2. 写 plan 时注明当前 **stage id**（轻档 **s1–s2**；中档及以上 **s1–s4**）与 milestone 对齐。  
+2. 写 plan 时注明 **stage id**（轻 **s1–s2** · 中 **s1–s4** · 重 **s1–s6**）与 milestone 对齐。  
 3. 步 **2b**（plan 后）：对照 `stage-<档>` 确认 milestone / work_item 映射。  
 4. 步 **6b**：按 `stage-<档>.exit_criteria` 勾选自检表（写入 close 笔记）。  
 5. 步 **6c**：按 `commit-policy-<档>` 回顾本次 commit 分级（auto / confirm / forbid 各举一例）。
@@ -44,8 +44,11 @@
 
 | 版本 | flow_weight | 场景 | 文档 |
 |------|-------------|------|------|
-| v0.19 | **中** | reading-card | [scenario](./dogfood-ii-scenario.md) · [close](./dogfood-ii-close.md) |
+| v0.21 | **重** | audit-trail | [scenario](./dogfood-iv-scenario.md) · [close](./dogfood-iv-close.md) |
 | v0.20 | **轻** | todo-strip | [scenario](./dogfood-iii-scenario.md) · [close](./dogfood-iii-close.md) |
+| v0.19 | **中** | reading-card | [scenario](./dogfood-ii-scenario.md) · [close](./dogfood-ii-close.md) |
+
+**矩阵对照**：[dogfood-matrix-comparison.md](./dogfood-matrix-comparison.md)（轻/中/重实跑差异）
 
 Sandbox **仅本地**；脱敏后范例入库 fuyao-nomad。
 
@@ -61,6 +64,7 @@ Sandbox **仅本地**；脱敏后范例入库 fuyao-nomad。
 | 天气 · 出行 · 穿搭 | 独立仓；关闭笔记 `docs/research/2026-08-26-dogfood-close.md`（身份约束链） |
 | **reading-card（v0.19）** | [dogfood-ii-scenario.md](./dogfood-ii-scenario.md) · [close](./dogfood-ii-close.md)（**中档** · 四阶段） |
 | **todo-strip（v0.20）** | [dogfood-iii-scenario.md](./dogfood-iii-scenario.md) · [close](./dogfood-iii-close.md)（**轻档** · 两阶段 · 本地 only） |
+| **audit-trail（v0.21）** | [dogfood-iv-scenario.md](./dogfood-iv-scenario.md) · [close](./dogfood-iv-close.md)（**重档** · 六阶段 · 三层审计） |
 
 仅作参考；勿把业务仓密钥或逻辑拷进扶摇。
 
