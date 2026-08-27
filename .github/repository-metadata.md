@@ -14,6 +14,8 @@
 
 ## About / Description
 
+**勿写版本号** — About 会长期滞后；当前版本见 README badge / Releases / CHANGELOG，不要写进 description。
+
 **中文（README 用）：**
 
 > 开源 Agent 团队框架：团队优先、DDD 驱动、轻-重流程重量可调；薄适配挂 Cursor 等 harness，不做 harness。
@@ -45,10 +47,11 @@ roster
 
 ```bash
 gh repo create NinjaSln-labs/fuyao-nomad --public \
-  --description "Open-source agent team framework: team-first, DDD-driven, thin harness adapters — not a harness." \
+  --description "扶摇 · Nomad — Open-source agent team framework: team-first, DDD-driven, adjustable flow_weight; thin adapters for Cursor & harnesses — not a harness." \
   --source=. --remote=origin --push
 
 gh repo edit NinjaSln-labs/fuyao-nomad \
+  --description "扶摇 · Nomad — Open-source agent team framework: team-first, DDD-driven, adjustable flow_weight; thin adapters for Cursor & harnesses — not a harness." \
   --add-topic agent-framework --add-topic multi-agent --add-topic ai-agents \
   --add-topic agent-team --add-topic domain-driven-design --add-topic ddd \
   --add-topic llm --add-topic cursor --add-topic workflow --add-topic json-schema \
