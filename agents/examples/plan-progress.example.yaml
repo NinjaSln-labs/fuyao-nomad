@@ -1,8 +1,8 @@
 # 调研→规格 · 计划进度示例
 #
-# dogfood 时配对 flow_weight=中 模板（见 docs/product/examples/dogfood-ii-scenario.md）：
-#   stage-中 · commit-policy-中 · dod-中 · verification-中 · ddd-gate-中
-# 关仓范例：docs/product/examples/dogfood-ii-close.md
+# dogfood 时配对模板：
+#   中档 → docs/product/examples/dogfood-ii-scenario.md（stage-中 等五文件）
+#   轻档 → docs/product/examples/dogfood-iii-scenario.md（stage-轻 等五文件）
 
 version: "0.1"
 roster_id: minimal-research-to-spec
