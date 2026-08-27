@@ -2,6 +2,17 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.20.0] - 2026-08-27
+
+### Added
+
+- Dogfood III 轻档范例：[dogfood-iii-scenario.md](docs/product/examples/dogfood-iii-scenario.md) · [close](docs/product/examples/dogfood-iii-close.md)（todo-strip）
+- dogfood-playbook：轻档两阶段说明 · **sandbox 本地 only** 约定
+
+### Changed
+
+- `plan-progress.example.yaml`：轻/中 dogfood 模板交叉引用
+
 ## [0.19.0] - 2026-08-27
 
 ### Added

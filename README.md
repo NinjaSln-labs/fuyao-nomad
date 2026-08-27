@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v0.19.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.19.0)
+[![Release](https://img.shields.io/badge/Release-v0.20.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.20.0)
 
 **[English](README.en.md)** | 中文
 
@@ -37,7 +37,7 @@
 | Harness 薄适配 POC | ✅ Cursor（install）· CLI · OpenHands · **LangGraph / CrewAI 导出**（文档 + 片段） |
 | 消息协议 + 争用顾问 | ✅ message validate · `check:contention`（territory 重叠 + CI `--strict`） |
 | 校验与测试 | ✅ `validate` 47 项 · `npm test` 16 项 · GitHub Actions |
-| 开源发布 | ✅ **v0.19.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+| 开源发布 | ✅ **v0.20.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
 维护者发版须 **双审计必做**（`.agents/audit/`：**发版审计** 100/100 + **代码质量审计** pass/pass_with_notes，不入库；顺序：双审计 → 包装 commit → tag → Release）。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
 
@@ -99,7 +99,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ## 路线图
 
-**当前：v0.19.0** — Dogfood II 六档实跑范例 · playbook 模板绑定 · reading-card 关仓笔记。
+**当前：v0.20.0** — Dogfood III 轻档实跑 · todo-strip · sandbox 本地 only。
 
 | 版本 | 目标 |
 |------|------|
@@ -120,8 +120,9 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 | **v0.15.0** ✅ | 团队包 export/import · 换映射指南 |
 | **v0.16.0** ✅ | 身份约束 · DoD/审计对照 intent |
 | **v0.17.0** ✅ | 协议硬化 · Eval 三门可选 · 复盘 |
-| **v0.19.0** ✅ | Dogfood II · 中档五模板实跑 · playbook 六档绑定 |
-| **v0.18.0** ✅ | stage/commit-policy 六档 · audit-record 可选评分 · identity 测试 |
+| **v0.20.0** ✅ | Dogfood III · 轻档五模板 · todo-strip |
+| **v0.19.0** ✅ | Dogfood II · 中档五模板 · reading-card |
+| **v0.18.0** ✅ | stage/commit-policy 六档 · audit-record · identity 测试 |
 
 详见 [后 v0.1 路线](docs/product/post-v01-roadmap.md) · [0→1 路径](docs/product/0-1-path.md)
 

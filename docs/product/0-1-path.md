@@ -18,13 +18,14 @@
 | **⑫ 质量门加深** | blocker 证据 · check:identity · Eval 可选 · 复盘 | ✅ **v0.17.0** |
 | **⑬ 模板族补齐** | stage / commit-policy 六档 · schema 收紧 · 能力勾选 | ✅ **v0.18.0** |
 | **⑭ Dogfood II** | 中档五模板实跑 · playbook 绑定 · 关仓范例 | ✅ **v0.19.0** |
+| **⑮ Dogfood III** | 轻档五模板实跑 · 两阶段 stage · 本地 sandbox | ✅ **v0.20.0** |
 
 ## 当前落点
 
 | 阶段 | 状态 |
 |------|------|
-| ①–⑭ | ✅ 至 **v0.19.0** |
-| ⑮+ | ▶ 稳态；见 [post-v01-roadmap.md](post-v01-roadmap.md) |
+| ①–⑮ | ✅ 至 **v0.20.0** |
+| ⑯+ | ▶ 稳态；见 [post-v01-roadmap.md](post-v01-roadmap.md) |
 
 ## 纪律
 

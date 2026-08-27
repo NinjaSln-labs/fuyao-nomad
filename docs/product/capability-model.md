@@ -128,6 +128,7 @@
 | **P0 框架提供** | 青蚨使/Voyage **机制继承表**（见 [delivery-model.md](delivery-model.md)） |
 | **P1** | stage 模板（可配置阶段，非固定 S0–S5） ✅ v0.18 六档 · [templates README](../templates/README.md) |
 | **P1** | dogfood 六档模板实跑（中档范例） ✅ v0.19 · [dogfood-ii-scenario.md](examples/dogfood-ii-scenario.md) |
+| **P1** | dogfood 轻档实跑（两阶段） ✅ v0.20 · [dogfood-iii-scenario.md](examples/dogfood-iii-scenario.md) |
 | **P1** | 追溯链：意图 → 领域 → 任务（轻端可缩） ✅ [traceability-contract.md](../design/traceability-contract.md) · `npm run check:traceability` |
 | **不做** | 固定「全工程 vs 敏捷」标签；满配 ceremony 为默认 |
 | **竞品差异** | BMAD 敏捷+PRD 主轴 → 扶摇 **DDD 必要 + flow_weight** |

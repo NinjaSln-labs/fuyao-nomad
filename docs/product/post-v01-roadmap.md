@@ -1,5 +1,12 @@
 # 后 v0.1 路线
 
+## v0.20.0 ✅（2026-08-27）
+
+| 项 | 状态 |
+|----|------|
+| Dogfood III · 轻档实跑（todo-strip） | ✅ [scenario](./examples/dogfood-iii-scenario.md) · [close](./examples/dogfood-iii-close.md) |
+| sandbox 本地 only · 不上 GitHub | ✅ playbook 约定 |
+
 ## v0.19.0 ✅（2026-08-27）
 
 | 项 | 状态 |

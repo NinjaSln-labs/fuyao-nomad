@@ -4,6 +4,11 @@
 
 ## 已完成
 
+### v0.20.0（2026-08-27）
+
+- Dogfood III：todo-strip · flow_weight=轻 五模板实跑
+- playbook：轻档两阶段 · sandbox 本地 only
+
 ### v0.19.0（2026-08-27）
 
 - Dogfood II：reading-card sandbox · flow_weight=中 五模板实跑
@@ -45,7 +50,7 @@
 ## 里程碑
 
 ```
-v0.18.0 ✅ → v0.19.0 ✅ Dogfood II 六档实跑 → 稳态
+v0.19.0 ✅ → v0.20.0 ✅ Dogfood III 轻档 → 稳态
 ```
 
 ## 不做
