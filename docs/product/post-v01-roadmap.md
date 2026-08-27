@@ -1,5 +1,12 @@
 # 后 v0.1 路线
 
+## v0.19.0 ✅（2026-08-27）
+
+| 项 | 状态 |
+|----|------|
+| Dogfood II · 中档五模板实跑（reading-card） | ✅ [dogfood-ii-scenario.md](./examples/dogfood-ii-scenario.md) · [close](./examples/dogfood-ii-close.md) |
+| playbook 六档绑定 · builder-guide 链 | ✅ [dogfood-playbook.md](./examples/dogfood-playbook.md) |
+
 ## v0.18.0 ✅（2026-08-27）
 
 | 项 | 状态 |

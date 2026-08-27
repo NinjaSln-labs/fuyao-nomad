@@ -127,6 +127,7 @@
 | **P0 框架提供** | DoD / 验证 / 交付物 / 边界 **模板族**（与 flow_weight 绑定） |
 | **P0 框架提供** | 青蚨使/Voyage **机制继承表**（见 [delivery-model.md](delivery-model.md)） |
 | **P1** | stage 模板（可配置阶段，非固定 S0–S5） ✅ v0.18 六档 · [templates README](../templates/README.md) |
+| **P1** | dogfood 六档模板实跑（中档范例） ✅ v0.19 · [dogfood-ii-scenario.md](examples/dogfood-ii-scenario.md) |
 | **P1** | 追溯链：意图 → 领域 → 任务（轻端可缩） ✅ [traceability-contract.md](../design/traceability-contract.md) · `npm run check:traceability` |
 | **不做** | 固定「全工程 vs 敏捷」标签；满配 ceremony 为默认 |
 | **竞品差异** | BMAD 敏捷+PRD 主轴 → 扶摇 **DDD 必要 + flow_weight** |
@@ -291,4 +292,5 @@
 | 2026-08-22 | 初稿：8 域 P0/P1/P2 + V1 切片 |
 | 2026-08-22 | 分层审计：设计 / 实现 / 代码质量 + flow_weight |
 | 2026-08-27 | v0.18 U1：已交付 P1 补 ✅；stage/commit-policy 标 ◐ 待六档 |
+| 2026-08-27 | v0.19 U9：dogfood 六档实跑 ✅ v0.19 · stage/commit 中档 dogfood 验证 |
 | 2026-08-27 | v0.18 U10：stage / commit-policy → ✅ v0.18 |

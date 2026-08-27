@@ -4,6 +4,11 @@
 
 ## 已完成
 
+### v0.19.0（2026-08-27）
+
+- Dogfood II：reading-card sandbox · flow_weight=中 五模板实跑
+- dogfood-playbook 六档模板绑定节 · dogfood-ii 场景/关仓范例
+
 ### v0.18.0（2026-08-27）
 
 - stage / commit-policy 六档模板矩阵
@@ -40,7 +45,7 @@
 ## 里程碑
 
 ```
-v0.17.0 ✅ → v0.18.0 ✅ 模板族补齐 → 稳态
+v0.18.0 ✅ → v0.19.0 ✅ Dogfood II 六档实跑 → 稳态
 ```
 
 ## 不做
@@ -56,4 +61,4 @@ v0.17.0 ✅ → v0.18.0 ✅ 模板族补齐 → 稳态
 
 ---
 
-*Last updated: 2026-08-26*
+*Last updated: 2026-08-27*

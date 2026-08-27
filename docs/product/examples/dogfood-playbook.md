@@ -51,8 +51,12 @@
 
 ## 已跑通范例（外部）
 
-天气 · 出行 · 穿搭助手 dogfood（独立仓）：关闭笔记 `docs/research/2026-08-26-dogfood-close.md`。  
-仅作参考；勿把该仓密钥或业务逻辑拷进扶摇。
+| 范例 | 说明 |
+|------|------|
+| 天气 · 出行 · 穿搭 | 独立仓；关闭笔记 `docs/research/2026-08-26-dogfood-close.md`（身份约束链） |
+| **reading-card（v0.19）** | [dogfood-ii-scenario.md](./dogfood-ii-scenario.md) · [dogfood-ii-close.md](./dogfood-ii-close.md)（**中档五模板**） |
+
+仅作参考；勿把业务仓密钥或逻辑拷进扶摇。
 
 ## 不做
 

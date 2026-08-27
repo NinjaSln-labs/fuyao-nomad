@@ -2,6 +2,17 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.19.0] - 2026-08-27
+
+### Added
+
+- Dogfood II 范例：[dogfood-ii-scenario.md](docs/product/examples/dogfood-ii-scenario.md) · [dogfood-ii-close.md](docs/product/examples/dogfood-ii-close.md)（reading-card · flow_weight=中）
+- dogfood-playbook **六档模板绑定**节（v0.19+）；builder-guide 链入
+
+### Changed
+
+- `plan-progress.example.yaml` 注释：dogfood 时配对中档五模板
+
 ## [0.18.0] - 2026-08-27
 
 ### Added

@@ -17,13 +17,14 @@
 | **⑪ 身份约束** | intent 品类词硬约束 · DoD/审计对齐 | ✅ **v0.16.0** |
 | **⑫ 质量门加深** | blocker 证据 · check:identity · Eval 可选 · 复盘 | ✅ **v0.17.0** |
 | **⑬ 模板族补齐** | stage / commit-policy 六档 · schema 收紧 · 能力勾选 | ✅ **v0.18.0** |
+| **⑭ Dogfood II** | 中档五模板实跑 · playbook 绑定 · 关仓范例 | ✅ **v0.19.0** |
 
 ## 当前落点
 
 | 阶段 | 状态 |
 |------|------|
-| ①–⑬ | ✅ 至 **v0.18.0** |
-| ⑭+ | ▶ 稳态；见 [post-v01-roadmap.md](post-v01-roadmap.md) |
+| ①–⑭ | ✅ 至 **v0.19.0** |
+| ⑮+ | ▶ 稳态；见 [post-v01-roadmap.md](post-v01-roadmap.md) |
 
 ## 纪律
 
