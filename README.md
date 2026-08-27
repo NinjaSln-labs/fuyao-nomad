@@ -39,7 +39,7 @@
 | 校验与测试 | ✅ `validate` 47 项 · `npm test` 16 项 · GitHub Actions |
 | 开源发布 | ✅ **v0.18.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
-维护者发版审计为**本地私有必做**（`.agents/audit/` 100/100，不入库；顺序：审计 → 包装 commit → tag → Release）。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
+维护者发版须 **双审计必做**（`.agents/audit/`：**发版审计** 100/100 + **代码质量审计** pass/pass_with_notes，不入库；顺序：双审计 → 包装 commit → tag → Release）。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
 
 ## 目录结构
 

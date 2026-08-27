@@ -41,7 +41,7 @@ Open-source **agent team framework** — defines how multi-role teams collaborat
 | Validation & tests | ✅ `validate` 47 checks · `npm test` 16 tests · GitHub Actions |
 | Open release | ✅ **v0.18.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
-Maintainer **release audits are mandatory** and local-only (`.agents/audit/` 100/100, not in repo; order: audit → release commit → tag → Release). Public contract: [docs/audit/README.md](docs/audit/README.md).
+Maintainer releases require **two local audits** (`.agents/audit/`: **release audit** 100/100 + **code quality audit** pass/pass_with_notes; not in repo; order: both audits → release commit → tag → Release). Public contract: [docs/audit/README.md](docs/audit/README.md).
 
 ## Layout
 
