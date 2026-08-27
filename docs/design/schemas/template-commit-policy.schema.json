@@ -17,6 +17,7 @@
           "items": {
             "type": "object",
             "required": ["gate_level", "action"],
+            "additionalProperties": false,
             "properties": {
               "gate_level": {
                 "type": "string",
