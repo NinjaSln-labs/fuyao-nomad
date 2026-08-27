@@ -1,0 +1,30 @@
+# 可配置阶段模板 · flow_weight=中
+# 对齐 research → spec → impl 链；审计门写入 exit_criteria 文案
+
+flow_weight: 中
+
+stages:
+  - id: s1
+    name: 调研
+    goal: 收集证据、去权威化快照
+    exit_criteria:
+      - 问题陈述或调研摘要可核对
+      - 快照未自动升格为 scope
+  - id: s2
+    name: 规格
+    goal: 可开工规格与任务分解
+    exit_criteria:
+      - 规格与 plan work_items 对齐
+      - 设计审计门 pass 或 N/A（audit_gate）
+  - id: s3
+    name: 实现
+    goal: 按规格交付可验证变更
+    exit_criteria:
+      - DoD checklist 完成
+      - plan-progress 已同步
+  - id: s4
+    name: 审计门
+    goal: 实现/质量核对后放行
+    exit_criteria:
+      - 适用 audit_gate 已 pass 或明确 N/A
+      - 身份约束仍满足（若有）

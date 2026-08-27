@@ -1,0 +1,23 @@
+# 可配置阶段模板 · flow_weight=轻中
+
+flow_weight: 轻中
+
+stages:
+  - id: s1
+    name: 探索
+    goal: 澄清问题与边界
+    exit_criteria:
+      - 问题陈述自洽
+      - 范围边界列出
+  - id: s2
+    name: 规格草稿
+    goal: 写出可开工的最小规格
+    exit_criteria:
+      - 范围与交付物写清
+      - 关键依赖标明
+  - id: s3
+    name: 交付
+    goal: 完成最小可验证产出
+    exit_criteria:
+      - DoD checklist 完成
+      - 验证模板对应项通过
