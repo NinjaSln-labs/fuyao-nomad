@@ -66,10 +66,13 @@ audit:
       status: fixed | recorded | open
   auditor_slot_id: auditor
   recorded_at: "2026-08-22T00:00:00Z"
+  # 可选（本地发版审计惯用；verdict 仍为权威判定）
+  # score / score_max / scope / summary / evidence[]
 ```
 
 - **blocked** → 写入 `progress.blockers` → 默认 handoff 升级  
 - 治理层决策/授权记录仍见治理域；本 schema 偏 **质量评审结论**
+- 可选 `score` / `scope` / `evidence` 等见 [audit-record.schema.json](./schemas/audit-record.schema.json)；公开样例 `tests/fixtures/audit-record-scored.audit.yaml`
 
 ## 与槽位
 

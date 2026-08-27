@@ -4,6 +4,7 @@
   "title": "Fuyao Nomad Audit Record",
   "type": "object",
   "required": ["audit"],
+  "additionalProperties": false,
   "properties": {
     "audit": {
       "type": "object",
@@ -24,6 +25,7 @@
           "items": {
             "type": "object",
             "required": ["severity", "status"],
+            "additionalProperties": false,
             "properties": {
               "id": { "type": "string" },
               "severity": {
@@ -40,7 +42,15 @@
           }
         },
         "auditor_slot_id": { "type": "string" },
-        "recorded_at": { "type": "string", "format": "date-time" }
+        "recorded_at": { "type": "string", "format": "date-time" },
+        "score": { "type": "number" },
+        "score_max": { "type": "number" },
+        "scope": { "type": "string" },
+        "summary": { "type": "string" },
+        "evidence": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
       }
     }
   }

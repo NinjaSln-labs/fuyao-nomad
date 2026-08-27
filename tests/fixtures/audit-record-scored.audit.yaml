@@ -1,0 +1,21 @@
+# Fixture: optional score/scope/evidence fields (local release-audit shape)
+
+audit:
+  type: code_quality
+  flow_weight: 重
+  verdict: pass
+  score: 100
+  score_max: 100
+  scope: v0.18 schema fixture — optional scoring fields
+  summary: scored audit record validates under audit-record schema
+  evidence:
+    - npm run validate -- --path tests/fixtures/audit-record-scored.audit.yaml
+    - npm test
+  findings:
+    - id: F1
+      severity: note
+      location: docs/design/schemas/audit-record.schema.json
+      description: optional score fields present
+      status: recorded
+  auditor_slot_id: auditor
+  recorded_at: "2026-08-27T00:00:00Z"
