@@ -4,6 +4,11 @@
 
 ## 已完成
 
+### v0.21.0（2026-08-27）
+
+- Dogfood IV：audit-trail · flow_weight=重 · 六阶段 · 三层审计
+- dogfood 轻/中/重矩阵对照表
+
 ### v0.20.0（2026-08-27）
 
 - Dogfood III：todo-strip · flow_weight=轻 五模板实跑
@@ -50,7 +55,7 @@
 ## 里程碑
 
 ```
-v0.19.0 ✅ → v0.20.0 ✅ Dogfood III 轻档 → 稳态
+v0.20.0 ✅ → v0.21.0 ✅ Dogfood IV 重档 → 稳态
 ```
 
 ## 不做

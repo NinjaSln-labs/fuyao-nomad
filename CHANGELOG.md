@@ -2,6 +2,17 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.21.0] - 2026-08-27
+
+### Added
+
+- Dogfood IV 重档：[dogfood-iv-scenario.md](docs/product/examples/dogfood-iv-scenario.md) · [close](docs/product/examples/dogfood-iv-close.md)（audit-trail · 六阶段 · 三层审计）
+- [dogfood-matrix-comparison.md](docs/product/examples/dogfood-matrix-comparison.md)（轻/中/重对照表）
+
+### Changed
+
+- dogfood-playbook · plan-research-spec-impl 示例：重档链与矩阵入口
+
 ## [0.20.0] - 2026-08-27
 
 ### Added

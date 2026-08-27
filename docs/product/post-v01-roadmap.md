@@ -1,5 +1,11 @@
 # 后 v0.1 路线
 
+## v0.21.0 ✅（2026-08-27）
+
+| 项 | 状态 |
+|----|------|
+| Dogfood IV · 重档（audit-trail） | ✅ [scenario](./examples/dogfood-iv-scenario.md) · [matrix](./examples/dogfood-matrix-comparison.md) |
+
 ## v0.20.0 ✅（2026-08-27）
 
 | 项 | 状态 |
