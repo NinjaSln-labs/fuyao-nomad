@@ -4,6 +4,10 @@
 
 ## 已完成
 
+### v0.23.0（2026-08-27）
+
+- Dogfood V 轻中 · pack triple harness 1.2.0
+
 ### v0.22.0（2026-08-27）
 
 - Dogfood playbook 完整 0–8 步 · 步 7 CLI 双 harness
@@ -60,7 +64,7 @@
 ## 里程碑
 
 ```
-v0.21.0 ✅ → v0.22.0 ✅ Playbook 完整 → 稳态
+v0.22.0 ✅ → v0.23.0 ✅ 轻中 + triple harness → 稳态
 ```
 
 ## 不做

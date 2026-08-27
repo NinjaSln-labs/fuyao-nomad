@@ -2,6 +2,19 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.23.0] - 2026-08-27
+
+### Added
+
+- Dogfood V 轻中：[dogfood-v-scenario.md](docs/product/examples/dogfood-v-scenario.md) · [close](docs/product/examples/dogfood-v-close.md)（action-list）
+- 官方 pack **triple harness**：cursor + cli + **openhands**（`pack_revision` 1.2.0）
+- 矩阵对照增桥接档轻中节
+
+### Changed
+
+- dogfood-playbook · step7：triple harness 说明
+- builder-guide：triple 安装路径
+
 ## [0.22.0] - 2026-08-27
 
 ### Added
