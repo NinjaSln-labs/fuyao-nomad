@@ -37,7 +37,7 @@
 | Harness 薄适配 POC | ✅ Cursor（install）· CLI · OpenHands · **LangGraph / CrewAI 导出**（文档 + 片段） |
 | 消息协议 + 争用顾问 | ✅ message validate · `check:contention`（territory 重叠 + CI `--strict`） |
 | 校验与测试 | ✅ `validate` 47 项 · `npm test` 16 项 · GitHub Actions |
-| 开源发布 | ✅ **v0.22.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+| 开源发布 | ✅ **v0.23.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
 维护者发版须 **双审计必做**（`.agents/audit/`：**发版审计** 100/100 + **代码质量审计** pass/pass_with_notes，不入库；顺序：双审计 → 包装 commit → tag → Release）。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
 
