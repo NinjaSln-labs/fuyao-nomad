@@ -1,0 +1,23 @@
+# Commit 策略 · flow_weight=全流程 · forbid 面更广；仍保留三枚举
+
+flow_weight: 全流程
+
+commit_policy:
+  rules:
+    - gate_level: auto
+      action: 仅无语义影响的 typo 可直接 commit
+      examples:
+        - 纯拼写修正（不改链接目标/版本号）
+    - gate_level: confirm
+      action: 几乎所有内容变更须确认
+      examples:
+        - schema / 模板 / 脚本 / 依赖
+        - 文档语义与验收标准
+        - CI workflow（不含禁止类）
+    - gate_level: forbid
+      action: 禁止 agent 自动 commit 或代发；仅人操作
+      examples:
+        - 发布 tag 与 GitHub Release
+        - 密钥、凭据、生产配置
+        - 外部破坏性命令（删库、force-push main）
+        - 含真实 dogfood 密钥的材料

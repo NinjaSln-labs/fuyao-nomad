@@ -1,0 +1,24 @@
+# Commit 策略 · flow_weight=中重 · confirm 扩到公开契约/依赖
+
+flow_weight: 中重
+
+commit_policy:
+  rules:
+    - gate_level: auto
+      action: 仅 typo/测试绿文档/纯示例可直接 commit
+      examples:
+        - 修正 typo
+        - 示例 yaml 注释澄清
+    - gate_level: confirm
+      action: 公开契约、依赖、模板语义变更须确认
+      examples:
+        - 修改公开 API / JSON Schema
+        - 升级任何生产依赖
+        - 改 flow_weight 模板必选项
+        - 改审计/追溯脚本默认行为
+    - gate_level: forbid
+      action: 禁止 agent 自动 commit；仅人操作
+      examples:
+        - 生产配置与密钥
+        - 发布 tag / Release 元数据（人触发）
+        - 破坏性数据迁移脚本

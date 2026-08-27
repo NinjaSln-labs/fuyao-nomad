@@ -1,0 +1,25 @@
+# Commit 策略 · flow_weight=重 · 默认偏 confirm
+
+flow_weight: 重
+
+commit_policy:
+  rules:
+    - gate_level: auto
+      action: 仅 typo 与测试已绿的文档微调可直接 commit
+      examples:
+        - 修正 typo
+        - CHANGELOG 错别字（非版本语义）
+    - gate_level: confirm
+      action: 默认须确认后再 commit（含多数功能与契约变更）
+      examples:
+        - 任何 schema / 协议变更
+        - 依赖升级
+        - 脚本行为变更
+        - 模板档位语义调整
+        - 新增公开命令
+    - gate_level: forbid
+      action: 禁止 agent 自动 commit；仅人操作
+      examples:
+        - 生产配置与密钥
+        - 强制推送 / 历史重写相关
+        - 外部破坏性操作脚本
