@@ -1,0 +1,25 @@
+# identity check fixture — no identity_constraints (skip)
+
+version: "0.1"
+roster_id: minimal-research-to-spec
+flow_weight: 轻
+
+intent: fixture without identity constraints
+
+plan:
+  goal: skip path
+  scope: tests only
+  work_items:
+    - id: wi-1
+      title: noop
+      slot_id: research
+  milestones:
+    - id: m-1
+      name: done
+      criteria: ok
+
+progress:
+  completed_work_item_ids: []
+  blockers: []
+  next_actions: []
+  updated_at: "2026-08-27T00:00:00Z"

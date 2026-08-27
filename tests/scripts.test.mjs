@@ -187,6 +187,37 @@ test("check:identity strict fails on bad fixture", () => {
   assert.match(out, /missing evidence|identity check failed/i);
 });
 
+test("check:identity skips when no identity_constraints", () => {
+  const r = run("npm", [
+    "run",
+    "check:identity",
+    "--",
+    "--project",
+    ROOT,
+    "--plan",
+    join(ROOT, "tests/fixtures/plan-identity-empty.yaml"),
+  ]);
+  const out = r.stdout + r.stderr;
+  assert.equal(r.status, 0, out);
+  assert.match(out, /no identity_constraints \(skip\)/);
+});
+
+test("check:identity advisory records issues without failing", () => {
+  const r = run("npm", [
+    "run",
+    "check:identity",
+    "--",
+    "--project",
+    ROOT,
+    "--plan",
+    join(ROOT, "tests/fixtures/plan-identity-bad.yaml"),
+  ]);
+  const out = r.stdout + r.stderr;
+  assert.equal(r.status, 0, out);
+  assert.match(out, /issue:/);
+  assert.match(out, /non-fatal|identity check passed \(advisory\)/i);
+});
+
 test("pack install to temp project", () => {
   const scratchBase = join(ROOT, ".scratch");
   mkdirSync(scratchBase, { recursive: true });
