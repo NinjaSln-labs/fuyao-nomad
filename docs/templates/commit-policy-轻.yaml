@@ -1,0 +1,21 @@
+# Commit 策略 · flow_weight=轻 · auto 面宽
+
+flow_weight: 轻
+
+commit_policy:
+  rules:
+    - gate_level: auto
+      action: 文档/示例/小改动测试绿后可直接 commit
+      examples:
+        - 修正 typo
+        - 补充 README 一行
+        - 通过 validate 的模板微调
+    - gate_level: confirm
+      action: 少数高风险变更须确认
+      examples:
+        - 修改公开 schema 字段语义
+    - gate_level: forbid
+      action: 禁止 agent 自动 commit；仅人操作
+      examples:
+        - 密钥与生产配置
+        - 含真实凭据的文件

@@ -1,0 +1,24 @@
+# Commit 策略 · flow_weight=轻中 · 介于轻与中
+
+flow_weight: 轻中
+
+commit_policy:
+  rules:
+    - gate_level: auto
+      action: 文档/测试绿且不改公开契约时可直接 commit
+      examples:
+        - 修正 typo
+        - 新增仅内部 fixture
+        - 模板文案澄清（不改 schema）
+    - gate_level: confirm
+      action: 规格/依赖/公开契约变更须确认
+      examples:
+        - 修改公开 API schema
+        - 升级 minor/major 依赖
+        - 改 DoD 必选项语义
+    - gate_level: forbid
+      action: 禁止 agent 自动 commit；仅人操作
+      examples:
+        - 生产配置
+        - 密钥路径
+        - 强制推送相关脚本
