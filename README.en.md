@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v0.23.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.23.0)
+[![Release](https://img.shields.io/badge/Release-v0.24.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.24.0)
 
 **[中文](README.md)** | English
 
@@ -76,7 +76,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ## Roadmap
 
-**Current: v0.23.0** — Light-mid dogfood · triple harness pack (cursor+cli+openhands).
+**Current: v0.24.0** — Mid-heavy dogfood changelog-slice · bridge tiers 轻中+中重 complete.
 
 ### Non-goals
 

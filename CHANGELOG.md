@@ -2,6 +2,13 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.24.0] - 2026-08-27
+
+### Added
+
+- Dogfood VI 中重：[dogfood-vi-scenario.md](docs/product/examples/dogfood-vi-scenario.md) · [close](docs/product/examples/dogfood-vi-close.md)（changelog-slice）
+- 矩阵对照补 **中重** 桥接档
+
 ## [0.23.0] - 2026-08-27
 
 ### Added

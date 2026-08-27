@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v0.23.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.23.0)
+[![Release](https://img.shields.io/badge/Release-v0.24.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.24.0)
 
 **[English](README.en.md)** | 中文
 
@@ -99,7 +99,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ## 路线图
 
-**当前：v0.23.0** — 轻中 dogfood · 官方 pack triple harness（cursor+cli+openhands）。
+**当前：v0.24.0** — 中重 dogfood changelog-slice · 桥接档轻中+中重齐。
 
 | 版本 | 目标 |
 |------|------|
@@ -120,7 +120,8 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 | **v0.15.0** ✅ | 团队包 export/import · 换映射指南 |
 | **v0.16.0** ✅ | 身份约束 · DoD/审计对照 intent |
 | **v0.17.0** ✅ | 协议硬化 · Eval 三门可选 · 复盘 |
-| **v0.23.0** ✅ | 轻中 action-list · triple harness pack 1.2.0 |
+| **v0.24.0** ✅ | 中重 changelog-slice · 桥接档补全 |
+| **v0.23.0** ✅ | 轻中 action-list · triple harness |
 | **v0.22.0** ✅ | Playbook 0–8 完整 · 步 7 CLI |
 | **v0.21.0** ✅ | Dogfood IV · 重档 audit-trail |
 | **v0.20.0** ✅ | Dogfood III · 轻档 todo-strip |

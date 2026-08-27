@@ -4,6 +4,10 @@
 
 ## 已完成
 
+### v0.24.0（2026-08-27）
+
+- Dogfood VI 中重 changelog-slice
+
 ### v0.23.0（2026-08-27）
 
 - Dogfood V 轻中 · pack triple harness 1.2.0
@@ -64,7 +68,7 @@
 ## 里程碑
 
 ```
-v0.22.0 ✅ → v0.23.0 ✅ 轻中 + triple harness → 稳态
+v0.23.0 ✅ → v0.24.0 ✅ 中重桥接档 → 稳态
 ```
 
 ## 不做
