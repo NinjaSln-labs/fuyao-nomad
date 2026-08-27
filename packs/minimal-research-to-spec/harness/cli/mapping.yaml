@@ -1,0 +1,11 @@
+# 槽位 id → CLI runner 名（minimal-research-to-spec）
+
+roster_id: minimal-research-to-spec
+
+mappings:
+  research: research-runner
+  spec: spec-runner
+  progress: progress-runner
+  auditor: auditor-runner
+
+# 见 docs/design/cli-openhands-adapter.md
