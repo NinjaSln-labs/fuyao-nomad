@@ -4,7 +4,7 @@ version: "0.1"
 id: minimal-research-to-spec
 name: 调研到规格（最小示例）
 description: 竞品调研 + 规格撰写；含推进与审计正交槽位；flow_weight=中
-pack_revision: "1.1.0"
+pack_revision: "1.2.0"
 published_at: "2026-08-27T00:00:00Z"
 flow_weight: 中
 
@@ -22,6 +22,9 @@ harness_adapters:
   cli:
     mapping: harness/cli/mapping.yaml
     runners_dir: harness/cli/runners
+  openhands:
+    mapping: harness/openhands/mapping.yaml
+    agents_dir: harness/openhands/agents
 
 skills:
   - skills/audit-readonly
