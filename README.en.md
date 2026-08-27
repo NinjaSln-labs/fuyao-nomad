@@ -39,7 +39,7 @@ Open-source **agent team framework** — defines how multi-role teams collaborat
 | Harness thin adapters | ✅ Cursor (install) · CLI · OpenHands · **LangGraph / CrewAI export** (docs + snippets) |
 | Message protocol + contention advisory | ✅ message validate · `check:contention` (territory overlap + CI `--strict`) |
 | Validation & tests | ✅ `validate` 47 checks · `npm test` 16 tests · GitHub Actions |
-| Open release | ✅ **v0.23.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+| Open release | ✅ **v0.24.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
 Maintainer releases require **two local audits** (`.agents/audit/`: **release audit** 100/100 + **code quality audit** pass/pass_with_notes; not in repo; order: both audits → release commit → tag → Release). Public contract: [docs/audit/README.md](docs/audit/README.md).
 
