@@ -13,7 +13,13 @@
 | **check:traceability strict** | 可选 | 建议 | **必跑（重档追溯）** |
 | **commit 默认** | auto 面宽 | 中档混合 | **confirm 为主** |
 | **Sandbox** | 本地 only | 本地 only | 本地 only |
-| **场景 doc** | [iii-scenario](./dogfood-iii-scenario.md) | [ii-scenario](./dogfood-ii-scenario.md) | [iv-scenario](./dogfood-iv-scenario.md) |
-| **关仓** | [iii-close](./dogfood-iii-close.md) | [ii-close](./dogfood-ii-close.md) | [iv-close](./dogfood-iv-close.md) |
+
+**Playbook 步 7（双 harness）：** v0.22 专档 [dogfood-step7-scenario.md](./dogfood-step7-scenario.md) · [close](./dogfood-step7-close.md)
+
+| 范例 | 场景 | 关仓 |
+|------|------|------|
+| 轻 | [iii-scenario](./dogfood-iii-scenario.md) | [iii-close](./dogfood-iii-close.md) |
+| 中 | [ii-scenario](./dogfood-ii-scenario.md) | [ii-close](./dogfood-ii-close.md) |
+| 重 | [iv-scenario](./dogfood-iv-scenario.md) | [iv-close](./dogfood-iv-close.md) |
 
 未实跑档位（轻中 · 中重 · 全流程）：见 [templates README](../../templates/README.md) 矩阵索引。
