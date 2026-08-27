@@ -1,4 +1,8 @@
 # 调研→规格→实现 · 计划示例（dogfood）
+#
+# 重档 dogfood：docs/product/examples/dogfood-iv-scenario.md（stage-重 · 六阶段 · 三层审计）
+# 中档：dogfood-ii-scenario.md · 轻档：dogfood-iii-scenario.md
+# 矩阵对照：docs/product/examples/dogfood-matrix-comparison.md
 
 version: "0.1"
 roster_id: minimal-research-to-spec
