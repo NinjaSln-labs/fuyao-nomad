@@ -23,6 +23,27 @@
 | 7 | 移植：在 `pack.yaml` `harness_adapters` 声明第二映射（如 cli），**不改** roster | mapping 文件 |
 | 8 | 关闭：短复盘 · `progress.status: closed`（或项目约定字段） | close 笔记 |
 
+## 六档模板绑定（v0.19+）
+
+按 `flow_weight` 从 [templates README](../../templates/README.md) 选取 **stage + commit-policy + DoD**（中档及以上建议再加 verification · ddd-gate）：
+
+| flow_weight | stage | commit-policy | DoD |
+|-------------|-------|---------------|-----|
+| 轻 … 全流程 | `stage-<档>.yaml` | `commit-policy-<档>.yaml` | `dod-<档>.yaml` |
+
+**Sandbox 建议：**
+
+1. 在 `.agents/templates/` 复制五文件（或 pin 到 fuyao tag），README 写明来源版本。  
+2. 写 plan 时注明当前 **stage id**（如 s1–s4）与 milestone 对齐。  
+3. 步 **2b**（plan 后）：对照 `stage-<档>` 确认 milestone / work_item 映射。  
+4. 步 **6b**：按 `stage-<档>.exit_criteria` 勾选自检表（写入 close 笔记）。  
+5. 步 **6c**：按 `commit-policy-<档>` 回顾本次 commit 分级（auto / confirm / forbid 各举一例）。
+
+**已跑通范例（v0.19）：**
+
+- 场景：[dogfood-ii-scenario.md](./dogfood-ii-scenario.md)（reading-card · flow_weight=**中**）  
+- 关仓：[dogfood-ii-close.md](./dogfood-ii-close.md)
+
 ## 停止条件
 
 - DoD：`identity_constraints_held` +（若曾阻塞）`blocker_evidence_recorded`，或  
