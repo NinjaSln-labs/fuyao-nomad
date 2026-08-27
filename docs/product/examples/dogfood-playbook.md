@@ -112,35 +112,22 @@ node "$Fuyao\scripts\check-traceability.mjs" --project . --plan .agents/plan-pro
 
 **原则：** 只改 `harness_adapters` + mapping 文件；**不改** `roster.yaml`。
 
-官方包 **v0.22+** 已内置 cursor + cli：
+### 步 7 · 多 harness（cursor + cli + openhands · v0.23+）
+
+> [dogfood-step7-scenario.md](./dogfood-step7-scenario.md) · [close](./dogfood-step7-close.md)
+
+官方包 **1.2.0** 内置 **triple**；仅 **cursor** 在 import 时写入 `.cursor/agents/`。
 
 ```yaml
-# agents/packs/minimal-research-to-spec/pack.yaml（摘录）
 harness_adapters:
-  cursor:
-    mapping: harness/cursor/mapping.yaml
-    agents_dir: harness/cursor/agents
-  cli:
-    mapping: harness/cli/mapping.yaml
-    runners_dir: harness/cli/runners
+  cursor: { mapping: harness/cursor/mapping.yaml, agents_dir: harness/cursor/agents }
+  cli: { mapping: harness/cli/mapping.yaml, runners_dir: harness/cli/runners }
+  openhands: { mapping: harness/openhands/mapping.yaml, agents_dir: harness/openhands/agents }
 ```
 
-**验证：**
+`npm run pack -- validate packs/minimal-research-to-spec` → 三项 mapping + fragments 均绿。
 
-```powershell
-Set-Location $Fuyao
-npm run pack -- validate packs/minimal-research-to-spec
-# 或在 sandbox 内：
-npm run pack -- validate "$Sandbox/agents/packs/minimal-research-to-spec"
-```
-
-| 预期 | 说明 |
-|------|------|
-| `✓ cursor mapping` + agents | import 时已装 `.cursor/agents` |
-| `✓ cli mapping` + runners | **包内片段**；扶摇不提供 CLI runtime |
-| roster 未改 | slots / serial_order 与上游一致 |
-
-**自行 fork 加 OpenHands：** 导出 pack → 参照 [cli-openhands-adapter.md](../../design/cli-openhands-adapter.md) 增 `openhands` 块 → 再 validate。
+**自行 fork 第四 runtime：** `pack:export` → 增映射 → validate（roster 仍不改）。
 
 ### 步 8 · 关闭
 
@@ -153,7 +140,8 @@ npm run pack -- validate "$Sandbox/agents/packs/minimal-research-to-spec"
 
 | flow_weight | stage 阶段数 | 范例 | 模板复制 |
 |-------------|-------------|------|----------|
-| 轻 | s1–s2 | [todo-strip](./dogfood-iii-scenario.md) | `stage-轻` … `ddd-gate-轻` |
+| 轻 | s1–s2 | [todo-strip](./dogfood-iii-scenario.md) | `stage-轻` … |
+| **轻中** | **s1–s3** | [action-list](./dogfood-v-scenario.md) | `stage-轻中` … |
 | 中 | s1–s4 | [reading-card](./dogfood-ii-scenario.md) | `stage-中` … |
 | 重 | s1–s6 | [audit-trail](./dogfood-iv-scenario.md) | `stage-重` … |
 
@@ -177,7 +165,8 @@ npm run pack -- validate "$Sandbox/agents/packs/minimal-research-to-spec"
 
 | 版本 | 主题 | 文档 |
 |------|------|------|
-| v0.22 | **步 7 · CLI 双 harness** | [step7-scenario](./dogfood-step7-scenario.md) · [close](./dogfood-step7-close.md) |
+| v0.23 | **轻中** action-list | [v-scenario](./dogfood-v-scenario.md) · [close](./dogfood-v-close.md) |
+| v0.22 | 步 7 triple harness | [step7-scenario](./dogfood-step7-scenario.md) · [close](./dogfood-step7-close.md) |
 | v0.21 | 重档 audit-trail | [iv-scenario](./dogfood-iv-scenario.md) · [close](./dogfood-iv-close.md) |
 | v0.20 | 轻档 todo-strip | [iii-scenario](./dogfood-iii-scenario.md) · [close](./dogfood-iii-close.md) |
 | v0.19 | 中档 reading-card | [ii-scenario](./dogfood-ii-scenario.md) · [close](./dogfood-ii-close.md) |

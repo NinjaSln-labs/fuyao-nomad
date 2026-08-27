@@ -8,7 +8,8 @@
 | 项 | 值 |
 |----|-----|
 | **日期** | 2026-08-27 |
-| **包** | minimal-research-to-spec @ pack_revision **1.1.0** |
+| **包** | minimal-research-to-spec @ **1.2.0** |
+| **Harness** | cursor + cli + **openhands**（triple validate ✅） |
 | **结论** | 步 7 **完成**（路径 B 可跟跑） |
 
 ## 步 7 验收
@@ -34,7 +35,8 @@
 | harness | import 行为 |
 |---------|-------------|
 | cursor | 写入 `.cursor/agents/`（4 agents） |
-| cli | **仅**保留在 `agents/packs/.../harness/cli/` |
+| cli | **仅**包内 `harness/cli/` |
+| openhands | **仅**包内 `harness/openhands/`（v0.23+） |
 
 OpenHands 第三映射：**N/A**（留 fork 按需）。
 

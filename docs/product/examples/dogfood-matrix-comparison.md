@@ -1,6 +1,8 @@
-# Dogfood 矩阵对照（轻 · 中 · 重）
+# Dogfood 矩阵对照
 
-> v0.21 · 实跑范例 ii / iii / iv · 机制见 [dogfood-playbook.md](./dogfood-playbook.md)
+> 主档（轻 · 中 · 重）+ 桥接档（轻中）· [playbook](./dogfood-playbook.md)
+
+## 主档（已实跑）
 
 | 维度 | 轻 · todo-strip | 中 · reading-card | 重 · audit-trail |
 |------|-----------------|-------------------|------------------|
@@ -14,12 +16,23 @@
 | **commit 默认** | auto 面宽 | 中档混合 | **confirm 为主** |
 | **Sandbox** | 本地 only | 本地 only | 本地 only |
 
-**Playbook 步 7（双 harness）：** v0.22 专档 [dogfood-step7-scenario.md](./dogfood-step7-scenario.md) · [close](./dogfood-step7-close.md)
-
 | 范例 | 场景 | 关仓 |
 |------|------|------|
-| 轻 | [iii-scenario](./dogfood-iii-scenario.md) | [iii-close](./dogfood-iii-close.md) |
-| 中 | [ii-scenario](./dogfood-ii-scenario.md) | [ii-close](./dogfood-ii-close.md) |
-| 重 | [iv-scenario](./dogfood-iv-scenario.md) | [iv-close](./dogfood-iv-close.md) |
+| 轻 | [iii](./dogfood-iii-scenario.md) | [iii-close](./dogfood-iii-close.md) |
+| 中 | [ii](./dogfood-ii-scenario.md) | [ii-close](./dogfood-ii-close.md) |
+| 重 | [iv](./dogfood-iv-scenario.md) | [iv-close](./dogfood-iv-close.md) |
 
-未实跑档位（轻中 · 中重 · 全流程）：见 [templates README](../../templates/README.md) 矩阵索引。
+## 桥接档（已实跑）
+
+| 维度 | **轻中 · action-list** |
+|------|------------------------|
+| **版本** | v0.23 |
+| **stage** | 3（s1 探索 · s2 规格草稿 · s3 交付） |
+| **DoD** | `smoke_verified` + identity required |
+| **文档** | [v-scenario](./dogfood-v-scenario.md) · [v-close](./dogfood-v-close.md) |
+
+**未实跑：** 中重 · 全流程 → [templates README](../../templates/README.md)
+
+## Harness（步 7）
+
+**Triple（v0.23+）：** cursor + cli + openhands · [step7](./dogfood-step7-scenario.md)

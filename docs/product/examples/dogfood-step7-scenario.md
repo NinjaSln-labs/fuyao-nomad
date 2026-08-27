@@ -1,6 +1,6 @@
-# Dogfood 步 7 · 第二 harness（CLI mapping）
+# Dogfood 步 7 · 多 harness 映射（CLI · OpenHands）
 
-> v0.22 · 补齐 [dogfood-playbook](./dogfood-playbook.md) 步 7 · 机制：[pack-import-export.md](../../design/pack-import-export.md) · [cli-openhands-adapter.md](../../design/cli-openhands-adapter.md)
+> v0.22 CLI 双 harness · **v0.23+ 官方包内置 triple**（cursor + cli + openhands）
 
 ## 1. 目标
 
@@ -16,7 +16,7 @@
 ## 2. 前置
 
 - 已完成 playbook **步 0–1**（空仓 + `pack:import`）
-- 官方包 **v0.22+** 已内置 CLI 适配（见 `packs/minimal-research-to-spec/pack.yaml`）
+- 官方包 **v0.23+**（`pack_revision` **1.2.0**）内置 **cursor + cli + openhands**
 
 ## 3. 步 7 动作清单
 
@@ -47,6 +47,18 @@ harness_adapters:
 - cursor 已安装 · cli 仅文档级
 - `pack validate` 输出摘要
 - **N/A**：OpenHands 第三映射（留按需 fork）
+
+  openhands:
+    mapping: harness/openhands/mapping.yaml
+    agents_dir: harness/openhands/agents
+```
+
+**v0.23+ 验证 triple：**
+
+```powershell
+npm run pack -- validate packs/minimal-research-to-spec
+# 期望：✓ cursor · ✓ cli · ✓ openhands（均无 install 脚本，除 cursor）
+```
 
 ## 6. Sandbox 一键验证
 

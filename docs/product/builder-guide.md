@@ -23,7 +23,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 | 路径 | 内容 |
 |------|------|
-| `agents/packs/<id>/` | roster · 模板 · 包内 `skills/` · `harness/cursor/` · **`harness/cli/`**（v0.22+ 双 mapping 范例） |
+| `agents/packs/<id>/` | roster · 模板 · skills · **harness/cursor + cli + openhands**（v0.23+ triple） |
 | `.cursor/agents/` | **仅 Cursor** subagent（CLI/OpenHands **无** install 脚本） |
 
 Dogfood 完整剧本（0–8 步 · 含步 7 双 harness）：[dogfood-playbook.md](./examples/dogfood-playbook.md)
