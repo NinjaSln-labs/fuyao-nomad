@@ -30,3 +30,6 @@ tmp/
 
 # local private handoff (not published)
 HANDOFF.md
+
+# local Cursor IDE / plans / rules / generated agents (not published)
+.cursor/

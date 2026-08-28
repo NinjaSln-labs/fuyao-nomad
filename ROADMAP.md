@@ -92,7 +92,7 @@
 | **v0.29** | C2 shisui 接手仓 + adopt 矩阵 | ✅ |
 | P2 | 包市场等 | 非默认 |
 
-详版：[.cursor/plans/v0.26-v0.29_steady_adopt_roadmap.plan.md](.cursor/plans/v0.26-v0.29_steady_adopt_roadmap.plan.md)
+详版：v0.26–v0.29 主计划（本地 `.cursor/plans/`，**不入库**）· 公开摘要见上表与 [CHANGELOG](CHANGELOG.md)
 
 ## 里程碑
 

@@ -34,8 +34,8 @@ Agent：优先给 Shell 设 `working_directory` 为本仓根，勿假定会话 c
 - [ ] **测试计数**：README / README.en 的 `npm test` 项数与 `node --test` 实际 pass 数一致
 - [ ] 清单与公开文档**已脱敏**（无本机绝对路径、私钥路径、个人凭据脚本路径）
 - [ ] 源产品仓 / dogfood / adopt **未**误提交进本仓
-- [ ] `.cursor/plans/` 索引状态与当前主计划一致（若有）
-- [ ] 勿提交 `HANDOFF.md` / `.agents/audit/` / `.githooks/`（均本地私有）
+- [ ] `.cursor/` 整树本地私有（plans / rules / agents 安装产物），**勿提交**
+- [ ] 勿提交 `HANDOFF.md` / `.agents/audit/` / `.githooks/` / `.cursor/`（均本地私有）
 
 ### 1. Preflight
 
