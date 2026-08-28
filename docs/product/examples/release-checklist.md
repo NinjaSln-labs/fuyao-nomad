@@ -29,12 +29,13 @@ Agent：优先给 Shell 设 `working_directory` 为本仓根，勿假定会话 c
 ### 0. 内容齐（含文档同步）
 
 - [ ] 本版 U 单元已 commit（一单元一 commit）
-- [ ] **版本号对齐**：`package.json` · CHANGELOG · README · README.en · ROADMAP · HANDOFF · badge
+- [ ] **版本号对齐**：`package.json` · CHANGELOG · README · README.en · ROADMAP · badge（本地 `HANDOFF.md` 可选同步，**不入库**）
 - [ ] **导航同步**：若本版新增 examples / 脚本 / 测试数，更新 README「文档导航·目录·状态表」· [docs/product/README.md](../README.md) · 相关 playbook/matrix 链
 - [ ] **测试计数**：README / README.en 的 `npm test` 项数与 `node --test` 实际 pass 数一致
 - [ ] 清单与公开文档**已脱敏**（无本机绝对路径、私钥路径、个人凭据脚本路径）
 - [ ] 源产品仓 / dogfood / adopt **未**误提交进本仓
 - [ ] `.cursor/plans/` 索引状态与当前主计划一致（若有）
+- [ ] 勿提交 `HANDOFF.md` / `.agents/audit/` / `.githooks/`（均本地私有）
 
 ### 1. Preflight
 

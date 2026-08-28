@@ -27,3 +27,6 @@ tmp/
 
 # local git hooks (machine-specific; not published)
 .githooks/
+
+# local private handoff (not published)
+HANDOFF.md
