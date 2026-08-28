@@ -38,10 +38,10 @@ Open-source **agent team framework** — defines how multi-role teams collaborat
 | Team pack `packs/minimal-research-to-spec` | ✅ pack validate / install |
 | Harness thin adapters | ✅ Cursor (install) · CLI · OpenHands · **LangGraph / CrewAI export** (docs + snippets) |
 | Message protocol + contention advisory | ✅ message validate · `check:contention` (territory overlap + CI `--strict`) |
-| Validation & tests | ✅ `validate` 47 checks · `npm test` 16 tests · GitHub Actions |
+| Validation & tests | ✅ `validate` 47 checks · `npm test` 18 tests · GitHub Actions |
 | Open release | ✅ **v0.29.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
-Maintainer releases require **two local audits** (`.agents/audit/`: **release audit** 100/100 + **code quality audit** pass/pass_with_notes; not in repo; order: both audits → release commit → tag → Release). Public contract: [docs/audit/README.md](docs/audit/README.md).
+Maintainer releases require **two local audits** (`.agents/audit/`: **release audit** 100/100 + **code quality audit** pass/pass_with_notes; not in repo; order: both audits → release commit → tag → Release). Checklist: [release-checklist.md](docs/product/examples/release-checklist.md) · `npm run release:preflight`. Public contract: [docs/audit/README.md](docs/audit/README.md).
 
 ## Layout
 
@@ -54,7 +54,8 @@ Maintainer releases require **two local audits** (`.agents/audit/`: **release au
 | `packs/` | Official team pack example (roster + templates + harness mapping + skills) |
 | `harness/` | Cursor / CLI / OpenHands / LangGraph / CrewAI **thin adapters** (not core product) |
 | `skills/` | Portable skills (**not** synced to harness paths) |
-| `scripts/` | `validate` · `pack` · `check:contention` · `check:identity` · `install:cursor-agents` |
+| `scripts/` | `validate` · `pack` · `check:*` · `install:cursor-agents` · `release:preflight` |
+| `docs/product/examples/` | Dogfood / adopt playbooks · matrices · release checklist |
 | `ROADMAP.md` | Version milestones and backlog |
 
 ## Development

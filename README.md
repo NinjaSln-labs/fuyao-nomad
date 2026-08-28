@@ -36,10 +36,10 @@
 | 团队包 `packs/minimal-research-to-spec` | ✅ pack validate / install |
 | Harness 薄适配 POC | ✅ Cursor（install）· CLI · OpenHands · **LangGraph / CrewAI 导出**（文档 + 片段） |
 | 消息协议 + 争用顾问 | ✅ message validate · `check:contention`（territory 重叠 + CI `--strict`） |
-| 校验与测试 | ✅ `validate` 47 项 · `npm test` 16 项 · GitHub Actions |
+| 校验与测试 | ✅ `validate` 47 项 · `npm test` 18 项 · GitHub Actions |
 | 开源发布 | ✅ **v0.29.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
-维护者发版须 **双审计必做**（`.agents/audit/`：**发版审计** 100/100 + **代码质量审计** pass/pass_with_notes，不入库；顺序：双审计 → 包装 commit → tag → Release）。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
+维护者发版须 **双审计必做**（`.agents/audit/`：**发版审计** 100/100 + **代码质量审计** pass/pass_with_notes，不入库；顺序：双审计 → 包装 commit → tag → Release）。清单：[release-checklist.md](docs/product/examples/release-checklist.md) · `npm run release:preflight`。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
 
 ## 目录结构
 
@@ -52,7 +52,8 @@
 | `packs/` | 官方团队包示例（roster + 模板 + harness 映射 + skills） |
 | `harness/` | Cursor / CLI / OpenHands / LangGraph / CrewAI **薄适配**（非产品核心） |
 | `skills/` | 可移植技能（**不同步**到 harness 路径） |
-| `scripts/` | `validate` · `pack` · `check:contention` · `check:identity` · `install:cursor-agents` |
+| `scripts/` | `validate` · `pack` · `check:*` · `install:cursor-agents` · `release:preflight` |
+| `docs/product/examples/` | dogfood / adopt 剧本 · 矩阵 · 发版清单 |
 | `packages/core/` | Schema 索引 |
 | `ROADMAP.md` | 版本里程碑与后续候选 |
 
@@ -96,6 +97,9 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 | 6 | [编制协议](docs/design/composition-protocol.md) |
 | 7 | [领域语言](docs/design/domain-language.md) |
 | 8 | [竞品快照](docs/research/2026-08-22-agent-team-landscape.md)（去权威化参考） |
+| 9 | [Dogfood 剧本](docs/product/examples/dogfood-playbook.md) · [矩阵](docs/product/examples/dogfood-matrix-comparison.md) |
+| 10 | [Adopt 剧本](docs/product/examples/fuyao-adopt-playbook.md) · [矩阵](docs/product/examples/adopt-matrix-comparison.md) |
+| 11 | [发版清单](docs/product/examples/release-checklist.md)（维护者） |
 
 ## 路线图
 

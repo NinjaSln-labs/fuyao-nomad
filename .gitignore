@@ -24,3 +24,6 @@ tmp/
 
 # local private audits (not published)
 .agents/audit/
+
+# local git hooks (machine-specific; not published)
+.githooks/

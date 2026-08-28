@@ -53,6 +53,8 @@ Dogfood 完整剧本（0–8 步 · 含步 7 双 harness）：[dogfood-playbook.
 从 intent 抽出 **身份约束**（不可裁剪）：[identity-constraints.md](../design/identity-constraints.md)  
 阶段复盘（v0.1–v0.16）：[v0.1-v0.16-retrospective.md](./examples/v0.1-v0.16-retrospective.md)  
 官方 dogfood 剧本：[dogfood-playbook.md](./examples/dogfood-playbook.md)（**完整 0–8 步** · 步 7 CLI 双 harness · [矩阵对照](./examples/dogfood-matrix-comparison.md)）  
+产品接手（adopt）：[fuyao-adopt-playbook.md](./examples/fuyao-adopt-playbook.md) · [adopt 矩阵](./examples/adopt-matrix-comparison.md)（源仓只读 · 独立 `fuyao-adopt-*`）  
+维护者发版：[release-checklist.md](./examples/release-checklist.md) · `npm run release:preflight`  
 `npm run check:identity -- --project .`（advisory；dogfood 用 `--strict`）  
 结构化槽位消息（可选）：[message-protocol.md](../design/message-protocol.md)  
 追溯与 DoD 联动：[traceability-contract.md](../design/traceability-contract.md) · `npm run check:traceability`  

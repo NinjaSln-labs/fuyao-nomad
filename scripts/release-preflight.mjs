@@ -131,9 +131,10 @@ function main() {
   }
 
   console.log("");
-  console.log("=== 4. Dual-audit reminder (manual) ===");
+  console.log("=== 4. Dual-audit + docs sync reminder (manual) ===");
   console.log("  [ ] .agents/audit/*-release-audit.md  (100/100 pass)");
   console.log("  [ ] .agents/audit/*-code-quality-audit.md");
+  console.log("  [ ] Docs sync: README(+en) · product/README · examples links · test counts");
   console.log("  [ ] Order: dual audit → packaging commit → tag → Release");
   console.log("  [ ] See docs/product/examples/release-checklist.md");
   console.log("");

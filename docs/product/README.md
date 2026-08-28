@@ -13,9 +13,19 @@
 | 3 | [交付模式](delivery-model.md) | ✅ 定稿 |
 | 4 | [能力模型](capability-model.md) | ✅ 定稿 |
 | 5 | [0→1 路径](0-1-path.md) | ✅ |
-| 6 | [Builder 指南](builder-guide.md) | v0.1 |
-| 7 | [后 v0.1 路线](post-v01-roadmap.md) | v0.7 ✅ |
+| 6 | [Builder 指南](builder-guide.md) | v0.2 |
+| 7 | [后 v0.1 路线](post-v01-roadmap.md) | 见 ROADMAP |
 | 8 | [竞品快照](../research/2026-08-22-agent-team-landscape.md) | ✅ |
+
+## 范例与运维（examples）
+
+| 文档 | 说明 |
+|------|------|
+| [dogfood-playbook.md](./examples/dogfood-playbook.md) | 档位 dogfood 0–8 步 |
+| [dogfood-matrix-comparison.md](./examples/dogfood-matrix-comparison.md) | 六档 + 桥接 + 全流程矩阵 |
+| [fuyao-adopt-playbook.md](./examples/fuyao-adopt-playbook.md) | 产品接手仓（源仓只读） |
+| [adopt-matrix-comparison.md](./examples/adopt-matrix-comparison.md) | adopt 对照（qingfu · shisui） |
+| [release-checklist.md](./examples/release-checklist.md) | 维护者发版（脱敏 · cwd 防呆） |
 
 ## 设计（③ 阶段）
 
