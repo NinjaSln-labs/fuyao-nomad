@@ -4,6 +4,10 @@
 
 ## 已完成
 
+### v0.29.0（2026-08-28）
+
+- Adopt C2：shisui 接手仓 + vs-source；adopt 矩阵 ≥2
+
 ### v0.28.0（2026-08-28）
 
 - Adopt C1：qingfu-envoy 接手仓 + vs-source（源仓零写入）
@@ -85,7 +89,7 @@
 | **v0.26** | 发版纪律 + adopt 模型 | ✅ |
 | **v0.27** | B s7 可选模块 + OpenHands E2E | ✅ |
 | **v0.28** | C1 qingfu-envoy 接手仓 + 源仓对比 | ✅ |
-| **v0.29** | C2 shisui 接手仓 + adopt 矩阵 | 计划 |
+| **v0.29** | C2 shisui 接手仓 + adopt 矩阵 | ✅ |
 | P2 | 包市场等 | 非默认 |
 
 详版：[.cursor/plans/v0.26-v0.29_steady_adopt_roadmap.plan.md](.cursor/plans/v0.26-v0.29_steady_adopt_roadmap.plan.md)
@@ -93,7 +97,7 @@
 ## 里程碑
 
 ```
-v0.27.0 ✅ s7/OH → v0.28.0 ✅ qingfu adopt → v0.29 shisui → 稳态 II
+v0.28.0 ✅ qingfu adopt → v0.29.0 ✅ shisui adopt · 矩阵满 → 稳态 II
 ```
 
 ## 不做

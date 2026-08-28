@@ -2,6 +2,13 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.29.0] - 2026-08-28
+
+### Added
+
+- Adopt C2 shisui：[adopt-shisui-scenario.md](docs/product/examples/adopt-shisui-scenario.md) · [close](docs/product/examples/adopt-shisui-close.md) · [vs-source](docs/product/examples/adopt-vs-source-shisui.md)
+- adopt-matrix 满 2 行（qingfu + shisui · 源仓零写入）
+
 ## [0.28.0] - 2026-08-28
 
 ### Added
