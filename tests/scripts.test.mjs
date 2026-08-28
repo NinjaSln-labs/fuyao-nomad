@@ -41,6 +41,10 @@ function run(cmd, args, cwd = ROOT) {
   return spawnSync(cmd, args, { cwd, encoding: "utf8" });
 }
 
+function spawn(cmd, args, opts) {
+  return spawnSync(cmd, args, opts);
+}
+
 test("validate passes on examples, templates, packs", () => {
   const r = run("npm", ["run", "validate"]);
   assert.equal(r.status, 0, r.stdout + r.stderr);
@@ -272,4 +276,29 @@ test("pack export with --id writes fork then import", () => {
   assert.equal(rImport.status, 0, rImport.stdout + rImport.stderr);
   assert.ok(existsSync(join(project, "agents/packs/my-fork-pack/pack.yaml")));
   assert.ok(existsSync(join(project, ".cursor/agents/research-analyst.md")));
+});
+
+test("release:preflight --skip-checks exits 0 without GH_TOKEN (advisory)", () => {
+  const env = { ...process.env };
+  delete env.GH_TOKEN;
+  delete env.GITHUB_TOKEN;
+  const r = spawn(process.execPath, [
+    join(ROOT, "scripts/release-preflight.mjs"),
+    "--skip-checks",
+  ], { cwd: ROOT, encoding: "utf8", env });
+  assert.equal(r.status, 0, r.stdout + r.stderr);
+  assert.match(r.stdout, /preflight PASSED/);
+});
+
+test("release:preflight --skip-checks --strict-gh fails without GH_TOKEN", () => {
+  const env = { ...process.env };
+  delete env.GH_TOKEN;
+  delete env.GITHUB_TOKEN;
+  const r = spawn(process.execPath, [
+    join(ROOT, "scripts/release-preflight.mjs"),
+    "--skip-checks",
+    "--strict-gh",
+  ], { cwd: ROOT, encoding: "utf8", env });
+  assert.equal(r.status, 1, r.stdout + r.stderr);
+  assert.match(r.stdout + r.stderr, /preflight FAILED|strict-gh/);
 });

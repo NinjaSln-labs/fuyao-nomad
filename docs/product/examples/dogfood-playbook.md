@@ -177,6 +177,8 @@ harness_adapters:
 
 Sandbox **仅本地**；脱敏范例入库 fuyao-nomad。
 
+**产品接手（adopt）：** [fuyao-adopt-playbook.md](./fuyao-adopt-playbook.md) · [adopt-matrix](./adopt-matrix-comparison.md) · [发版清单](./release-checklist.md)
+
 ---
 
 ## 停止条件
