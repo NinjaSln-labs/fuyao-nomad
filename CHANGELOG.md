@@ -2,6 +2,14 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.26.0] - 2026-08-28
+
+### Added
+
+- 发版纪律：[release-checklist.md](docs/product/examples/release-checklist.md) · `npm run release:preflight`
+- Adopt 模型：[fuyao-adopt-playbook.md](docs/product/examples/fuyao-adopt-playbook.md) · [adopt-matrix-comparison.md](docs/product/examples/adopt-matrix-comparison.md)（源仓并行接手仓 · 占位行）
+- 路线图 v0.26–v0.29（A 发版 · B s7/OH · C 产品 adopt）
+
 ## [0.25.0] - 2026-08-27
 
 ### Added

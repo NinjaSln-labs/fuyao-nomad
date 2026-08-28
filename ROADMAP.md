@@ -4,6 +4,12 @@
 
 ## 已完成
 
+### v0.26.0（2026-08-28）
+
+- 发版纪律：release-checklist · `release:preflight`
+- Adopt 模型：playbook + 矩阵壳（源仓并行接手仓）
+- 主计划 v0.26–v0.29 启动
+
 ### v0.25.0（2026-08-27）
 
 - Dogfood VII 全流程 grant-gate · 独立 sandbox · m-release 授权门
@@ -65,15 +71,20 @@
 
 ## 后续
 
-| 优先级 | 主题 | 状态 |
-|--------|------|------|
-| — | 无强制功能切片 | 稳态 |
-| 候选 | 更远 P2（包市场等） | 非默认 |
+| 版本 | 主题 | 状态 |
+|------|------|------|
+| **v0.26** | 发版纪律 + adopt 模型 | ✅ |
+| **v0.27** | B s7 可选模块 + OpenHands E2E | 计划 |
+| **v0.28** | C1 qingfu-envoy 接手仓 + 源仓对比 | 计划 |
+| **v0.29** | C2 shisui 接手仓 + adopt 矩阵 | 计划 |
+| P2 | 包市场等 | 非默认 |
+
+详版：[.cursor/plans/v0.26-v0.29_steady_adopt_roadmap.plan.md](.cursor/plans/v0.26-v0.29_steady_adopt_roadmap.plan.md)
 
 ## 里程碑
 
 ```
-v0.24.0 ✅ 中重桥接档 → v0.25.0 ✅ 全流程 grant-gate → **稳态 · 矩阵满**
+v0.25.0 ✅ 矩阵满 → v0.26.0 ✅ adopt 模型 → v0.27–v0.29 → 稳态 II
 ```
 
 ## 不做
@@ -89,4 +100,4 @@ v0.24.0 ✅ 中重桥接档 → v0.25.0 ✅ 全流程 grant-gate → **稳态 ·
 
 ---
 
-*Last updated: 2026-08-27*
+*Last updated: 2026-08-28*
