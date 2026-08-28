@@ -124,18 +124,18 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 | **v0.15.0** ✅ | 团队包 export/import · 换映射指南 |
 | **v0.16.0** ✅ | 身份约束 · DoD/审计对照 intent |
 | **v0.17.0** ✅ | 协议硬化 · Eval 三门可选 · 复盘 |
-| **v0.29.0** ✅ | Adopt shisui · adopt 矩阵满 |
-| **v0.28.0** ✅ | Adopt qingfu-envoy · vs-source |
-| **v0.27.0** ✅ | s7 对抗启用 · OpenHands E2E lite |
-| **v0.26.0** ✅ | 发版 checklist · release:preflight · adopt playbook |
-| **v0.25.0** ✅ | 全流程 grant-gate · 矩阵满 |
-| **v0.24.0** ✅ | 中重 changelog-slice · 桥接档补全 |
-| **v0.23.0** ✅ | 轻中 action-list · triple harness |
-| **v0.22.0** ✅ | Playbook 0–8 完整 · 步 7 CLI |
-| **v0.21.0** ✅ | Dogfood IV · 重档 audit-trail |
-| **v0.20.0** ✅ | Dogfood III · 轻档 todo-strip |
-| **v0.19.0** ✅ | Dogfood II · 中档五模板 · reading-card |
 | **v0.18.0** ✅ | stage/commit-policy 六档 · audit-record · identity 测试 |
+| **v0.19.0** ✅ | Dogfood II · 中档五模板 · reading-card |
+| **v0.20.0** ✅ | Dogfood III · 轻档 todo-strip |
+| **v0.21.0** ✅ | Dogfood IV · 重档 audit-trail |
+| **v0.22.0** ✅ | Playbook 0–8 完整 · 步 7 CLI |
+| **v0.23.0** ✅ | 轻中 action-list · triple harness |
+| **v0.24.0** ✅ | 中重 changelog-slice · 桥接档补全 |
+| **v0.25.0** ✅ | 全流程 grant-gate · 矩阵满 |
+| **v0.26.0** ✅ | 发版 checklist · release:preflight · adopt playbook |
+| **v0.27.0** ✅ | s7 对抗启用 · OpenHands E2E lite |
+| **v0.28.0** ✅ | Adopt qingfu-envoy · vs-source |
+| **v0.29.0** ✅ | Adopt shisui · adopt 矩阵满 |
 
 详见 [后 v0.1 路线](docs/product/post-v01-roadmap.md) · [0→1 路径](docs/product/0-1-path.md)
 
