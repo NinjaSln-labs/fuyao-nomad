@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v0.27.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.27.0)
+[![Release](https://img.shields.io/badge/Release-v0.28.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.28.0)
 
 **[English](README.en.md)** | 中文
 
@@ -37,7 +37,7 @@
 | Harness 薄适配 POC | ✅ Cursor（install）· CLI · OpenHands · **LangGraph / CrewAI 导出**（文档 + 片段） |
 | 消息协议 + 争用顾问 | ✅ message validate · `check:contention`（territory 重叠 + CI `--strict`） |
 | 校验与测试 | ✅ `validate` 47 项 · `npm test` 16 项 · GitHub Actions |
-| 开源发布 | ✅ **v0.27.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+| 开源发布 | ✅ **v0.28.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
 维护者发版须 **双审计必做**（`.agents/audit/`：**发版审计** 100/100 + **代码质量审计** pass/pass_with_notes，不入库；顺序：双审计 → 包装 commit → tag → Release）。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
 
@@ -99,7 +99,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ## 路线图
 
-**当前：v0.27.0** — s7 对抗启用 + OpenHands E2E lite · adopt 模型已备（下一版 qingfu 接手）。
+**当前：v0.28.0** — Adopt C1 qingfu-envoy（独立接手仓 · vs-source）· 下一 shisui。
 
 | 版本 | 目标 |
 |------|------|
@@ -120,6 +120,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 | **v0.15.0** ✅ | 团队包 export/import · 换映射指南 |
 | **v0.16.0** ✅ | 身份约束 · DoD/审计对照 intent |
 | **v0.17.0** ✅ | 协议硬化 · Eval 三门可选 · 复盘 |
+| **v0.28.0** ✅ | Adopt qingfu-envoy · vs-source |
 | **v0.27.0** ✅ | s7 对抗启用 · OpenHands E2E lite |
 | **v0.26.0** ✅ | 发版 checklist · release:preflight · adopt playbook |
 | **v0.25.0** ✅ | 全流程 grant-gate · 矩阵满 |

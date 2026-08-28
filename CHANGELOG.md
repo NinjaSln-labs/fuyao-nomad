@@ -2,6 +2,13 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.28.0] - 2026-08-28
+
+### Added
+
+- Adopt C1 qingfu-envoy：[adopt-qingfu-scenario.md](docs/product/examples/adopt-qingfu-scenario.md) · [close](docs/product/examples/adopt-qingfu-close.md) · [vs-source](docs/product/examples/adopt-vs-source-qingfu.md)
+- adopt-matrix 填 qingfu 行（独立接手仓 · 源仓零写入）
+
 ## [0.27.0] - 2026-08-28
 
 ### Added
