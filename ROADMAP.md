@@ -4,6 +4,11 @@
 
 ## 已完成
 
+### v0.27.0（2026-08-28）
+
+- Dogfood VIII：boundary-s7 · s7 对抗模块启用
+- OpenHands E2E lite（mapping smoke）
+
 ### v0.26.0（2026-08-28）
 
 - 发版纪律：release-checklist · `release:preflight`
@@ -74,7 +79,7 @@
 | 版本 | 主题 | 状态 |
 |------|------|------|
 | **v0.26** | 发版纪律 + adopt 模型 | ✅ |
-| **v0.27** | B s7 可选模块 + OpenHands E2E | 计划 |
+| **v0.27** | B s7 可选模块 + OpenHands E2E | ✅ |
 | **v0.28** | C1 qingfu-envoy 接手仓 + 源仓对比 | 计划 |
 | **v0.29** | C2 shisui 接手仓 + adopt 矩阵 | 计划 |
 | P2 | 包市场等 | 非默认 |
@@ -84,7 +89,7 @@
 ## 里程碑
 
 ```
-v0.25.0 ✅ 矩阵满 → v0.26.0 ✅ adopt 模型 → v0.27–v0.29 → 稳态 II
+v0.26.0 ✅ adopt 模型 → v0.27.0 ✅ s7/OH → v0.28–v0.29 adopt 实跑 → 稳态 II
 ```
 
 ## 不做

@@ -2,6 +2,18 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.27.0] - 2026-08-28
+
+### Added
+
+- Dogfood VIII：[dogfood-viii-scenario.md](docs/product/examples/dogfood-viii-scenario.md) · [close](docs/product/examples/dogfood-viii-close.md)（boundary-s7 · **s7 对抗启用**）
+- OpenHands E2E lite：step7 关仓补 mapping smoke；sandbox `check:openhands`
+
+### Changed
+
+- dogfood-matrix / playbook：全流程 s7 启用行
+- step7 scenario/close：OpenHands 不再记 N/A
+
 ## [0.26.0] - 2026-08-28
 
 ### Added
