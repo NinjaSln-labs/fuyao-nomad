@@ -126,7 +126,7 @@ node "$Fuyao\scripts\check-traceability.mjs" --project . --plan .agents/plan-pro
 
 | 版本 | 源仓 | 接手仓 | 状态 |
 |------|------|--------|------|
-| v0.28 | qingfu-envoy | `fuyao-adopt-qingfu-envoy` | 计划 |
+| **v0.28** | qingfu-envoy | `fuyao-adopt-qingfu-envoy` | ✅ [scenario](./adopt-qingfu-scenario.md) · [close](./adopt-qingfu-close.md) · [vs-source](./adopt-vs-source-qingfu.md) |
 | v0.29 | shisui | `fuyao-adopt-shisui` | 计划 |
 
 详版：[v0.26–v0.29 计划](../../../.cursor/plans/v0.26-v0.29_steady_adopt_roadmap.plan.md)
