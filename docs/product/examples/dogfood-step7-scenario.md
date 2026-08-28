@@ -46,7 +46,7 @@ harness_adapters:
 
 - cursor 已安装 · cli 仅文档级
 - `pack validate` 输出摘要
-- **N/A**：OpenHands 第三映射（留按需 fork）
+**N/A**：无（v0.27+ OpenHands E2E lite 见 [step7-close](./dogfood-step7-close.md) · [viii](./dogfood-viii-scenario.md)）
 
   openhands:
     mapping: harness/openhands/mapping.yaml
@@ -58,6 +58,13 @@ harness_adapters:
 ```powershell
 npm run pack -- validate packs/minimal-research-to-spec
 # 期望：✓ cursor · ✓ cli · ✓ openhands（均无 install 脚本，除 cursor）
+```
+
+**v0.27+ OpenHands E2E lite（sandbox）：**
+
+```powershell
+# 在已 import 的 sandbox 内
+npm run check:openhands   # 若场景提供；或对照 step7-close 清单手检 4 agents
 ```
 
 ## 6. Sandbox 一键验证

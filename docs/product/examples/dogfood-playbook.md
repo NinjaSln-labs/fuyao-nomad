@@ -167,6 +167,7 @@ harness_adapters:
 
 | 版本 | 主题 | 文档 |
 |------|------|------|
+| v0.27 | **全流程 s7** boundary-s7 | [viii-scenario](./dogfood-viii-scenario.md) · [close](./dogfood-viii-close.md) |
 | v0.25 | **全流程** grant-gate | [vii-scenario](./dogfood-vii-scenario.md) · [close](./dogfood-vii-close.md) |
 | v0.24 | **中重** changelog-slice | [vi-scenario](./dogfood-vi-scenario.md) · [close](./dogfood-vi-close.md) |
 | v0.23 | **轻中** action-list | [v-scenario](./dogfood-v-scenario.md) · [close](./dogfood-v-close.md) |

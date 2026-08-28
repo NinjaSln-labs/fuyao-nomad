@@ -38,8 +38,18 @@
 | cli | **仅**包内 `harness/cli/` |
 | openhands | **仅**包内 `harness/openhands/`（v0.23+） |
 
-OpenHands 第三映射：**N/A**（留 fork 按需）。
+OpenHands 第三映射：**已做 E2E lite**（v0.27 · [dogfood-viii](./dogfood-viii-scenario.md)）— `check:openhands` 验证 mapping ↔ agents；**不**启 OpenHands runtime。
+
+## OpenHands E2E lite（v0.27+）
+
+| 检查 | 结果 |
+|------|------|
+| `harness/openhands/mapping.yaml` 覆盖 4 slots | ✅ |
+| `ResearchAgent` / `SpecAgent` / `ProgressAgent` / `AuditorAgent` 片段存在 | ✅ |
+| `pack validate` 含 openhands | ✅ |
+| 启 OpenHands 进程跑任务 | **N/A**（本 dogfood 为 pack 级冒烟） |
 
 ## 结论
 
-playbook 步 0–8 **文档闭环**；他人可按 [dogfood-playbook.md](./dogfood-playbook.md) 路径 B 跟跑。
+playbook 步 0–8 **文档闭环**；他人可按 [dogfood-playbook.md](./dogfood-playbook.md) 路径 B 跟跑。  
+v0.27 补：**s7 对抗启用** + **OpenHands mapping smoke**。

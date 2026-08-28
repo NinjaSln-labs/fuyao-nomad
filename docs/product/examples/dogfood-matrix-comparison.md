@@ -47,6 +47,15 @@
 
 **矩阵：** 六档 + 桥接 + 全流程 **已满**。
 
+### 全流程 · s7 启用（v0.27）
+
+| 维度 | **boundary-s7** |
+|------|-----------------|
+| **版本** | v0.27 |
+| **s7** | **必做**（adversarial_boundary） |
+| **OpenHands** | E2E lite（mapping smoke） |
+| **范例** | [viii-scenario](./dogfood-viii-scenario.md) · [viii-close](./dogfood-viii-close.md) |
+
 ## Harness（步 7）
 
 **Triple（v0.23+）：** cursor + cli + openhands · [step7](./dogfood-step7-scenario.md)
