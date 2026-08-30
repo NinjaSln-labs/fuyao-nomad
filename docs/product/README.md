@@ -24,7 +24,7 @@
 | [dogfood-playbook.md](./examples/dogfood-playbook.md) | 档位 dogfood 0–8 步 |
 | [dogfood-matrix-comparison.md](./examples/dogfood-matrix-comparison.md) | 六档 + 桥接 + 全流程矩阵 |
 | [fuyao-adopt-playbook.md](./examples/fuyao-adopt-playbook.md) | 产品接手仓（源仓只读） |
-| [adopt-matrix-comparison.md](./examples/adopt-matrix-comparison.md) | adopt 对照（qingfu · shisui） |
+| [adopt-matrix-comparison.md](./examples/adopt-matrix-comparison.md) | adopt 对照（qingfu · shisui · voyage） |
 | [release-checklist.md](./examples/release-checklist.md) | 维护者发版（脱敏 · cwd 防呆） |
 
 ## 设计（③ 阶段）

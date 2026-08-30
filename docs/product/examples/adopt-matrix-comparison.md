@@ -34,7 +34,7 @@
 | 审计 | 产品审计链 vs `.agents/audit/` |
 | Git | 公开策略 vs 本地 only |
 
-## 验收（v0.29 目标）
+## 验收（v0.30 目标）
 
 - [x] adopt 矩阵 ≥ **1** 行已实跑（qingfu）  
 - [x] ≥ **2** 行（+ shisui）  

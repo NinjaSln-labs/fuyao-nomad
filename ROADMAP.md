@@ -4,6 +4,10 @@
 
 ## 已完成
 
+### v0.30.0（2026-08-30）
+
+- Adopt C3：Voyage 接手仓 + vs-source（ic-zero-trust-approval）· adopt 矩阵第 3 行
+
 ### v0.29.0（2026-08-28）
 
 - Adopt C2：shisui 接手仓 + vs-source；adopt 矩阵 ≥2
@@ -90,6 +94,7 @@
 | **v0.27** | B s7 可选模块 + OpenHands E2E | ✅ |
 | **v0.28** | C1 qingfu-envoy 接手仓 + 源仓对比 | ✅ |
 | **v0.29** | C2 shisui 接手仓 + adopt 矩阵 | ✅ |
+| **v0.30** | C3 voyage 接手仓 · adopt 矩阵 ≥3 | ✅ |
 | P2 | 包市场等 | 非默认 |
 
 详版：v0.26–v0.29 主计划（本地 `.cursor/plans/`，**不入库**）· 公开摘要见上表与 [CHANGELOG](CHANGELOG.md)
@@ -97,7 +102,7 @@
 ## 里程碑
 
 ```
-v0.28.0 ✅ qingfu adopt → v0.29.0 ✅ shisui adopt · 矩阵满 → 稳态 II
+v0.28.0 ✅ qingfu adopt → v0.29.0 ✅ shisui adopt → v0.30.0 ✅ voyage adopt · 稳态 II
 ```
 
 ## 不做
@@ -113,4 +118,4 @@ v0.28.0 ✅ qingfu adopt → v0.29.0 ✅ shisui adopt · 矩阵满 → 稳态 II
 
 ---
 
-*Last updated: 2026-08-28*
+*Last updated: 2026-08-30*

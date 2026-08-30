@@ -2,6 +2,13 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.30.0] - 2026-08-30
+
+### Added
+
+- Adopt C3 voyage：[adopt-voyage-scenario.md](docs/product/examples/adopt-voyage-scenario.md) · [close](docs/product/examples/adopt-voyage-close.md) · [vs-source](docs/product/examples/adopt-vs-source-voyage.md)
+- identity `ic-zero-trust-approval`（双人批准 + Grant 在案 + fail-closed）· adopt 矩阵第 3 行（源仓零写入）
+
 ## [0.29.0] - 2026-08-28
 
 ### Added
