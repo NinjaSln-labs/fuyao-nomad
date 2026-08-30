@@ -13,16 +13,16 @@
 
 ## 已实跑 / 计划
 
-| 维度 | qingfu-envoy（**v0.28**） | shisui（**v0.29**） |
-|------|---------------------------|----------------------|
-| **状态** | ✅ 已实跑 | ✅ 已实跑 |
-| **源仓** | `qingfu-envoy`（只读） | `shisui`（只读） |
-| **接手仓** | `fuyao-adopt-qingfu-envoy` | `fuyao-adopt-shisui` |
-| **flow_weight** | 全流程 | **中** |
-| **identity** | `ic-no-silent-pay`（ADR 001） | `ic-evidence-gate`（G1） |
-| **scenario** | [adopt-qingfu-scenario](./adopt-qingfu-scenario.md) | [adopt-shisui-scenario](./adopt-shisui-scenario.md) |
-| **close** | [adopt-qingfu-close](./adopt-qingfu-close.md) | [adopt-shisui-close](./adopt-shisui-close.md) |
-| **vs-source** | [adopt-vs-source-qingfu](./adopt-vs-source-qingfu.md) | [adopt-vs-source-shisui](./adopt-vs-source-shisui.md) |
+| 维度 | qingfu-envoy（**v0.28**） | shisui（**v0.29**） | Voyage（**v0.30 候选**） |
+|------|---------------------------|----------------------|--------------------------|
+| **状态** | ✅ 已实跑 | ✅ 已实跑 | ✅ 已实跑 |
+| **源仓** | `qingfu-envoy`（只读） | `shisui`（只读） | `Voyage`（只读） |
+| **接手仓** | `fuyao-adopt-qingfu-envoy` | `fuyao-adopt-shisui` | `fuyao-adopt-voyage` |
+| **flow_weight** | 全流程 | **中** | **中** |
+| **identity** | `ic-no-silent-pay`（ADR 001） | `ic-evidence-gate`（G1） | `ic-zero-trust-approval`（零信任审批） |
+| **scenario** | [adopt-qingfu-scenario](./adopt-qingfu-scenario.md) | [adopt-shisui-scenario](./adopt-shisui-scenario.md) | [adopt-voyage-scenario](./adopt-voyage-scenario.md) |
+| **close** | [adopt-qingfu-close](./adopt-qingfu-close.md) | [adopt-shisui-close](./adopt-shisui-close.md) | [adopt-voyage-close](./adopt-voyage-close.md) |
+| **vs-source** | [adopt-vs-source-qingfu](./adopt-vs-source-qingfu.md) | [adopt-vs-source-shisui](./adopt-vs-source-shisui.md) | [adopt-vs-source-voyage](./adopt-vs-source-voyage.md) |
 
 ## 对比维度（每行关仓须覆盖）
 
@@ -38,5 +38,6 @@
 
 - [x] adopt 矩阵 ≥ **1** 行已实跑（qingfu）  
 - [x] ≥ **2** 行（+ shisui）  
+- [x] ≥ **3** 行（+ Voyage · v0.30 候选）  
 - [x] 每行含 scenario · close · vs-source  
 - [x] 对应源仓本会话 **零写入**
