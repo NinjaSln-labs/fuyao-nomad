@@ -22,7 +22,7 @@
 
 | 目录 | 目标 | 形态 | 证据级 |
 |------|------|------|--------|
-| [cursor/](./cursor/) | Cursor IDE | install 脚本 + subagents | 安装级 → 挂载级补测排 v0.34 |
+| [cursor/](./cursor/) | Cursor IDE / CLI | install 脚本 + subagents + CLI print | **挂载级·CLI 委派（v0.34）** |
 | [pi/](./pi/) | **pi CLI** | skill 片段 + 编排约定 | **挂载级·真多实例（v0.32.1）** |
 | [dsh/](./dsh/) | **dsh（DeepSeek Harness）** | pi + subagent 通道 | **挂载级·委派驱动（v0.33）** ✅ 北极星移植 2/2 |
 | [qoder/](./qoder/) | Qoder IDE | `.qoder/agents/` 项目级 | v0.35 排期（Mac runbook） |

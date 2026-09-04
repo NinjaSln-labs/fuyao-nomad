@@ -4,6 +4,11 @@
 
 ## 已完成
 
+### v0.34.0（2026-09-05）
+
+- cursor 挂载级实跑（第三家 · 回归实证）：CLI print 委派全链 + R8 readonly 维度/R9 WSL 认证/R10 print 委派三发现入 MAPPING
+- [场景](docs/product/examples/dogfood-cursor-harness-scenario.md) · [关仓](docs/product/examples/dogfood-cursor-harness-close.md)
+
 ### v0.33.0（2026-09-05）
 
 - dsh 挂载级实跑（移植验证第二家 · **北极星移植 2/2 达标**）：ctx.subagents 委派驱动全链 + headless 无头分段形态 + R5/R6/R7 三发现反哺 MAPPING

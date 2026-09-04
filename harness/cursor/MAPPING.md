@@ -48,6 +48,17 @@ npm run install:cursor-agents -- --project . \
 - `orchestration.mode=parallel` → Cursor `/multitask` 或并行 subagent（见 Cursor 文档）
 - 争用规则：见 capability-model §2 P1（V1 文档级）
 
+## 挂载步骤与维度增补（v0.34 实跑后）
+
+- **readonly 维度（R8）**：`harness/cursor/agents/*.md` 的 `readonly: true` 是 cursor subagent 机制事实（只读语义）。
+  **产物落盘型槽位挂载时须显式声明并移除该字段**（dogfood 场景如此）；只读审计槽位保留。
+  pi/dsh 片段无此维度——三家片段差异最大处，挂载清单须逐 harness 核对 frontmatter
+- **挂载步骤约定**：pack → `.cursor/agents/` 的同步由 `install:cursor-agents` 承担（脚本已存在）；
+  sandbox 手工落位属实验偏离
+- **WSL/headless 认证（R9）**：CLI `~/.config/cursor/auth.json` 可从 IDE 登录态（state.vscdb `cursorAuth/*`）合法迁移
+- **print 委派（R10）**：`agent -p --trust` 一次性模式支持 subagents 委派；分段委派（每槽位一进程）
+- **实跑证据**：[dogfood-cursor-harness](../docs/product/examples/dogfood-cursor-harness-close.md)（v0.34 · 挂载级）
+
 ## V1 验收
 
 - [x] `minimal-roster.yaml` 可映射到 ≥2 个 `.cursor/agents/*.md`

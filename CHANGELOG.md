@@ -2,6 +2,18 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.34.0] - 2026-09-05
+
+### Added
+
+- **cursor 挂载级实跑**（移植验证第三家 · 首家适配目录回归实证）：Cursor CLI（`agent` v2026.09.02）print 模式 + `.cursor/agents` subagents 委派全链——research/spec/auditor 产物均由子代理落盘，父会话只协调不代写
+- dogfood-cursor 场景 + 关仓：v0.31 诚实降级（安装级）的欠账清偿；四类型 message（handoff / request-gate-confirm / audit）全实测过验
+- MAPPING 增补（R8–R10）：readonly 维度挂载声明 · 挂载步骤由 install:cursor-agents 承担 · WSL 认证迁移路径 · print 委派形态
+
+### Changed
+
+- harness/README 证据级表：cursor 升「挂载级·CLI 委派（v0.34）」——三家（pi/dsh/cursor）全部挂载级
+
 ## [0.33.0] - 2026-09-05
 
 ### Added
