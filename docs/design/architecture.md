@@ -176,6 +176,8 @@ m-release  授权门：Agent propose → 主理人 approve → 禁止静默 exec
 
 roster / pack / templates / plan-progress **零改动** → 只换 `harness_adapters` 映射表 → `install:cursor-agents`（或读导出映射）→ 新 harness 的 agents 接同一 `.agents/` 落点继续跑。协议语义（§2 图右侧三列）不变。
 
+> **已实证（v0.32–v0.35）**：同一 pack 在 **pi / dsh / cursor / qoder / claude** 五家全部挂载级实跑（含 Mac 远程与无订阅第三方模型形态）——场景 C 从设计主张变为五家实证，见 [harness/README](../../harness/README.md) 证据级表。
+
 ---
 
 ## §6 横切概念

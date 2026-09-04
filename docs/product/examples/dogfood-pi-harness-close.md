@@ -57,6 +57,7 @@ round 1 产物归档 sandbox `docs/round1-archive/`；挂载级结论以 round 2
 ```
 pi ✅ 挂载级·真多实例（v0.32.1 · 本笔记）
 dsh ⏳ v0.33 · cursor ⏳ 挂载级补测 v0.34 · qoder ⏳ v0.35（Mac runbook）· claude ⏳ v0.35
+（后续实况：五家已于 v0.32–v0.35 全数挂载级 · 见 [harness/README](../../../harness/README.md) 证据级表）
 openhands ❄️ 冻结 · langgraph/crewai ⏳ runtime smoke v0.36
 ```
 

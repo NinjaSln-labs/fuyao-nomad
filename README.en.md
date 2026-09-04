@@ -19,7 +19,7 @@
 
 **Fuyao (fú yáo, "soaring wind")** — from Zhuangzi’s *Free and Easy Wandering*: *"Rising ninety thousand li on the whirlwind."* **Nomad** = portable team specs that do not lock you to one harness.
 
-Open-source **agent team framework** — defines how multi-role teams collaborate and deliver with adjustable process weight (`flow_weight`), mounted via thin adapters onto Cursor / CLI / OpenHands / LangGraph / CrewAI (**does not replace harnesses or orchestration engines**).
+Open-source **agent team framework** — defines how multi-role teams collaborate and deliver with adjustable process weight (`flow_weight`), mounted via thin adapters onto pi / dsh / Cursor / Qoder / Claude Code / CLI / LangGraph / CrewAI (**does not replace harnesses or orchestration engines**).
 
 - **One-line goal**: give builders, small teams, and solo developers reusable **team protocols** (roster, handoff, plan/progress, DoD/verification/DDD gates) instead of one-off prompt stacks.
 - **Positioning**: AI-employee products sell a strong individual; orchestration frameworks sell runtime APIs; IDE agents stay shallow — Fuyao sells **team-layer specs + DDD foundation + open extensibility**.
@@ -36,7 +36,7 @@ Open-source **agent team framework** — defines how multi-role teams collaborat
 | Product / design docs `docs/` | ✅ Finalized (problem statement · north star · capability model · composition protocol) |
 | JSON Schema + six `flow_weight` tiers | ✅ roster · plan-progress · DoD · verification · DDD gate · **stage · commit-policy** · audit-record |
 | Team pack `packs/minimal-research-to-spec` | ✅ pack validate / install |
-| Harness thin adapters | ✅ **pi mounted-level verified** · Cursor (installed) · CLI · Qoder/Claude scheduled · **LangGraph / CrewAI export** · OpenHands frozen |
+| Harness thin adapters | ✅ **five harnesses mounted-level verified** (pi · dsh · cursor · qoder · claude · one pack unchanged) · CLI · **LangGraph / CrewAI export** · OpenHands frozen |
 | Message protocol + contention advisory | ✅ message validate · `check:contention` (territory overlap + CI `--strict`) |
 | Validation & tests | ✅ `validate` 47 checks · `npm test` 21 tests · GitHub Actions |
 | Open release | ✅ **v0.31.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |

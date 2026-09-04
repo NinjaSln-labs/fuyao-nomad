@@ -223,14 +223,14 @@
 |---|------|
 | **P0 框架提供** | Harness **薄适配**契约：槽位 → 运行时 agent 映射表 |
 | **P0 框架提供** | 团队 spec（roster + handoff + flow_weight）**与 harness 解耦** |
-| **P0 框架提供** | Cursor 适配 POC 路径（`.cursor/agents/` 映射） |
-| **P1** | CLI 适配；OpenHands delegation 映射说明 ✅ v0.14 [cli-openhands-adapter.md](../design/cli-openhands-adapter.md) |
+| **P0 已实证** | 五家挂载级实跑（v0.32–v0.35 · 同一 pack 零改动）：**pi · dsh · cursor · qoder · claude**（[harness/README](../../harness/README.md) 证据级表） |
+| **P1** | CLI 适配；OpenHands delegation 映射说明 ✅ v0.14 [cli-openhands-adapter.md](../design/cli-openhands-adapter.md)（openhands 现 ❄️ 冻结） |
 | **P1** | 团队包导入/导出（同 spec 换映射表） ✅ v0.15 [pack-import-export.md](../design/pack-import-export.md) |
-| **P2** | LangGraph / CrewAI Flow **导出映射**（非内置引擎）✅ v0.9 文档 POC |
+| **P2** | LangGraph / CrewAI Flow **导出映射**（非内置引擎）✅ v0.9 文档 POC → runtime smoke v0.36 |
 | **不做** | 构建 harness、IDE、沙箱 runtime |
-| **竞品差异** | 全行业 harness 绑定 → 扶摇 **spec 不变，只换映射** |
+| **竞品差异** | 全行业 harness 绑定 → 扶摇 **spec 不变，只换映射**（五家实证） |
 
-**V1 验收**：同一份 roster 文档 + 两份 harness 映射说明（Cursor 必达，第二 harness 文档级即可）。
+**V1 验收**：同一份 roster 文档 + 两份 harness 映射说明（Cursor 必达，第二 harness 文档级即可）——**已超越**：五家全部挂载级实证。
 
 ---
 
@@ -277,7 +277,7 @@
 | 能力域 | 设计文档 | 实现目录（③ 后） |
 |--------|----------|------------------|
 | 1 编制 | composition-protocol | `packages/core/` · `agents/` |
-| 2 编排 | escalation-protocol · contention-rules · message-protocol · export-orchestration-mapping · [architecture §7](../../design/architecture.md) | `packages/core/` |
+| 2 编排 | escalation-protocol · contention-rules · message-protocol · export-orchestration-mapping · [architecture §7](../design/architecture.md) | `packages/core/` |
 | 3 推进 | plan-progress-contract · identity-constraints | `.agents/` |
 | 4 交付 | delivery-model | `docs/product/` 模板 |
 | 5 质量 | verification + audit-by-flow-weight · identity-constraints | `skills/` |

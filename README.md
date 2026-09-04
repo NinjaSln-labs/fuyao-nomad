@@ -34,7 +34,7 @@
 | 产品 / 设计文档 `docs/` | ✅ 定稿（问题陈述 · 北极星 · 能力模型 · 编制协议） |
 | JSON Schema + 六档 `flow_weight` 模板 | ✅ roster · plan-progress · DoD · verification · DDD 门 · **stage · commit-policy** · audit-record |
 | 团队包 `packs/minimal-research-to-spec` | ✅ pack validate / install |
-| Harness 薄适配 | ✅ **pi 挂载级实跑** · Cursor（安装级）· CLI · Qoder/Claude 排期 · **LangGraph / CrewAI 导出** · OpenHands 冻结 |
+| Harness 薄适配 | ✅ **五家挂载级实证**（pi · dsh · cursor · qoder · claude · 同一 pack 零改动）· CLI · **LangGraph / CrewAI 导出** · OpenHands 冻结 |
 | 消息协议 + 争用顾问 | ✅ message validate · `check:contention`（territory 重叠 + CI `--strict`） |
 | 校验与测试 | ✅ `validate` 47 项 · `npm test` 21 项 · GitHub Actions |
 | 开源发布 | ✅ **v0.31.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |

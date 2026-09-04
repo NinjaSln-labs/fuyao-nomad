@@ -30,19 +30,23 @@ dsh = pi 之上的 DeepSeek Harness（subagent 通道：`ctx.subagents.start()` 
 dsh-subagent-router 的 `model: auto` 策略（其分级 trivial/standard/complex 与
 model_hint fast/quality 同构可翻译）。详细映射表随 v0.33 落 `harness/dsh/MAPPING.md`。
 
-## 与既有适配关系
+## 与既有适配关系（五家全数挂载级 · v0.32–v0.35 实跑收敛）
 
 | 适配 | 形态 | 实跑状态 |
 |------|------|---------|
-| cursor | install 脚本 + subagents | 安装级（挂载级 v0.34 补） |
-| **pi** | skill 片段 + 编排约定 | **挂载级（v0.32 首家）** |
-| dsh | pi + subagent 通道 | v0.33 |
-| qoder | `.qoder/agents/` 项目级 | v0.35（Mac runbook） |
-| claude code | `.claude/agents/` | v0.35 第二梯队 |
-| openhands | 文档级 | ❄️ 冻结 |
-| langgraph / crewai | 导出映射 | runtime smoke v0.36 |
+| cursor | install 脚本 + subagents + CLI print | **挂载级（v0.34 · CLI 委派）** |
+| **pi** | skill 片段 + 编排约定 | **挂载级（v0.32.1 · 真多实例首家）** |
+| **dsh** | pi + subagent 通道 | **挂载级（v0.33 · 委派驱动）** |
+| **qoder** | `.qoder/agents/` 项目级 + headless | **挂载级（v0.35 · Mac 远程）** |
+| **claude code** | `.claude/agents/` + 第三方模型接入 | **挂载级（v0.35 · tokenrouter 无订阅形态）** |
+| openhands | 文档级 | ❄️ 冻结（无维护者环境） |
+| langgraph / crewai | 导出映射 | runtime smoke v0.36（导出形态，非挂载目标） |
+
+> 同一 pack（minimal-research-to-spec）零改动五家通吃——「换 harness 只换映射表」五家实证。
+> 五家 frontmatter 能力面梯度与实跑发现（R1–R14）见各家 MAPPING 与 dogfood 关仓文档。
 
 ## 验收
 
 - [x] 本契约 + harness/pi/ 四件套（v0.32）
-- [ ] harness/dsh/ 四件套 + subagent 通道翻译（v0.33）
+- [x] harness/dsh/ 四件套 + subagent 通道翻译（v0.33）
+- [x] cursor/qoder/claude 挂载级实跑（v0.34–v0.35 · 五家收敛）

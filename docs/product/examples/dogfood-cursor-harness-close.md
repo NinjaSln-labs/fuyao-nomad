@@ -36,6 +36,7 @@
 pi ✅ 挂载级·真多实例（v0.32.1）· dsh ✅ 挂载级·委派驱动（v0.33）· cursor ✅ 挂载级·CLI 委派（v0.34）
 北极星「移植」2/2 达标 + 第三家纵深 ✅
 qoder/claude ⏳ v0.35（Mac runbook）· langgraph/crewai ⏳ runtime smoke v0.36 · openhands ❄️ 冻结
+（后续实况：qoder/claude 已于 v0.35 挂载级（Mac 远程直测）· 候选五家全数收敛）
 ```
 
 ## 备注

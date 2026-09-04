@@ -47,6 +47,7 @@
 ```
 pi ✅ 挂载级·真多实例（v0.32.1）· dsh ✅ 挂载级·委派驱动（v0.33）—— 北极星 2/2 达标
 cursor ⏳ v0.34 挂载级补测 · qoder/claude ⏳ v0.35 · langgraph/crewai ⏳ runtime smoke v0.36
+（后续实况：cursor/qoder/claude 已于 v0.34/v0.35 挂载级 · 五家收敛）
 openhands ❄️ 冻结（无维护者环境）
 ```
 
