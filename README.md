@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v0.31.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.31.0)
+[![Release](https://img.shields.io/badge/Release-v0.32.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.32.0)
 
 **[English](README.en.md)** | 中文
 
@@ -34,7 +34,7 @@
 | 产品 / 设计文档 `docs/` | ✅ 定稿（问题陈述 · 北极星 · 能力模型 · 编制协议） |
 | JSON Schema + 六档 `flow_weight` 模板 | ✅ roster · plan-progress · DoD · verification · DDD 门 · **stage · commit-policy** · audit-record |
 | 团队包 `packs/minimal-research-to-spec` | ✅ pack validate / install |
-| Harness 薄适配 POC | ✅ Cursor（install）· CLI · OpenHands · **LangGraph / CrewAI 导出**（文档 + 片段） |
+| Harness 薄适配 | ✅ **pi 挂载级实跑** · Cursor（安装级）· CLI · Qoder/Claude 排期 · **LangGraph / CrewAI 导出** · OpenHands 冻结 |
 | 消息协议 + 争用顾问 | ✅ message validate · `check:contention`（territory 重叠 + CI `--strict`） |
 | 校验与测试 | ✅ `validate` 47 项 · `npm test` 21 项 · GitHub Actions |
 | 开源发布 | ✅ **v0.31.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
@@ -103,7 +103,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ## 路线图
 
-**当前：v0.31.0** — 发版防呆机械化 · 架构概览完整形态。
+**当前：v0.32.0** — pi 挂载级实跑（移植验证第一家）· 证据级标注体系。
 
 | 版本 | 目标 |
 |------|------|

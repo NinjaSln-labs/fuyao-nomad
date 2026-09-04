@@ -2,6 +2,13 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.32.0] - 2026-09-04
+
+### Added
+
+- **pi 薄适配 + 挂载级实跑**（移植验证第一家）：[harness/pi/](harness/pi/) 四件套（README · MAPPING 五维翻译 · mapping 示例 · 4 槽位 skill 片段）· [pi-harness-contract.md](docs/design/pi-harness-contract.md) · [dogfood-pi-harness 场景](docs/product/examples/dogfood-pi-harness-scenario.md) · [关仓](docs/product/examples/dogfood-pi-harness-close.md)——同一 pack 在 pi 下实跑完整链，`.agents/` 落点与 cursor 同构；message 文件实跑仓内首次（handoff + request 双类型）
+- harness/README **证据级标注体系**（文档级/安装级/挂载级/runtime smoke 级）+ 五家实跑排期（pi ✅ · dsh · cursor 补测 · qoder · claude）+ openhands 冻结标注
+
 ## [0.31.0] - 2026-08-30
 
 ### Added

@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v0.31.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.31.0)
+[![Release](https://img.shields.io/badge/Release-v0.32.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.32.0)
 
 **[中文](README.md)** | English
 
@@ -36,7 +36,7 @@ Open-source **agent team framework** — defines how multi-role teams collaborat
 | Product / design docs `docs/` | ✅ Finalized (problem statement · north star · capability model · composition protocol) |
 | JSON Schema + six `flow_weight` tiers | ✅ roster · plan-progress · DoD · verification · DDD gate · **stage · commit-policy** · audit-record |
 | Team pack `packs/minimal-research-to-spec` | ✅ pack validate / install |
-| Harness thin adapters | ✅ Cursor (install) · CLI · OpenHands · **LangGraph / CrewAI export** (docs + snippets) |
+| Harness thin adapters | ✅ **pi mounted-level verified** · Cursor (installed) · CLI · Qoder/Claude scheduled · **LangGraph / CrewAI export** · OpenHands frozen |
 | Message protocol + contention advisory | ✅ message validate · `check:contention` (territory overlap + CI `--strict`) |
 | Validation & tests | ✅ `validate` 47 checks · `npm test` 21 tests · GitHub Actions |
 | Open release | ✅ **v0.31.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
@@ -77,7 +77,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ## Roadmap
 
-**Current: v0.31.0** — Mechanical release guards · Architecture overview in complete form.
+**Current: v0.32.0** — pi mounted-level verification (first portability proof) · evidence-level labels.
 
 ### Non-goals
 

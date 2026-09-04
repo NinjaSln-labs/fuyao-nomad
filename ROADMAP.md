@@ -4,6 +4,12 @@
 
 ## 已完成
 
+### v0.32.0（2026-09-04）
+
+- pi 薄适配 + **挂载级实跑**（移植验证第一家）：harness/pi 四件套 · [pi-harness-contract](docs/design/pi-harness-contract.md) · dogfood 场景/关仓
+- harness/README 证据级标注体系（文档级/安装级/挂载级/runtime smoke 级）+ 五家实跑排期 + openhands 冻结标注
+- message 文件实跑仓内首次（handoff + request 双类型落盘）
+
 ### v0.31.0（2026-08-30）
 
 - 发版纪律机械化：`release:preflight` 四项防呆（cwd 断言 · 私有未 tracked · 脱敏扫描 · filter-repo 标记）· 测试 18→21
@@ -102,6 +108,7 @@
 | **v0.29** | C2 shisui 接手仓 + adopt 矩阵 | ✅ |
 | **v0.30** | C3 voyage 接手仓 · adopt 矩阵 ≥3 | ✅ |
 | **v0.31** | 发版防呆机械化 + 架构概览完整形态 | ✅ |
+| **v0.32** | pi 薄适配 · 挂载级实跑（移植验证第一家） | ✅ |
 | P2 | 包市场等 | 非默认 |
 
 详版：v0.26–v0.29 主计划（本地 `.cursor/plans/`，**不入库**）· 公开摘要见上表与 [CHANGELOG](CHANGELOG.md)

@@ -1,0 +1,18 @@
+# 槽位 id → pi 会话角色名（约定，非可执行配置）
+
+roster_id: minimal-research-to-spec
+
+mappings:
+  research: research-analyst
+  spec: spec-writer
+  progress: progress-keeper
+  auditor: quality-auditor
+
+# 可选：覆盖 roster model_policy / model_hint（最高优先）
+# 翻译为 pi 启动参数 --provider / --model：
+# model_hints:
+#   research: fast        # e.g. pi --provider deepseek --model <轻量档>
+#   auditor: quality       # e.g. pi --provider <strong> --model <推理档>
+
+# pi 无内置 subagent：实例由人/脚本展开（tmux / 多终端）。
+# 见 docs/design/pi-harness-contract.md · harness/pi/MAPPING.md
