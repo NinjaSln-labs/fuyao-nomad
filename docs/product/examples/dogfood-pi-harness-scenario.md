@@ -22,14 +22,16 @@
 | 验证轴 | flow_weight 模板矩阵 | **harness 移植**（同一 pack 换挂载点） |
 | 编排 | 默认（cursor 安装） | pi 会话角色串行/常驻约定 |
 
-## 3. 槽位展开（MAPPING 五维翻译实跑）
+## 3. 槽位展开（MAPPING 五维翻译实跑 · round 2 真多实例）
 
-| 槽位 | pi 形态 | 实跑动作 |
+**驱动机制（v0.32.1 补测后）**：每槽位为**独立 SDK AgentSession**（`createAgentSession()` spawn，fresh context），以槽位片段为首 prompt；会话间零共享记忆，仅经 `.agents/` 落点通信。round 1 单会话链证据降级归档。
+
+| 槽位 | pi 形态 | 实跑动作（独立实例） |
 |------|---------|---------|
-| research | 主链实例 1（串行 s1） | 按 `harness/pi-agents/research-analyst.md` 片段入场 → 产出 research_snapshot |
-| spec | 主链实例 2（串行 s2 · gate=confirm） | 读 handoff message 落点 → 产出规格 + 人确认身份词 |
-| progress | **常驻正交实例** | 维护 plan-progress · 落点对比验证 · 触发审计 request |
-| auditor | **常驻正交实例（只读）** | m-impl code_quality 门 → pass_with_notes |
+| research | 独立实例 s1 | 片段开场 → 调研 pi 多实例机制（Fact×4 引官方原文）→ 产出快照 + handoff message 落点 |
+| spec | 独立实例 s2（gate=confirm） | **仅读 handoff 落点**获知 research 结论 → 产出规格（含身份词逐词核对） |
+| progress | 常驻协调 | 维护 plan-progress · R3 写冲突处置（contention 活例）· 触发审计 |
+| auditor | 独立只读实例 | m-impl 门 → pass_with_notes + request message 落盘 |
 
 ## 4. 验收（DoD：intent_clear · plan_progress_synced）
 

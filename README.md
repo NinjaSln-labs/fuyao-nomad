@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v0.32.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.32.0)
+[![Release](https://img.shields.io/badge/Release-v0.32.1-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.32.1)
 
 **[English](README.en.md)** | 中文
 
@@ -103,7 +103,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ## 路线图
 
-**当前：v0.32.0** — pi 挂载级实跑（移植验证第一家）· 证据级标注体系。
+**当前：v0.32.1** — pi 挂载级实跑（真多实例 · 移植验证第一家）。
 
 | 版本 | 目标 |
 |------|------|

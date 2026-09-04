@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v0.32.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.32.0)
+[![Release](https://img.shields.io/badge/Release-v0.32.1-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.32.1)
 
 **[中文](README.md)** | English
 
@@ -77,7 +77,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ## Roadmap
 
-**Current: v0.32.0** — pi mounted-level verification (first portability proof) · evidence-level labels.
+**Current: v0.32.1** — pi mounted-level verified (true multi-instance · first portability proof).
 
 ### Non-goals
 

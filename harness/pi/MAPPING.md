@@ -19,7 +19,8 @@
 | `orchestration.mode=serial` + `serial_order` | 按序切换/交接活动实例（tmux 顺序窗格或串行会话） |
 | `orchestration.mode=parallel` + `parallel_groups` | tmux 并行 panes / 多终端实例（实际并行度由用户管理） |
 | `orthogonal_slots`（progress · auditor） | **常驻独立实例**（与主链并行，随时可介入） |
-| `handoff` / messages | `plan-progress.progress.handoff_snippet` + `.agents/messages/<roster_id>/`（落点同 cursor） |
+| `handoff` / messages | `plan-progress.progress.handoff_snippet` + `.agents/messages/<roster_id>/`（落点同 cursor） | 
+| **共享落点写序** | plan-progress 为共享可变落点：多实例并发写须按 [file-lock-contract](../../docs/design/file-lock-contract.md) 声明 territory 归属；写冲突活例见 [dogfood-pi-harness-close](../../docs/product/examples/dogfood-pi-harness-close.md) R3 |
 | `gate_level: confirm` | 暂停待人确认（人在主控终端执行确认后继续） |
 | `model_policy` / `model_hint` | 实例启动参数 `--provider` / `--model`（优先级同 [model-harness-contract](../../docs/design/model-harness-contract.md)） |
 | `check:contention` | 扶摇侧跑（`npm run check:contention`），不进 pi |
@@ -46,3 +47,4 @@ pi 适配是 **单人直接驱动**形态；dsh 是 **委派自动驱动**形态
 - [x] README · MAPPING · mapping.example · 槽位片段 ×4
 - [x] sandbox 实跑：minimal-research-to-spec「调研→规格」链在 pi 下全通（落点与 cursor 同构）
 - [x] roster / pack 零改动
+- [x] **round 2 多实例补测（v0.32.1）**：3 个独立 SDK AgentSession（research/spec/auditor）fresh context、片段开场、仅经 `.agents/` 落点通信——挂载级实证成立；round 1 单会话证据降级为「单会话链级」归档

@@ -2,6 +2,14 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.32.1] - 2026-09-04
+
+### Fixed
+
+- **pi 挂载证据升级为真多实例**（round 2 补测）：3 个独立 SDK AgentSession（research/spec/auditor）fresh context、槽位片段开场、仅经 `.agents/` 落点通信——挂载级实证成立；round 1 单会话证据诚实降级为「单会话链级」并归档
+- MAPPING 增补**共享落点写序**条款（plan-progress 多实例并发写须按 file-lock 声明 territory——来自 R3 写冲突活例）
+- 关仓文档重写：证据等级演进表（round 1 vs round 2）+ R3 争用活例记录
+
 ## [0.32.0] - 2026-09-04
 
 ### Added
