@@ -2,12 +2,12 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
-## [Unreleased]
+## [0.31.0] - 2026-08-30
 
 ### Added
 
 - `release:preflight` 四项机械化防呆（坑修复入机制）：第 0 步 cwd 断言（仓根 `package.json` name 校验）· 第 2.5 步发布守卫（私有文件未 tracked 断言 · 脱敏模式扫描 home/Users/mnt/Windows 用户路径/私钥/`.ssh`/token 前缀 · `.git/filter-repo` 残留标记检测）；新增 3 项回归测试（18 → 21）
-- `architecture.md` 完整形态（v0.31 候选）：arc42 裁剪九节 —— 系统上下文 · 能力域×层对齐 · 运行时视图（A 全流程七阶段 + 轻重伸缩 + B 并行争用 + C 换 harness）· 横切概念 · 编排协同总图（域 2 五份专题文档互链）· 决策与风险（roles.md 裁决归档）；capability-model 域 2「待扩」标注兑现
+- `architecture.md` 完整形态（v0.31）：arc42 裁剪九节 —— 系统上下文 · 能力域×层对齐 · 运行时视图（A 全流程七阶段 + 轻重伸缩 + B 并行争用 + C 换 harness）· 横切概念 · 编排协同总图（域 2 五份专题文档互链）· 决策与风险（roles.md 裁决归档）；capability-model 域 2「待扩」标注兑现
 
 ### Fixed
 
