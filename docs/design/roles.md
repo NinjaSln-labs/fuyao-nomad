@@ -1,7 +1,8 @@
 # 角色编制
 
-> ⏸ **已暂停 · blocked by ① 发现**  
-> 本产品**不提供固定编制**。见 [composition-protocol.md](composition-protocol.md)。
+> ⏸ **已裁决归档（2026-08-30）** — 「官方固定角色表」方向已否决，见 [architecture.md §8 决策与风险](architecture.md#8-决策与风险)。  
+> 本产品**不提供固定编制**。权威：[composition-protocol.md](composition-protocol.md)。  
+> 以下内容保留作历史化石（git 历史不删），不参与导航。
 
 ---
 

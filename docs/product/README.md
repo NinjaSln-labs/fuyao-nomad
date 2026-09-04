@@ -42,7 +42,7 @@
 | [升级协议](../design/escalation-protocol.md) | v0.3 |
 | [文件锁契约](../design/file-lock-contract.md) | v0.4 |
 | [Schema](../design/schemas/) | v0.1 |
-| [架构概览](../design/architecture.md) | 草案 |
+| [架构概览](../design/architecture.md) | 完整形态（v0.31 候选） |
 
 ## 权威层级
 

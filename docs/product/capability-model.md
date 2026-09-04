@@ -277,7 +277,7 @@
 | 能力域 | 设计文档 | 实现目录（③ 后） |
 |--------|----------|------------------|
 | 1 编制 | composition-protocol | `packages/core/` · `agents/` |
-| 2 编排 | architecture（待扩） | `packages/core/` |
+| 2 编排 | escalation-protocol · contention-rules · message-protocol · export-orchestration-mapping · [architecture §7](../../design/architecture.md) | `packages/core/` |
 | 3 推进 | plan-progress-contract · identity-constraints | `.agents/` |
 | 4 交付 | delivery-model | `docs/product/` 模板 |
 | 5 质量 | verification + audit-by-flow-weight · identity-constraints | `skills/` |
