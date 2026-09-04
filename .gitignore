@@ -33,3 +33,7 @@ HANDOFF.md
 
 # local Cursor IDE / plans / rules / generated agents (not published)
 .cursor/
+
+# local project plans (not published; see docs/plans/README.md)
+docs/plans/
+*.plan.md
