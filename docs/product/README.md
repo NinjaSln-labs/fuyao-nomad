@@ -25,7 +25,7 @@
 | [dogfood-matrix-comparison.md](./examples/dogfood-matrix-comparison.md) | 六档 + 桥接 + 全流程矩阵 |
 | [fuyao-adopt-playbook.md](./examples/fuyao-adopt-playbook.md) | 产品接手仓（源仓只读） |
 | [adopt-matrix-comparison.md](./examples/adopt-matrix-comparison.md) | adopt 对照（qingfu · shisui · voyage） |
-| [release-checklist.md](./examples/release-checklist.md) | 维护者发版（脱敏 · cwd 防呆） |
+| [release-checklist.md](./examples/release-checklist.md) | 维护者发版（preflight 四项机械化防呆：cwd · 私有未 tracked · 脱敏扫描 · filter-repo） |
 
 ## 设计（③ 阶段）
 

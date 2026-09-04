@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
-import { mkdtempSync, existsSync, mkdirSync, readFileSync } from "node:fs";
+import { mkdtempSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -301,4 +301,67 @@ test("release:preflight --skip-checks --strict-gh fails without GH_TOKEN", () =>
   ], { cwd: ROOT, encoding: "utf8", env });
   assert.equal(r.status, 1, r.stdout + r.stderr);
   assert.match(r.stdout + r.stderr, /preflight FAILED|strict-gh/);
+});
+
+test("release:preflight passes guards in clean tree (skip-checks)", () => {
+  // 2.5 publish guard must pass on the real repo: private files untracked,
+  // desensitization scan clean, no stale filter-repo marker.
+  const env = { ...process.env };
+  delete env.GH_TOKEN;
+  delete env.GITHUB_TOKEN;
+  const r = spawn(process.execPath, [
+    join(ROOT, "scripts/release-preflight.mjs"),
+    "--skip-checks",
+  ], { cwd: ROOT, encoding: "utf8", env });
+  assert.equal(r.status, 0, r.stdout + r.stderr);
+  assert.match(r.stdout, /repo guard/);
+  assert.match(r.stdout, /no private files tracked/);
+  assert.match(r.stdout, /desensitization scan clean/);
+  assert.match(r.stdout, /no git filter-repo marker/);
+});
+
+test("release:preflight sensitization scan catches leaked absolute home path", () => {
+  const scratchBase = join(ROOT, ".scratch");
+  mkdirSync(scratchBase, { recursive: true });
+  const tmp = mkdtempSync(join(scratchBase, "fuyao-preflight-"));
+  // clone minimal git repo with the tracked script's repo layout
+  spawnSync("git", ["init", "-q"], { cwd: tmp, encoding: "utf8" });
+  spawnSync("git", ["config", "user.email", "test@example.com"], { cwd: tmp, encoding: "utf8" });
+  spawnSync("git", ["config", "user.name", "t"], { cwd: tmp, encoding: "utf8" });
+  mkdirSync(join(tmp, "scripts"), { recursive: true });
+  writeFileSync(join(tmp, "package.json"), JSON.stringify({ name: "fuyao-nomad", version: "0.0.0" }));
+  writeFileSync(
+    join(tmp, "scripts/release-preflight.mjs"),
+    readFileSync(join(ROOT, "scripts/release-preflight.mjs"), "utf8"),
+  );
+  // assemble leak strings at runtime so THIS test file never contains the literals
+  const leakHome = ["", "home", "someone", "secret", "path"].join("/");
+  const leakSsh = ["~", ".ssh", "id_rsa"].join("/");
+  writeFileSync(join(tmp, "docs.md"), `leak: ${leakHome} and ${leakSsh}\n`);
+  spawnSync("git", ["add", "."], { cwd: tmp, encoding: "utf8" });
+  spawnSync("git", ["commit", "-q", "-m", "init"], { cwd: tmp, encoding: "utf8" });
+  const r = spawnSync(process.execPath, [
+    join(tmp, "scripts/release-preflight.mjs"),
+    "--skip-checks",
+  ], { cwd: tmp, encoding: "utf8" });
+  assert.equal(r.status, 1, r.stdout + r.stderr);
+  assert.match(r.stdout + r.stderr, /sensitization: docs\.md/);
+});
+
+test("release:preflight repo guard fails outside fuyao-nomad package", () => {
+  const scratchBase = join(ROOT, ".scratch");
+  mkdirSync(scratchBase, { recursive: true });
+  const tmp = mkdtempSync(join(scratchBase, "fuyao-guard-"));
+  mkdirSync(join(tmp, "scripts"), { recursive: true });
+  writeFileSync(join(tmp, "package.json"), JSON.stringify({ name: "some-other-repo" }));
+  writeFileSync(
+    join(tmp, "scripts/release-preflight.mjs"),
+    readFileSync(join(ROOT, "scripts/release-preflight.mjs"), "utf8"),
+  );
+  const r = spawnSync(process.execPath, [
+    join(tmp, "scripts/release-preflight.mjs"),
+    "--skip-checks",
+  ], { cwd: tmp, encoding: "utf8" });
+  assert.equal(r.status, 1, r.stdout + r.stderr);
+  assert.match(r.stdout + r.stderr, /repo guard.*wrong repo|refuse release/s);
 });

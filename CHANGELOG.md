@@ -2,6 +2,16 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [Unreleased]
+
+### Added
+
+- `release:preflight` 四项机械化防呆（坑修复入机制）：第 0 步 cwd 断言（仓根 `package.json` name 校验）· 第 2.5 步发布守卫（私有文件未 tracked 断言 · 脱敏模式扫描 home/Users/mnt/Windows 用户路径/私钥/`.ssh`/token 前缀 · `.git/filter-repo` 残留标记检测）；新增 3 项回归测试（18 → 21）
+
+### Fixed
+
+- `.github/repository-metadata.md` 脱敏清单自指用户目录字面量（被新扫描器抓出后改为占位描述）
+
 ## [0.30.0] - 2026-08-30
 
 ### Added

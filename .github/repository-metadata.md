@@ -64,7 +64,7 @@ gh repo edit NinjaSln-labs/fuyao-nomad \
 
 ## 脱敏检查清单
 
-- [x] 无本地绝对路径（`/Users/...`）
+- [x] 无本地绝对路径（示例形式如 `/Users/<user>/...` 亦勿出现）
 - [x] 无 API key / token / `.env`
 - [x] 无 `private: true`（package.json）
 - [x] CHANGELOG release URL 指向 NinjaSln-labs
