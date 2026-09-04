@@ -1,5 +1,41 @@
 # 后 v0.1 路线
 
+## v0.35.0 ✅（2026-09-05）
+
+| 项 | 状态 |
+|----|------|
+| qoder 挂载级实跑（第四家 · Mac 远程） | ✅ [场景](examples/dogfood-qoder-harness-scenario.md) · [关仓](examples/dogfood-qoder-harness-close.md) |
+| claude 挂载级实跑（第五家 · 无订阅第三方模型） | ✅ [场景](examples/dogfood-claude-harness-scenario.md) · [关仓](examples/dogfood-claude-harness-close.md) |
+| R11–R14 实跑发现入 MAPPING | ✅ 远程跨机形态 · frontmatter 能力面梯度 · 第三方模型接入 · confirm 门互动力 |
+
+## v0.34.0 ✅（2026-09-05）
+
+| 项 | 状态 |
+|----|------|
+| cursor 挂载级回归实证（第三家 · CLI 委派） | ✅ [场景](examples/dogfood-cursor-harness-scenario.md) · [关仓](examples/dogfood-cursor-harness-close.md) |
+| R8–R10 入 MAPPING（readonly 维度 · 凭据迁移 · print 委派） | ✅ |
+
+## v0.33.0 ✅（2026-09-05）
+
+| 项 | 状态 |
+|----|------|
+| dsh 薄适配 · 委派驱动挂载级（第二家） | ✅ [场景](examples/dogfood-dsh-harness-scenario.md) · [关仓](examples/dogfood-dsh-harness-close.md) |
+| 北极星「移植」2/2 达标 | ✅ pi + dsh 双家实证 |
+| OpenHands 冻结 + 幽灵命令 `check:openhands` 清偿 | ✅ |
+
+## v0.32.0 / v0.32.1 ✅（2026-09-04）
+
+| 项 | 状态 |
+|----|------|
+| pi 薄适配四件套 + 证据级标注体系 | ✅ [场景](examples/dogfood-pi-harness-scenario.md) · [关仓](examples/dogfood-pi-harness-close.md) |
+| 挂载证据升级**真多实例**（3 独立 SDK 实例 · 证据等级纪律确立） | ✅ round 1 单会话证据诚实降级归档 |
+
+## v0.31.0 ✅（2026-08-30）
+
+| 项 | 状态 |
+|----|------|
+| 发版防呆机械化（preflight 四防）· architecture.md 完整形态 | ✅ [架构概览](../design/architecture.md) |
+
 ## v0.21.0 ✅（2026-08-27）
 
 | 项 | 状态 |

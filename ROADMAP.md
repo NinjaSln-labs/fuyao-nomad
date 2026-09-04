@@ -129,14 +129,18 @@
 | **v0.30** | C3 voyage 接手仓 · adopt 矩阵 ≥3 | ✅ |
 | **v0.31** | 发版防呆机械化 + 架构概览完整形态 | ✅ |
 | **v0.32** | pi 薄适配 · 挂载级实跑·真多实例（移植验证第一家） | ✅ |
+| **v0.33** | dsh 薄适配 · 委派驱动挂载级（第二家 · 北极星移植 2/2）· OpenHands 冻结 | ✅ |
+| **v0.34** | cursor 挂载级回归实证（第三家 · CLI 委派） | ✅ |
+| **v0.35** | qoder + claude 挂载级（第四/五家 · Mac 远程直测）· 候选五家全数收敛 | ✅ |
 | P2 | 包市场等 | 非默认 |
 
-详版：v0.26–v0.29 主计划（本地 `.cursor/plans/`，**不入库**）· 公开摘要见上表与 [CHANGELOG](CHANGELOG.md)
+详版主计划（本地 `docs/plans/`，**不入库**）· 公开摘要见上表与 [CHANGELOG](CHANGELOG.md)
 
 ## 里程碑
 
 ```
-v0.28.0 ✅ qingfu adopt → v0.29.0 ✅ shisui adopt → v0.30.0 ✅ voyage adopt · 稳态 II
+v0.28.0 ✅ qingfu adopt → v0.29.0 ✅ shisui adopt → v0.30.0 ✅ voyage adopt
+→ v0.32–v0.35 ✅ 五家 harness 挂载级（pi · dsh · cursor · qoder · claude）· 移植主线收敛
 ```
 
 ## 不做
