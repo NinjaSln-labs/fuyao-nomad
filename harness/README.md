@@ -23,8 +23,8 @@
 | 目录 | 目标 | 形态 | 证据级 |
 |------|------|------|--------|
 | [cursor/](./cursor/) | Cursor IDE | install 脚本 + subagents | 安装级 → 挂载级补测排 v0.34 |
-| [pi/](./pi/) | **pi CLI** | skill 片段 + 编排约定 | **挂载级（v0.32）** |
-| [dsh/](./dsh/) | **dsh（DeepSeek Harness）** | pi + subagent 通道 | v0.33 排期 |
+| [pi/](./pi/) | **pi CLI** | skill 片段 + 编排约定 | **挂载级·真多实例（v0.32.1）** |
+| [dsh/](./dsh/) | **dsh（DeepSeek Harness）** | pi + subagent 通道 | **挂载级·委派驱动（v0.33）** ✅ 北极星移植 2/2 |
 | [qoder/](./qoder/) | Qoder IDE | `.qoder/agents/` 项目级 | v0.35 排期（Mac runbook） |
 | [claude/](./claude/) | Claude Code | `.claude/agents/` | v0.35 排期（第二梯队） |
 | [cli/](./cli/) | 命令行（通用） | runners 片段 | 文档级 |

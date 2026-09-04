@@ -2,6 +2,24 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.33.0] - 2026-09-05
+
+### Added
+
+- **dsh 薄适配 + 挂载级实跑**（移植验证第二家 · **北极星「移植」2/2 达标**）：`harness/dsh/` 四件套（README · MAPPING 差异维翻译 · mapping 示例 · 槽位片段 ×4）——dsh（DeepSeek Harness · pi 之上）的 `ctx.subagents` 委派通道承载扶摇槽位链
+- dogfood-dsh 场景 + 关仓：headless 无头模式分段委派全链（research/spec/auditor 均为 spawn 子代理产出，父会话只协调不代写——`.dsh/sessions/` 会话日志实证 `subagent/descriptor`）；gate-confirm 人核 message（confirm 门降级形态 R7 实证）
+- MAPPING 无头实跑任务设计约定（R5 反哺：结构化模板 + 限定输入）
+
+### Fixed
+
+- 幽灵命令 `check:openhands` 5 处文档引用清偿（step7/viii 场景与关仓、CHANGELOG——如实标注为 sandbox 本地脚本，仓内从未提供）
+- OpenHands 适配 README 冻结标注（❄️ 无维护者环境，欢迎社区认领）
+- harness/dsh/agents 片段「pi 常驻」主语残留修复（审计 N-1 回流：dsh continuable 正交槽位 + MAPPING 引用改 dsh）
+
+### Changed
+
+- harness/README 证据级表：pi 升「挂载级·真多实例」· dsh 升「挂载级·委派驱动 ✅ 移植 2/2」
+
 ## [0.32.1] - 2026-09-04
 
 ### Fixed
@@ -54,7 +72,7 @@
 ### Added
 
 - Dogfood VIII：[dogfood-viii-scenario.md](docs/product/examples/dogfood-viii-scenario.md) · [close](docs/product/examples/dogfood-viii-close.md)（boundary-s7 · **s7 对抗启用**）
-- OpenHands E2E lite：step7 关仓补 mapping smoke；sandbox `check:openhands`
+- OpenHands E2E lite：step7 关仓补 mapping smoke；sandbox 本地脚本（当时称 `check:openhands`，仓内从未提供，v0.33 清偿）
 
 ### Changed
 

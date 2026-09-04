@@ -1,0 +1,18 @@
+# 示例（dsh）：槽位 id → 子代理委派名（约定，非可执行配置）
+
+roster_id: minimal-research-to-spec
+
+mappings:
+  research: research-analyst   # one-shot 子代理（主链 s1）
+  spec: spec-writer            # one-shot 子代理（主链 s2 · gate=confirm）
+  progress: progress-keeper    # continuable 子代理（正交 · 常驻）
+  auditor: quality-auditor     # continuable 子代理（正交 · 只读审计）
+
+# 可选：覆盖 roster model_policy / model_hint（最高优先）
+# 翻译为 subagent 委派参数 provider / model（省略则继承父级路由）：
+# model_hints:
+#   research: { provider: sensenova, model: sensenova-6.8-flash-lite }
+#   auditor: { model: auto }   # auto = 内置分层路由（task 分类 → trivial/standard/complex）
+
+# 无头自动实跑（CI / sandbox 验证形态）：
+#   dsh --profile headless "按 mapping 委派全链并汇报"   # 退出码 0/1 判定

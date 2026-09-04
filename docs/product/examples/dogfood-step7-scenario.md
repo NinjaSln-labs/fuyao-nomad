@@ -63,8 +63,9 @@ npm run pack -- validate packs/minimal-research-to-spec
 **v0.27+ OpenHands E2E lite（sandbox）：**
 
 ```powershell
-# 在已 import 的 sandbox 内
-npm run check:openhands   # 若场景提供；或对照 step7-close 清单手检 4 agents
+# 在已 import 的 sandbox 内手检 mapping ↔ 4 agents
+# 注：早期文档所称的 npm run check:openhands 为 sandbox 本地脚本，从未在仓内提供（幽灵命令 · v0.33 清偿）
+# OpenHands 适配现已 ❄️ 冻结（无维护者环境）
 ```
 
 ## 6. Sandbox 一键验证

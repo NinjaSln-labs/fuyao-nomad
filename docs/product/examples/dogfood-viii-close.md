@@ -29,7 +29,7 @@
 
 | 项 | ✅ |
 |----|---|
-| mapping ↔ 4 agents | ✅ `check:openhands` |
+| mapping ↔ 4 agents | ✅ 手检（当时称 check:openhands，系 sandbox 本地脚本，仓内从未提供） |
 | pack validate openhands | ✅ |
 
 ## 校验

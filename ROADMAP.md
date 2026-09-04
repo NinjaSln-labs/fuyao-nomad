@@ -4,6 +4,12 @@
 
 ## 已完成
 
+### v0.33.0（2026-09-05）
+
+- dsh 挂载级实跑（移植验证第二家 · **北极星移植 2/2 达标**）：ctx.subagents 委派驱动全链 + headless 无头分段形态 + R5/R6/R7 三发现反哺 MAPPING
+- OpenHands 冻结标注 + 幽灵命令 `check:openhands` 5 处清偿
+- [场景](docs/product/examples/dogfood-dsh-harness-scenario.md) · [关仓](docs/product/examples/dogfood-dsh-harness-close.md)
+
 ### v0.32.1（2026-09-04）
 
 - pi 薄适配 + **挂载级实跑·真多实例**（移植验证第一家）：3 独立 SDK AgentSession 仅经 `.agents/` 落点通信；round 1 单会话证据诚实降级归档；R3 写冲突活例 → MAPPING 增补共享落点写序

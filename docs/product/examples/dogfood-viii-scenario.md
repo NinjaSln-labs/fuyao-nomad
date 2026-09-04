@@ -38,8 +38,7 @@
 ## 5. OpenHands E2E lite
 
 ```powershell
-npm run check:openhands
-# mapping 4 slots ↔ agents/*.md
+# 手检 mapping 4 slots ↔ agents/*.md（当时文档称 check:openhands，实为 sandbox 本地脚本，仓内从未提供）
 npm run pack -- validate agents/packs/minimal-research-to-spec  # 含 openhands
 ```
 
@@ -50,7 +49,7 @@ npm run pack -- validate agents/packs/minimal-research-to-spec  # 含 openhands
 ```powershell
 Set-Location $Sandbox
 npm test
-npm run check:openhands
+# identity/traceability 双 strict（mapping 手检同 dogfood-step7）
 node "$Fuyao\scripts\check-identity.mjs" --project . --plan .agents/plan-progress.yaml --strict
 node "$Fuyao\scripts\check-traceability.mjs" --project . --plan .agents/plan-progress.yaml --strict
 ```

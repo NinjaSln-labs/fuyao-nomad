@@ -38,7 +38,7 @@
 | cli | **仅**包内 `harness/cli/` |
 | openhands | **仅**包内 `harness/openhands/`（v0.23+） |
 
-OpenHands 第三映射：**已做 E2E lite**（v0.27 · [dogfood-viii](./dogfood-viii-scenario.md)）— `check:openhands` 验证 mapping ↔ agents；**不**启 OpenHands runtime。
+OpenHands 第三映射：**已做 E2E lite**（v0.27 · [dogfood-viii](./dogfood-viii-scenario.md)）— mapping ↔ agents 手检（当时称 `check:openhands`，系 sandbox 本地脚本，仓内从未提供，幽灵命令 v0.33 清偿）；**不**启 OpenHands runtime。OpenHands 适配现已 ❄️ 冻结（无维护者环境）。
 
 ## OpenHands E2E lite（v0.27+）
 
