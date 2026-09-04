@@ -14,11 +14,11 @@ research（调研）→ spec（规格）→ spec/主 agent（实现）→ audito
 
 | 文件 | 用途 |
 |------|------|
-| [minimal-roster.yaml](../../agents/examples/minimal-roster.yaml) | 团队编制 |
-| [plan-research-spec-impl.example.yaml](../../agents/examples/plan-research-spec-impl.example.yaml) | 三阶段 work_items + territory + 追溯链 |
+| [minimal-roster.yaml](../../../agents/examples/minimal-roster.yaml) | 团队编制 |
+| [plan-research-spec-impl.example.yaml](../../../agents/examples/plan-research-spec-impl.example.yaml) | 三阶段 work_items + territory + 追溯链 |
 | [plan-dod-traceability-chain.md](plan-dod-traceability-chain.md) | 计划↔DoD 联动与校验 |
 | [problem-prd-chain.md](problem-prd-chain.md) | 问题陈述 → PRD-lite（重端可选） |
-| [packs/minimal-research-to-spec](../../packs/minimal-research-to-spec/) | 可安装团队包 |
+| [packs/minimal-research-to-spec](../../../packs/minimal-research-to-spec/) | 可安装团队包 |
 
 ## 模型调用（harness）
 
@@ -26,7 +26,7 @@ research（调研）→ spec（规格）→ spec/主 agent（实现）→ audito
 
 1. `pack:install` → `.cursor/agents/` subagent
 2. 主 Agent 按 plan / handoff 委派槽位
-3. `model_hint` / mapping `model_hints` → Cursor `model` 字段（见 [model-harness-contract.md](../design/model-harness-contract.md)）
+3. `model_hint` / mapping `model_hints` → Cursor `model` 字段（见 [model-harness-contract.md](../../design/model-harness-contract.md)）
 
 ## 验证
 

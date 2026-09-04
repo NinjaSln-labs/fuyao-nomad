@@ -57,7 +57,7 @@ npm run install:cursor-agents -- --project . \
   sandbox 手工落位属实验偏离
 - **WSL/headless 认证（R9）**：CLI `~/.config/cursor/auth.json` 可从 IDE 登录态（state.vscdb `cursorAuth/*`）合法迁移
 - **print 委派（R10）**：`agent -p --trust` 一次性模式支持 subagents 委派；分段委派（每槽位一进程）
-- **实跑证据**：[dogfood-cursor-harness](../docs/product/examples/dogfood-cursor-harness-close.md)（v0.34 · 挂载级）
+- **实跑证据**：[dogfood-cursor-harness](../../docs/product/examples/dogfood-cursor-harness-close.md)（v0.34 · 挂载级）
 
 ## V1 验收
 

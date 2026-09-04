@@ -39,7 +39,7 @@ Open-source **agent team framework** — defines how multi-role teams collaborat
 | Harness thin adapters | ✅ **five harnesses mounted-level verified** (pi · dsh · cursor · qoder · claude · one pack unchanged) · CLI · **LangGraph / CrewAI export** · OpenHands frozen |
 | Message protocol + contention advisory | ✅ message validate · `check:contention` (territory overlap + CI `--strict`) |
 | Validation & tests | ✅ `validate` 47 checks · `npm test` 21 tests · GitHub Actions |
-| Open release | ✅ **v0.31.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+| Open release | ✅ **v0.35.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
 Maintainer releases require **two local audits** (`.agents/audit/`: **release audit** 100/100 + **code quality audit** pass/pass_with_notes; not in repo; order: both audits → release commit → tag → Release). Checklist: [release-checklist.md](docs/product/examples/release-checklist.md) · `npm run release:preflight`. Public contract: [docs/audit/README.md](docs/audit/README.md).
 
@@ -52,7 +52,7 @@ Maintainer releases require **two local audits** (`.agents/audit/`: **release au
 | `docs/templates/` | Six `flow_weight` tiers (DoD · verification · ddd-gate · **stage · commit-policy**, etc.) |
 | `agents/examples/` | minimal-roster · plan-progress · message examples |
 | `packs/` | Official team pack example (roster + templates + harness mapping + skills) |
-| `harness/` | Cursor / CLI / OpenHands / LangGraph / CrewAI **thin adapters** (not core product) |
+| `harness/` | **pi · dsh · Cursor · Qoder · Claude** (five mounted-level verified) · CLI · LangGraph / CrewAI export · OpenHands frozen — **thin adapters** (not core product) |
 | `skills/` | Portable skills (**not** synced to harness paths) |
 | `scripts/` | `validate` · `pack` · `check:*` · `install:cursor-agents` · `release:preflight` |
 | `docs/product/examples/` | Dogfood / adopt playbooks · matrices · release checklist |
@@ -78,6 +78,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 ## Roadmap
 
 **Current: v0.35.0** — qoder + claude mounted-level verified (all five candidate harnesses at mounted level).
+**Next:** v0.36 langgraph/crewai runtime smoke → v0.37 shuijing adopt → v0.38 solo starter → v0.39 English core docs → **1.0.0-alpha.1 contract freeze**. Full version table: [README.md](README.md) (Chinese, authoritative) · [ROADMAP.md](ROADMAP.md).
 
 ### Non-goals
 

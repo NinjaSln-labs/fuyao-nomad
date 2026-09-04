@@ -23,6 +23,7 @@
 |------|------|
 | [dogfood-playbook.md](./examples/dogfood-playbook.md) | 档位 dogfood 0–8 步 |
 | [dogfood-matrix-comparison.md](./examples/dogfood-matrix-comparison.md) | 六档 + 桥接 + 全流程矩阵 |
+| **harness 挂载剧本**（[pi](./examples/dogfood-pi-harness-scenario.md) · [dsh](./examples/dogfood-dsh-harness-scenario.md) · [cursor](./examples/dogfood-cursor-harness-scenario.md) · [qoder](./examples/dogfood-qoder-harness-scenario.md) · [claude](./examples/dogfood-claude-harness-scenario.md)） | 五家挂载级实跑（v0.32–v0.35 · 同一 pack 零改动） |
 | [fuyao-adopt-playbook.md](./examples/fuyao-adopt-playbook.md) | 产品接手仓（源仓只读） |
 | [adopt-matrix-comparison.md](./examples/adopt-matrix-comparison.md) | adopt 对照（qingfu · shisui · voyage） |
 | [release-checklist.md](./examples/release-checklist.md) | 维护者发版（preflight 四项机械化防呆：cwd · 私有未 tracked · 脱敏扫描 · filter-repo） |

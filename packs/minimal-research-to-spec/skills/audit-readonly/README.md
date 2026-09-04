@@ -10,4 +10,4 @@
 - 调研去权威化提醒
 - 审计 findings 格式（severity / fixed / recorded / open）
 
-见 [audit-by-flow-weight.md](../../docs/design/audit-by-flow-weight.md)。
+见 [audit-by-flow-weight.md](../../../../docs/design/audit-by-flow-weight.md)。

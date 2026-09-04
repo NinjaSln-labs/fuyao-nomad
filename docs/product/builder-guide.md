@@ -75,7 +75,7 @@ npm run pack:install -- --pack packs/<pack-id> --project /path/to/project
 
 - [domain-language.md](../design/domain-language.md)
 - [audit-by-flow-weight.md](../design/audit-by-flow-weight.md) — **规则**（公开）
-- 具体审计报告：**本地** `.agents/audit/`（见 [docs/audit/README.md](../../audit/README.md)）
+- 具体审计报告：**本地** `.agents/audit/`（见 [docs/audit/README.md](../audit/README.md)）
 
 ## Cursor 薄适配
 

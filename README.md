@@ -19,7 +19,7 @@
 
 **扶摇（fú yáo）**——「扶摇」= 旋风、上举之力；出处：《庄子·逍遥游》「抟**扶摇**而上者九万里」。**Nomad** = 团队规格可迁移，不绑单一 harness。
 
-开源 **Agent 团队框架** — 定义多角色如何协作、按轻-重流程重量交付，通过薄适配挂到 Cursor / CLI / OpenHands / LangGraph / CrewAI 等（**不替代 harness / 编排引擎**）。
+开源 **Agent 团队框架** — 定义多角色如何协作、按轻-重流程重量交付，通过薄适配挂到 pi · dsh · Cursor · Qoder · Claude Code 等（**不替代 harness / 编排引擎**）——同一团队包五家实跑验证。
 
 - **一句话目标**：让 Builder、小团队、单人用同一套 **组队协议**（编制、交接、计划进度、DoD/验证/DDD 门）完成真实工程与产品工作，而非单体 prompt 堆砌。
 - **全球定位对位**：AI 员工产品卖「强个体」；编排框架卖 runtime API；IDE 内置 agent 偏浅层 subagent — 扶摇卖 **团队层规格 + DDD 底座 + 开源可扩展**。
@@ -37,7 +37,7 @@
 | Harness 薄适配 | ✅ **五家挂载级实证**（pi · dsh · cursor · qoder · claude · 同一 pack 零改动）· CLI · **LangGraph / CrewAI 导出** · OpenHands 冻结 |
 | 消息协议 + 争用顾问 | ✅ message validate · `check:contention`（territory 重叠 + CI `--strict`） |
 | 校验与测试 | ✅ `validate` 47 项 · `npm test` 21 项 · GitHub Actions |
-| 开源发布 | ✅ **v0.31.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+| 开源发布 | ✅ **v0.35.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
 维护者发版须 **双审计必做**（`.agents/audit/`：**发版审计** 100/100 + **代码质量审计** pass/pass_with_notes，不入库；顺序：双审计 → 包装 commit → tag → Release）。清单：[release-checklist.md](docs/product/examples/release-checklist.md) · `npm run release:preflight`。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
 
@@ -50,7 +50,7 @@
 | `docs/templates/` | 六档 `flow_weight` 模板（DoD · verification · ddd-gate · **stage · commit-policy** 等） |
 | `agents/examples/` | minimal-roster · plan-progress · messages 示例 |
 | `packs/` | 官方团队包示例（roster + 模板 + harness 映射 + skills） |
-| `harness/` | Cursor / CLI / OpenHands / LangGraph / CrewAI **薄适配**（非产品核心） |
+| `harness/` | **pi · dsh · Cursor · Qoder · Claude**（五家挂载级实证）· CLI · LangGraph / CrewAI 导出 · OpenHands 冻结 — **薄适配**（非产品核心） |
 | `skills/` | 可移植技能（**不同步**到 harness 路径） |
 | `scripts/` | `validate` · `pack` · `check:*` · `install:cursor-agents` · `release:preflight` |
 | `docs/product/examples/` | dogfood / adopt 剧本 · 矩阵 · 发版清单 |
@@ -138,6 +138,10 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 | **v0.29.0** ✅ | Adopt shisui · adopt 矩阵满 |
 | **v0.30.0** ✅ | Adopt voyage（ic-zero-trust-approval）· adopt 矩阵第 3 行 |
 | **v0.31.0** ✅ | 发版防呆机械化（preflight 四防）· architecture.md 完整形态 · roles.md 裁决归档 |
+| **v0.32/0.32.1** ✅ | pi 适配 + 挂载级证据升级**真多实例**（3 独立 SDK 实例 · 证据等级纪律确立） |
+| **v0.33.0** ✅ | dsh 适配 · **北极星「移植」2/2 达标** · OpenHands 冻结 + 幽灵命令清偿 |
+| **v0.34.0** ✅ | cursor 挂载级回归实证（CLI 委派 · 三家全挂载级） |
+| **v0.35.0** ✅ | qoder + claude 挂载级（Mac 远程直测 · claude 无订阅第三方模型）· **候选五家全数挂载级** |
 
 详见 [后 v0.1 路线](docs/product/post-v01-roadmap.md) · [0→1 路径](docs/product/0-1-path.md)
 
