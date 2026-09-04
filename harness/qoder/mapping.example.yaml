@@ -1,0 +1,19 @@
+# 示例（qoder）：槽位 id → .qoder/agents 片段名（约定，非可执行配置）
+
+roster_id: minimal-research-to-spec
+
+mappings:
+  research: research-analyst   # subagent（主链 s1）
+  spec: spec-writer            # subagent（主链 s2 · gate=confirm）
+  progress: progress-keeper    # 按需委派（正交）
+  auditor: quality-auditor     # 按需委派（正交 · 只读 tools 白名单）
+
+# 可选：model 承载在片段 frontmatter（qoder 有承载面，优于 dsh）：
+# model_hints:
+#   research: efficient   # inherit / auto / lite / efficient / performance
+#   auditor: inherit
+
+# 无头实跑（headless · 分段委派）：
+#   qodercn -p "use the research-analyst subagent: <任务>" --permission-mode accept_edits
+#   qodercn -p "use the spec-writer subagent: <任务>" --permission-mode accept_edits
+#   qodercn -p "use the quality-auditor subagent: <任务>" --permission-mode accept_edits

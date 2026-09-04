@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v0.34.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.34.0)
+[![Release](https://img.shields.io/badge/Release-v0.35.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.35.0)
 
 **[English](README.en.md)** | 中文
 
@@ -103,7 +103,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ## 路线图
 
-**当前：v0.34.0** — cursor 挂载级实跑（CLI 委派 · 三家全挂载级）。
+**当前：v0.35.0** — qoder + claude 挂载级实跑（候选五家全数挂载级）。
 
 | 版本 | 目标 |
 |------|------|

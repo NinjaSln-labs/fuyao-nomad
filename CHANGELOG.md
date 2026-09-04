@@ -2,6 +2,19 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.35.0] - 2026-09-05
+
+### Added
+
+- **qoder 挂载级实跑**（移植验证第四家）：Qoder CLI CN（`@qodercn-ai/qoderclicn`）headless + `.qoder/agents` 项目级 subagents——R11 远程跨机实跑形态（SSH + scp 落点同步 + WSL 三绿）、R12 frontmatter 能力面梯度（qoder model+tools+permissionMode 最强，五家对照表入 MAPPING）
+- **claude 挂载级实跑**（移植验证第五家）：Claude Code print + `.claude/agents` subagents——**R13 第三方模型接入**（`ANTHROPIC_BASE_URL` → tokenrouter Anthropic 兼容端点 + 免费 glm-5.3-free，无 Anthropic 订阅跑通全链）、R14 confirm 门互动力（spec 子代理六项自曝式待确认 + 操作者逐项裁决）
+- `harness/qoder/` + `harness/claude/` 四件套各一（README · MAPPING · example · 片段 ×4）
+- dogfood-qoder / dogfood-claude 场景 + 关仓（Mac 远程 sandbox · git 存档）
+
+### Changed
+
+- **候选 harness 全数挂载级**：pi · dsh · cursor · qoder · claude 五家，同一 pack 零改动五家通吃——「换 harness 只换映射表」主张五家闭环
+
 ## [0.34.0] - 2026-09-05
 
 ### Added

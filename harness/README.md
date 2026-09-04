@@ -25,8 +25,8 @@
 | [cursor/](./cursor/) | Cursor IDE / CLI | install 脚本 + subagents + CLI print | **挂载级·CLI 委派（v0.34）** |
 | [pi/](./pi/) | **pi CLI** | skill 片段 + 编排约定 | **挂载级·真多实例（v0.32.1）** |
 | [dsh/](./dsh/) | **dsh（DeepSeek Harness）** | pi + subagent 通道 | **挂载级·委派驱动（v0.33）** ✅ 北极星移植 2/2 |
-| [qoder/](./qoder/) | Qoder IDE | `.qoder/agents/` 项目级 | v0.35 排期（Mac runbook） |
-| [claude/](./claude/) | Claude Code | `.claude/agents/` | v0.35 排期（第二梯队） |
+| [qoder/](./qoder/) | Qoder IDE / CLI | `.qoder/agents/` 项目级 + headless | **挂载级·headless 委派（v0.35）** |
+| [claude/](./claude/) | Claude Code | `.claude/agents/` + 第三方模型接入 | **挂载级·第三方模型（v0.35）** |
 | [cli/](./cli/) | 命令行（通用） | runners 片段 | 文档级 |
 | [openhands/](./openhands/) | OpenHands | — | ❄️ **冻结**（无维护者环境，欢迎社区认领；幽灵命令引用已清偿） |
 | [langgraph/](./langgraph/) | LangGraph 编排导出 | 导出映射 | 文档级 → runtime smoke 排 v0.36 |

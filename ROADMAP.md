@@ -4,6 +4,11 @@
 
 ## 已完成
 
+### v0.35.0（2026-09-05）
+
+- qoder + claude 挂载级实跑（第四/五家 · Mac 远程直测）：候选 harness 全数挂载级（五家零改动通吃）· R11 远程形态/R12 能力面梯度/R13 claude 第三方模型接入/R14 confirm 门互动力
+- [qoder 场景](docs/product/examples/dogfood-qoder-harness-scenario.md) · [关仓](docs/product/examples/dogfood-qoder-harness-close.md) · [claude 场景](docs/product/examples/dogfood-claude-harness-scenario.md) · [关仓](docs/product/examples/dogfood-claude-harness-close.md)
+
 ### v0.34.0（2026-09-05）
 
 - cursor 挂载级实跑（第三家 · 回归实证）：CLI print 委派全链 + R8 readonly 维度/R9 WSL 认证/R10 print 委派三发现入 MAPPING
