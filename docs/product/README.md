@@ -1,5 +1,9 @@
 # 产品文档
 
+## 快速开始
+
+**[get-started.md](get-started.md) — 15 分钟单人开箱**（starter-solo 包 + `fuyao:init` 一条命令）。
+
 ## 愿景
 
 扶摇 · Nomad 是开源 **Agent 团队框架**：团队优先、DDD 必要、编制可加减、**轻-重流程重量**，通过薄适配挂到任意 harness（**不做 harness**）。
@@ -28,6 +32,7 @@
 | [fuyao-adopt-playbook.md](./examples/fuyao-adopt-playbook.md) | 产品接手仓（源仓只读） |
 | [adopt-matrix-comparison.md](./examples/adopt-matrix-comparison.md) | adopt 对照（qingfu · shisui · voyage · shuijing） |
 | [release-checklist.md](./examples/release-checklist.md) | 维护者发版（preflight 四项机械化防呆：cwd · 私有未 tracked · 脱敏扫描 · filter-repo） |
+| [dogfood-solo-lite-close.md](./examples/dogfood-solo-lite-close.md) | 新人视角 dogfood-lite（v0.38 · starter-solo + fuyao:init · 实测 12 分钟） |
 
 ## 设计（③ 阶段）
 
