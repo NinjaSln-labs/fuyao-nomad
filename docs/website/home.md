@@ -6,9 +6,7 @@
 
 团队优先 · 薄适配器挂载任意 harness · 仪式感随场景调节
 
-[![npm](https://img.shields.io/badge/npm-fuyao--nomad-cb3837)](https://www.npmjs.com/package/fuyao-nomad)
-[![Release](https://img.shields.io/badge/Release-v1.0.0--alpha.1-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases)
-[![License](https://img.shields.io/badge/License-Apache--2.0-green)](LICENSE)
+**npm**: [`fuyao-nomad`](https://www.npmjs.com/package/fuyao-nomad) · **Release**: [v1.0.0-alpha.1](https://github.com/NinjaSln-labs/fuyao-nomad/releases) · **License**: [Apache-2.0](https://github.com/NinjaSln-labs/fuyao-nomad/blob/main/LICENSE)
 
 [15 分钟上手](product/get-started.md) · [组合协议](design/composition-protocol.md) · [五家挂载](harness-README.md) · [GitHub](https://github.com/NinjaSln-labs/fuyao-nomad)
 
