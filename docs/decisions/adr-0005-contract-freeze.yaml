@@ -1,0 +1,54 @@
+# ADR-0005 · 1.0.0-alpha.1 契约冻结
+
+flow_weight: 全流程
+
+adr:
+  title: 契约面冻结——承诺稳定字段与允许变面划分（1.0.0-alpha.1）
+  status: accepted
+  context: |
+    v0.31–v0.39 九版收敛：五家 harness 挂载级 + langgraph runtime smoke + adopt 矩阵 4 行
+    + 单人开箱 + 外部信任面。主路线终点是 1.0.0-alpha.1：下游（dogfood/adopt 接手仓、
+    外部贡献者、harness 适配器、fuyao:init 生成的骨架）需要知道「什么可以依赖」。
+    $id 已语义化（ADR-0006 先行收窄：五核心 /v1 · 模板 /v1-template）——本 ADR 冻结
+    /v1 承诺面的具体内容。
+  decision: |
+    冻结以下承诺面（alpha.1 起 patch 级修 bug、minor 增可选面；破坏性变更升版本）：
+
+    【A · 四核心 schema 字段结构（/v1）】
+    - roster：version/id/slots/orchestration/flow_weight required 集；roleSlot 字段
+      （id/purpose required · gate_level 枚举 auto|confirm|forbid · slot_kind 枚举
+      generic|progress|verifier|auditor）；orchestration.mode 枚举 serial|parallel|mixed；
+      orthogonal_slots 语义（不走 serial 主线）
+    - plan-progress：version/intent/plan/progress required；identity_constraints 三字段
+      （id/phrase/meaning required · enforcement 枚举 blocker_if_unmet|abolish）；
+      blockers.evidence 语义（清除前须有）；plan.work_items/milestones 结构
+    - message：type 枚举 handoff|status|audit|request + 按 type 的 payload 条件结构
+    - audit-record：type 枚举 design|implementation|code_quality · verdict 枚举
+      pass|pass_with_notes|blocked · findings.severity/status 枚举
+    - team-pack：manifest required 集 + harness_adapters 结构 + skills 不进 harness 路径
+
+    【B · pack 目录布局】
+    pack.yaml / roster.yaml / templates/{dod,verification,ddd-gate}.yaml /
+    harness/<runtime>/{mapping,agents|runners}/ ——布局变更=破坏性
+
+    【C · check:* 与 validate 退出码】
+    0=通过；1=strict 发现 issue / 校验失败。advisory 模式发现仅记录仍退 0。
+    validate 全仓扫描集（schemas/templates/packs/decisions/docs 示例）=承诺面。
+
+    【D · 模板六档绑定】
+    flow_weight 六档（轻/轻中/中/中重/重/全流程）× 五模板族绑定关系；模板 checklist
+    内容属 /v1-template 演进面（示例 id 惯例 m-spec/m-impl/wi-* 已入 CONTRIBUTING 检查单）。
+
+    【E · install / fuyao:init 行为】
+    pack:import 产物路径（agents/packs/<id>/ + .cursor/agents/）；
+    fuyao:init 骨架结构（serial→work_items · 正交→p2 · m-done）+ 拒覆盖守卫；
+    生成骨架必须过 plan-progress /v1 校验。
+
+    允许变面（不视为破坏）：模板内容/示例 id · 文档措辞与新增文档 · harness 适配细节
+    （MAPPING/片段/runbook）· pack_revision 内容演进 · English 译文。
+  consequences:
+    - 下游可对 A–E 建工具与流程；破坏性变更须 ADR + 升版本（/v2）
+    - 回归测试按契约字段逐项落位（v1.0.0-alpha.1 回归扩容 24→30+）
+    - alpha 语义：patch 修 bug · minor 增可选面 · stable 前 v1 仍可能积累 minor；
+      1.0.0 正式版起 /v1 承诺至 2.x 前不破坏（schema-stability.md 变更流程）
+    - 三重审计为 alpha 发版门槛（发版 100/100 + 代码质量 + 本 ADR 契约面逐字段核对）
