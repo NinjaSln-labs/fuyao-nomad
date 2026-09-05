@@ -1,6 +1,6 @@
-# CrewAI 薄适配 · 导出映射 POC
+# CrewAI 薄适配 · 导出映射
 
-> **状态：③ 设计 · v0.9 文档级 POC**  
+> **状态：文档级（v0.36 对照标注）** —— 未实跑；LangGraph 侧已 runtime smoke 级（见 [langgraph MAPPING](../langgraph/MAPPING.md)）  
 > 与 [LangGraph MAPPING](../langgraph/MAPPING.md) · [Cursor MAPPING](../cursor/MAPPING.md) 同构精神；侧重 **Flow / Crew 导出**。
 
 ## 原则
@@ -52,14 +52,19 @@ POC **同时给出映射语义**；用户择一或组合，扶摇不规定必须
 
 ## 与 LangGraph 差异
 
-| 项 | CrewAI POC | LangGraph POC |
-|----|------------|---------------|
+| 项 | CrewAI | LangGraph |
+|----|--------|-----------|
 | 一等公民 | Agent / Flow step | Graph node / edge |
-| HITL | human feedback / pause | interrupt_before |
+| HITL | human feedback / pause | 动态 `interrupt()` + `Command(resume=)`（R15） |
 | 安装脚本 | 无 | 无 |
+| **证据级** | **文档级**（v0.36 · 未实跑） | **runtime smoke 级**（v0.36 · 6/6 PASS） |
 
-## V0.9 验收
+> v0.36 主计划 U1「二选一」选定 LangGraph 实跑（确定性 stub 可无 LLM 验证，守住「框架侧不调 LLM」边界）；
+> CrewAI 维持文档级，smoke 参考实现待社区认领（形态可仿 `harness/langgraph/smoke/`）。
 
-- [x] MAPPING.md + mapping.example.yaml
-- [x] agent 片段 — `agents/`（Research · Spec · Progress · Auditor）
-- [x] 明确不做 CrewAI runtime
+## 验收
+
+- [x] MAPPING.md + mapping.example.yaml（v0.9）
+- [x] agent 片段 — `agents/`（Research · Spec · Progress · Auditor）（v0.9）
+- [x] 明确不做 CrewAI runtime（v0.9）
+- [x] **v0.36 文档级诚实标注**（未实跑；LangGraph 侧 runtime smoke 已跑，两家证据级分层呈现）

@@ -1,6 +1,6 @@
 # 编排导出映射契约
 
-> **状态：③ 设计 · v0.9 文档级 POC**  
+> **状态：runtime smoke 级（v0.36 · LangGraph 侧实跑）**  
 > 能力域：[capability-model.md](../product/capability-model.md) §2 · §8  
 > 适配目录：[harness/langgraph/](../../harness/langgraph/) · [harness/crewai/](../../harness/crewai/)
 
@@ -39,7 +39,7 @@ LangGraph   CrewAI Flow
 | `orthogonal_slots`（progress · auditor） | 条件边 / interrupt / 旁路 node | Flow 事件监听或独立 Crew |
 | `handoff` / messages | `state` 通道字段 | Flow state / task output |
 | `plan-progress` | checkpoint 外挂状态文件路径 | Flow state 引用路径 |
-| `gate_level: confirm` | `interrupt_before` / HITL | human feedback / Flow pause |
+| `gate_level: confirm` | **node 内动态 `interrupt()` + `Command(resume=)` 续跑**（R15 修订，见 [langgraph MAPPING](../../harness/langgraph/MAPPING.md)） | human feedback / Flow pause |
 | `model_policy` / `model_hint` | node 可配置 model（runtime） | Agent LLM 配置（runtime） |
 | `check:contention` | **仍在扶摇侧**跑顾问；不进图引擎 | 同左 |
 
@@ -47,12 +47,20 @@ LangGraph   CrewAI Flow
 
 ```
 harness/<runtime>/
-  MAPPING.md              # 语义与加载流程
+  MAPPING.md              # 语义与加载流程 + runtime smoke 实跑证据（langgraph 已有）
   mapping.example.yaml    # 槽位 id → 运行时名
   nodes|agents/           # 角色 prompt 片段（可选）
+  smoke/                  # runtime smoke 参考实现（langgraph 侧 v0.36 起；crewai 文档级待社区认领）
 ```
 
 换 runtime **只换映射目录**，不改 `roster.yaml` / pack 本体。
+
+## 证据级现状（v0.36）
+
+| runtime | 证据级 | 说明 |
+|---------|--------|------|
+| LangGraph | **runtime smoke 级**（v0.36） | `smoke/smoke.py` 在真实 LangGraph 1.2.11 下 6/6 断言通过；R15 发现与修订已入 MAPPING |
+| CrewAI | 文档级 | 映射表与片段存在，未实跑（见 [crewai MAPPING](../../harness/crewai/MAPPING.md)） |
 
 ## 与既有薄适配关系
 
@@ -70,3 +78,9 @@ harness/<runtime>/
 - [x] `harness/langgraph/` · `harness/crewai/`：MAPPING + mapping.example + 角色片段
 - [x] 对齐 `minimal-research-to-spec` 四槽位
 - [x] ROADMAP P2 勾选；明确不做 runtime
+
+## v0.36 验收（runtime smoke）
+
+- [x] LangGraph 侧实跑：mapping + roster 在真实 runtime 下组装 StateGraph，6/6 断言通过
+- [x] R15 发现在契约层固化：`interrupt_before` → 动态 `interrupt()` + `Command(resume=)`
+- [x] CrewAI 侧诚实标注：文档级（未实跑）
