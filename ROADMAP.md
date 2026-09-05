@@ -4,6 +4,12 @@
 
 ## 已完成
 
+### v0.38.0（2026-09-06）
+
+- 单人开箱四单元：**starter-solo 包**（轻档 3+2 槽）· **`fuyao:init`**（选包→安装→骨架 · 测试 21→24）· **get-started 15 分钟教程**（实测 12 分钟）· **dogfood-lite 新人实跑**（三绿 strict · 两个文档缺口当场修）
+- dod-轻模板 wi-main 孤例清偿（v0.37 轻中档同 bug 漏网——全档 grep 零残留）
+- [关仓](docs/product/examples/dogfood-solo-lite-close.md) · [get-started](docs/product/get-started.md)
+
 ### v0.37.0（2026-09-06）
 
 - adopt shuijing 第 4 行（轻中档补矩阵轻端）：**pi harness 全程驱动**（首个非 cursor adopt · research/spec/auditor 三槽位独立 SDK AgentSession）· ic-sole-commitment-exit（唯一承诺出口 + 硬锚定双不变量机器验证 · TDD v0 首跑红为违规证据）
@@ -146,6 +152,7 @@
 | **v0.35** | qoder + claude 挂载级（第四/五家 · Mac 远程直测）· 候选五家全数收敛 | ✅ |
 | **v0.36** | langgraph runtime smoke（首个 runtime 级证据 · R15 契约修订）· crewai 文档级对照 | ✅ |
 | **v0.37** | adopt shuijing 第 4 行（轻中 · pi harness 首个非 cursor）· R16 分段纪律 · dod-轻中模板修正 | ✅ |
+| **v0.38** | 单人开箱：starter-solo + fuyao:init + get-started + dogfood-lite | ✅ |
 | P2 | 包市场等 | 非默认 |
 
 详版主计划（本地 `docs/plans/`，**不入库**）· 公开摘要见上表与 [CHANGELOG](CHANGELOG.md)
@@ -157,6 +164,7 @@ v0.28.0 ✅ qingfu adopt → v0.29.0 ✅ shisui adopt → v0.30.0 ✅ voyage ado
 → v0.32–v0.35 ✅ 五家 harness 挂载级（pi · dsh · cursor · qoder · claude）· 移植主线收敛
 → v0.36.0 ✅ langgraph runtime smoke（导出层首个 runtime 级证据 · R15 契约修订）
 → v0.37.0 ✅ adopt shuijing 第 4 行（pi harness 全程驱动 · 轻中档 · R16）
+→ v0.38.0 ✅ 单人开箱（starter-solo · fuyao:init · get-started · dod-轻孤例全档清偿）
 ```
 
 ## 不做

@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v0.37.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.37.0)
+[![Release](https://img.shields.io/badge/Release-v0.38.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.38.0)
 
 **[中文](README.md)** | English
 
@@ -38,8 +38,8 @@ Open-source **agent team framework** — defines how multi-role teams collaborat
 | Team pack `packs/minimal-research-to-spec` | ✅ pack validate / install |
 | Harness thin adapters | ✅ **five harnesses mounted-level verified** (pi · dsh · cursor · qoder · claude · one pack unchanged) · CLI · **LangGraph / CrewAI export** · OpenHands frozen |
 | Message protocol + contention advisory | ✅ message validate · `check:contention` (territory overlap + CI `--strict`) |
-| Validation & tests | ✅ `validate` 47 checks · `npm test` 21 tests · GitHub Actions |
-| Open release | ✅ **v0.37.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+| Validation & tests | ✅ `validate` 48 checks · `npm test` 24 tests · GitHub Actions |
+| Open release | ✅ **v0.38.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
 Maintainer releases require **two local audits** (`.agents/audit/`: **release audit** 100/100 + **code quality audit** pass/pass_with_notes; not in repo; order: both audits → release commit → tag → Release). Checklist: [release-checklist.md](docs/product/examples/release-checklist.md) · `npm run release:preflight`. Public contract: [docs/audit/README.md](docs/audit/README.md).
 
@@ -72,13 +72,14 @@ npm run check:contention -- --project .
 npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 ```
 
+- [Get started (15-min solo starter)](docs/product/get-started.md) (Chinese)
 - [Builder guide](docs/product/builder-guide.md) (Chinese)
 - [Contributing](CONTRIBUTING.md)
 
 ## Roadmap
 
-**Current: v0.37.0** — adopt shuijing (row 4 · light-mid tier · fully pi-harness driven, first non-Cursor adopt · ic-sole-commitment-exit).
-**Next:** v0.38 solo starter → v0.39 English core docs → **1.0.0-alpha.1 contract freeze**. Full version table: [README.md](README.md) (Chinese, authoritative) · [ROADMAP.md](ROADMAP.md).
+**Current: v0.38.0** — solo onboarding: starter-solo pack + `fuyao:init` + get-started 15-min tutorial + dogfood-lite (measured 12 min).
+**Next:** v0.39 English core docs + schema `$id` → **1.0.0-alpha.1 contract freeze**. Full version table: [README.md](README.md) (Chinese, authoritative) · [ROADMAP.md](ROADMAP.md).
 
 ### Non-goals
 

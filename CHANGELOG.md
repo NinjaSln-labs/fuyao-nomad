@@ -2,6 +2,20 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.38.0] - 2026-09-06
+
+### Added
+
+- **`packs/starter-solo/`**（首个官方第二包 · 单人开箱）：轻档 3+2 槽（builder→reviewer 主链 + progress/auditor 正交）· 轻档三模板 · cursor adapter 四片段——pack validate 全绿
+- **`npm run fuyao:init`**（U2）：选包 → pack:import → 从 roster 自动生成 `.agents/plan-progress.yaml` 骨架（serial_order→work_items · 正交槽→p2 · m-done 里程碑）——骨架过 schema · 拒覆盖守卫（--force）· 裸名/路径双解析 · `--list` 列包；测试 21→24（骨架/拒覆盖/pack validate 三测）
+- **`docs/product/get-started.md`**（U3）：15 分钟单人开箱教程——新人视角零协议文档依赖；实测 12 分钟（骨架 <1 · 修订 2 · 主链 5 · 核验 3 · 收口 1）
+- **dogfood-lite 关仓**（U4）：新人视角实跑撞坑两个文档缺口当场修（dod-轻模板 wi-main 同款孤例 · strict 模式 traceability/identity-evidence 教学缺节）——实跑 13865af 三绿 strict
+
+### Changed
+
+- **dod-轻模板孤例清偿**（v0.37 修轻中时轻档漏网）：`wi-main` → wi-builder/wi-reviewer 分挂 + starter-solo pack 内拷贝同步——**全档 grep 验证零残留**（本次全档扫描：轻/轻中/中/中重/重/全流程六档示例 id 全对齐惯例）
+- validate 47→48（starter-solo pack 入链）· 测试计数同步 README/README.en 21→24
+
 ## [0.37.0] - 2026-09-06
 
 ### Added
