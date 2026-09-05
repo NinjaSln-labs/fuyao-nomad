@@ -15,6 +15,15 @@
 - package.json：`bin.fuyao` + `files` 白名单 + 依赖 runtime 化；description/homepage 指向 npm 与官网
 - 仓库 description/topics 同步（GitHub API）
 
+### Fixed（官网两阶事故 · 2026-09-06 追补）
+
+- **空白页一阶根因**：docsify `@4` 库脚本在 head 内加载——核心在脚本求值时立即执行 `document.body.clientWidth`（移动端探测），此时 `document.body` 为 null → TypeError 杀掉整个初始化 → `#app` 永远停在「加载中」；修复：库与插件脚本移 body 末尾。curl 静态 200 验证掩盖了客户端渲染失败——SPA 站点必须浏览器级验证
+- **「格式有问题」二阶根因**：从未引入 docsify 主题 CSS（`themes/vue.css`）——docsify.min.js 只是渲染引擎，无主题则侧栏全宽裸渲染（1424px 不定位）、无 toggle、无样式；补 `<link>` 后布局级验证（侧栏 300px / toggle / 内容 780px）
+- **死引用清除**：`@alertoo/docsify-footer` CDN 404 → 内联 footer 插件 · emoji 插件 v4.13 弃用移除 · 外部 prismjs 组件与 @4 内嵌 Prism 冲突移除
+- **homepage 路径修正**：`docs/product/north-star.md` → `website/home.md`（部署工作流把 docs/* 平移到站点根）
+- ADR 侧栏链接外指 GitHub（yaml 不适合 docsify 渲染）· 补 `favicon.svg` 与自定义 `404.md` · `<footer-p>` 非标标签清理 · `<div align>` 改 style · shields.io 徽章偶发限流纯文本化（官网自容）
+- **验证方法升级（R17）**：`_site` 部署同构 + headless chromium 渲染级四链冒烟（首页 h1 / 路由切换 / 侧栏深点中→英 / 404）+ 布局级断言（侧栏宽度 / toggle 存在性）
+
 ## [1.0.0-alpha.1] - 2026-09-06
 
 ### Added
