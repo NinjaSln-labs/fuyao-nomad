@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/team-pack/v0",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/team-pack/v1",
   "title": "Fuyao Nomad Team Pack",
   "description": "可发布的团队包：roster + 模板 + 可选 harness 适配与 skills",
   "type": "object",

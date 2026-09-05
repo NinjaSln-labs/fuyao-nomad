@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-adversarial-boundary/v0",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-adversarial-boundary/v1-template",
   "title": "Fuyao Nomad Adversarial / Boundary Testing Module",
   "description": "重端/全流程可选模块；可并入代码质量审计扩展。非默认；非红蓝 96 项硬 DoD。",
   "type": "object",

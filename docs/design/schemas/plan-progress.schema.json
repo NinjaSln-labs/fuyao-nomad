@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/plan-progress/v0",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/plan-progress/v1",
   "title": "Fuyao Nomad Plan & Progress",
   "description": "计划 + 执行态进度载体。可与 HANDOFF 合并或独立文件（如 .agents/plan-progress.yaml）。",
   "type": "object",

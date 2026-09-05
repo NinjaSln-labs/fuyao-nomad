@@ -2,7 +2,9 @@
 
 Harness 无关的核心契约与校验。
 
-## Schema（v0.2）
+## Schema（$id 语义化 · v0.39）
+
+> 核心 `/v1`（承诺面）· 模板 `/v1-template`（演进面）——见 [schema-stability.md](../../docs/design/schema-stability.md) · [ADR-0006](../../docs/decisions/adr-0006-schema-id-semver.yaml)
 
 | 文件 | 说明 |
 |------|------|

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/audit-record/v0",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/audit-record/v1",
   "title": "Fuyao Nomad Audit Record",
   "type": "object",
   "required": ["audit"],

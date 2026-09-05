@@ -1,0 +1,22 @@
+# ADR-0006 · Schema $id 语义化
+
+flow_weight: 中
+
+adr:
+  title: 16 schema $id 从 /v0 一次性切 /v1（核心）与 /v1-template（模板类）
+  status: accepted
+  context: |
+    v0 起 $id 统一 /v0 后缀，未区分承诺层级：核心契约（roster/plan-progress/message/
+    audit-record/team-pack）与项目起点类模板（dod/verification 等 11 份）同档。
+    1.0.0-alpha.1 契约冻结在即（ADR-0005 计划），$id 需先行语义化，否则冻结面含糊。
+    消费现状：校验器按本地文件路径加载，$id 零运行时依赖——切换零破坏窗口存在。
+  decision: |
+    四核心 + team-pack → /v1（承诺面：破坏性变更须升 v2，v1 存续至 1.0.0 stable）。
+    11 模板类 → /v1-template（演进面：checklist 项集/description 可不升版调整——
+    模板是项目起点，示例 id 的项目化替换是既有实践（v0.37/v0.38 两轮修正为证））。
+    承诺面/演进面划分与变更流程固化于 docs/design/schema-stability.md。
+  consequences:
+    - $id 首次具备消费者可依赖的语义：核心 /v1 是稳定锚，下游引用模板类只用文件名
+    - 校验器零改动（本地路径加载），v0.39 实测 24 test / 48 validate 全绿
+    - 模板调整不再被误解为「破坏契约」——六档模板与 pack 内拷贝同步的既有纪律照旧
+    - 1.0.0-alpha.1 冻结面收窄为五核心 /v1 的字段结构 + 语义不变量

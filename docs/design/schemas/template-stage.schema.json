@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-stage/v0",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-stage/v1-template",
   "type": "object",
   "required": ["flow_weight", "stages"],
   "additionalProperties": false,

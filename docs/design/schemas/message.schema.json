@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/message/v0",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/message/v1",
   "title": "Fuyao Nomad Slot Message",
   "description": "槽位间结构化消息信封 + 按 type 的 payload",
   "type": "object",

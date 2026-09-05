@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-problem-statement/v0",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-problem-statement/v1-template",
   "title": "Fuyao Nomad Problem Statement Template",
   "type": "object",
   "required": ["flow_weight", "problem_statement"],

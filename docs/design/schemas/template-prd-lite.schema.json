@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-prd-lite/v0",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-prd-lite/v1-template",
   "title": "Fuyao Nomad PRD-lite Template",
   "description": "重端可选产物；非框架全局权威。见 delivery-model 去权威化。",
   "type": "object",

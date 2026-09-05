@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-anti-metrics/v0",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-anti-metrics/v1-template",
   "title": "Fuyao Nomad Anti-Metrics Template",
   "description": "项目/团队包自定义反指标机制。非 Voyage R1/R2/R3；北极星默认反指标可作起点。",
   "type": "object",

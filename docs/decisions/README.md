@@ -10,5 +10,6 @@
 | 0002 | [adr-0002-audit-private.yaml](./adr-0002-audit-private.yaml) | 审计报告本地私有 | accepted |
 | 0003 | [adr-0003-traceability-not-in-ci.yaml](./adr-0003-traceability-not-in-ci.yaml) | check:traceability 不入 CI | accepted |
 | 0004 | [adr-0004-research-deauthorize.yaml](./adr-0004-research-deauthorize.yaml) | 竞品快照去权威化 | accepted |
+| 0006 | [adr-0006-schema-id-semver.yaml](./adr-0006-schema-id-semver.yaml) | Schema $id 语义化（核心 /v1 · 模板 /v1-template） | accepted |
 
 新增：复制模板 → `adr-NNNN-slug.yaml` → 更新本表 → `npm run validate`。

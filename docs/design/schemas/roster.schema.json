@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/roster/v0",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/roster/v1",
   "title": "Fuyao Nomad Team Roster",
   "description": "团队实例：槽位编队 + 可选 handoff + flow_weight。handoff.rules 可选；未配置时使用默认交接行为。",
   "type": "object",

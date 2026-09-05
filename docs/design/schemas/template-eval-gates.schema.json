@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-eval-gates/v0",
+  "$id": "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/template-eval-gates/v1-template",
   "title": "Fuyao Nomad Eval Gates Module",
   "description": "高风险 AI 可选评测三门禁；默认关闭；框架不执行评测。见 eval-gates.md",
   "type": "object",
