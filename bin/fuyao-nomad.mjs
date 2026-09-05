@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * fuyao — CLI entry (npm bin)
+ * fuyao-nomad — CLI entry (npm bin · 全名命令，与包名一致)
  *
  * Subcommands map 1:1 to the repo scripts (no new logic — one surface, many doors):
- *   fuyao init        → scripts/fuyao-init.mjs        (pack → install → plan skeleton)
- *   fuyao pack …      → scripts/pack.mjs …            (validate | import | export)
- *   fuyao validate …  → scripts/validate.mjs …        (schema/contract validation)
- *   fuyao check …     → scripts/check-{identity,traceability,contention}.mjs
- *   fuyao install:cursor … → scripts/install-cursor-agents.mjs …
+ *   fuyao-nomad init  → scripts/fuyao-init.mjs        (pack → install → plan skeleton)
+ *   fuyao-nomad pack  → scripts/pack.mjs …            (validate | import | export)
+ *   fuyao-nomad validate → scripts/validate.mjs …        (schema/contract validation)
+ *   fuyao-nomad check → scripts/check-{identity,traceability,contention}.mjs
+ *   fuyao-nomad install:cursor → scripts/install-cursor-agents.mjs …
  *
  * Version / help / unknown → repo metadata + usage.
  */
@@ -30,19 +30,19 @@ const CHECKS = ["identity", "traceability", "contention"];
 
 function usage() {
   console.log(`
-fuyao ${pkg.version} — 扶摇 · Nomad Agent team framework CLI
+fuyao-nomad ${pkg.version} — 扶摇 · Nomad Agent team framework CLI
 
 Usage:
-  fuyao init      --project <dir> [--pack <name|path>] [--intent "…"] [--force]
+  fuyao-nomad init      --project <dir> [--pack <name|path>] [--intent "…"] [--force]
                   一条命令：选团队包 → 安装 → 生成 .agents/plan-progress.yaml 骨架
-  fuyao pack validate <pack-dir>            校验团队包
-  fuyao pack import   --pack <dir> --project <root>   安装团队包到项目
-  fuyao pack export   --pack <dir> --out <dir> [--id <new-id>]   可移植复制/分叉
-  fuyao validate   （无参=全仓扫描） --path <file> 单契约文件校验
-  fuyao check identity|traceability|contention --project <root> [--plan <file>] [--strict]
-  fuyao install:cursor [--mapping <yaml>] [--agents-dir <dir>] [--project <root>] [--roster <yaml>]
+  fuyao-nomad pack validate <pack-dir>            校验团队包
+  fuyao-nomad pack import   --pack <dir> --project <root>   安装团队包到项目
+  fuyao-nomad pack export   --pack <dir> --out <dir> [--id <new-id>]   可移植复制/分叉
+  fuyao-nomad validate   （无参=全仓扫描） --path <file> 单契约文件校验
+  fuyao-nomad check identity|traceability|contention --project <root> [--plan <file>] [--strict]
+  fuyao-nomad install:cursor [--mapping <yaml>] [--agents-dir <dir>] [--project <root>] [--roster <yaml>]
 
-Docs: https://ninjaSln-labs.github.io/fuyao-nomad/  (GitHub Pages)
+Docs: https://ninjasln-labs.github.io/fuyao-nomad/  (GitHub Pages)
 Repo: ${pkg.repository.url}
 `);
 }
@@ -57,7 +57,7 @@ if (args[0] === "--version" || args[0] === "-v") {
   process.exit(0);
 }
 
-// fuyao check identity … → scripts/check-identity.mjs …
+// fuyao-nomad check identity … → scripts/check-identity.mjs …
 if (args[0] === "check" && CHECKS.includes(args[1])) {
   const r = spawn(
     process.execPath,
@@ -71,7 +71,7 @@ if (args[0] === "check" && CHECKS.includes(args[1])) {
   });
   r.on("exit", (c) => process.exit(c ?? 1));
 } else {
-  console.error(`fuyao: unknown command "${args[0]}"`);
+  console.error(`fuyao-nomad: unknown command "${args[0]}"`);
   usage();
   process.exit(1);
 }

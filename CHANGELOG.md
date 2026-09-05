@@ -2,6 +2,19 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [1.0.0-alpha.2] - 2026-09-06
+
+### Added
+
+- **npm CLI 分发**（bin 全名 `fuyao-nomad`——防生态撞名 · 与包名一致）：`fuyao init` · `fuyao pack validate\|import\|export` · `fuyao validate` · `fuyao check identity\|traceability\|contention` · `fuyao install:cursor` ——与仓内脚本 1:1 映射，不新增逻辑；`files` 白名单（scripts/packs/docs核心/harness-cursor/agents 示例）+ 依赖 runtime 化（yaml/ajv 从 devDependencies 挪 dependencies——tarball 实测暴露的 CLI 分发必修课）；tarball 真实安装实测：`npm i <tarball>` → `npx fuyao init` 全链 EXIT 0
+- **GitHub Pages 官网**（docsify · 零构建）：`docs/index.html` + 侧栏（全仓文档可浏览）+ 官网首页 `docs/website/home.md`；`.github/workflows/docs.yml` 部署工作流（docs/ + harness README/CONTRIBUTING 平移）
+- **README 使用区扩容**：三种使用方式（npm 推荐 / npx 免安装 / 源码）+ 官网链接 + CLI 命令全览——回应「描述怎么使用的地方很少」
+
+### Changed
+
+- package.json：`bin.fuyao` + `files` 白名单 + 依赖 runtime 化；description/homepage 指向 npm 与官网
+- 仓库 description/topics 同步（GitHub API）
+
 ## [1.0.0-alpha.1] - 2026-09-06
 
 ### Added

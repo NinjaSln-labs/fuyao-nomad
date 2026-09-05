@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v1.0.0--alpha.1-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v1.0.0-alpha.1)
+[![Release](https://img.shields.io/badge/Release-v1.0.0--alpha.2-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v1.0.0-alpha.2)
 
 **[English](README.en.md)** | 中文
 
@@ -39,7 +39,7 @@
 | Harness 薄适配 | ✅ **五家挂载级实证**（pi · dsh · cursor · qoder · claude · 同一 pack 零改动）· CLI · **LangGraph / CrewAI 导出** · OpenHands 冻结 |
 | 消息协议 + 争用顾问 | ✅ message validate · `check:contention`（territory 重叠 + CI `--strict`） |
 | 校验与测试 | ✅ `validate` 50 项 · `npm test` 34 项 · GitHub Actions |
-| 开源发布 | ✅ **v1.0.0-alpha.1** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+| 开源发布 | ✅ **v1.0.0-alpha.2** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) · [官网](https://ninjasln-labs.github.io/fuyao-nomad/) |
 
 维护者发版须 **双审计必做**（`.agents/audit/`：**发版审计** 100/100 + **代码质量审计** pass/pass_with_notes，不入库；顺序：双审计 → 包装 commit → tag → Release）。清单：[release-checklist.md](docs/product/examples/release-checklist.md) · `npm run release:preflight`。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
 
@@ -59,15 +59,49 @@
 | `packages/core/` | Schema 索引 |
 | `ROADMAP.md` | 版本里程碑与后续候选 |
 
-## 开发
+## 使用（三通道）
+
+### 1 · npm（推荐）
+
+```bash
+mkdir my-project && cd my-project && git init
+npm i fuyao-nomad
+npx fuyao-nomad init --project . --pack starter-solo --intent "一句话目标"
+```
+
+一条命令完成：选团队包 → 安装（pack → `agents/packs/` + Cursor 子代理 → `.cursor/agents/`）→ 生成 `.agents/plan-progress.yaml` 计划骨架。后续验证：
+
+```bash
+npx fuyao-nomad validate --path .agents/plan-progress.yaml
+npx fuyao-nomad check identity --project . --plan .agents/plan-progress.yaml --strict
+```
+
+CLI 全命令：`fuyao-nomad init` · `fuyao-nomad pack validate|import|export` · `fuyao-nomad validate` · `fuyao-nomad check identity|traceability|contention` · `fuyao-nomad install:cursor`（`fuyao-nomad --help` 全览）。
+
+### 2 · npx（免安装试用）
+
+```bash
+npx -y fuyao-nomad@alpha init --project . --pack starter-solo --intent "试用"
+```
+
+### 3 · 源码
+
+```bash
+git clone https://github.com/NinjaSln-labs/fuyao-nomad.git
+node fuyao-nomad/scripts/fuyao-init.mjs --project . --pack starter-solo --intent "一句话目标"
+```
+
+> 完整教程（含分钟分段与三坑提醒）：[docs/product/get-started.md](docs/product/get-started.md)（15 分钟 · 实测 12 分钟）· [English](docs/product/get-started.en.md)
+
+## 开发（仓库贡献者）
 
 ```bash
 git clone https://github.com/NinjaSln-labs/fuyao-nomad.git
 cd fuyao-nomad
-npm install
+npm ci
 
-npm run validate          # schema 校验（示例 · 模板 · pack · message）
-npm test                  # 脚本与 pack install 测试
+npm run validate          # 50 项（schema · 模板 · pack · message · ADR）
+npm test                  # 34 项（脚本 · pack · 契约回归）
 npm run install:cursor-agents -- --project .   # 同步 Cursor subagent 映射
 npm run check:contention -- --project .        # 争用顾问（默认 advisory）
 npm run pack:install -- --pack packs/minimal-research-to-spec --project .
@@ -105,7 +139,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ## 路线图
 
-**当前：v1.0.0-alpha.1** — 契约冻结：ADR-0005（A–E 五面：四核心 schema / pack 布局 / check 退出码 / 模板六档 / init 行为）+ 回归扩容 24→34 + validate --path 未知类型拒绝静默通过。
+**当前：v1.0.0-alpha.2** — 分发层：npm CLI（`npm i fuyao-nomad` · `npx fuyao-nomad init` 三通道）+ GitHub Pages 官网 + README 使用区扩容。契约面不变（ADR-0005 冻结）。
 
 | 版本 | 目标 |
 |------|------|
@@ -149,6 +183,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 | **v0.38.0** ✅ | 单人开箱：**starter-solo 包**（轻档 3+2 槽）· **`fuyao:init`**（选包→安装→骨架）· get-started 教程（实测 12 分钟）· dod-轻模板同款孤例清偿 |
 | **v0.39.0** ✅ | 外部信任面：**英文核心 5 份**（north-star · capability-model · composition-protocol · team-pack · get-started）· **schema `$id` 语义化**（五核心 /v1 · 11 模板 /v1-template · ADR-0006 · schema-stability.md）· CONTRIBUTING 首贡献路径 + 3 issue 模板 |
 | **v1.0.0-alpha.1** ✅ | **契约冻结**（ADR-0005 A–E 五面）· 回归扩容 24→34（契约字段每项一测）· validate `--path` 未知类型拒绝静默通过（C 面真漏洞修复）· 三重审计 |
+| **v1.0.0-alpha.2** ✅ | **分发层**：npm CLI（`bin/fuyao` · 依赖 runtime 化 · tarball 实测）· GitHub Pages 官网（docsify · 全仓文档）· README 使用区三通道扩容 |
 
 详见 [后 v0.1 路线](docs/product/post-v01-roadmap.md) · [0→1 路径](docs/product/0-1-path.md)
 

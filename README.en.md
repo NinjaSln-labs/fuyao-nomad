@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v1.0.0--alpha.1-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v1.0.0-alpha.1)
+[![Release](https://img.shields.io/badge/Release-v1.0.0--alpha.2-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v1.0.0-alpha.2)
 
 **[中文](README.md)** | English
 
@@ -39,7 +39,7 @@ Open-source **agent team framework** — defines how multi-role teams collaborat
 | Harness thin adapters | ✅ **five harnesses mounted-level verified** (pi · dsh · cursor · qoder · claude · one pack unchanged) · CLI · **LangGraph / CrewAI export** · OpenHands frozen |
 | Message protocol + contention advisory | ✅ message validate · `check:contention` (territory overlap + CI `--strict`) |
 | Validation & tests | ✅ `validate` 50 checks · `npm test` 34 tests · GitHub Actions |
-| Open release | ✅ **v1.0.0-alpha.1** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+| Open release | ✅ **v1.0.0-alpha.2** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) · [Docs site](https://ninjasln-labs.github.io/fuyao-nomad/) |
 
 Maintainer releases require **two local audits** (`.agents/audit/`: **release audit** 100/100 + **code quality audit** pass/pass_with_notes; not in repo; order: both audits → release commit → tag → Release). Checklist: [release-checklist.md](docs/product/examples/release-checklist.md) · `npm run release:preflight`. Public contract: [docs/audit/README.md](docs/audit/README.md).
 
@@ -58,15 +58,49 @@ Maintainer releases require **two local audits** (`.agents/audit/`: **release au
 | `docs/product/examples/` | Dogfood / adopt playbooks · matrices · release checklist |
 | `ROADMAP.md` | Version milestones and backlog |
 
-## Development
+## Usage (three channels)
+
+### 1 · npm (recommended)
+
+```bash
+mkdir my-project && cd my-project && git init
+npm i fuyao-nomad
+npx fuyao-nomad init --project . --pack starter-solo --intent "one-line goal"
+```
+
+One command: pick a team pack → install (pack → `agents/packs/` + Cursor subagents → `.cursor/agents/`) → generate the `.agents/plan-progress.yaml` plan skeleton. Then verify:
+
+```bash
+npx fuyao-nomad validate --path .agents/plan-progress.yaml
+npx fuyao-nomad check identity --project . --plan .agents/plan-progress.yaml --strict
+```
+
+Full CLI: `fuyao-nomad init` · `fuyao-nomad pack validate|import|export` · `fuyao-nomad validate` · `fuyao-nomad check identity|traceability|contention` · `fuyao-nomad install:cursor` (see `fuyao-nomad --help`).
+
+### 2 · npx (no install)
+
+```bash
+npx -y fuyao-nomad@alpha init --project . --pack starter-solo --intent "trial"
+```
+
+### 3 · From source
+
+```bash
+git clone https://github.com/NinjaSln-labs/fuyao-nomad.git
+node fuyao-nomad/scripts/fuyao-init.mjs --project . --pack starter-solo --intent "one-line goal"
+```
+
+> Full tutorial (minute-by-minute, three pitfalls): [get-started.en.md](docs/product/get-started.en.md) (15 min · measured 12 min) · [中文](docs/product/get-started.md) · Docs site: [GitHub Pages](https://ninjasln-labs.github.io/fuyao-nomad/)
+
+## Development (repo contributors)
 
 ```bash
 git clone https://github.com/NinjaSln-labs/fuyao-nomad.git
 cd fuyao-nomad
-npm install
+npm ci
 
-npm run validate
-npm test
+npm run validate          # 50 checks
+npm test                  # 34 tests
 npm run install:cursor-agents -- --project .
 npm run check:contention -- --project .
 npm run pack:install -- --pack packs/minimal-research-to-spec --project .

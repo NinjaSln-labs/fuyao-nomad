@@ -4,6 +4,10 @@
 
 ## 已完成
 
+### 1.0.0-alpha.2（2026-09-06）
+
+- 分发层：**npm CLI**（bin/fuyao · tarball 实测 · 依赖 runtime 化）· **GitHub Pages 官网**（docsify 全仓文档）· README 使用区三通道扩容 —— 契约面不变（ADR-0005 冻结）
+
 ### 1.0.0-alpha.1（2026-09-06）
 
 - 契约冻结终章：**ADR-0005 A–E 五面**（四核心 schema /v1 · pack 布局 · check 退出码 · 模板六档 · init 行为）· 回归扩容 24→34 · validate --path 未知类型拒绝静默通过（契约回归暴露的真漏洞）· 三重审计

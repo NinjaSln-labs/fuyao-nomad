@@ -37,7 +37,7 @@ Harness 内置 Agent → 单 Agent 或浅子代理
 
 ```bash
 npm i fuyao-nomad
-npx fuyao init --project . --pack starter-solo --intent "一句话目标"
+npx fuyao-nomad init --project . --pack starter-solo --intent "一句话目标"
 ```
 
 一条命令：选团队包 → 安装（pack + Cursor 子代理）→ 生成 `.agents/plan-progress.yaml` 计划骨架。
