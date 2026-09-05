@@ -2,6 +2,21 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.39.0] - 2026-09-06
+
+### Added
+
+- **英文核心 5 份**（U1）：north-star · capability-model · composition-protocol · team-pack · get-started 英文版入库（忠实浓缩 · 中文为权威源 · 双向链接）——外部信任面首层
+- **schema `$id` 语义化**（U2）：16 schema 全量切换——五核心（roster · plan-progress · message · audit-record · team-pack）→ **`/v1`**（承诺面：破坏性变更须升 v2）；11 模板类 → **`/v1-template`**（演进面：checklist/description 可不升版调整）；零运行时依赖实测切换零破坏（24 test / 48→49 validate 全绿）
+- **schema-stability.md**：承诺面 vs 演进面划分 · 变更流程 · 消费者影响
+- **ADR-0006**：$id 语义化裁决入库（validate 48→49）
+- **CONTRIBUTING 首贡献路径 + 3 issue 模板**（U3）：15 分钟环境验证 → 良好首议题表（文档/模板/片段/runbook 四型）· bug-report · feature-proposal（含 non-goals 检查清单）· harness-request（证据级四选一 · 冻结认领须维护者环境）
+
+### Changed
+
+- packages/core/README：Schema 节升级为 $id 语义化说明 · ADR 索引补 0006 行
+- 导航同步：product/README（北极星/能力模型/get-started 英文链接）· README 双语（英文核心五链接 + 文档导航）
+
 ## [0.38.0] - 2026-09-06
 
 ### Added

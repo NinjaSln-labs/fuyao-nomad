@@ -4,6 +4,10 @@
 
 ## 已完成
 
+### v0.39.0（2026-09-06）
+
+- 外部信任面四单元：**英文核心 5 份** · **schema `$id` 语义化**（五核心 /v1 · 11 模板 /v1-template · ADR-0006 · schema-stability.md · 零破坏切换实测）· **CONTRIBUTING 首贡献路径 + 3 issue 模板** · 导航全链同步
+
 ### v0.38.0（2026-09-06）
 
 - 单人开箱四单元：**starter-solo 包**（轻档 3+2 槽）· **`fuyao:init`**（选包→安装→骨架 · 测试 21→24）· **get-started 15 分钟教程**（实测 12 分钟）· **dogfood-lite 新人实跑**（三绿 strict · 两个文档缺口当场修）
@@ -153,6 +157,7 @@
 | **v0.36** | langgraph runtime smoke（首个 runtime 级证据 · R15 契约修订）· crewai 文档级对照 | ✅ |
 | **v0.37** | adopt shuijing 第 4 行（轻中 · pi harness 首个非 cursor）· R16 分段纪律 · dod-轻中模板修正 | ✅ |
 | **v0.38** | 单人开箱：starter-solo + fuyao:init + get-started + dogfood-lite | ✅ |
+| **v0.39** | 外部信任面：英文核心 ×5 · schema $id /v1 与 /v1-template（ADR-0006）· 首贡献路径 + issue 模板 | ✅ |
 | P2 | 包市场等 | 非默认 |
 
 详版主计划（本地 `docs/plans/`，**不入库**）· 公开摘要见上表与 [CHANGELOG](CHANGELOG.md)
@@ -165,6 +170,7 @@ v0.28.0 ✅ qingfu adopt → v0.29.0 ✅ shisui adopt → v0.30.0 ✅ voyage ado
 → v0.36.0 ✅ langgraph runtime smoke（导出层首个 runtime 级证据 · R15 契约修订）
 → v0.37.0 ✅ adopt shuijing 第 4 行（pi harness 全程驱动 · 轻中档 · R16）
 → v0.38.0 ✅ 单人开箱（starter-solo · fuyao:init · get-started · dod-轻孤例全档清偿）
+→ v0.39.0 ✅ 外部信任面（英文核心 ×5 · $id 语义化 · 首贡献路径）
 ```
 
 ## 不做
