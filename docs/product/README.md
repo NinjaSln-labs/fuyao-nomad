@@ -2,7 +2,7 @@
 
 ## 快速开始
 
-**[get-started.md](get-started.md) — 15 分钟单人开箱**（starter-solo 包 + `fuyao:init` 一条命令）。
+**[get-started.md](get-started.md)（[EN](get-started.en.md)）— 15 分钟单人开箱**（starter-solo 包 + `fuyao:init` 一条命令）。
 
 ## 愿景
 
@@ -13,9 +13,9 @@
 | # | 文档 | 状态 |
 |---|------|------|
 | 1 | [问题陈述](problem-statement.md) | ✅ 草案 |
-| 2 | [北极星](north-star.md) | ✅ 定稿 |
+| 2 | [北极星](north-star.md)（[EN](north-star.en.md)） | ✅ 定稿 |
 | 3 | [交付模式](delivery-model.md) | ✅ 定稿 |
-| 4 | [能力模型](capability-model.md) | ✅ 定稿 |
+| 4 | [能力模型](capability-model.md)（[EN](capability-model.en.md)） | ✅ 定稿 |
 | 5 | [0→1 路径](0-1-path.md) | ✅ |
 | 6 | [Builder 指南](builder-guide.md) | v0.2 |
 | 7 | [后 v0.1 路线](post-v01-roadmap.md) | 见 ROADMAP |
