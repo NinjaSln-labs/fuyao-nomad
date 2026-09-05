@@ -14,11 +14,11 @@ dod:
     - id: intent_clear
       required: true
       plan_refs:
-        work_item_ids: [wi-main]
+        work_item_ids: [wi-builder]
     - id: handoff_snippet_updated
       required: false
       plan_refs:
-        work_item_ids: [wi-main]
+        work_item_ids: [wi-reviewer]
     - id: identity_constraints_held
       required: false
       description: 若 plan 声明了 identity_constraints，则须仍满足（见 identity-constraints.md）
