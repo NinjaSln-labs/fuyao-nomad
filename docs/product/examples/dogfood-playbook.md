@@ -167,6 +167,8 @@ harness_adapters:
 
 | 版本 | 主题 | 文档 |
 |------|------|------|
+| v0.36 | **langgraph runtime smoke** | [场景](./dogfood-langgraph-harness-scenario.md) · [close](./dogfood-langgraph-harness-close.md) |
+| v0.35 | qoder + claude 挂载级（五家全数） | [qoder](./dogfood-qoder-harness-scenario.md) · [claude](./dogfood-claude-harness-scenario.md) |
 | v0.27 | **全流程 s7** boundary-s7 | [viii-scenario](./dogfood-viii-scenario.md) · [close](./dogfood-viii-close.md) |
 | v0.25 | **全流程** grant-gate | [vii-scenario](./dogfood-vii-scenario.md) · [close](./dogfood-vii-close.md) |
 | v0.24 | **中重** changelog-slice | [vi-scenario](./dogfood-vi-scenario.md) · [close](./dogfood-vi-close.md) |

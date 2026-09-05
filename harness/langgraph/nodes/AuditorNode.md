@@ -7,6 +7,6 @@
 
 - 按 flow_weight 执行设计 / 实现 / 代码质量审计
 - 产出 audit 记录（本地 `.agents/audit/`）；`blocked` → progress blockers
-- 建议 `interrupt_before` 或阶段门条件边；不写业务实现文件
+- 建议阶段门条件边（`interrupt_before` 在 LangGraph 1.2.x 不可靠，见 MAPPING R15）；不写业务实现文件
 
 见 `docs/design/audit-by-flow-weight.md` · `export-orchestration-mapping.md`。

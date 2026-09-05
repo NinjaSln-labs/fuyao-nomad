@@ -2,6 +2,18 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.36.0] - 2026-09-05
+
+### Added
+
+- **langgraph runtime smoke 级实跑**（导出层首个 runtime 级证据）：`harness/langgraph/smoke/smoke.py` 参考实现——真实 LangGraph 1.2.11（Python 3.12）下读取 roster + mapping 组装 StateGraph，确定性 stub（不调 LLM）验证映射语义，6/6 断言 PASS（confirm 门 · serial 序 · 拓扑执行序 · outputs 键名 · 裁决续跑 · node 名集）
+- dogfood-langgraph 场景 + 关仓（沙盒 git f81919a · 证据 run.json）
+
+### Changed
+
+- **R15 契约修订（本版核心发现）**：LangGraph 1.2.x 实测 `compile(interrupt_before=...)` + `invoke` 首跑不再中断（三形态探针）——confirm 门映射从「interrupt_before 该 node」修订为「node 内动态 `interrupt()` + `Command(resume=)` 续跑」；export-orchestration-mapping 公共映射表 + langgraph MAPPING 同步
+- **证据级分层诚实化**：harness/README 状态表 langgraph 升「runtime smoke 级（v0.36 · 6/6 PASS · R15）」；crewai 维持文档级（未实跑 · smoke 待社区认领）——「二选一」实跑另一家不冒领
+
 ## [0.35.0] - 2026-09-05
 
 ### Added

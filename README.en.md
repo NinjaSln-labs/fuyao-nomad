@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v0.35.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.35.0)
+[![Release](https://img.shields.io/badge/Release-v0.36.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.36.0)
 
 **[中文](README.md)** | English
 
@@ -39,7 +39,7 @@ Open-source **agent team framework** — defines how multi-role teams collaborat
 | Harness thin adapters | ✅ **five harnesses mounted-level verified** (pi · dsh · cursor · qoder · claude · one pack unchanged) · CLI · **LangGraph / CrewAI export** · OpenHands frozen |
 | Message protocol + contention advisory | ✅ message validate · `check:contention` (territory overlap + CI `--strict`) |
 | Validation & tests | ✅ `validate` 47 checks · `npm test` 21 tests · GitHub Actions |
-| Open release | ✅ **v0.35.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+| Open release | ✅ **v0.36.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
 Maintainer releases require **two local audits** (`.agents/audit/`: **release audit** 100/100 + **code quality audit** pass/pass_with_notes; not in repo; order: both audits → release commit → tag → Release). Checklist: [release-checklist.md](docs/product/examples/release-checklist.md) · `npm run release:preflight`. Public contract: [docs/audit/README.md](docs/audit/README.md).
 
@@ -77,8 +77,8 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ## Roadmap
 
-**Current: v0.35.0** — qoder + claude mounted-level verified (all five candidate harnesses at mounted level).
-**Next:** v0.36 langgraph/crewai runtime smoke → v0.37 shuijing adopt → v0.38 solo starter → v0.39 English core docs → **1.0.0-alpha.1 contract freeze**. Full version table: [README.md](README.md) (Chinese, authoritative) · [ROADMAP.md](ROADMAP.md).
+**Current: v0.36.0** — langgraph runtime smoke (first runtime-level evidence, 6/6 assertions · R15 contract fix: dynamic interrupt() gate).
+**Next:** v0.37 shuijing adopt → v0.38 solo starter → v0.39 English core docs → **1.0.0-alpha.1 contract freeze**. Full version table: [README.md](README.md) (Chinese, authoritative) · [ROADMAP.md](ROADMAP.md).
 
 ### Non-goals
 

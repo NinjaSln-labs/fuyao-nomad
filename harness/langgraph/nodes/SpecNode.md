@@ -7,7 +7,7 @@
 
 - 输入：`research_snapshot` · `problem_notes`
 - 输出：`spec_summary`
-- `gate_level: confirm` 时建议 `interrupt_before` 本 node（HITL）
+- `gate_level: confirm` 时建议 node 内动态 `interrupt()` + `Command(resume=)` 续跑（HITL · R15）
 - 完成后更新 plan-progress；阻塞写入 blockers → ProgressNode
 
 见 `docs/design/export-orchestration-mapping.md`。

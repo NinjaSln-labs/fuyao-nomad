@@ -4,6 +4,11 @@
 
 ## 已完成
 
+### v0.36.0（2026-09-05）
+
+- langgraph runtime smoke（首个 runtime 级证据）：真实 LangGraph 1.2.11 下组图消费 mapping，6/6 断言 PASS · **R15 发现与契约修订**（`interrupt_before` 在 1.2.x 失效 → confirm 门改动态 `interrupt()` + `Command(resume=)`）· crewai 文档级对照标注
+- [场景](docs/product/examples/dogfood-langgraph-harness-scenario.md) · [关仓](docs/product/examples/dogfood-langgraph-harness-close.md)
+
 ### v0.35.0（2026-09-05）
 
 - qoder + claude 挂载级实跑（第四/五家 · Mac 远程直测）：候选 harness 全数挂载级（五家零改动通吃）· R11 远程形态/R12 能力面梯度/R13 claude 第三方模型接入/R14 confirm 门互动力
@@ -132,6 +137,7 @@
 | **v0.33** | dsh 薄适配 · 委派驱动挂载级（第二家 · 北极星移植 2/2）· OpenHands 冻结 | ✅ |
 | **v0.34** | cursor 挂载级回归实证（第三家 · CLI 委派） | ✅ |
 | **v0.35** | qoder + claude 挂载级（第四/五家 · Mac 远程直测）· 候选五家全数收敛 | ✅ |
+| **v0.36** | langgraph runtime smoke（首个 runtime 级证据 · R15 契约修订）· crewai 文档级对照 | ✅ |
 | P2 | 包市场等 | 非默认 |
 
 详版主计划（本地 `docs/plans/`，**不入库**）· 公开摘要见上表与 [CHANGELOG](CHANGELOG.md)
@@ -141,6 +147,7 @@
 ```
 v0.28.0 ✅ qingfu adopt → v0.29.0 ✅ shisui adopt → v0.30.0 ✅ voyage adopt
 → v0.32–v0.35 ✅ 五家 harness 挂载级（pi · dsh · cursor · qoder · claude）· 移植主线收敛
+→ v0.36.0 ✅ langgraph runtime smoke（导出层首个 runtime 级证据 · R15 契约修订）
 ```
 
 ## 不做
