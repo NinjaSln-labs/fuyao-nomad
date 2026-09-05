@@ -42,7 +42,7 @@ Usage:
   fuyao-nomad check identity|traceability|contention --project <root> [--plan <file>] [--strict]
   fuyao-nomad install:cursor [--mapping <yaml>] [--agents-dir <dir>] [--project <root>] [--roster <yaml>]
 
-Docs: https://ninjasln-labs.github.io/fuyao-nomad/  (GitHub Pages)
+Docs: https://NinjaSln-labs.github.io/fuyao-nomad/  (GitHub Pages)
 Repo: ${pkg.repository.url}
 `);
 }

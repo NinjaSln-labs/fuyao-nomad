@@ -39,7 +39,7 @@ Open-source **agent team framework** — defines how multi-role teams collaborat
 | Harness thin adapters | ✅ **five harnesses mounted-level verified** (pi · dsh · cursor · qoder · claude · one pack unchanged) · CLI · **LangGraph / CrewAI export** · OpenHands frozen |
 | Message protocol + contention advisory | ✅ message validate · `check:contention` (territory overlap + CI `--strict`) |
 | Validation & tests | ✅ `validate` 50 checks · `npm test` 34 tests · GitHub Actions |
-| Open release | ✅ **v1.0.0-alpha.2** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) · [Docs site](https://ninjasln-labs.github.io/fuyao-nomad/) |
+| Open release | ✅ **v1.0.0-alpha.2** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) · [Docs site](https://NinjaSln-labs.github.io/fuyao-nomad/) |
 
 Maintainer releases require **two local audits** (`.agents/audit/`: **release audit** 100/100 + **code quality audit** pass/pass_with_notes; not in repo; order: both audits → release commit → tag → Release). Checklist: [release-checklist.md](docs/product/examples/release-checklist.md) · `npm run release:preflight`. Public contract: [docs/audit/README.md](docs/audit/README.md).
 
@@ -90,7 +90,7 @@ git clone https://github.com/NinjaSln-labs/fuyao-nomad.git
 node fuyao-nomad/scripts/fuyao-init.mjs --project . --pack starter-solo --intent "one-line goal"
 ```
 
-> Full tutorial (minute-by-minute, three pitfalls): [get-started.en.md](docs/product/get-started.en.md) (15 min · measured 12 min) · [中文](docs/product/get-started.md) · Docs site: [GitHub Pages](https://ninjasln-labs.github.io/fuyao-nomad/)
+> Full tutorial (minute-by-minute, three pitfalls): [get-started.en.md](docs/product/get-started.en.md) (15 min · measured 12 min) · [中文](docs/product/get-started.md) · Docs site: [GitHub Pages](https://NinjaSln-labs.github.io/fuyao-nomad/)
 
 ## Development (repo contributors)
 

@@ -39,7 +39,7 @@
 | Harness 薄适配 | ✅ **五家挂载级实证**（pi · dsh · cursor · qoder · claude · 同一 pack 零改动）· CLI · **LangGraph / CrewAI 导出** · OpenHands 冻结 |
 | 消息协议 + 争用顾问 | ✅ message validate · `check:contention`（territory 重叠 + CI `--strict`） |
 | 校验与测试 | ✅ `validate` 50 项 · `npm test` 34 项 · GitHub Actions |
-| 开源发布 | ✅ **v1.0.0-alpha.2** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) · [官网](https://ninjasln-labs.github.io/fuyao-nomad/) |
+| 开源发布 | ✅ **v1.0.0-alpha.2** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) · [官网](https://NinjaSln-labs.github.io/fuyao-nomad/) |
 
 维护者发版须 **双审计必做**（`.agents/audit/`：**发版审计** 100/100 + **代码质量审计** pass/pass_with_notes，不入库；顺序：双审计 → 包装 commit → tag → Release）。清单：[release-checklist.md](docs/product/examples/release-checklist.md) · `npm run release:preflight`。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
 
