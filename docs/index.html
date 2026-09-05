@@ -7,12 +7,45 @@
   <meta name="description" content="开源 DDD 驱动、可组合的 Agent 团队框架 — 团队优先 · 薄适配器挂载任意 harness · 仪式感随场景调节" />
   <link rel="icon" href="_media/favicon.svg" type="image/svg+xml" />
 
-  <!-- docsify -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <!-- docsify（先定义配置，再加载库） -->
+  <script>
+    window.$docsify = {
+      name: "扶摇 · Nomad",
+      repo: "NinjaSln-labs/fuyao-nomad",
+      // 部署形态：docs/* 平移到站点根 —— 所有路径相对站点根
+      homepage: "website/home.md",
+      loadSidebar: "_sidebar.md",
+      loadNavbar: false,
+      maxLevel: 3,
+      subMaxLevel: 3,
+      notFoundPage: "404.md",
+      search: {
+        placeholder: "搜索文档",
+        noData: "未找到",
+        depth: 3,
+      },
+      auto2top: true,
+      alias: {
+        // 嵌套路由下侧栏一律回落到根
+        "/.*/_sidebar.md": "_sidebar.md",
+      },
+      plugins: [
+        // 内联 footer（原 @alertoo/docsify-footer CDN 已失效——不引第三方小众插件）
+        function footer(hook) {
+          hook.afterEach(function (html) {
+            return (
+              html +
+              '<hr style="margin:2.5em 0 1em">' +
+              '<p style="text-align:center;color:#78716c;font-size:.85em;margin:0 0 2em">' +
+              'Apache-2.0 · <a href="https://github.com/NinjaSln-labs/fuyao-nomad" target="_blank">GitHub</a>' +
+              ' · <a href="https://www.npmjs.com/package/fuyao-nomad" target="_blank">npm</a>' +
+              " · 扶摇 · Nomad</p>"
+            );
+          });
+        },
+      ],
+    };
+  </script>
 
   <style>
     :root {
@@ -47,40 +80,10 @@
   </style>
 </head>
 <body>
-  <div id="app"></div>
-  <script>
-    window.$docsify = {
-      name: "扶摇 · Nomad",
-      repo: "NinjaSln-labs/fuyao-nomad",
-      homepage: "docs/product/north-star.md",
-      loadSidebar: "_sidebar.md",
-      loadNavbar: false,
-      maxLevel: 3,
-      subMaxLevel: 3,
-      subMargin: true,
-      search: {
-        placeholder: { "/zh-cn/": "搜索文档", "/": "Search docs" },
-        noData: { "/zh-cn/": "未找到", "/": "No results" },
-        depth: 3,
-      },
-      alias: {
-        // 根路由 → 导航首页（不复用仓库 README——官网首页要有官网的样子）
-        "/.*/_sidebar.md": "_sidebar.md",
-        "/README.md": "docs/website/home.md",
-        "/": "docs/website/home.md",
-        // GitHub 相对链接修偏：仓库根相对链接在 Pages 上指错层级
-        "/docs/product/north-star.md": "docs/product/north-star.md",
-      },
-      footer: {
-        copy: '<span>Apache-2.0 · <a href="https://github.com/NinjaSln-labs/fuyao-nomad" target="_blank" style="color:inherit">GitHub</a> · <a href="https://www.npmjs.com/package/fuyao-nomad" target="_blank" style="color:inherit">npm</a></span>',
-        pre: " ",
-        style: "text-align: center; color: #78716c; margin: 2.5em 0 1em; font-size: 0.85em;",
-      },
-      auto2top: true,
-      copyCode: { buttonText: "复制" },
-    };
-  </script>
+  <div id="app">加载中 …</div>
+  <!-- docsify 库与插件必须在 body 末尾加载：@4 核心在求值时立即读 document.body.clientWidth（移动端探测），head 内 body 为 null 会直接 TypeError 杀掉初始化（线上空白页根因） -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/@alertoo/docsify-footer/dist/docsify-footer.min.js"></script>
 </body>
 </html>

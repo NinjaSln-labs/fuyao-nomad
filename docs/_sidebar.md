@@ -42,8 +42,8 @@
 
 - **决策与审计**
   - [ADR 索引](decisions/README.md)
-  - [ADR-0005 契约冻结](decisions/adr-0005-contract-freeze.yaml)
-  - [ADR-0006 $id 语义化](decisions/adr-0006-schema-id-semver.yaml)
+  - [ADR-0005 契约冻结](https://github.com/NinjaSln-labs/fuyao-nomad/blob/main/docs/decisions/adr-0005-contract-freeze.yaml)
+  - [ADR-0006 $id 语义化](https://github.com/NinjaSln-labs/fuyao-nomad/blob/main/docs/decisions/adr-0006-schema-id-semver.yaml)
 
 - **产品叙事**
   - [问题陈述](product/problem-statement.md)
