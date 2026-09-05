@@ -128,6 +128,8 @@ node "$Fuyao\scripts\check-traceability.mjs" --project . --plan .agents/plan-pro
 |------|------|--------|------|
 | **v0.28** | qingfu-envoy | `fuyao-adopt-qingfu-envoy` | ✅ [scenario](./adopt-qingfu-scenario.md) · [close](./adopt-qingfu-close.md) · [vs-source](./adopt-vs-source-qingfu.md) |
 | **v0.29** | shisui | `fuyao-adopt-shisui` | ✅ [scenario](./adopt-shisui-scenario.md) · [close](./adopt-shisui-close.md) · [vs-source](./adopt-vs-source-shisui.md) |
+| **v0.30** | Voyage | `fuyao-adopt-voyage` | ✅ [scenario](./adopt-voyage-scenario.md) · [close](./adopt-voyage-close.md) · [vs-source](./adopt-vs-source-voyage.md) |
+| **v0.37** | shuijing-v2 | `fuyao-adopt-shuijing` | ✅ [scenario](./adopt-shuijing-scenario.md) · [close](./adopt-shuijing-close.md) · [vs-source](./adopt-vs-source-shuijing.md) · pi harness · 轻中档 |
 
 详版：[v0.26–v0.29 计划](../../../.cursor/plans/v0.26-v0.29_steady_adopt_roadmap.plan.md)
 

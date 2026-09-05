@@ -4,6 +4,13 @@
 
 ## 已完成
 
+### v0.37.0（2026-09-06）
+
+- adopt shuijing 第 4 行（轻中档补矩阵轻端）：**pi harness 全程驱动**（首个非 cursor adopt · research/spec/auditor 三槽位独立 SDK AgentSession）· ic-sole-commitment-exit（唯一承诺出口 + 硬锚定双不变量机器验证 · TDD v0 首跑红为违规证据）
+- **R16 分段纪律收窄**：headless 委派「1 输入文件/段 + 填空模板」（多文件并读触发读后停滞 · 七轮对照探针定位）
+- dod-轻中模板示例 id 修正（m-done/wi-main → m-spec/m-impl 惯例对齐，顺手清偿）
+- [场景](docs/product/examples/adopt-shuijing-scenario.md) · [关仓](docs/product/examples/adopt-shuijing-close.md) · [vs-source](docs/product/examples/adopt-vs-source-shuijing.md)
+
 ### v0.36.0（2026-09-05）
 
 - langgraph runtime smoke（首个 runtime 级证据）：真实 LangGraph 1.2.11 下组图消费 mapping，6/6 断言 PASS · **R15 发现与契约修订**（`interrupt_before` 在 1.2.x 失效 → confirm 门改动态 `interrupt()` + `Command(resume=)`）· crewai 文档级对照标注
@@ -138,6 +145,7 @@
 | **v0.34** | cursor 挂载级回归实证（第三家 · CLI 委派） | ✅ |
 | **v0.35** | qoder + claude 挂载级（第四/五家 · Mac 远程直测）· 候选五家全数收敛 | ✅ |
 | **v0.36** | langgraph runtime smoke（首个 runtime 级证据 · R15 契约修订）· crewai 文档级对照 | ✅ |
+| **v0.37** | adopt shuijing 第 4 行（轻中 · pi harness 首个非 cursor）· R16 分段纪律 · dod-轻中模板修正 | ✅ |
 | P2 | 包市场等 | 非默认 |
 
 详版主计划（本地 `docs/plans/`，**不入库**）· 公开摘要见上表与 [CHANGELOG](CHANGELOG.md)
@@ -148,6 +156,7 @@
 v0.28.0 ✅ qingfu adopt → v0.29.0 ✅ shisui adopt → v0.30.0 ✅ voyage adopt
 → v0.32–v0.35 ✅ 五家 harness 挂载级（pi · dsh · cursor · qoder · claude）· 移植主线收敛
 → v0.36.0 ✅ langgraph runtime smoke（导出层首个 runtime 级证据 · R15 契约修订）
+→ v0.37.0 ✅ adopt shuijing 第 4 行（pi harness 全程驱动 · 轻中档 · R16）
 ```
 
 ## 不做

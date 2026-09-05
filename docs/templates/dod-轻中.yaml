@@ -13,19 +13,19 @@ dod:
     - id: intent_clear
       required: true
       plan_refs:
-        milestone_ids: [m-done]
-        work_item_ids: [wi-main]
+        milestone_ids: [m-impl]
+        work_item_ids: [wi-spec, wi-impl]
     - id: handoff_snippet_updated
       required: true
       plan_refs:
-        milestone_ids: [m-done]
-        work_item_ids: [wi-main]
+        milestone_ids: [m-impl]
+        work_item_ids: [wi-spec, wi-impl]
     - id: smoke_verified
       required: true
       description: 变更路径 smoke 或可读性自检
       plan_refs:
-        milestone_ids: [m-done]
-        work_item_ids: [wi-main]
+        milestone_ids: [m-impl]
+        work_item_ids: [wi-spec, wi-impl]
     - id: identity_constraints_held
       required: true
       description: intent 身份约束仍满足；未满足须 blocker 或废除（见 docs/design/identity-constraints.md）

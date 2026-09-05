@@ -2,6 +2,19 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.37.0] - 2026-09-06
+
+### Added
+
+- **adopt shuijing 第 4 行**（产品接手 · 轻中档补矩阵轻端空白）：承诺出口域薄切片——Mock 评审链上验证 `ic-sole-commitment-exit`（唯一承诺出口：闭包 token 强制非主席不得裁决 · 硬锚定防评分-裁决悖论：blocked≥2 不得 go / 全 blocked 强制 no_go）
+- **首个非 cursor adopt**：全程 **pi harness** 驱动——research/spec/auditor 三槽位独立 SDK AgentSession（v0.32.1 同款机制），gate=confirm 门操作者三项裁决（闭包封装 / 最小集 5 组 / 纯库无 CLI）
+- adopt 三文档入库（scenario / close / vs-source）· 矩阵第 4 行（含 harness 维度列）· 接手仓 10/10 测试 + auditor verdict: pass + 三绿 strict
+
+### Changed
+
+- **R16 分段委派纪律收窄**（pi SDK headless + kimi-k2.6）：「槽位片段前缀 + ≥2 文件并读 + 长结构化产出」触发读后停滞（读完零 write · 末轮纯 thinking）——七轮对照探针定位后固化对策：**1 输入文件/段 + 骨架填空模板**（v0.33「限定输入」纪律再收窄：输入也须限 1）
+- **dod-轻中模板修正**（顺手清偿）：`docs/templates/dod-轻中.yaml` 前 3 项 plan_refs 孤例 `m-done/wi-main` 改为 m-spec/m-impl 惯例（其余档早已如此）——轻中档 traceability strict 必挂的模板 bug 清偿
+
 ## [0.36.0] - 2026-09-05
 
 ### Added
