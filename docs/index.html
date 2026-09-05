@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>扶摇 · Nomad — Agent team framework</title>
+  <meta name="description" content="开源 DDD 驱动、可组合的 Agent 团队框架 — 团队优先 · 薄适配器挂载任意 harness · 仪式感随场景调节" />
+  <link rel="icon" href="_media/favicon.svg" type="image/svg+xml" />
+
+  <!-- docsify -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+
+  <style>
+    :root {
+      --fu-primary: #b45309; /* amber-700 扶摇 = 扶摇直上的暖色 */
+      --fu-ink: #1c1917; /* stone-900 */
+    }
+    body { font-family: "LXGW WenKai Screen", "Noto Serif SC", system-ui, sans-serif; }
+    .sidebar-toggle { padding: 1.2em 0; }
+    .sidebar { padding-top: 2.2em; }
+    .sidebar .sidebar-nav { margin-top: 0.4em; }
+    .sidebar h1 { font-size: 1.15em; margin: 0 0 0.4em; }
+    .sidebar h1 a { color: var(--fu-primary); text-decoration: none; }
+    .sidebar ul { margin-left: 0.75em; }
+    .sidebar li { margin: 0.18em 0; }
+    .sidebar a { color: var(--fu-ink); text-decoration: none; font-size: 0.92em; }
+    .sidebar a:hover { color: var(--fu-primary); }
+    .sidebar .app-sub-sidebar a { font-size: 0.82em; color: #78716c; }
+    .content { max-width: 52em; }
+    h1, h2, h3 { font-weight: 600; }
+    .content h1 { border-bottom: 2px solid var(--fu-primary); padding-bottom: 0.3em; }
+    a { color: var(--fu-primary); }
+    a:hover { color: #92400e; }
+    .markdown-section code { font-size: 0.88em; }
+    .markdown-section pre { background: #1c1917; }
+    .markdown-section pre code { color: #e7e5e4; }
+    table { display: table; width: 100%; }
+    td, th { padding: 0.4em 0.7em; font-size: 0.92em; }
+    th { background: #fafaf9; }
+    tbody tr:nth-child(even) { background: #fafaf9; }
+    blockquote { border-left: 4px solid var(--fu-primary); background: #fffbeb; padding: 0.7em 1em; color: #44403c; border-radius: 0 6px 6px 0; }
+    .anchor { text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: "扶摇 · Nomad",
+      repo: "NinjaSln-labs/fuyao-nomad",
+      homepage: "docs/product/north-star.md",
+      loadSidebar: "_sidebar.md",
+      loadNavbar: false,
+      maxLevel: 3,
+      subMaxLevel: 3,
+      subMargin: true,
+      search: {
+        placeholder: { "/zh-cn/": "搜索文档", "/": "Search docs" },
+        noData: { "/zh-cn/": "未找到", "/": "No results" },
+        depth: 3,
+      },
+      alias: {
+        // 根路由 → 导航首页（不复用仓库 README——官网首页要有官网的样子）
+        "/.*/_sidebar.md": "_sidebar.md",
+        "/README.md": "docs/website/home.md",
+        "/": "docs/website/home.md",
+        // GitHub 相对链接修偏：仓库根相对链接在 Pages 上指错层级
+        "/docs/product/north-star.md": "docs/product/north-star.md",
+      },
+      footer: {
+        copy: '<span>Apache-2.0 · <a href="https://github.com/NinjaSln-labs/fuyao-nomad" target="_blank" style="color:inherit">GitHub</a> · <a href="https://www.npmjs.com/package/fuyao-nomad" target="_blank" style="color:inherit">npm</a></span>',
+        pre: " ",
+        style: "text-align: center; color: #78716c; margin: 2.5em 0 1em; font-size: 0.85em;",
+      },
+      auto2top: true,
+      copyCode: { buttonText: "复制" },
+    };
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@alertoo/docsify-footer/dist/docsify-footer.min.js"></script>
+</body>
+</html>

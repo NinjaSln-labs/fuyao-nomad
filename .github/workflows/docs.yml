@@ -1,0 +1,48 @@
+name: docs (GitHub Pages)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
+      - ".github/workflows/docs.yml"
+      - "harness/README.md"
+      - "CONTRIBUTING.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare Pages artifact
+        run: |
+          # docsify 是零构建静态站 —— 发布物 = docs/ + 侧栏链接越界的宿主文件
+          mkdir -p _site
+          cp -r docs/* _site/
+          # 官网首页/侧栏引用的根级文件（harness README / CONTRIBUTING）平移到 _site 根
+          cp harness/README.md _site/harness-README.md
+          cp CONTRIBUTING.md _site/CONTRIBUTING.md
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
