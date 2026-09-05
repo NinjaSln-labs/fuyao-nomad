@@ -1,9 +1,23 @@
 {
   "name": "fuyao-nomad",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "扶摇 · Nomad — Agent team framework",
   "license": "Apache-2.0",
   "type": "module",
+  "bin": { "fuyao": "bin/fuyao" },
+  "files": [
+    "bin/",
+    "scripts/",
+    "packs/",
+    "agents/examples/",
+    "docs/design/schemas/",
+    "docs/templates/",
+    "harness/cursor/",
+    "README.md",
+    "README.en.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NinjaSln-labs/fuyao-nomad.git"
@@ -29,7 +43,8 @@
     "fuyao:init": "node scripts/fuyao-init.mjs",
     "release:preflight": "node scripts/release-preflight.mjs"
   },
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
     "yaml": "^2.7.0"
