@@ -1,4 +1,4 @@
-<div align="center">
+<div style="text-align:center">
 
 # 扶摇 · Nomad
 
@@ -111,6 +111,6 @@ node fuyao-nomad/scripts/fuyao-init.mjs --project . --pack starter-solo --intent
 
 ---
 
-<footer-p>
-Apache-2.0 · npm 包 <code>fuyao-nomad</code> · 主路线 v0.32 → v1.0.0-alpha.1 已闭环
-</footer-p>
+---
+
+Apache-2.0 · npm 包 `fuyao-nomad` · 主路线 v0.32 → v1.0.0-alpha.1 已闭环
