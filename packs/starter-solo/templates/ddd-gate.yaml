@@ -1,0 +1,13 @@
+# DDD 设计门 · flow_weight=轻
+
+flow_weight: 轻
+
+ddd_gate:
+  required: false
+  checks:
+    - id: intent_scope_consistent
+      required: true
+      description: 意图与范围自洽，无明显冲突
+    - id: terms_not_conflicting
+      required: false
+      description: 与 domain-language 无严重术语冲突

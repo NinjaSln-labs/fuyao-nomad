@@ -1,0 +1,21 @@
+# 扶摇团队包 · 单人开箱（最小起手）
+
+version: "0.1"
+id: starter-solo
+name: 单人开箱（最小起手）
+description: 单人 15 分钟起手包；builder→reviewer 主链 + progress/auditor 正交；flow_weight=轻
+pack_revision: "1.0.0"
+published_at: "2026-09-06T00:00:00Z"
+flow_weight: 轻
+
+roster: roster.yaml
+
+templates:
+  dod: templates/dod.yaml
+  verification: templates/verification.yaml
+  ddd_gate: templates/ddd-gate.yaml
+
+harness_adapters:
+  cursor:
+    mapping: harness/cursor/mapping.yaml
+    agents_dir: harness/cursor/agents

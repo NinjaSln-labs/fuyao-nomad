@@ -1,0 +1,55 @@
+# Starter Solo roster · flow_weight=轻 · 单人开箱
+
+version: "0.1"
+id: starter-solo
+name: 单人开箱（最小起手）
+flow_weight: 轻
+
+orchestration:
+  mode: serial
+  serial_order:
+    - builder
+    - reviewer
+  orthogonal_slots:
+    - progress
+    - auditor
+
+handoff:
+  use_defaults: true
+
+model_policy:
+  default: inherit
+  by_slot_kind:
+    auditor: inherit
+    progress: fast
+  by_slot:
+    builder: inherit
+    reviewer: fast
+  notes: "单人驱动：builder 主模型；reviewer/progress 轻量档即可"
+
+slots:
+  - id: builder
+    purpose: 实现最小可验证交付（代码/脚本/文档切片）
+    outputs: [build_output]
+    gate_level: auto
+    slot_kind: generic
+
+  - id: reviewer
+    purpose: 对照 intent 核验交付（含身份词逐词核对）
+    inputs: [build_output]
+    outputs: [review_notes]
+    gate_level: confirm
+    slot_kind: verifier
+
+  - id: progress
+    purpose: 维护计划与进度、处理阻塞
+    slot_kind: progress
+    gate_level: auto
+
+  - id: auditor
+    purpose: 代码/文档质量审计（可选启用）
+    slot_kind: auditor
+    gate_level: auto
+    model_hint: inherit
+
+harness_mapping_ref: harness/cursor/mapping.yaml

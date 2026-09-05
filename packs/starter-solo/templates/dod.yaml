@@ -1,0 +1,27 @@
+# DoD 模板 · flow_weight=轻
+# 配对：verification-轻.yaml · ddd-gate-轻.yaml
+# plan_refs：轻端示例 id（项目可替换）；见 traceability-contract.md
+
+flow_weight: 轻
+
+dod:
+  deliverables:
+    - 意图/范围陈述
+    - 约定产出物（按槽位 outputs）
+  boundaries:
+    - 明确不做什么
+  checklist:
+    - id: intent_clear
+      required: true
+      plan_refs:
+        work_item_ids: [wi-builder]
+    - id: handoff_snippet_updated
+      required: false
+      plan_refs:
+        work_item_ids: [wi-reviewer]
+    - id: identity_constraints_held
+      required: false
+      description: 若 plan 声明了 identity_constraints，则须仍满足（见 identity-constraints.md）
+    - id: blocker_evidence_recorded
+      required: false
+      description: 若曾出现身份类 blocker，清除时建议留 evidence（见 identity-constraints.md）
