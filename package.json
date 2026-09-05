@@ -1,6 +1,6 @@
 {
   "name": "fuyao-nomad",
-  "version": "0.37.0",
+  "version": "0.38.0",
   "description": "扶摇 · Nomad — Agent team framework",
   "license": "Apache-2.0",
   "type": "module",
@@ -26,6 +26,7 @@
     "check:traceability": "node scripts/check-traceability.mjs",
     "check:identity": "node scripts/check-identity.mjs",
     "install:cursor-agents": "node scripts/install-cursor-agents.mjs",
+    "fuyao:init": "node scripts/fuyao-init.mjs",
     "release:preflight": "node scripts/release-preflight.mjs"
   },
   "devDependencies": {

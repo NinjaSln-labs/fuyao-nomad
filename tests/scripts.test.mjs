@@ -365,3 +365,68 @@ test("release:preflight repo guard fails outside fuyao-nomad package", () => {
   assert.equal(r.status, 1, r.stdout + r.stderr);
   assert.match(r.stdout + r.stderr, /repo guard.*wrong repo|refuse release/s);
 });
+
+test("fuyao:init generates validated plan-progress skeleton from starter-solo", () => {
+  const scratchBase = join(ROOT, ".scratch");
+  mkdirSync(scratchBase, { recursive: true });
+  const tmp = mkdtempSync(join(scratchBase, "fuyao-init-"));
+  const r = run("npm", [
+    "run",
+    "fuyao:init",
+    "--",
+    "--project",
+    tmp,
+    "--pack",
+    join(ROOT, "packs/starter-solo"),
+    "--intent",
+    "单人开箱冒烟",
+  ]);
+  assert.equal(r.status, 0, r.stdout + r.stderr);
+  // pack 已安装
+  assert.ok(existsSync(join(tmp, "agents/packs/starter-solo/pack.yaml")));
+  assert.ok(existsSync(join(tmp, ".cursor/agents/solo-builder.md")));
+  // plan-progress 骨架：roster 驱动
+  const plan = readFileSync(join(tmp, ".agents/plan-progress.yaml"), "utf8");
+  assert.match(plan, /roster_id: starter-solo/);
+  assert.match(plan, /flow_weight: 轻/);
+  assert.match(plan, /intent: 单人开箱冒烟/);
+  assert.match(plan, /wi-builder/);
+  assert.match(plan, /wi-reviewer/);
+  assert.match(plan, /wi-progress/);
+  assert.match(plan, /wi-auditor/);
+  assert.match(plan, /m-done/);
+  assert.match(plan, /active_slot_id: builder/);
+  // 骨架过 validate（plan-progress schema）
+  const rv = run("node", [
+    join(ROOT, "scripts/validate.mjs"),
+    "--path",
+    join(tmp, ".agents/plan-progress.yaml"),
+  ]);
+  assert.equal(rv.status, 0, rv.stdout + rv.stderr);
+});
+
+test("fuyao:init refuses to overwrite existing plan-progress", () => {
+  const scratchBase = join(ROOT, ".scratch");
+  mkdirSync(scratchBase, { recursive: true });
+  const tmp = mkdtempSync(join(scratchBase, "fuyao-init-"));
+  const args = [
+    "run",
+    "fuyao:init",
+    "--",
+    "--project",
+    tmp,
+    "--pack",
+    join(ROOT, "packs/starter-solo"),
+  ];
+  const r1 = run("npm", args);
+  assert.equal(r1.status, 0, r1.stdout + r1.stderr);
+  const r2 = run("npm", args);
+  assert.equal(r2.status, 1);
+  assert.match(r2.stderr, /refusing to overwrite/);
+});
+
+test("starter-solo pack validates", () => {
+  const r = run("npm", ["run", "pack", "--", "validate", join(ROOT, "packs/starter-solo")]);
+  assert.equal(r.status, 0, r.stdout + r.stderr);
+  assert.match(r.stdout, /Pack valid/);
+});
