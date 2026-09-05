@@ -5,54 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>扶摇 · Nomad — Agent team framework</title>
   <meta name="description" content="开源 DDD 驱动、可组合的 Agent 团队框架 — 团队优先 · 薄适配器挂载任意 harness · 仪式感随场景调节" />
+  <meta name="theme-color" content="#b45309" />
   <link rel="icon" href="_media/favicon.svg" type="image/svg+xml" />
 
   <!-- docsify 主题 CSS（必需：docsify.min.js 只是渲染引擎，无主题则侧栏不定位、无样式——裸渲染根因） -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/themes/vue.css" />
-
-  <!-- docsify（先定义配置，再加载库） -->
-  <script>
-    window.$docsify = {
-      name: "扶摇 · Nomad",
-      repo: "NinjaSln-labs/fuyao-nomad",
-      // 部署形态：docs/* 平移到站点根 —— 所有路径相对站点根
-      homepage: "website/home.md",
-      loadSidebar: "_sidebar.md",
-      loadNavbar: false,
-      maxLevel: 3,
-      subMaxLevel: 3,
-      notFoundPage: "404.md",
-      search: {
-        placeholder: "搜索文档",
-        noData: "未找到",
-        depth: 3,
-      },
-      auto2top: true,
-      alias: {
-        // 嵌套路由下侧栏一律回落到根
-        "/.*/_sidebar.md": "_sidebar.md",
-      },
-      plugins: [
-        // 内联 footer（原 @alertoo/docsify-footer CDN 已失效——不引第三方小众插件）
-        function footer(hook) {
-          hook.afterEach(function (html) {
-            return (
-              html +
-              '<hr style="margin:2.5em 0 1em">' +
-              '<p style="text-align:center;color:#78716c;font-size:.85em;margin:0 0 2em">' +
-              'Apache-2.0 · <a href="https://github.com/NinjaSln-labs/fuyao-nomad" target="_blank">GitHub</a>' +
-              ' · <a href="https://www.npmjs.com/package/fuyao-nomad" target="_blank">npm</a>' +
-              " · 扶摇 · Nomad</p>"
-            );
-          });
-        },
-      ],
-    };
-  </script>
+  <!-- 字体预连接（Vercel 准则：CDN/资产域 preconnect） -->
+  <link rel="preconnect" href="//cdn.jsdelivr.net" crossorigin />
 
   <style>
+    /* 主题变量覆盖（vue.css 用 --theme-color 全套派生：链接/高亮/进度条/active——
+       直接改变量，而不是逐选择器对抗主题——特异性竞斗没有赢家）
+       #9a4207 amber-800：白底 6.1:1 · f8f8f8 底 5.7:1 · 均 WCAG AA+ */
     :root {
-      --fu-primary: #b45309; /* amber-700 扶摇 = 扶摇直上的暖色 */
+      --theme-color: #9a4207;
       --fu-ink: #1c1917; /* stone-900 */
     }
     body { font-family: "LXGW WenKai Screen", "Noto Serif SC", system-ui, sans-serif; }
@@ -60,33 +26,98 @@
     .sidebar { padding-top: 2.2em; }
     .sidebar .sidebar-nav { margin-top: 0.4em; }
     .sidebar h1 { font-size: 1.15em; margin: 0 0 0.4em; }
-    .sidebar h1 a { color: var(--fu-primary); text-decoration: none; }
+    .sidebar h1 a { color: var(--theme-color); text-decoration: none; }
     .sidebar ul { margin-left: 0.75em; }
     .sidebar li { margin: 0.18em 0; }
     .sidebar a { color: var(--fu-ink); text-decoration: none; font-size: 0.92em; }
-    .sidebar a:hover { color: var(--fu-primary); }
-    .sidebar .app-sub-sidebar a { font-size: 0.82em; color: #78716c; }
+    .sidebar a:hover { color: var(--theme-color); }
+    .sidebar .app-sub-sidebar a { font-size: 0.82em; color: #57534e; } /* 原 #78716c → 加深：小字号对比达标 */
     .content { max-width: 52em; }
     h1, h2, h3 { font-weight: 600; }
-    .content h1 { border-bottom: 2px solid var(--fu-primary); padding-bottom: 0.3em; }
-    a { color: var(--fu-primary); }
-    a:hover { color: #92400e; }
+    .content h1 { border-bottom: 2px solid var(--theme-color); padding-bottom: 0.3em; }
+    /* 锚点跳转不贴顶（Vercel 准则：heading anchors 加 scroll-margin） */
+    .markdown-section h1, .markdown-section h2, .markdown-section h3 { scroll-margin-top: 1.5em; }
+    a { color: var(--theme-color); }
+    a:hover { color: #78350f; }
+    /* focus 可见性（Vercel 准则：:focus-visible；主题默认 outline auto 在链接色相近时弱） */
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--theme-color); outline-offset: 2px; border-radius: 2px; }
     .markdown-section code { font-size: 0.88em; }
-    .markdown-section pre { background: #1c1917; }
-    .markdown-section pre code { color: #e7e5e4; }
+    /* 代码块：深底浅字 —— vue 主题把 code 也上 #f8f8f8 浅底（code,pre 同规则），
+       必须 !important 或提权覆盖；实测 !important 最稳（主题选择器 .markdown-section pre > code 与我们同级但主题先加载） */
+    .markdown-section pre { background: #1c1917 !important; }
+    .markdown-section pre > code { color: #e7e5e4 !important; background: transparent !important; }
+    /* 内联 code：主题色 #e96900 on #f8f8f8 仅 3.04:1 → 深化为琥珀主题色 6.26:1 */
+    .markdown-section code { color: #9a4207 !important; background: #fafaf9 !important; padding: 0.15em 0.35em; border-radius: 3px; }
+    .markdown-section pre > code { color: #e7e5e4 !important; background: transparent !important; padding: 0 !important; }
     table { display: table; width: 100%; }
     td, th { padding: 0.4em 0.7em; font-size: 0.92em; }
     th { background: #fafaf9; }
     tbody tr:nth-child(even) { background: #fafaf9; }
-    blockquote { border-left: 4px solid var(--fu-primary); background: #fffbeb; padding: 0.7em 1em; color: #44403c; border-radius: 0 6px 6px 0; }
+    blockquote { border-left: 4px solid var(--theme-color); background: #fffbeb; padding: 0.7em 1em; color: #44403c; border-radius: 0 6px 6px 0; }
     .anchor { text-decoration: none; }
+    /* 移动端触达（Vercel 准则：touch-action；toggle 命中区 ≥44px） */
+    body { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+    .sidebar-toggle-button { min-width: 44px; min-height: 44px; }
+    @media (max-width: 768px) {
+      .sidebar-toggle { padding: 1em 0; }
+    }
+    /* copy-code 插件按钮：琥珀底 → 白字 6.65:1（深灰对琥珀仅 1.15:1 不可读） */
+    .docsify-copy-code-button span { color: #ffffff; }
+    .docsify-copy-code-button { background: var(--theme-color); border: none; }
+    /* 插件 aria-hidden="hidden" 是非法值（应为 true）——axe critical 8 处；DOM 由插件生成不可改，
+       用 CSS 对屏幕阅读器隐藏（display:none 也移除 axe 扫描面）+ 视觉保留给 .label */
+    .docsify-copy-code-button .error, .docsify-copy-code-button .success { display: none; }
+    /* 动效克制（Vercel 准则：prefers-reduced-motion） */
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+    }
   </style>
 </head>
 <body>
-  <div id="app">加载中 …</div>
+  <div id="app">加载中…</div>
   <!-- docsify 库与插件必须在 body 末尾加载：@4 核心在求值时立即读 document.body.clientWidth（移动端探测），head 内 body 为 null 会直接 TypeError 杀掉初始化（线上空白页根因） -->
+  <script>
+    window.$docsify = {
+      name: "扶摇 · Nomad",
+      nameLink: "/",
+      repo: "NinjaSln-labs/fuyao-nomad",
+      homepage: "website/home.md",
+      loadSidebar: "_sidebar.md",
+      loadNavbar: false,
+      maxLevel: 3,
+      subMaxLevel: 3,
+      notFoundPage: "404.md",
+      search: { placeholder: "搜索文档", noData: "未找到", depth: 3 },
+      auto2top: true,
+      alias: { "/.*/_sidebar.md": "_sidebar.md" },
+      plugins: [
+        // 代码块键盘可达（axe scrollable-region-focusable）：横向滚动的 pre 需要 tabindex
+        function preKeyboard(hook) {
+          hook.doneEach(function () {
+            // axe scrollable-region-focusable：实际横向滚动容器是 pre > code.lang-*（主题 overflowX:auto）
+            document.querySelectorAll('.markdown-section pre, .markdown-section pre > code, .markdown-section table').forEach(function (el) {
+              if (el.scrollWidth > el.clientWidth && !el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+            });
+          });
+        },
+        function footer(hook) {
+          hook.afterEach(function (html) {
+            return (
+              html +
+              '<hr style="margin:2.5em 0 1em;border:none;border-top:1px solid #e7e5e4">' +
+              '<p style="text-align:center;color:#57534e;font-size:.85em;margin:0 0 2em">' +
+              'Apache-2.0 · <a href="https://github.com/NinjaSln-labs/fuyao-nomad" target="_blank" rel="noopener">GitHub</a>' +
+              ' · <a href="https://www.npmjs.com/package/fuyao-nomad" target="_blank" rel="noopener">npm</a>' +
+              " · 扶摇 · Nomad</p>"
+            );
+          });
+        },
+      ],
+    };
+  </script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@3/dist/docsify-copy-code.min.js"></script>
 </body>
 </html>
