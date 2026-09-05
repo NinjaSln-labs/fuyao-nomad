@@ -29,8 +29,8 @@
 | [claude/](./claude/) | Claude Code | `.claude/agents/` + 第三方模型接入 | **挂载级·第三方模型（v0.35）** |
 | [cli/](./cli/) | 命令行（通用） | runners 片段 | 文档级 |
 | [openhands/](./openhands/) | OpenHands | — | ❄️ **冻结**（无维护者环境，欢迎社区认领；幽灵命令引用已清偿） |
-| [langgraph/](./langgraph/) | LangGraph 编排导出 | 导出映射 | 文档级 → runtime smoke 排 v0.36 |
-| [crewai/](./crewai/) | CrewAI Flow / Crew 导出 | 导出映射 | 文档级 → runtime smoke 排 v0.36 |
+| [langgraph/](./langgraph/) | LangGraph 编排导出 | 导出映射 + smoke 参考实现 | **runtime smoke 级（v0.36 · 6/6 PASS · R15）** |
+| [crewai/](./crewai/) | CrewAI Flow / Crew 导出 | 导出映射 | 文档级（v0.36 对照标注 · smoke 待社区认领） |
 
 换 harness 只换映射表，不换 roster / pack。
 
