@@ -37,3 +37,4 @@ HANDOFF.md
 # local project plans (not published; see docs/plans/README.md)
 docs/plans/
 *.plan.md
+*.tgz
