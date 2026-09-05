@@ -7,9 +7,11 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v0.38.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.38.0)
+[![Release](https://img.shields.io/badge/Release-v0.39.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.39.0)
 
 **[English](README.en.md)** | 中文
+
+*English core docs: [north-star](docs/product/north-star.en.md) · [capability-model](docs/product/capability-model.en.md) · [composition-protocol](docs/design/composition-protocol.en.md) · [team-pack](docs/design/team-pack.en.md) · [get-started](docs/product/get-started.en.md)*
 
 </div>
 
@@ -36,8 +38,8 @@
 | 团队包 `packs/minimal-research-to-spec` | ✅ pack validate / install |
 | Harness 薄适配 | ✅ **五家挂载级实证**（pi · dsh · cursor · qoder · claude · 同一 pack 零改动）· CLI · **LangGraph / CrewAI 导出** · OpenHands 冻结 |
 | 消息协议 + 争用顾问 | ✅ message validate · `check:contention`（territory 重叠 + CI `--strict`） |
-| 校验与测试 | ✅ `validate` 48 项 · `npm test` 24 项 · GitHub Actions |
-| 开源发布 | ✅ **v0.38.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+| 校验与测试 | ✅ `validate` 49 项 · `npm test` 24 项 · GitHub Actions |
+| 开源发布 | ✅ **v0.39.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
 维护者发版须 **双审计必做**（`.agents/audit/`：**发版审计** 100/100 + **代码质量审计** pass/pass_with_notes，不入库；顺序：双审计 → 包装 commit → tag → Release）。清单：[release-checklist.md](docs/product/examples/release-checklist.md) · `npm run release:preflight`。公开契约见 [docs/audit/README.md](docs/audit/README.md)。
 
@@ -103,7 +105,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 
 ## 路线图
 
-**当前：v0.38.0** — 单人开箱：starter-solo 包 + `fuyao:init` + get-started 15 分钟教程（dogfood-lite 实测 12 分钟）。
+**当前：v0.39.0** — 外部信任面：英文核心 5 份 + schema `$id` 语义化（ADR-0006）+ 首贡献路径与 issue 模板。
 
 | 版本 | 目标 |
 |------|------|
@@ -145,6 +147,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 | **v0.36.0** ✅ | langgraph runtime smoke（真实 runtime 6/6 断言 · R15 interrupt() 契约修订 · crewai 文档级对照） |
 | **v0.37.0** ✅ | adopt shuijing 第 4 行（轻中档补矩阵轻端 · **pi harness 全程驱动** · ic-sole-commitment-exit · R16 分段纪律 + dod-轻中模板修正） |
 | **v0.38.0** ✅ | 单人开箱：**starter-solo 包**（轻档 3+2 槽）· **`fuyao:init`**（选包→安装→骨架）· get-started 教程（实测 12 分钟）· dod-轻模板同款孤例清偿 |
+| **v0.39.0** ✅ | 外部信任面：**英文核心 5 份**（north-star · capability-model · composition-protocol · team-pack · get-started）· **schema `$id` 语义化**（五核心 /v1 · 11 模板 /v1-template · ADR-0006 · schema-stability.md）· CONTRIBUTING 首贡献路径 + 3 issue 模板 |
 
 详见 [后 v0.1 路线](docs/product/post-v01-roadmap.md) · [0→1 路径](docs/product/0-1-path.md)
 

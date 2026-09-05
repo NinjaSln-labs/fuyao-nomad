@@ -7,7 +7,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![CI](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml/badge.svg)](https://github.com/NinjaSln-labs/fuyao-nomad/actions/workflows/validate.yml)
-[![Release](https://img.shields.io/badge/Release-v0.38.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.38.0)
+[![Release](https://img.shields.io/badge/Release-v0.39.0-blue)](https://github.com/NinjaSln-labs/fuyao-nomad/releases/tag/v0.39.0)
 
 **[中文](README.md)** | English
 
@@ -38,8 +38,8 @@ Open-source **agent team framework** — defines how multi-role teams collaborat
 | Team pack `packs/minimal-research-to-spec` | ✅ pack validate / install |
 | Harness thin adapters | ✅ **five harnesses mounted-level verified** (pi · dsh · cursor · qoder · claude · one pack unchanged) · CLI · **LangGraph / CrewAI export** · OpenHands frozen |
 | Message protocol + contention advisory | ✅ message validate · `check:contention` (territory overlap + CI `--strict`) |
-| Validation & tests | ✅ `validate` 48 checks · `npm test` 24 tests · GitHub Actions |
-| Open release | ✅ **v0.38.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
+| Validation & tests | ✅ `validate` 49 checks · `npm test` 24 tests · GitHub Actions |
+| Open release | ✅ **v0.39.0** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) |
 
 Maintainer releases require **two local audits** (`.agents/audit/`: **release audit** 100/100 + **code quality audit** pass/pass_with_notes; not in repo; order: both audits → release commit → tag → Release). Checklist: [release-checklist.md](docs/product/examples/release-checklist.md) · `npm run release:preflight`. Public contract: [docs/audit/README.md](docs/audit/README.md).
 
@@ -72,14 +72,17 @@ npm run check:contention -- --project .
 npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 ```
 
-- [Get started (15-min solo starter)](docs/product/get-started.md) (Chinese)
+- [Get started (15-min)](docs/product/get-started.en.md)
+- [North star](docs/product/north-star.en.md) · [Capability model](docs/product/capability-model.en.md)
+- [Composition protocol](docs/design/composition-protocol.en.md) · [Team pack](docs/design/team-pack.en.md)
+- [Schema stability ($id)](docs/design/schema-stability.md) · [CONTRIBUTING](CONTRIBUTING.md)
 - [Builder guide](docs/product/builder-guide.md) (Chinese)
 - [Contributing](CONTRIBUTING.md)
 
 ## Roadmap
 
-**Current: v0.38.0** — solo onboarding: starter-solo pack + `fuyao:init` + get-started 15-min tutorial + dogfood-lite (measured 12 min).
-**Next:** v0.39 English core docs + schema `$id` → **1.0.0-alpha.1 contract freeze**. Full version table: [README.md](README.md) (Chinese, authoritative) · [ROADMAP.md](ROADMAP.md).
+**Current: v0.39.0** — external trust surface: English core docs (×5) + schema `$id` semantics (core `/v1` · templates `/v1-template`, ADR-0006) + first-contribution path + issue templates.
+**Next:** **1.0.0-alpha.1 contract freeze**. Full version table: [README.md](README.md) (Chinese, authoritative) · [ROADMAP.md](ROADMAP.md).
 
 ### Non-goals
 
