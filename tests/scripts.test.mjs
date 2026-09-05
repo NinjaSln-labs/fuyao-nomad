@@ -430,3 +430,135 @@ test("starter-solo pack validates", () => {
   assert.equal(r.status, 0, r.stdout + r.stderr);
   assert.match(r.stdout, /Pack valid/);
 });
+
+// ============================================================
+// 1.0.0-alpha.1 契约回归（ADR-0005 A–E 面 · 每契约字段一项断言）
+// ============================================================
+
+test("contract A: roster /v1 — 枚举与 required 冻结（gate_level / slot_kind / orchestration.mode / orthogonal）", () => {
+  const schema = JSON.parse(readFileSync(join(ROOT, "docs/design/schemas/roster.schema.json"), "utf8"));
+  assert.equal(schema["$id"], "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/roster/v1");
+  assert.deepEqual(schema.required, ["version", "id", "slots", "orchestration", "flow_weight"]);
+  const slot = schema["$defs"].roleSlot;
+  assert.deepEqual(slot.required, ["id", "purpose"]);
+  assert.deepEqual(slot.properties.gate_level.enum.sort(), ["auto", "confirm", "forbid"].sort());
+  assert.deepEqual(slot.properties.slot_kind.enum.sort(), ["auditor", "generic", "progress", "verifier"].sort());
+  assert.deepEqual(schema.properties.orchestration.properties.mode.enum.sort(), ["mixed", "parallel", "serial"].sort());
+  assert.ok(schema.properties.orchestration.properties.orthogonal_slots);
+});
+
+test("contract A: plan-progress /v1 — required 集 + identity_constraints 三字段 + blockers.evidence 语义", () => {
+  const schema = JSON.parse(readFileSync(join(ROOT, "docs/design/schemas/plan-progress.schema.json"), "utf8"));
+  assert.equal(schema["$id"], "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/plan-progress/v1");
+  assert.deepEqual(schema.required, ["version", "intent", "plan", "progress"]);
+  const ic = schema.properties.identity_constraints.items;
+  assert.deepEqual(ic.required, ["id", "phrase", "meaning"]);
+  assert.deepEqual(ic.properties.enforcement.enum, ["blocker_if_unmet", "abolish"]);
+  const blocker = schema["$defs"].progress.properties.blockers.items;
+  assert.ok(blocker.properties.evidence, "blockers.evidence 保留（清除前须有）");
+  assert.deepEqual(blocker.properties.status.enum, ["open", "cleared"]);
+});
+
+test("contract A: message /v1 — type 枚举 + 按 type 的 payload 条件结构", () => {
+  const schema = JSON.parse(readFileSync(join(ROOT, "docs/design/schemas/message.schema.json"), "utf8"));
+  assert.equal(schema["$id"], "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/message/v1");
+  const msg = schema.properties.message;
+  assert.deepEqual(msg.properties.type.enum.sort(), ["audit", "handoff", "request", "status"].sort());
+  assert.ok(msg.allOf, "按 type 的 payload 条件结构（allOf if/then）");
+  assert.ok(schema["$defs"].handoffPayload && schema["$defs"].statusPayload && schema["$defs"].auditPayload);
+});
+
+test("contract A: audit-record /v1 — 三 type · 三 verdict · findings 枚举", () => {
+  const schema = JSON.parse(readFileSync(join(ROOT, "docs/design/schemas/audit-record.schema.json"), "utf8"));
+  assert.equal(schema["$id"], "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/audit-record/v1");
+  const audit = schema.properties.audit;
+  assert.deepEqual(audit.properties.type.enum.sort(), ["code_quality", "design", "implementation"].sort());
+  assert.deepEqual(audit.properties.verdict.enum, ["pass", "pass_with_notes", "blocked"]);
+  const finding = audit.properties.findings.items;
+  assert.deepEqual(finding.properties.severity.enum.sort(), ["critical", "major", "minor", "note"].sort());
+  assert.deepEqual(finding.properties.status.enum.sort(), ["fixed", "open", "recorded"].sort());
+});
+
+test("contract A: team-pack /v1 — manifest required + harness_adapters + skills 不进 harness 路径", () => {
+  const schema = JSON.parse(readFileSync(join(ROOT, "docs/design/schemas/team-pack.schema.json"), "utf8"));
+  assert.equal(schema["$id"], "https://github.com/NinjaSln-labs/fuyao-nomad/schemas/team-pack/v1");
+  assert.ok(schema.required.includes("roster") && schema.required.includes("templates"));
+  // 行为断言：install 产物 skills 落 pack 内、不落 harness 目录（契约 E 半面）
+  const scratchBase = join(ROOT, ".scratch");
+  mkdirSync(scratchBase, { recursive: true });
+  const tmp = mkdtempSync(join(scratchBase, "fuyao-contract-"));
+  const r = run("npm", ["run", "pack:install", "--", "--pack", join(ROOT, "packs/minimal-research-to-spec"), "--project", tmp]);
+  assert.equal(r.status, 0, r.stdout + r.stderr);
+  assert.ok(existsSync(join(tmp, "agents/packs/minimal-research-to-spec/skills/audit-readonly/README.md")));
+  assert.ok(!existsSync(join(tmp, ".cursor/skills")), "skills 不得进 .cursor/skills（ADR-0005 A 面）");
+});
+
+test("contract B: pack 目录布局 — 四件套布局在双官方包冻结（manifest/roster/templates/adapter）", () => {
+  for (const pack of ["starter-solo", "minimal-research-to-spec"]) {
+    const dir = join(ROOT, "packs", pack);
+    assert.ok(existsSync(join(dir, "pack.yaml")), `${pack}/pack.yaml`);
+    assert.ok(existsSync(join(dir, "roster.yaml")), `${pack}/roster.yaml`);
+    for (const t of ["dod", "verification", "ddd-gate"]) {
+      assert.ok(existsSync(join(dir, "templates", `${t}.yaml`)), `${pack}/templates/${t}.yaml`);
+    }
+    assert.ok(existsSync(join(dir, "harness", "cursor", "mapping.yaml")), `${pack}/harness/cursor/mapping.yaml`);
+  }
+});
+
+test("contract C: 退出码 — strict 发现 issue 退 1；advisory 记录仍退 0", () => {
+  const bad = ROOT; // plan fixture 位于 tests/fixtures，project 根仅需存在
+  const plan = join(ROOT, "tests/fixtures/plan-identity-bad.yaml");
+  const rStrict = spawnSync(process.execPath, [
+    join(ROOT, "scripts/check-identity.mjs"), "--project", bad,
+    "--plan", plan, "--strict",
+  ], { encoding: "utf8" });
+  assert.equal(rStrict.status, 1, "strict 发现 issue 必须退 1（ADR-0005 C 面）");
+  const rAdv = spawnSync(process.execPath, [
+    join(ROOT, "scripts/check-identity.mjs"), "--project", bad,
+    "--plan", plan,
+  ], { encoding: "utf8" });
+  assert.equal(rAdv.status, 0, "advisory 记录 issue 仍退 0");
+  assert.match(rAdv.stdout, /non-fatal/, "advisory 输出须标注 non-fatal");
+});
+
+test("contract C: 退出码 — validate 失败退 1 / 通过退 0", () => {
+  const scratchBase = join(ROOT, ".scratch");
+  mkdirSync(scratchBase, { recursive: true });
+  const tmp = mkdtempSync(join(scratchBase, "fuyao-exit-"));
+  writeFileSync(join(tmp, "bad.plan.yaml"), "version: \"9.9\"\nintent: x\nplan: {}\nprogress: {}\n");
+  const rBad = spawnSync(process.execPath, [
+    join(ROOT, "scripts/validate.mjs"), "--path", join(tmp, "bad.plan.yaml"),
+  ], { encoding: "utf8" });
+  assert.equal(rBad.status, 1, "validate 失败必须退 1");
+  const rOk = run("node", [join(ROOT, "scripts/validate.mjs")]);
+  assert.equal(rOk.status, 0);
+});
+
+test("contract D: 模板六档绑定 — 六档 × dod/verification/ddd-gate 族全配对存在", () => {
+  const tiers = ["轻", "轻中", "中", "中重", "重", "全流程"];
+  for (const tier of tiers) {
+    for (const fam of ["dod", "verification", "ddd-gate", "stage", "commit-policy"]) {
+      const p = join(ROOT, "docs/templates", `${fam}-${tier}.yaml`);
+      if (fam === "commit-policy" && tier === "轻") continue; // 轻档 commit-policy 按模板族豁免（historical: 轻档无独立 commit-policy）
+      assert.ok(existsSync(p), `缺模板 ${fam}-${tier}.yaml`);
+    }
+  }
+  // dod 六档示例 id 惯例零 wi-main/m-done 残留（v0.37/v0.38 两轮清偿的回归锁）
+  for (const tier of tiers) {
+    const t = readFileSync(join(ROOT, "docs/templates", `dod-${tier}.yaml`), "utf8");
+    assert.ok(!/wi-main|m-done/.test(t), `dod-${tier} 不得残留 wi-main/m-done 示例 id`);
+  }
+});
+
+test("contract E: fuyao:init 行为 — 拒覆盖 + 骨架过 /v1 校验（回归锁）", () => {
+  const scratchBase = join(ROOT, ".scratch");
+  mkdirSync(scratchBase, { recursive: true });
+  const tmp = mkdtempSync(join(scratchBase, "fuyao-ce-"));
+  const r = run("npm", ["run", "fuyao:init", "--", "--project", tmp, "--pack", join(ROOT, "packs/starter-solo")]);
+  assert.equal(r.status, 0, r.stdout + r.stderr);
+  const plan = readFileSync(join(tmp, ".agents/plan-progress.yaml"), "utf8");
+  // 骨架结构契约：serial→work_items · 正交→p2 · m-done · active_slot=首 serial 槽
+  assert.match(plan, /m-done: 主链完成|id: m-done/);
+  assert.match(plan, /phase_id: p2/);
+  assert.match(plan, /roster_id: starter-solo/);
+});

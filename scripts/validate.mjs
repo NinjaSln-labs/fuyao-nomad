@@ -137,7 +137,22 @@ let failed = 0;
 const args = process.argv.slice(2);
 if (args[0] === "--path" && args[1]) {
   const p = isAbsolute(args[1]) ? args[1] : join(process.cwd(), args[1]);
-  if (validateFile(p)) passed++;
+  // ADR-0005 C 面：--path 显式单文件校验时，未知类型/无法识别为契约文件必须 FAIL
+  // （目录扫描内的示例杂文件可 skip；显式指定是契约行为，静默通过=校验器说谎）
+  const name = basename(p);
+  const data = parseYaml(p);
+  let kind = null;
+  if (name === "pack.yaml") kind = "pack";
+  else if (name.endsWith(".audit.yaml")) kind = "audit";
+  else if (data?.message) kind = "message";
+  else if (name.includes("plan-progress") || name.startsWith("plan-")) kind = "plan";
+  else if (name.includes("roster") || name === "minimal-roster.yaml") kind = "roster";
+  else kind = classifyTemplate(name);
+  if (!kind || !validators[kind]) {
+    console.error(`✗ unknown contract type (refusing to pass): ${p}`);
+    console.error(`  --path 指定文件须为可识别契约（roster/plan/message/audit/pack/模板）；目录扫描内杂项才可 skip`);
+    failed++;
+  } else if (validateData(data, validators[kind], kind, p)) passed++;
   else failed++;
 } else {
   const ex = validateDir(join(ROOT, "agents/examples"));
