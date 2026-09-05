@@ -1,6 +1,6 @@
 {
   "name": "fuyao-nomad",
-  "version": "0.39.0",
+  "version": "1.0.0-alpha.1",
   "description": "扶摇 · Nomad — Agent team framework",
   "license": "Apache-2.0",
   "type": "module",

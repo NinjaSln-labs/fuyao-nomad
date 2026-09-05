@@ -4,6 +4,10 @@
 
 ## 已完成
 
+### 1.0.0-alpha.1（2026-09-06）
+
+- 契约冻结终章：**ADR-0005 A–E 五面**（四核心 schema /v1 · pack 布局 · check 退出码 · 模板六档 · init 行为）· 回归扩容 24→34 · validate --path 未知类型拒绝静默通过（契约回归暴露的真漏洞）· 三重审计
+
 ### v0.39.0（2026-09-06）
 
 - 外部信任面四单元：**英文核心 5 份** · **schema `$id` 语义化**（五核心 /v1 · 11 模板 /v1-template · ADR-0006 · schema-stability.md · 零破坏切换实测）· **CONTRIBUTING 首贡献路径 + 3 issue 模板** · 导航全链同步
@@ -158,6 +162,7 @@
 | **v0.37** | adopt shuijing 第 4 行（轻中 · pi harness 首个非 cursor）· R16 分段纪律 · dod-轻中模板修正 | ✅ |
 | **v0.38** | 单人开箱：starter-solo + fuyao:init + get-started + dogfood-lite | ✅ |
 | **v0.39** | 外部信任面：英文核心 ×5 · schema $id /v1 与 /v1-template（ADR-0006）· 首贡献路径 + issue 模板 | ✅ |
+| **v1.0.0-alpha.1** | 契约冻结：ADR-0005 A–E 五面 · 回归扩容 24→34 · validate --path 拒静默 · 三重审计 | ✅（主路线终点站） |
 | P2 | 包市场等 | 非默认 |
 
 详版主计划（本地 `docs/plans/`，**不入库**）· 公开摘要见上表与 [CHANGELOG](CHANGELOG.md)
@@ -171,6 +176,7 @@ v0.28.0 ✅ qingfu adopt → v0.29.0 ✅ shisui adopt → v0.30.0 ✅ voyage ado
 → v0.37.0 ✅ adopt shuijing 第 4 行（pi harness 全程驱动 · 轻中档 · R16）
 → v0.38.0 ✅ 单人开箱（starter-solo · fuyao:init · get-started · dod-轻孤例全档清偿）
 → v0.39.0 ✅ 外部信任面（英文核心 ×5 · $id 语义化 · 首贡献路径）
+→ v1.0.0-alpha.1 ✅ 契约冻结（ADR-0005 · 回归 34 · 三重审计）—— **主路线终点站，0.32 路线图闭环**
 ```
 
 ## 不做

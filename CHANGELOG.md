@@ -2,6 +2,17 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [1.0.0-alpha.1] - 2026-09-06
+
+### Added
+
+- **ADR-0005 契约冻结**：A–E 五面（四核心 schema 字段结构 /v1 · pack 目录布局 · check:* 与 validate 退出码 · 模板六档绑定 · install/fuyao:init 行为）—— alpha.1 起 patch 修 bug · minor 增可选面 · 破坏性变更须 ADR + 升版；validate 49→50 入链
+- **契约回归扩容 24→34**：契约字段每项一测——五 schema 枚举与 required（gate_level/slot_kind/orchestration.mode · identity_constraints 三字段 + blockers.evidence · message 四 type · audit 三 verdict · pack skills 不进 harness 路径）· 退出码 strict/advisory · 六档模板绑定 + dod 零孤例残留锁 · init 拒覆盖与骨架结构
+
+### Fixed
+
+- **validate `--path` 未知类型静默通过漏洞**（ADR-0005 C 面真漏洞）：显式单文件校验时未识别契约类型报 `skip (unknown type)` 且计为 passed 退 0——非契约文件名（如 `bad.plan.yaml`）逃过校验；现改为拒绝静默通过（`unknown contract type (refusing to pass)` 退 1）；目录扫描内杂项 skip 行为不变（示例目录允许非契约文件）
+
 ## [0.39.0] - 2026-09-06
 
 ### Added
