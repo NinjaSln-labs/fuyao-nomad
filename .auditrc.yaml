@@ -1,0 +1,8 @@
+# repo-audit 基线（已知接受项 · 团队共享）
+# 机制提案：scaffold-templates FEEDBACK-fuyao-nomad.md E5（.auditrc.yaml 方案 b）
+# 当前工具（v1.0）尚未实现该豁免通道——本文件先作为基线记录，工具落地后即生效
+waive:
+  - id: GIT-001
+    reason: "Conventional Commits 16/20：唯一 miss 是 5b67133 fix(template)+docs:（+ 连接双类型）。历史提交不回改（诚实保留原则）；145 条 commit 总体符合，后续提交已遵守单类型格式"
+    since: "2026-09-06"
+    review_note: "若未来 git log 前 20 条全部规范（该历史 commit 滚出窗口），可移除此豁免"
