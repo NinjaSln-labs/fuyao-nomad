@@ -13,18 +13,15 @@
 | 无头实跑 | `claude -p "<任务>"` + `--dangerously-skip-permissions`（可信沙盒）或 settings 权限预配 | 分段委派（每槽位一进程） |
 | **第三方模型**（R13） | `ANTHROPIC_BASE_URL` + `ANTHROPIC_API_KEY` + `ANTHROPIC_MODEL` 环境变量重定向至任何 Anthropic 兼容端点 | TokenRouter 免费档实测（glm-5.3-free）——无订阅形态 |
 
-## 片段 frontmatter 对照（五家终表）
+## 片段 frontmatter 对照
 
-| 能力面 | cursor | dsh | qoder | **claude** |
-|--------|--------|-----|-------|-----------|
-| model 承载 | ✅ | ❌（委派参数） | ✅ | ✅ `model: inherit` |
-| readonly | ✅ `readonly: true` | ❌ | ❌（tools 替代） | ❌（prompt 约束替代） |
-| tools 白名单 | ❌ | ❌ | ✅ | ❌ |
-| 权限模式 | ❌ | ❌ | ✅ | ❌（CLI flag / settings 承担） |
+五家权威终表已上提 [harness/README](../README.md)（单一权威源，各 MAPPING 不再复制全表）；
+claude 列要点：model 承载 ✅（`model: inherit`）· readonly/tools/权限模式均无 frontmatter
+承载面（prompt 约束 / CLI flag / settings 承担）。
 
 ## 验收（v0.35）
 
-- [x] README · MAPPING（差异维 + 五家 frontmatter 终表）
+- [x] README · MAPPING（差异维 + 五家 frontmatter 终表）（五家/对照终表后经 N1 清偿上提 harness/README，本表存指针）
 - [x] 槽位片段 ×4（claude frontmatter）
 - [x] sandbox 实跑：minimal-research-to-spec 全链经 `.claude/agents` Task 委派（headless · Mac 远程 · tokenrouter 免费模型）
 - [x] roster / pack 零改动

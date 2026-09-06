@@ -19,19 +19,15 @@
 - 并发写：file-lock-contract territory 声明（R3 教训）
 - identity/traceability：`--strict` 双绿
 
-## 片段 frontmatter 对照（qoder vs cursor vs dsh）
+## 片段 frontmatter 对照
 
-| 能力面 | cursor | dsh | **qoder** |
-|--------|--------|-----|-----------|
-| model 承载 | ✅ `model: inherit` | ❌（委派参数） | ✅ `model:` 字段 |
-| readonly | ✅ `readonly: true` | ❌ | ❌ → **tools 白名单替代** |
-| tools 白名单 | ❌ | ❌ | ✅ `tools: [Read, Grep]` |
-| 权限模式 | ❌ | ❌（approval 辅助） | ✅ `permissionMode` |
-| 再委派控制 | ❌ | ❌ | ✅ `Agent(name)` / `disallowedTools: [Agent]` |
+五家权威终表已上提 [harness/README](../README.md)（单一权威源，各 MAPPING 不再复制全表）；
+qoder 列要点：model 承载 ✅（`model:` 字段）· tools 白名单 ✅ · 权限模式 ✅（`permissionMode`）·
+再委派控制 ✅（`Agent(name)` / `disallowedTools: [Agent]`）——readonly 无承载面，以 tools 白名单替代。
 
 ## 验收（v0.35）
 
-- [x] README · MAPPING（差异维 + frontmatter 对照表）
+- [x] README · MAPPING（差异维 + frontmatter 对照表）（五家/对照终表后经 N1 清偿上提 harness/README，本表存指针）
 - [x] 槽位片段 ×4（qoder frontmatter · tools 白名单区分写手/审计）
 - [x] sandbox 实跑：minimal-research-to-spec 全链经 `.qoder/agents` 委派（headless · Mac 远程）
 - [x] roster / pack 零改动

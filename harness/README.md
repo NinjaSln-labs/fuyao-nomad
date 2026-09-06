@@ -32,6 +32,22 @@
 | [langgraph/](./langgraph/) | LangGraph 编排导出 | 导出映射 + smoke 参考实现 | **runtime smoke 级（v0.36 · 6/6 PASS · R15）** |
 | [crewai/](./crewai/) | CrewAI Flow / Crew 导出 | 导出映射 | 文档级（v0.36 对照标注 · smoke 待社区认领） |
 
+## 片段 frontmatter 能力面（五家权威终表）
+
+槽位片段的 frontmatter 承载面随 harness 机制而异。本表为**唯一权威源**（v0.35 散落各
+MAPPING 的局部终表于此上提合并）；各 MAPPING.md 只列本家差异维与机制说明，不复制全表。
+
+| 能力面 | pi | dsh | cursor | qoder | claude |
+|--------|----|----|--------|-------|--------|
+| model 承载 | ❌（实例启动参数 `--provider`/`--model`） | ❌（委派参数 `provider`/`model`） | ✅ `model: inherit` | ✅ `model:` 字段 | ✅ `model: inherit` |
+| readonly | ❌（prompt 约束） | ❌ | ✅ `readonly: true` | ❌（tools 白名单替代） | ❌（prompt 约束替代） |
+| tools 白名单 | ❌ | ❌ | ❌ | ✅ `tools: [Read, Grep]` | ❌ |
+| 权限模式 | ❌（confirm 门·人在主控终端） | ❌（approval 辅助） | ❌（CLI flag） | ✅ `permissionMode` | ❌（CLI flag / settings 承担） |
+| 再委派控制 | ❌ | ❌ | ❌ | ✅ `Agent(name)` / `disallowedTools: [Agent]` | ❌ |
+
+片段 frontmatter 与各 harness 机制的机制级说明（如 cursor 产物落盘型槽位须移除
+`readonly`、qoder headless 权限语义）见各 MAPPING.md 差异维。
+
 换 harness 只换映射表，不换 roster / pack。
 
 设计契约：[pi/dsh](../docs/design/pi-harness-contract.md) · 编排导出公共契约 [export-orchestration-mapping.md](../docs/design/export-orchestration-mapping.md) · CLI/OpenHands 深化 [cli-openhands-adapter.md](../docs/design/cli-openhands-adapter.md)。
