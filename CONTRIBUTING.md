@@ -12,8 +12,8 @@ git clone https://github.com/<you>/fuyao-nomad.git && cd fuyao-nomad
 
 # 2. Install & verify (should be green)
 npm ci
-npm run validate          # 49 checks
-npm test                  # 24 tests
+npm run validate          # 50 checks
+npm test                  # 34 tests
 
 # 3. Try the 15-minute onboarding in a scratch project
 mkdir /tmp/my-first && cd /tmp/my-first && git init
