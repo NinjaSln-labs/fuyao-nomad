@@ -12,7 +12,7 @@
 
 ### Changed
 
-- package.json：`bin.fuyao` + `files` 白名单 + 依赖 runtime 化；description/homepage 指向 npm 与官网
+- package.json：bin 全名 `fuyao-nomad`（2e7ceca 命名归一，防生态撞名）+ `files` 白名单 + 依赖 runtime 化；description/homepage 指向 npm 与官网
 - 仓库 description/topics 同步（GitHub API）
 
 ### Fixed（官网两阶事故 · 2026-09-06 追补）

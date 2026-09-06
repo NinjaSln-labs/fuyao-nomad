@@ -183,7 +183,7 @@ npm run pack:install -- --pack packs/minimal-research-to-spec --project .
 | **v0.38.0** ✅ | 单人开箱：**starter-solo 包**（轻档 3+2 槽）· **`fuyao:init`**（选包→安装→骨架）· get-started 教程（实测 12 分钟）· dod-轻模板同款孤例清偿 |
 | **v0.39.0** ✅ | 外部信任面：**英文核心 5 份**（north-star · capability-model · composition-protocol · team-pack · get-started）· **schema `$id` 语义化**（五核心 /v1 · 11 模板 /v1-template · ADR-0006 · schema-stability.md）· CONTRIBUTING 首贡献路径 + 3 issue 模板 |
 | **v1.0.0-alpha.1** ✅ | **契约冻结**（ADR-0005 A–E 五面）· 回归扩容 24→34（契约字段每项一测）· validate `--path` 未知类型拒绝静默通过（C 面真漏洞修复）· 三重审计 |
-| **v1.0.0-alpha.2** ✅ | **分发层**：npm CLI（`bin/fuyao` · 依赖 runtime 化 · tarball 实测）· GitHub Pages 官网（docsify · 全仓文档）· README 使用区三通道扩容 |
+| **v1.0.0-alpha.2** ✅ | **分发层**：npm CLI（bin 全名 `fuyao-nomad` · 依赖 runtime 化 · tarball 实测）· GitHub Pages 官网（docsify · 全仓文档）· README 使用区三通道扩容 |
 
 详见 [后 v0.1 路线](docs/product/post-v01-roadmap.md) · [0→1 路径](docs/product/0-1-path.md)
 

@@ -6,7 +6,7 @@
 
 ### 1.0.0-alpha.2（2026-09-06）
 
-- 分发层：**npm CLI**（bin/fuyao · tarball 实测 · 依赖 runtime 化）· **GitHub Pages 官网**（docsify 全仓文档）· README 使用区三通道扩容 —— 契约面不变（ADR-0005 冻结）
+- 分发层：**npm CLI**（bin 全名 `fuyao-nomad` · tarball 实测 · 依赖 runtime 化）· **GitHub Pages 官网**（docsify 全仓文档）· README 使用区三通道扩容 —— 契约面不变（ADR-0005 冻结）
 
 ### 1.0.0-alpha.1（2026-09-06）
 
