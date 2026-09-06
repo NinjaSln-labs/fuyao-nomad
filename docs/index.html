@@ -117,9 +117,13 @@
       ],
     };
   </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@3/dist/docsify-copy-code.min.js"></script>
+  <!-- docsify 生态全部本地化（R18 终局：jsdelivr CDN 间歇挂起 → 「加载中」卡死，2026-09-06 实测
+       同一路由几分钟内时好时坏——引擎/插件/主题三面自容，官网零运行时外链）。
+       _media/*.js 为 docsify@4 核心+search+zoom（MIT License）与 docsify-copy-code@3（MIT）
+       的钉版副本；升级 docsify 时四件 + vue.css 需一并重抓重验（本地 _site 同构四链） -->
+  <script src="_media/docsify.min.js"></script>
+  <script src="_media/plugins/search.min.js"></script>
+  <script src="_media/plugins/zoom-image.min.js"></script>
+  <script src="_media/docsify-copy-code.min.js"></script>
 </body>
 </html>
