@@ -38,7 +38,7 @@ Open-source **agent team framework** — defines how multi-role teams collaborat
 | Team pack `packs/minimal-research-to-spec` | ✅ pack validate / install |
 | Harness thin adapters | ✅ **five harnesses mounted-level verified** (pi · dsh · cursor · qoder · claude · one pack unchanged) · CLI · **LangGraph / CrewAI export** · OpenHands frozen |
 | Message protocol + contention advisory | ✅ message validate · `check:contention` (territory overlap + CI `--strict`) |
-| Validation & tests | ✅ `validate` 50 checks · `npm test` 34 tests · GitHub Actions |
+| Validation & tests | ✅ `validate` 51 checks · `npm test` 34 tests · GitHub Actions |
 | Open release | ✅ **v1.0.0-alpha.2** — [CHANGELOG](CHANGELOG.md) · [ROADMAP](ROADMAP.md) · [Docs site](https://NinjaSln-labs.github.io/fuyao-nomad/) |
 
 Maintainer releases require **two local audits** (`.agents/audit/`: **release audit** 100/100 + **code quality audit** pass/pass_with_notes; not in repo; order: both audits → release commit → tag → Release). Checklist: [release-checklist.md](docs/product/examples/release-checklist.md) · `npm run release:preflight`. Public contract: [docs/audit/README.md](docs/audit/README.md).
@@ -99,7 +99,7 @@ git clone https://github.com/NinjaSln-labs/fuyao-nomad.git
 cd fuyao-nomad
 npm ci
 
-npm run validate          # 50 checks
+npm run validate          # 51 checks (grows as contract artifacts land)
 npm test                  # 34 tests
 npm run install:cursor-agents -- --project .
 npm run check:contention -- --project .

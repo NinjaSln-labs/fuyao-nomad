@@ -14,7 +14,7 @@
 
 ## Agent 硬规则（违反即返工）
 
-1. **三绿才 commit**：`npm test`（34）· `npm run validate`（50）· 涉争用跑 `check:contention --strict`
+1. **三绿才 commit**：`npm test`（34）· `npm run validate`（51，新增 ADR/schema 等契约件时 +1）· 涉争用跑 `check:contention --strict`
 2. **中文为权威源**：`.en.md` 是浓缩译文，改中文必须同步评估英文
 3. **契约面零碰**：五核心 schema `/v1` 字段、check:* 退出码、模板六档绑定——变更须先过 ADR
 4. **脱敏**：任何 home 路径/令牌不得入 tracked 文件（preflight 会扫）
