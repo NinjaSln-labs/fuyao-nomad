@@ -227,6 +227,9 @@ default-handoff（dod_complete / blocked / gate 三类默认换手）
 | [ADR-0002](../decisions/adr-0002-audit-private.yaml) | 审计报告本地私有 | accepted |
 | [ADR-0003](../decisions/adr-0003-traceability-not-in-ci.yaml) | traceability 不入 CI | accepted |
 | [ADR-0004](../decisions/adr-0004-research-deauthorize.yaml) | 调研快照去权威化 | accepted |
+| [ADR-0005](../decisions/adr-0005-contract-freeze.yaml) | 1.0.0-alpha.1 契约面冻结（A–E 五面） | accepted |
+| [ADR-0006](../decisions/adr-0006-schema-id-semver.yaml) | Schema $id 语义化（核心 /v1 · 模板 /v1-template） | accepted |
+| [ADR-0007](../decisions/adr-0007-prerelease-versioning.yaml) | 预发布版按事件递增（ship-on-event） | accepted |
 
 ### roles.md 裁决（2026-08-30）
 

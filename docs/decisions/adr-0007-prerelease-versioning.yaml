@@ -1,0 +1,40 @@
+# ADR-0007 · 预发布版递增纪律（ship-on-event）
+
+flow_weight: 轻中
+
+adr:
+  title: 预发布版按事件递增——npm files 白名单内变更才发版；官网/文档走 CI 不占版本号
+  status: accepted
+  context: |
+    1.0.0-alpha.2 发布当日（2026-09-06）后续 9 个 commit：技术债 N 系清偿
+    （N1/N2+N7/N5/N8/N10）· 官网两轮修复（R18 主题 CSS 本地化 · CONTRIBUTING 数字修正）
+    · 审计标准件与 .auditrc.yaml 基线。逐一核对 npm files 白名单
+    （scripts/packs/docs 核心/harness-cursor/agents 示例）：全部不在分发面内或纯文档——
+    用户安装 alpha.2 的行为零变化。若逐 commit 递增预发布号，版本号与用户可见变化
+    脱钩（版本噪音）；若完全不发，tarball 内文档（README 路线表等）会随仓库演进
+    事实性过期。
+  decision: |
+    预发布版（1.0.0-alpha.N / rc.N）按事件递增，非按 commit 递增：
+
+    【发版触发事件】
+    ① 契约面（ADR-0005 A–E 五面）或其工具链（check:* / validate / fuyao:init）
+       用户可见行为变化
+    ② npm files 白名单内文件的用户可见行为变化
+    ③ tarball 内文档（README 等）事实性漂移累计至误导用户
+    ④ 1.0.0 stable gate（ROADMAP）达成
+
+    【不触发】官网部署（独立 CI 通道，不占版本号）· 仓库文档纯措辞/索引同步 ·
+    审计标准件 · 本地私有件（.auditrc.yaml / HANDOFF / .githooks）
+
+    【累积纪律】事件间 commit 归入下一发版事件的 CHANGELOG 条目（Keep a
+    Changelog 累积；可不建 Unreleased 节，事件时一次成节）；发版前 npm pack
+    自检核对 files 白名单差异。
+
+    【stable 出口】gate 达成 → 窗口内有增量则 1.0.0-rc.1 过渡；零增量则直接
+    1.0.0（CHANGELOG 补记 delta）。
+  consequences:
+    - alpha.2 后当日 9 commit 不切 alpha.3（用户面零 delta）——归入下一发版事件
+    - 官网内容修复对用户即时生效（GitHub Pages CI），与 npm 版本号解耦——
+      R18 类修复无需发 npm 版即触达用户
+    - 版本号语义回归 SemVer 本义：号 = 用户可感知变化
+    - 发版 checklist（release-checklist.md）流程不变，仅前置「触发判定」一步

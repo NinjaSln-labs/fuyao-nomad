@@ -181,7 +181,23 @@ v0.28.0 ✅ qingfu adopt → v0.29.0 ✅ shisui adopt → v0.30.0 ✅ voyage ado
 → v0.38.0 ✅ 单人开箱（starter-solo · fuyao:init · get-started · dod-轻孤例全档清偿）
 → v0.39.0 ✅ 外部信任面（英文核心 ×5 · $id 语义化 · 首贡献路径）
 → v1.0.0-alpha.1 ✅ 契约冻结（ADR-0005 · 回归 34 · 三重审计）—— **主路线终点站，0.32 路线图闭环**
+→ v1.0.0-alpha.2 ✅ 分发层（npm CLI · 官网 · 审计闭环）
+→ v1.0.0 stable ⏳ gate（下方条件全绿后评审 · 出口纪律见 ADR-0007）
 ```
+
+### 1.0.0 stable gate（反馈期显式化 · 2026-09-06）
+
+alpha 反馈期不是无限期等待——以下条件全部满足即可评审发 1.0.0（评审记录入本地审计 md）：
+
+- [ ] **G1 反馈窗口**：alpha.2 发布 ≥4 周（2026-10-04 后）
+- [ ] **G2 社区反馈清账**：契约面（A–E）反馈逐条有 ADR/裁定记录；bug 全部 closed
+      或 known-issue 化（窗口内零反馈也过——窗口本身就是证据）
+- [ ] **G3 质量门**：三绿（test 34 · validate 50）+ `release:preflight --strict-gh`
+      + 双审计（[发版 checklist](docs/product/examples/release-checklist.md) 全链）
+- [ ] **G4 技术债**：N1–N17 清零 ✅（2026-09-06 session 2 · 条件项 N4 不阻塞）
+- [ ] **G5 分发面**：npm 三通道 E2E 绿 + 官网四链渲染级+布局级验证（R17/R18 纪律）
+- [ ] **G6 版本路径**：窗口内有增量 → 1.0.0-rc.1；零增量 → 直接 1.0.0
+      （CHANGELOG 补记 delta · [ADR-0007](docs/decisions/adr-0007-prerelease-versioning.yaml)）
 
 ## 不做
 
@@ -196,4 +212,4 @@ v0.28.0 ✅ qingfu adopt → v0.29.0 ✅ shisui adopt → v0.30.0 ✅ voyage ado
 
 ---
 
-*Last updated: 2026-08-30*
+*Last updated: 2026-09-06*
