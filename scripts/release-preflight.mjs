@@ -114,7 +114,7 @@ function checkGhToken() {
 /**
  * Step 2.5 — publish guard, three mechanical checks over the working tree:
  *
- *  a) private files must NOT be tracked: HANDOFF.md / .agents/audit/ / .githooks/ / .cursor/
+ *  a) private files must NOT be tracked: HANDOFF.md / HANDOFF-ARCHIVE/ / .agents/audit/ / .githooks/ / .cursor/
  *  b) desensitization scan over `git ls-files` (machine patterns, no prose):
  *     absolute home paths · Windows user paths · private key blocks · .ssh paths · token prefixes
  *  c) stale git filter-repo marker (.git/filter-repo) misclassifies the next rewrite task
@@ -135,7 +135,7 @@ function checkPublishGuard() {
     return false;
   }
   const tracked = ls.stdout.split("\n").filter((l) => l.length > 0);
-  const PRIVATE = ["HANDOFF.md", ".agents/audit/", ".githooks/", ".cursor/"];
+  const PRIVATE = ["HANDOFF.md", "HANDOFF-ARCHIVE/", ".agents/audit/", ".githooks/", ".cursor/"];
   const leaked = tracked.filter((f) =>
     PRIVATE.some((p) => (p.endsWith("/") ? f.startsWith(p) : f === p || f.startsWith(p + "/"))),
   );
@@ -144,7 +144,7 @@ function checkPublishGuard() {
     for (const f of leaked) console.error(`  git rm --cached '${f}'`);
     failed = true;
   } else {
-    console.log("OK — no private files tracked (HANDOFF.md · .agents/audit/ · .githooks/ · .cursor/)");
+    console.log("OK — no private files tracked (HANDOFF.md · HANDOFF-ARCHIVE/ · .agents/audit/ · .githooks/ · .cursor/)");
   }
 
   // b) desensitization scan on tracked files
