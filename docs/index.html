@@ -8,8 +8,10 @@
   <meta name="theme-color" content="#b45309" />
   <link rel="icon" href="_media/favicon.svg" type="image/svg+xml" />
 
-  <!-- docsify 主题 CSS（必需：docsify.min.js 只是渲染引擎，无主题则侧栏不定位、无样式——裸渲染根因） -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/themes/vue.css" />
+  <!-- docsify 主题 CSS（必需：docsify.min.js 只是渲染引擎，无主题则侧栏不定位、无样式——裸渲染根因）。
+       本地化 _media/vue.css（docsify@4 官方主题副本）：原生首行 @import Google Fonts 为渲染阻塞外链，
+       受限网络间歇断连 → 整页白屏（2026-09-06 实测抓现行）；已剥离 @import 回退系统字体栈，官网自容 -->
+  <link rel="stylesheet" href="_media/vue.css" />
   <!-- 字体预连接（Vercel 准则：CDN/资产域 preconnect） -->
   <link rel="preconnect" href="//cdn.jsdelivr.net" crossorigin />
 
