@@ -75,7 +75,19 @@ npm run pack:import -- --pack packs/minimal-research-to-spec --project $Sandbox
 
 ### 步 2 · 计划与身份
 
-创建 `$Sandbox/.agents/plan-progress.yaml`：
+**推荐（v0.38+）：`fuyao:init` 按 roster 生成骨架**（schema 校验后落盘——机械化杜绝复制旧场景副本的残留噪音）：
+
+```powershell
+Set-Location $Fuyao
+npm run fuyao:init -- --project $Sandbox --pack minimal-research-to-spec --intent "<本场景一句话目标>"
+```
+
+生成后手工补 `identity_constraints`（人的判断，见 [identity-constraints.md](../../design/identity-constraints.md)）。
+
+**红线：勿复制上一 dogfood 场景的 plan-progress 改造**——副本携带旧场景 work_items/handoff 残留，
+审计必携（v0.34 cursor · v0.35 qoder 两轮 gate-confirm 实踩，N2 清偿入模板）。
+
+手工编写（init 前时代路径，仍可用）：
 
 - `intent`：一句话目标  
 - `identity_constraints`：品类/形态词硬约束（见 [identity-constraints.md](../../design/identity-constraints.md)）  
@@ -160,6 +172,64 @@ harness_adapters:
 | 身份 | `npm run check:identity -- --project <仓> --strict` |
 | 追溯 | `npm run check:traceability -- --project <仓> --strict` |
 | 争用（可选） | `npm run check:contention -- --project <仓>` |
+
+---
+
+## harness 挂载场景模板（N2/N7 清偿 · 2026-09-06）
+
+五家挂载 dogfood 的**场景文档骨架**——新场景从此模板起步，勿从上一场景文档/plan-progress
+复制改造（cursor/qoder 两轮副本残留教训；plan-progress 一律 `fuyao:init` 生成，见步 2）。
+
+### 场景文档六节骨架（占位符以 `{}` 标注）
+
+```markdown
+# Dogfood · {harness} harness 挂载实跑场景
+
+> {版本} · [关仓笔记](./dogfood-{场景名}-close.md)  
+> Sandbox：`fuyao-dogfood-{场景名}`（本地 only · 不上 GitHub）
+
+## 1. 目的
+
+在 {harness} 下挂载并实跑 {pack_id}——**验证什么机制**（与已挂载家差异轴一句话）。
+
+## 2. 挂载操作
+
+pack 拷入（与已挂载家同源，pack 零改动）· 槽位片段落位 `{harness 目录}` ·
+plan-progress `fuyao:init` 生成（intent 本场景）。
+
+## 3. 链执行
+
+| 步 | 槽位 | 委派形态 | 产物 |
+|----|------|---------|------|
+| s1 | research | … | … |
+| 门 | —（操作者） | confirm 门人核 | … |
+
+## 4. 五维翻译实测（{harness} MAPPING）
+
+逐维 ✅/◐/❌ 结果；降级裁决引用（S 编号）。
+
+## 5. 校验
+
+validate / identity strict / traceability strict 三绿 · message schema 过验 · auditor 独立 verdict。
+
+## 6. 偏差与关仓
+
+沙盒偏差如实记录（模型不替你圆场）；关仓产物清单。
+```
+
+### R16 分段委派模板（1 输入/段 + 骨架填空 + **纪律尾注**）
+
+- 每段：**1 个输入文件**（落点或片段，勿 ≥2 并读）+ **填空骨架产物**（占位符清单，模型只填不构）。
+- **纪律节放任务尾注，不进骨架**（N7）：骨架里只放产物章节；委派纪律（1 输入/段、
+  写落点、不动源仓等）以「尾注」附在委派指令末尾——骨架含纪律节时段产物会照抄混入
+  （v0.37 adopt-shuijing research 快照/audit 两轮实踩，均需操作者手工清）。
+
+```text
+# 委派指令形态（示意）
+读 <1 个输入文件>，产出 <落点路径>，骨架如下：
+{产物章节骨架——仅产物节}
+—— 尾注（不进产物）：仅写落点 · 勿改源仓 · 未覆盖的占位符如实标 TODO
+```
 
 ---
 
