@@ -31,6 +31,25 @@
 | **model_policy** | 团队级模型策略（default / by_slot_kind / by_slot）；见 model-harness-contract.md |
 | **文件锁契约** | 并行槽位对路径的争用约定；见 file-lock-contract |
 
+## 术语英译（English glossary）
+
+上表核心术语已英主中注；此处集中收编**英文文档按上下文括注、无集中对照**的档位名
+（v1.0.0-alpha quality N10）。英文文档写档位时用右列译名，首次出现括注中文。
+
+**flow_weight 六档**（权威定义见 [delivery-model](../product/delivery-model.md)）：
+
+| 中文（模板/包内权威） | English |
+|----------------------|---------|
+| 轻 | light |
+| 轻中 | light-mid |
+| 中 | medium |
+| 中重 | medium-heavy |
+| 重 | heavy |
+| 全流程 | full-cycle |
+
+模板文件名与六档绑定校验（`dod-轻.yaml` 等）**保留中文字符，不作英译**——契约面
+（ADR-0005）以六档绑定为准，文件名是稳定标识而非术语面。
+
 ## 边界上下文
 
 ```
