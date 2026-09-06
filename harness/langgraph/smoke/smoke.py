@@ -64,8 +64,8 @@ class SmokeState(TypedDict, total=False):
     gate_decisions: Annotated[list[str], operator.add]
 
 
-def discover_roster(project_root: Path) -> tuple[str, Path]:
-    """在 agents/packs/ 下发现唯一 roster（多包时需 --pack-id 指定）。"""
+def discover_roster(project_root: Path, requested: str | None = None) -> tuple[str, Path]:
+    """在 agents/packs/ 下发现 roster（多包未指定 --pack-id 时提示歧义后取首个）。"""
     packs_dir = project_root / "agents" / "packs"
     if not packs_dir.is_dir():
         raise SystemExit(f"未找到 {packs_dir} — 请先在项目内 pack:import 团队包")
@@ -76,6 +76,13 @@ def discover_roster(project_root: Path) -> tuple[str, Path]:
             found.append((pack_dir.name, roster))
     if not found:
         raise SystemExit("agents/packs/ 下无 roster.yaml")
+    if len(found) > 1 and requested is None:
+        names = "、".join(name for name, _ in found)
+        print(
+            f"[歧义提示] agents/packs/ 下发现多个团队包（{names}）——默认取首个 {found[0][0]}；"
+            "如需指定请加 --pack-id <pack-id>",
+            file=sys.stderr,
+        )
     return found[0]
 
 
@@ -330,7 +337,7 @@ def main() -> int:
     args = parser.parse_args()
 
     project = Path(args.project).resolve()
-    pack_id, roster_path = discover_roster(project)
+    pack_id, roster_path = discover_roster(project, args.pack_id)
     if args.pack_id and pack_id != args.pack_id:
         raise SystemExit(f"发现包 {pack_id} != --pack-id {args.pack_id}")
     mapping_path = project / args.mapping
