@@ -69,7 +69,7 @@ npm i fuyao-nomad
 npx fuyao-nomad init --project . --pack starter-solo --intent "一句话目标"
 ```
 
-一条命令完成：选团队包 → 安装（pack → `agents/packs/` + Cursor 子代理 → `.cursor/agents/`）→ 生成 `.agents/plan-progress.yaml` 计划骨架。后续验证：
+一条命令完成：选团队包 → 安装（pack → `agents/packs/` + Cursor 子代理 → `.cursor/agents/`）→ 生成 `.agents/plan-progress.yaml` 计划骨架。`--pack` 接受裸包名（解析到自带 `packs/`）、相对路径（按当前目录）或绝对路径——显式路径优先；仓内仅一个包时可省略。后续验证：
 
 ```bash
 npx fuyao-nomad validate --path .agents/plan-progress.yaml

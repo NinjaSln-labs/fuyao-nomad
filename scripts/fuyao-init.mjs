@@ -15,6 +15,12 @@
  *      - progress: status in_progress · messages_dir 按协议落点
  *   4. 骨架过 plan-progress.schema 校验后落盘；已有 plan-progress 拒绝覆盖（--force 覆写）
  *
+ * --pack 解析三形态（显式路径优先）：
+ *   绝对/相对路径 → 相对路径按调用方 cwd 解析；该路径下存在 pack.yaml 即用之
+ *                   （边界：用户项目内恰有同名目录且含 pack.yaml 时，显式路径优先）
+ *   裸名/目录名   → 回退源仓 packs/<name>
+ *   省略          → 仓内 packs/ 唯一包时自动选用；多包则列包后报错
+ *
  * 设计边界：只生成骨架，不替用户写 intent 细节/identity_constraints（identity 抽取
  * 是人的判断，见 identity-constraints.md）。
  */

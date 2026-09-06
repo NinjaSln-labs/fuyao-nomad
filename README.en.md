@@ -68,7 +68,7 @@ npm i fuyao-nomad
 npx fuyao-nomad init --project . --pack starter-solo --intent "one-line goal"
 ```
 
-One command: pick a team pack → install (pack → `agents/packs/` + Cursor subagents → `.cursor/agents/`) → generate the `.agents/plan-progress.yaml` plan skeleton. Then verify:
+One command: pick a team pack → install (pack → `agents/packs/` + Cursor subagents → `.cursor/agents/`) → generate the `.agents/plan-progress.yaml` plan skeleton. `--pack` accepts a bare pack name (resolved against the bundled `packs/`), a relative path (against your cwd) or an absolute path — explicit paths win; omit it when exactly one pack ships. Then verify:
 
 ```bash
 npx fuyao-nomad validate --path .agents/plan-progress.yaml

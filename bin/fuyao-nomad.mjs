@@ -35,6 +35,7 @@ fuyao-nomad ${pkg.version} — 扶摇 · Nomad Agent team framework CLI
 Usage:
   fuyao-nomad init      --project <dir> [--pack <name|path>] [--intent "…"] [--force]
                   一条命令：选团队包 → 安装 → 生成 .agents/plan-progress.yaml 骨架
+                  --pack 解析：裸名（源仓 packs/）· 相对路径（按 cwd）· 绝对路径——显式路径优先；省略时仓内唯一包自动选用
   fuyao-nomad pack validate <pack-dir>            校验团队包
   fuyao-nomad pack import   --pack <dir> --project <root>   安装团队包到项目
   fuyao-nomad pack export   --pack <dir> --out <dir> [--id <new-id>]   可移植复制/分叉
